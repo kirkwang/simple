@@ -17,7 +17,7 @@ public class PermMissingElem {
 
         Scanner scn = new Scanner(System.in);
         // int[] n = scn.nextInt();
-        int[] n = new int[]{1, 2, 3, 6, 4};
+        int[] n = new int[]{1, 2, 3, 5, 4};
         // int[] n = new int[]{  9, 3, 9, 3, 1, 4, 4};
         //  solution(n);
         System.out.print(solution(n));
