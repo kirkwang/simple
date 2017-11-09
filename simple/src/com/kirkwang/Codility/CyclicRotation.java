@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 /**
  * Created by kewang on 11/8/17.
+ * For example, given array A = [3, 8, 9, 7, 6] and K = 3, the function should return [9, 7, 6, 3, 8].
+
  */
 public class CyclicRotation {
     public static void main(String[] args) {

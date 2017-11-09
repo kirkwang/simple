@@ -4,6 +4,13 @@ import java.util.Scanner;
 
 /**
  * Created by kewang on 11/8/17.
+ * For example, given array A such that:
+ * A[0] = 2
+ * A[1] = 3
+ * A[2] = 1
+ * A[3] = 5
+ * <p>
+ * the function should return 4, as it is the missing element.
  */
 public class PermMissingElem {
     public static void main(String[] args) {
