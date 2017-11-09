@@ -27,19 +27,29 @@ public class MissingInteger {
         if (A == null || A.length == 0) {
             return 0;
         }
+        int max = Integer.MIN_VALUE;
         TreeSet hSet = new TreeSet<>();
         for (int i = 0; i < A.length; i++) {
-            hSet.add(A[i]);
+            if (A[i] > 0) {
+                //only add positive number
+                hSet.add(A[i]);
+            }
+            if (A[i] > max) {
+                max = A[i];
+            }
+        }
+        if (max < 0) {
+            return 1;
         }
         int n = hSet.size() + 1;
-        long total = n * (n + 1) / 2;
+        max = n * (n + 1) / 2;
 
         Iterator<Integer> iterator = hSet.iterator();
 
         while (iterator.hasNext()) {
-            total -= iterator.next();
+            max -= iterator.next();
         }
 
-        return (int) total;
+        return (int) max;
     }
 }
