@@ -23,6 +23,28 @@ public class MissingInteger {
         System.out.println(solution(n));
     }
 
+    public static int solution1(int[] A) {
+        int max = Integer.MIN_VALUE;
+        TreeSet hSet = new TreeSet<>();
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] > 0) {
+                //only add positive number
+                hSet.add(A[i]);
+            }
+            if (A[i] > max) {
+                max = A[i];
+            }
+        }
+        if (max < 0) {
+            return 1;
+        }
+
+
+        int min = (int) hSet.first();
+        return min;
+
+    }
+
     public static int solution(int[] A) {
         if (A == null || A.length == 0) {
             return 0;
