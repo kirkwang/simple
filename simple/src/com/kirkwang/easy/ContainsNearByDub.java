@@ -7,9 +7,11 @@ import java.util.HashMap;
  */
 public class ContainsNearByDub {
     public static void main(String[] args) {
+        int[] numbs = {1, 4, 5, 1, 56, 22, 4};
+        System.out.println(ContainsNearByDub(numbs, 3));
     }
 
-    public boolean ContainsNearByDub(int[] numbs, int k) {
+    public static boolean ContainsNearByDub(int[] numbs, int k) {
         HashMap<Integer, Integer> map = new HashMap();
         for (int i = 0; i < numbs.length; i++) {
             if (map.containsKey(numbs[i])) {

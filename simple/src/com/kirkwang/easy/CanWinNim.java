@@ -4,7 +4,8 @@ package com.kirkwang.easy;
  * Created by kewang on 12/23/15.
  */
 /*
-You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take the first turn to remove the stones.
+You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones.
+ The one who removes the last stone will be the winner. You will take the first turn to remove the stones.
 
 Both of you are very clever and have optimal strategies for the game. Write a function to determine whether you can win the game given the number of stones in the heap.
 
@@ -21,7 +22,7 @@ public class CanWinNim {
     }
 
     public boolean canWinNim(int n) {
-        if (n % 4 == 0) // if it can't be devided by 4, then true
+        if (n % 4 == 0) // if it can't be divided by 4, then true
             return false;
         else
             return true;
