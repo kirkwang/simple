@@ -51,12 +51,11 @@ public class Detect_remove_loop_in_linked_list {
     // Function to remove loop
     void removeLoop(Node loop, Node curr) {
         Node ptr1 = null, ptr2 = null;
-
-		/* Set a pointer to the beging of the Linked List and
+        /* Set a pointer to the beging of the Linked List and
         move it one by one to find the first node which is
 		part of the Linked List */
         ptr1 = curr;
-        while (1 == 1) {
+        while (true) {
 
 			/* Now start a pointer from loop_node and check if it ever
             reaches ptr2 */
@@ -74,6 +73,7 @@ public class Detect_remove_loop_in_linked_list {
 			/* If ptr2 did't reach ptr1 then try the next node after ptr1 */
             ptr1 = ptr1.next;
         }
+
 
 		/* After the end of loop ptr2 is the last node of the loop. So
 		make next of ptr2 as NULL */
