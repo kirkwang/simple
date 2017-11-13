@@ -15,7 +15,7 @@ public class FindDups2 {
         Set uniqe = new HashSet<>();
         for (Object a : strings) {
             if ((uniqe.add(a))) {
-                System.out.println("This is unique string " + a);
+                System.out.println("This is a unique string " + a);
             }
         }
     }
