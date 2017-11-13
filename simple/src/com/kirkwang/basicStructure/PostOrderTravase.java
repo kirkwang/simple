@@ -11,14 +11,15 @@ import java.util.TreeSet;
 public class PostOrderTravase {
     public static void main(String... arg) {
         Set<String> treeSet = new TreeSet<String>();
+        treeSet.add("a");
+        treeSet.add("b");
+        treeSet.add("c");
+
         Node aNode = new Node();
         aNode.setNodeValue(11);
         aNode.setNodeValue(3);
         aNode.setNodeValue(7);
         aNode.setNodeValue(71);
-        treeSet.add("a");
-        treeSet.add("b");
-        treeSet.add("c");
         Iterator it = treeSet.iterator();
         while (it.hasNext()) {
             Object element = it.next();
@@ -27,6 +28,13 @@ public class PostOrderTravase {
 
         String[] array = (String[]) treeSet.toArray(new String[treeSet.size()]);
         Arrays.toString(array);
+
+        String s1 = new String("hello");
+        String s2 = "hello";
+        String s3 = "hello";
+
+        System.err.println(s1 == s2);
+        System.err.println(s2 == s3);
 
 
     }
