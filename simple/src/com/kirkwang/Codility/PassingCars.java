@@ -50,7 +50,12 @@ public class PassingCars {
                     }
                 }
             }
+            if (numberTotal > 1000000000) {
+                numberTotal = -1;
+                break;
+            }
             numberTotal = numberOntheLeft + numberOntheright;
+
         }
 
         return numberTotal / 2;
