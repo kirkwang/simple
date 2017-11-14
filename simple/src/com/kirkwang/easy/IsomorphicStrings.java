@@ -25,28 +25,27 @@ You may assume both s and t have the same length.
  */
 public class IsomorphicStrings {
     public static void main(String[] args) {
-        // boolean istr = ;
         System.out.print(IsomorphicStrings.isomorphicStrings("daa", "add"));
     }
 
-    public static boolean isomorphicStrings(String s, String t) {
-        if (s.length() != t.length())
+    public static boolean isomorphicStrings(String source, String t) {
+        if (source.length() != t.length())
             return false;
-        Map<Character, Character> map1 = new HashMap<Character, Character>();
-        Map<Character, Character> map2 = new HashMap<Character, Character>();
+        Map<Character, Character> map1 = new HashMap<Character, Character>(); //daa, add
+        Map<Character, Character> map2 = new HashMap<Character, Character>(); //add, daa
 
-        for (int i = 0; i < s.length(); i++) {
-            if (map1.containsKey(s.charAt(i))) {
-                if (map1.get(s.charAt(i)) != t.charAt(i))
+        for (int i = 0; i < source.length(); i++) {
+            if (map1.containsKey(source.charAt(i))) {
+                if (map1.get(source.charAt(i)) != t.charAt(i))
                     return false;
             }
             if (map2.containsKey(t.charAt(i))) {
-                if (map2.get(t.charAt(i)) != s.charAt(i)) {
+                if (map2.get(t.charAt(i)) != source.charAt(i)) {
                     return false;
                 }
             }
-            map1.put(s.charAt(i), t.charAt(i));
-            map2.put(t.charAt(i), s.charAt(i));
+            map1.put(source.charAt(i), t.charAt(i));
+            map2.put(t.charAt(i), source.charAt(i));
         }
         return true;
     }
