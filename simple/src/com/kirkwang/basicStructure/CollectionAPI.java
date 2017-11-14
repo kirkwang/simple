@@ -25,8 +25,8 @@ public class CollectionAPI {
 
         DequeueList();
         System.out.println(Collections.binarySearch(fruitsList, "Oranges"));
-        //checkedCollection();
-        //fill_frequency_Method();
+        checkedCollection();
+        fill_frequency_Method();
         sychronized();
     }
 
