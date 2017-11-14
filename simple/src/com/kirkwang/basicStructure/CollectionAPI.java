@@ -25,8 +25,21 @@ public class CollectionAPI {
 
         DequeueList();
         System.out.println(Collections.binarySearch(fruitsList, "Oranges"));
-        checkedCollection();
-        fill_frequency_Method();
+        //checkedCollection();
+        //fill_frequency_Method();
+        sychronized();
+    }
+
+    public static void sychronized() {
+        List fruitsList = new ArrayList();
+
+        Collections.addAll(fruitsList, "Apples", "Oranges", "Banana");
+
+        Collection<String> synchronizedCollection = Collections.synchronizedCollection(fruitsList);
+        List<String> synchronizedList = Collections.synchronizedList(fruitsList);
+        List<String> EMPTY_LIST = Collections.EMPTY_LIST;
+        fruitsList.forEach(System.out::println);
+
     }
 
     public static void fill_frequency_Method() {
@@ -35,7 +48,6 @@ public class CollectionAPI {
         int counter = 0;
         Collections.fill(vegetables, "filled with dummy data");
         vegetables.forEach(System.out::println);
-
         System.out.println(Collections.frequency(vegetables, "Cabbage"));
 
     }
