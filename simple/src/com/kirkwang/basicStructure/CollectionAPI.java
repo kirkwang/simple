@@ -11,8 +11,7 @@ public class CollectionAPI {
         Set hashSet = new HashSet();
         List fruitsList = new ArrayList();
 
-        Collections.addAll(fruitsList, "pear", "banan", "apple");
-
+        Collections.addAll(fruitsList, "Apples", "Oranges", "Banana");
         Collections.addAll(hashSet, "cherry", "watermelon", "apple");
 
         Collections.sort(fruitsList, Comparator.naturalOrder());
@@ -22,6 +21,47 @@ public class CollectionAPI {
         fruitsList.forEach(System.out::print);
         System.out.println();
         hashSet.forEach(System.out::print);
+        System.out.println();
 
+        DequeueList();
+        System.out.println(Collections.binarySearch(fruitsList, "Oranges"));
+        checkedCollection();
+        fill_frequency_Method();
+    }
+
+    public static void fill_frequency_Method() {
+        List vegetables = new ArrayList();
+        Collections.addAll(vegetables, "Potato", "Cabbage");
+        int counter = 0;
+        Collections.fill(vegetables, "filled with dummy data");
+        vegetables.forEach(System.out::println);
+
+        System.out.println(Collections.frequency(vegetables, "Cabbage"));
+
+    }
+
+    public static void DequeueList() {
+        Deque deque = new LinkedList();
+        deque.addFirst("apple");
+        deque.addFirst("banana");
+        deque.addFirst("orange");
+
+        Queue queue = Collections.asLifoQueue(deque);
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
+
+    }
+
+    public static void checkedCollection() {
+        List list = new ArrayList();
+        Collections.addAll(list, "one", "two", "three", "four");
+        Collection checkedList = Collections.checkedCollection(list, String.class);
+        System.out.println("Checked list content: " + checkedList);
+//we can add any type of element to list
+        list.add(null);
+//we cannot add any type of elements to chkList, doing so
+//throws ClassCastException
+        // checkedList.add(10);
     }
 }
