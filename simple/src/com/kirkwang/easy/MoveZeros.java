@@ -15,27 +15,30 @@ Minimize the total number of operations.
 @SuppressWarnings("Array")
 public class MoveZeros {
 
-    public static void main(String[] args) {
-        MoveZeros mz = new MoveZeros();
-        int[] sorted = mz.movesZeros(new int[]{1, 0, 2, 30, 0});
-        for (int aSorted : sorted)
-            System.out.print(aSorted + " ");
+  public static void main(String[] args) {
+    MoveZeros mz = new MoveZeros();
+    int[] sorted = mz.movesZeros(new int[]{1, 0, 2, 30, 0});
+    for (int aSorted : sorted) {
+      System.out.print(aSorted + " ");
+    }
+  }
+
+  public int[] movesZeros(int[] numbs) {
+    if (numbs == null || numbs.length == 0) {
+      return numbs;
+    }
+    int index = 0;
+    for (int i = 0; i < numbs.length; i++) {
+      if (numbs[i] != 0) {
+        numbs[index++] = numbs[i];
+      }
+
+    }
+    while (index < numbs.length) {
+      numbs[index++] = 0;
     }
 
-    public int[] movesZeros(int[] numbs) {
-        if (numbs == null || numbs.length == 0) return numbs;
-        int index = 0;
-        for (int i = 0; i < numbs.length; i++) {
-            if (numbs[i] != 0) {
-                numbs[index++] = numbs[i];
-            }
-
-        }
-        while (index < numbs.length) {
-            numbs[index++] = 0;
-        }
-
-        return numbs;
-    }
+    return numbs;
+  }
 
 }
