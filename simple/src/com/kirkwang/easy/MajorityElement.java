@@ -35,7 +35,8 @@ public class MajorityElement {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{1, 1, 2, 4, 4, 4, 4, 5};
+        //  int[] array = new int[]{1, 1, 2, 4, 4, 4, 4, 5};
+        int[] array = {1, 1, 2, 4, 4, 4, 4, 5};
         Integer me = MajorityElement.majorityElement(array);
         System.out.print(me);
     }
