@@ -25,7 +25,7 @@ public class Nesting {
 
   private static boolean compare(Character left, char right) {
 
-    return left.equals('(') && right == ')' ? true : false;
+    return left.equals('(') && right == ')';
 
   }
 
