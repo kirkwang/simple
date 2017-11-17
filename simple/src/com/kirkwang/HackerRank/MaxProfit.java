@@ -30,7 +30,6 @@ public class MaxProfit {
 
     return maxProfit;
 
-
   }
 
   public static void main(String[] args) {
