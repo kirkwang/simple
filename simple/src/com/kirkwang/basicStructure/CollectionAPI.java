@@ -27,13 +27,13 @@ public class CollectionAPI {
     Collections.sort(fruitsList, Comparator.reverseOrder());
     //Collections.sort(hashSet); Set can't be sorted
 
-    fruitsList.forEach(System.out::print);
+    fruitsList.forEach(System.out::println);
     System.out.println();
-    hashSet.forEach(System.out::print);
+    hashSet.forEach(System.out::println);
     System.out.println();
 
     DequeueList();
-    System.out.println(Collections.binarySearch(fruitsList, "Oranges"));
+    System.out.println(Collections.binarySearch(fruitsList, "Apples"));
     checkedCollection();
     fill_frequency_Method();
     sychronized();
@@ -68,9 +68,9 @@ public class CollectionAPI {
     deque.addFirst("orange");
 
     Queue queue = Collections.asLifoQueue(deque);
-    System.out.println(queue.poll());
-    System.out.println(queue.poll());
-    System.out.println(queue.poll());
+    System.out.println(" dequeue pull " + queue.poll());
+    System.out.println(" dequeue pull " + queue.poll());
+    System.out.println(" dequeue pull " + queue.poll());
 
   }
 
@@ -81,7 +81,7 @@ public class CollectionAPI {
     System.out.println("Checked list content: " + checkedList);
 //we can add any type of element to list
     list.add(null);
-//we cannot add any type of elements to chkList, doing so
+//we cannot add any type of elements to chkList, it's checkecCollecion doing so
 //throws ClassCastException
     // checkedList.add(10);
   }
