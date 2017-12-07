@@ -47,6 +47,7 @@ public class CollectionAPI {
     Collection<String> synchronizedCollection = Collections.synchronizedCollection(fruitsList);
     List<String> synchronizedList = Collections.synchronizedList(fruitsList);
     List<String> EMPTY_LIST = Collections.EMPTY_LIST;
+    System.out.println("this is sychronized block ");
     fruitsList.forEach(System.out::println);
 
   }
@@ -54,11 +55,12 @@ public class CollectionAPI {
   public static void fill_frequency_Method() {
     List vegetables = new ArrayList();
     Collections.addAll(vegetables, "Potato", "Cabbage");
-    int counter = 0;
-    Collections.fill(vegetables, "filled with dummy data");
     vegetables.forEach(System.out::println);
-    System.out.println(Collections.frequency(vegetables, "Cabbage"));
-
+    int counter = 0;
+    Collections.fill(vegetables,
+        "filled with dummy data"); //fill will cover up every thing with dummy datejjj
+    vegetables.forEach(System.out::println);
+    System.out.println(Collections.frequency(vegetables, "Cabbage"));//print 0 // this is no cabbage
   }
 
   public static void DequeueList() {
