@@ -2,6 +2,7 @@ package com.kirkwang.DynamicProgramming;
 
 /**
  * Created by kewang on 11/28/17.
+ * https://stackoverflow.com/questions/767759/occurrences-of-substring-in-a-string
  */
 public class OccurrencesOfSubstring {
 
@@ -39,7 +40,8 @@ public class OccurrencesOfSubstring {
     System.out.println("two string comparesion with compareTo  " + equal1.split("u")[0]);
     System.out.println("two string comparesion with endsWith  " + equal1.endsWith("al"));
     System.out.println("two string comparesion with chars  " + equal1.toCharArray()[0]);
-    System.out.println(OccurrencesOfSubstring("cat", "atdogcatcatdog"));
+    System.out.println(OccurrencesOfSubstring("cat",
+        "atdogcatcatdog")); // find how many cat(s) in the target string
 
   }
 
