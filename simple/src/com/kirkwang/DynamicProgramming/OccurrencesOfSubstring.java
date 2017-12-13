@@ -1,7 +1,8 @@
 package com.kirkwang.DynamicProgramming;
 
 /**
- * Created by kewang on 11/28/17. https://stackoverflow.com/questions/767759/occurrences-of-substring-in-a-string
+ * Created by kewang on 11/28/17.
+ * https://stackoverflow.com/questions/767759/occurrences-of-substring-in-a-string
  */
 public class OccurrencesOfSubstring {
 
@@ -14,7 +15,7 @@ public class OccurrencesOfSubstring {
       //  lastIndex = target.lastIndexOf(source);
       if (lastIndex != -1) {
         count++;
-        lastIndex += source.length();
+        lastIndex += source.length(); //shift or move source length
       }
     }
     return count;
