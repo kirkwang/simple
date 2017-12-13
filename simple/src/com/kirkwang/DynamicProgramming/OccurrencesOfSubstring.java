@@ -1,8 +1,7 @@
 package com.kirkwang.DynamicProgramming;
 
 /**
- * Created by kewang on 11/28/17.
- * https://stackoverflow.com/questions/767759/occurrences-of-substring-in-a-string
+ * Created by kewang on 11/28/17. https://stackoverflow.com/questions/767759/occurrences-of-substring-in-a-string
  */
 public class OccurrencesOfSubstring {
 
