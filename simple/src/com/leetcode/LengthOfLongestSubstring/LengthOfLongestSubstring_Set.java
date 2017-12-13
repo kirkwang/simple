@@ -42,7 +42,6 @@ public class LengthOfLongestSubstring_Set {
         set.add(input.charAt(tail++));
         ans = Math.max(ans, tail - head);
       } else {
-
         set.remove(input.charAt(head++));
       }
     }

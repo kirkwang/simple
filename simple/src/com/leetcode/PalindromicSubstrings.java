@@ -29,7 +29,10 @@ public class PalindromicSubstrings {
 
   public static void main(String[] args) {
 
-    int result = PalindromicSubstrings("aaa");
+    int result = PalindromicSubstrings("abc");
+    System.out.println("This is the result " + result);
+
+    result = PalindromicSubstrings("aaa");
     System.out.println("This is the result " + result);
 
     result = PalindromicSubstrings("ababada");
