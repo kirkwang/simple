@@ -4,7 +4,7 @@ package com.kirkwang.easy;
  * Created by kewang on 12/13/17.
  */
 
-@Deprecated
+
 public class ReverseInteger {
 
   public static int ReverseInteger(int input) {
