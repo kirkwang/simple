@@ -8,21 +8,29 @@ package com.kirkwang.easy;
 public class ReverseInteger {
 
   public static int ReverseInteger(int input) {
-    int result = 0;
-    while (input > 0) {
-      int reminder = input % 10;
-      result = result * 10 + reminder;
-      input /= 10;
+    long reversedNum = 0;
+    long input_long = input;
+    while (input_long != 0) {
+      long reminder = input_long % 10;
+      reversedNum = reversedNum * 10 + reminder;
+      input_long = input_long / 10;
+
     }
-    return result;
+
+    if (reversedNum > Integer.MAX_VALUE || reversedNum < Integer.MIN_VALUE) {
+      return 0;
+      // throw new IllegalArgumentException();
+    }
+    return (int) reversedNum;
+
   }
 
   public static void main(String[] args) {
-
-    int result = ReverseInteger(123);
+//1534236469
+    int result = ReverseInteger(-456);
     System.out.println("This is the result " + result);
 
-    int result1 = ReverseInteger(456);
+    int result1 = ReverseInteger(1534236469); //over flow
     System.out.println("This is the result " + result1);
 
   }
