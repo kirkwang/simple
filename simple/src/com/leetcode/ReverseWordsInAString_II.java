@@ -10,37 +10,20 @@ public class ReverseWordsInAString_II {
       return input;
     }
     char[] processed = input.trim().toCharArray();
-    int j = processed.length - 1;
-    for (int i = 0; i < processed.length / 2; i++) {
-      char c = processed[i];
-      processed[i] = processed[j - i];
-      processed[j - i] = c;
-    }
+
+    reverse(processed, 0, processed.length - 1);
 
     int head = 0;
-    int tail = 0;
     for (int i = 0; i < processed.length; i++) {
-
-      char endChar = processed[tail];
-      while (!Character.isSpaceChar(endChar)) {
-        if (tail < processed.length) {
-          endChar = processed[tail];
-          tail++;
-        } else {
-          break;
-        }
-
-
+      char endChar = processed[i];
+      if (endChar == ' ') {
+        reverse(processed, head, i - 1); //done with swap
+        head = i + 1; //skip space char
       }
-      reverse(processed, head, tail - 2);
-      head = tail;
-      i = tail;
 
     }
-    //if (Character.isLetter(ch))
+    reverse(processed, head, processed.length - 1);
 
-    // String[] strings = processed.split(":");
-    // processed.join(" ", strings);
     return String.valueOf(processed);
   }
 
@@ -49,7 +32,7 @@ public class ReverseWordsInAString_II {
 
       return processed;
     }
-    while (i <= j) {
+    while (i < j) {
       char temp = processed[i];
       processed[i] = processed[j];
       processed[j] = temp;
