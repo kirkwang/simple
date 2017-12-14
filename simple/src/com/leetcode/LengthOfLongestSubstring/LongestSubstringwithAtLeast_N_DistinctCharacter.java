@@ -17,6 +17,7 @@ import java.util.Map;
  * Output: 5
  *
  * The longest substring is "ababb", as 'a' is repeated 2 times and 'b' is repeated 3 times.
+ * https://discuss.leetcode.com/topic/33537/java-o-n-explain-how-i-come-up-with-this-idea
  */
 
 @Deprecated // Implete
