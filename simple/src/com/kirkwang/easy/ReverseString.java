@@ -8,71 +8,33 @@ import java.io.IOException;
  */
 public class ReverseString {
 
-
-    public static void main(String args[]) throws FileNotFoundException, IOException {
-
-      //original string
-      String str = "Sony is going to introduce Internet TV soon";
-      System.out.println("Original String: " + str);
-
-      //reversed string using Stringbuffer
-      //String reverseStr = new StringBuffer(str).reverse().toString();
-      String reversedStr = new StringBuffer(str).reverse().toString();
-    //  System.out.println("Reverse String in Java using StringBuffer: " + reversedStr);
-      
-      //iterative method to reverse String in Java
-      reversedStr = reverse(str);
-      System.out.println("Reverse String in Java using Iteration: " + reversedStr);
-
-      //recursive method to reverse String in Java
-      reversedStr = reverseRecursively(str);
-//      System.out.println("Reverse String in Java using Recursion: " + reverseStr);
+  public static String ReverseString(String input) {
+    if (input == null) {
+      return null;
+    }
+    char[] chars = input.toCharArray();
+    int j = chars.length - 1;
+    for (int i = 0; i < chars.length / 2; i++) {
+      char temp = chars[i];
+      chars[i] = chars[j - i];
+      chars[j - i] = temp;
 
     }
-  public static String reverseRecur(String str){
-    if (str.length() < 2)
-      return str;
-    return  reverseRecur(str.substring(1)+ str.charAt(0));
-    
+    return String.valueOf(chars);
   }
-  public static String reverseRecursively(String str){
-    if (str.length() < 2) {
-        return str;
-      }
-      return reverseRecursively(str.substring(1)) + str.charAt(0);
+
+  public static void main(String args[]) throws FileNotFoundException, IOException {
+
+    //original string
+    String str = "Sony is going to introduce Internet TV soon";
+    System.out.println("Original String: " + str);
+
+    System.out.println("Reservsed String: " + ReverseString(str));
+
 
   }
-     public static String reverse(String str){
-      StringBuilder strBuilder = new StringBuilder();        
-      char[] strChars = str.toCharArray();
-       
-       for (int i= strChars.length-1; i>=0; i--){
-         strBuilder.append(strChars[i]);
-       }
-       return  strBuilder.toString();
-     }
-//    public static String reverse(String str) {
-//      StringBuilder strBuilder = new StringBuilder();
-//      char[] strChars = str.toCharArray();
-//
-//      for (int i = strChars.length - 1; i >= 0; i--) {
-//        strBuilder.append(strChars[i]);
-//      }
-//
-//      return strBuilder.toString();
-//    }
 
-//    public static String reverseRecursively(String str) {
-//
-//      //base case to handle one char string and empty string
-//      if (str.length() < 2) {
-//        return str;
-//      }
-//
-//      return reverseRecursively(str.substring(1)) + str.charAt(0);
-//
-//    }
-  }
+}
 
 
 
