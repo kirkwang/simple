@@ -11,7 +11,7 @@ package com.kirkwang.easy;
  *
  * For example, Given s = "the sky is blue", return "blue is sky the".
  */
-public class ReverseWordsInAString {
+public class ReverseWordsInAString_I {
 
   public static String ReverseWordsInAString(String input) {
 
@@ -38,6 +38,7 @@ public class ReverseWordsInAString {
     System.out.println("Original String: " + str);
 
     System.out.println("Reservsed String: " + ReverseWordsInAString("   a   b "));
+    System.out.println("Reservsed String: " + ReverseWordsInAString(str));
 
 
   }
