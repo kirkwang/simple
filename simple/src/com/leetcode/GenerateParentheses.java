@@ -25,6 +25,7 @@ public class GenerateParentheses {
   }
 
   public static void generater(String str, List<String> sublist, int left, int right) {
+
     if (left > right) {
       return;
     }
