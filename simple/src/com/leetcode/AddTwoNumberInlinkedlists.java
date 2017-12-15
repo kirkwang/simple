@@ -2,8 +2,15 @@ package com.leetcode;
 
 /**
  * Created by kewang on 12/13/17.
+ *
+ *
+ * https://leetcode.com/problems/add-two-numbers/solution/
+ *
+ * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4) Output: 7 -> 0 -> 8 Explanation: 342 + 465 = 807.
  */
-public class TwoNumberInlinkedlists {
+
+@Deprecated
+public class AddTwoNumberInlinkedlists {
 
   public static int TwoNumberInlinkedlists() {
 
@@ -20,4 +27,15 @@ public class TwoNumberInlinkedlists {
 
   }
 
+  class ListNode {
+
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+      val = x;
+    }
+  }
+
 }
+
