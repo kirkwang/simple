@@ -6,6 +6,9 @@ import java.util.Arrays;
  * Created by kewang on 12/28/15.
  */
 /*
+
+https://leetcode.com/submissions/detail/46640625/
+
 Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
 
 Example:
@@ -19,24 +22,27 @@ You may assume that the array does not change.
 There are many calls to sumRange function.
  */
 public class SumRange {
-    private int[] total;
 
-    public SumRange(int[] numbs) {
-        for (int i = 1; i < numbs.length; i++) {
-            numbs[i] = numbs[i - 1] + numbs[i];
+  private int[] total;
 
-        }
-        this.total = numbs;
-        System.out.print(Arrays.toString(total));
+  public SumRange(int[] numbs) {
+    for (int i = 1; i < numbs.length; i++) {
+      numbs[i] = numbs[i - 1] + numbs[i];
+
     }
+    this.total = numbs;
+    System.out.print(Arrays.toString(total));
+  }
 
-    public static void main(String[] args) {
-        SumRange sr = new SumRange(new int[]{-12, 0, 6, -5, 2, -1});
-        System.out.print(sr.SumRange(2, 4));
-    }
+  public static void main(String[] args) {
+    SumRange sr = new SumRange(new int[]{-12, 0, 6, -5, 2, -1});
+    System.out.print(sr.SumRange(2, 4));
+  }
 
-    public int SumRange(int s, int e) {
-        if (s == 0) return total[e];
-        return total[e] - total[s - 1];
+  public int SumRange(int s, int e) {
+    if (s == 0) {
+      return total[e];
     }
+    return total[e] - total[s - 1];
+  }
 }
