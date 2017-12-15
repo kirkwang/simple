@@ -14,14 +14,16 @@ import java.util.List;
  */
 public class LetterCombinationsPhoneNumber {
 
-  public static List<String> LetterCombinationsPhoneNumber(String input) {
+  public static List<String> LetterCombinationsPhoneNumber(String digits) {
     LinkedList<String> linkedList = new LinkedList();
-    String[] keyPad = new String[]{"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqs", "tuv",
+    String[] keyPad = new String[]{"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv",
         "wxyz"};
-
+    if (digits == null || digits.length() == 0) {
+      return linkedList;
+    }
     linkedList.add("");
-    for (int i = 0; i < input.length(); i++) {
-      int digit = Character.getNumericValue(input.charAt(i));
+    for (int i = 0; i < digits.length(); i++) {
+      int digit = Character.getNumericValue(digits.charAt(i));
 
       while (linkedList.peek().length() == i) {
 
