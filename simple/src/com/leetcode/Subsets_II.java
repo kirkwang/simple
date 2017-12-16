@@ -41,12 +41,12 @@ public class Subsets_II {
   }
 
   private static void generateSubSet(List<List<Integer>> list, List objects,
-      int[] nums, int j) {
+      int[] nums, int index) {
     list.add(new ArrayList<>(objects));
 
-    for (int i = j; i < nums.length; i++) {
+    for (int i = index; i < nums.length; i++) {
       //if loop starts and current item is same as previous , skip
-      if (i > j && nums[i] == nums[i - 1]) {
+      if (i > index && nums[i] == nums[i - 1]) {
         continue;
       }
       objects.add(nums[i]);
