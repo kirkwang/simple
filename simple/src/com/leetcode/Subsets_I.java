@@ -19,7 +19,7 @@ import java.util.List;
  *
  * [ [3], [1], [2], [1,2,3], [1,3], [2,3], [1,2], [] ]
  */
-public class Subsets {
+public class Subsets_I {
 
   public static void main(String[] args) {
     List result = subsets(new int[]{1, 2, 3});
