@@ -41,7 +41,6 @@ public class Permutations_I {
         } else {
           sublist.add(nums[i]); //add to the sublist
           generator(list, sublist, nums);
-
           sublist.remove(sublist.size() - 1); //remove last one
         }
       }
