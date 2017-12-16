@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.backTrackGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
