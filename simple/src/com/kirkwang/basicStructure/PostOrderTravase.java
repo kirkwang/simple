@@ -8,6 +8,7 @@ import java.util.TreeSet;
 /**
  * Created by amp on 9/18/2015.
  */
+@Deprecated //incomplete
 public class PostOrderTravase {
 
   public static void main(String... arg) {
@@ -16,7 +17,7 @@ public class PostOrderTravase {
     treeSet.add("b");
     treeSet.add("c");
 
-    Node aNode = new Node();
+    Node aNode = new Node(0);
     aNode.setNodeValue(11);
     aNode.setNodeValue(3);
     aNode.setNodeValue(7);
@@ -26,6 +27,8 @@ public class PostOrderTravase {
       Object element = it.next();
       System.out.println(element);
     }
+
+    postOrder(aNode);
 
     String[] array = (String[]) treeSet.toArray(new String[treeSet.size()]);
     Arrays.toString(array);
@@ -40,7 +43,7 @@ public class PostOrderTravase {
 
   }
 
-  void postOrder(Node root) {
+  static void postOrder(Node root) {
 
     if (root == null) {
       return;
@@ -49,6 +52,8 @@ public class PostOrderTravase {
     postOrder(root.leftNode());
     postOrder(root.rightNode());
 
-    root.getNodeValue();
+    //  root.getNodeValue();
+    System.out.println(root.getNodeValue() + " ");
+
   }
 }

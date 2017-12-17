@@ -3,13 +3,16 @@ package com.kirkwang.basicStructure;
 /**
  * Created by amp on 9/18/2015.
  */
+@Deprecated //incomplete
 public class Node {
 
   private Node right;
   private Node left;
   private int nodeValue;
 
-  public Node() {
+
+  public Node(int nodeValue) {
+    this.nodeValue = nodeValue;
   }
 
   public Node leftNode() {
