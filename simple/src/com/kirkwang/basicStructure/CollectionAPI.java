@@ -64,12 +64,12 @@ public class CollectionAPI {
   }
 
   public static void DequeueList() {
-    Deque deque = new LinkedList();
+    Deque<String> deque = new LinkedList<String>();
     deque.addFirst("apple");
     deque.addFirst("banana");
     deque.addFirst("orange");
 
-    Queue queue = Collections.asLifoQueue(deque);
+    Queue<String> queue = Collections.asLifoQueue(deque);
     System.out.println(" dequeue pull " + queue.poll());
     System.out.println(" dequeue pull " + queue.poll());
     System.out.println(" dequeue pull " + queue.poll());
@@ -77,9 +77,9 @@ public class CollectionAPI {
   }
 
   public static void checkedCollection() {
-    List list = new ArrayList();
+    List<String> list = new ArrayList<String>();
     Collections.addAll(list, "one", "two", "three", "four");
-    Collection checkedList = Collections.checkedCollection(list, String.class);
+    Collection<String> checkedList = Collections.checkedCollection(list, String.class);
     System.out.println("Checked list content: " + checkedList);
 //we can add any type of element to list
     list.add(null);
