@@ -1,7 +1,6 @@
 package com.kirkwang.basicStructure;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -10,19 +9,17 @@ import java.util.Set;
 public class HashSetExample {
 
   public static void main(String[] args) {
-    Set<Integer> set = new HashSet<Integer>();
-    set.add(new Integer(1));
-    set.add(new Integer(2));
-    set.add(new Integer(3));
+    Set<Integer> set = new HashSet<>();
+    set.add(1);
+    set.add(2);
+    set.add(3);
 
-    for (Iterator i = set.iterator(); i.hasNext(); ) {
-      Integer integer = (Integer) i.next();
+    for (Integer integer : set) {
     }
 
-    set.remove(new Integer(3));
+    set.remove(3);
 
-    for (Iterator i = set.iterator(); i.hasNext(); ) {
-      Integer integer = (Integer) i.next();
+    for (Integer integer : set) {
       System.out.println(integer);
     }
   }
