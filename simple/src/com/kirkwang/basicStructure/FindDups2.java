@@ -10,13 +10,13 @@ import java.util.Set;
  */
 public class FindDups2 {
 
-  public static void printUniqeWords(List strings) {
+  public static void printUniqeWords(List<String> strings) {
     if (strings == null) {
       return;
     }
     Set uniqe = new HashSet<>();
     for (Object a : strings) {
-      if ((uniqe.add(a))) {
+      if (uniqe.add(a)) {
         System.out.println("This is a unique string " + a);
       }
     }
@@ -26,7 +26,7 @@ public class FindDups2 {
     String[] stringSet = {"aa", "bb", "cc", "dd", "bb", "aa"};
     Set<String> uniques = new HashSet<String>();
 
-    Set<String> dups = new HashSet<String>();
+    Set<String> dups = new HashSet<>();
 
     printUniqeWords(Arrays.asList(stringSet));
     printUniqeWords(null);
