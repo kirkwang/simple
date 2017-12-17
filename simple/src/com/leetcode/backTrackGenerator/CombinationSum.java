@@ -48,8 +48,8 @@ public class CombinationSum {
     } else {
       for (int i = index; i < canidate.length; i++) {
         sublist.add(canidate[i]);
-        generator(list, sublist, canidate, target - canidate[i],
-            i); //i + 1 will not reuse the item. for unique result set
+        generator(list, sublist, canidate, target - canidate[i], i);
+        //i + 1 will not reuse the item. for unique result set
         sublist.remove(sublist.size() - 1);
       }
     }
