@@ -3,6 +3,9 @@ package com.kirkwang.Codility;
 /**
  * Created by kewang on 11/15/17.
  *
+ *
+ * https://codility.com/programmers/lessons/7-stacks_and_queues/nesting/
+ *
  * that, given a string S consisting of N characters, returns 1 if S is properly nested and 0
  * otherwise.
  *
@@ -35,7 +38,7 @@ public class Brackets {
   private static boolean compare(char left, Character right) {
     switch (left) {
       case '{':
-        return right.charValue() == '}';
+        return right == '}';
 
       case '[':
         return right.equals(']');
