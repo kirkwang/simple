@@ -7,29 +7,30 @@ import java.util.TreeSet;
  * Created by kewang on 11/9/17.
  */
 public class FrogRiverOne {
-    public static void main(String[] args) {
 
-        //   Scanner scn = new Scanner(System.in);
-        //  int n = scn.nextInt();
-        int[] A = new int[]{1, 3, 1, 3, 2, 5, 6, 4};
+  public static void main(String[] args) {
 
-        System.out.println(solution(5, A));
+    //   Scanner scn = new Scanner(System.in);
+    //  int n = scn.nextInt();
+    int[] A = new int[]{1, 3, 1, 3, 2, 5, 6, 4};
+
+    System.out.println(solution(5, A));
+  }
+
+  public static int solution(int X, int[] A) {
+    int steps = -1;
+    Set<Integer> values = new TreeSet<Integer>();
+    for (int i = 0; i < A.length; i++) {
+      if (A[i] <= X) {
+        values.add(A[i]);
+      }
+      if (values.size() == X) {
+        steps = i;
+        break;
+      }
     }
+    return steps;
 
-    public static int solution(int X, int[] A) {
-        int steps = -1;
-        Set<Integer> values = new TreeSet<Integer>();
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] <= X) {
-                values.add(A[i]);
-            }
-            if (values.size() == X) {
-                steps = i;
-                break;
-            }
-        }
-        return steps;
-
-    }
+  }
 }
 

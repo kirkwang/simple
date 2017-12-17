@@ -1,8 +1,7 @@
 package com.kirkwang.HackerRank;
 
-import javafx.util.Pair;
-
 import java.util.Scanner;
+import javafx.util.Pair;
 
 /**
  * Created by kewang on 10/31/17.

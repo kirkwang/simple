@@ -1,9 +1,8 @@
 package com.kirkwang.easy;
 
-import scala.actors.threadpool.Arrays;
-
 import java.util.ArrayList;
 import java.util.List;
+import scala.actors.threadpool.Arrays;
 
 /**
  * Created by kewang on 12/25/15.
