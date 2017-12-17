@@ -3,8 +3,13 @@ package com.kirkwang.Codility;
 import java.util.Scanner;
 
 /**
- * Created by kewang on 11/8/17. For example, given N = 1041 the function should return 5, because N
- * has binary representation 10000010001 and so its longest binary gap is of length 5.
+ * Created by kewang on 11/8/17.
+ *
+ * https://codility.com/programmers/lessons/1-iterations/binary_gap/
+ *
+ *
+ * For example, given N = 1041 the function should return 5, because N has binary representation
+ * 10000010001 and so its longest binary gap is of length 5.
  */
 public class BinaryGap {
 
@@ -12,8 +17,26 @@ public class BinaryGap {
 
     Scanner scn = new Scanner(System.in);
     int n = scn.nextInt();
-    System.out.println(BinaryGap(n));
+    System.out.println(BinaryGap_toCharArry(n));
   }
+
+  public static int BinaryGap_toCharArry(int N) {
+    String binaryFormat = Integer.toBinaryString(N);
+
+    int distance = 0;
+    int result = 0;
+    for (int i = 0; i < binaryFormat.length(); i++) {
+      if (binaryFormat.charAt(i) == '0') {
+        distance++;
+      } else if (distance > 0) {
+        result = distance > result ? distance : result;
+        distance = 0;
+      }
+
+    }
+    return result;
+  }
+
 
   public static int BinaryGap(int N) {
     int binaryGap = 0;
