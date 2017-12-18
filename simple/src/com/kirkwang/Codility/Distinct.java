@@ -6,6 +6,23 @@ import java.util.Map;
 
 /**
  * Created by kewang on 11/15/17.
+ *
+ *
+ * https://codility.com/programmers/lessons/6-sorting/distinct/
+ *
+ * that, given a zero-indexed array A consisting of N integers, returns the number of distinct
+ * values in array A.
+ *
+ * Assume that:
+ *
+ * N is an integer within the range [0..100,000]; each element of array A is an integer within the
+ * range [−1,000,000..1,000,000].
+ *
+ * For example, given array A consisting of six elements such that: A[0] = 2    A[1] = 1    A[2] = 1
+ * A[3] = 2    A[4] = 3    A[5] = 1
+ *
+ * the function should return 3, because there are 3 distinct values appearing in array A, namely 1,
+ * 2 and 3.
  */
 public class Distinct {
 
@@ -14,12 +31,12 @@ public class Distinct {
       return 0;
     }
     Map<Integer, Integer> map = new HashMap<>();
-    for (int i = 0; i < A.length; i++) {
-      if (map.containsKey(A[i])) {
-        map.put(A[i], map.get(A[i]) + 1);
+    for (int aA : A) {
+      if (map.containsKey(aA)) {
+        map.put(aA, map.get(aA) + 1);
 
       } else {
-        map.put(A[i], 1);
+        map.put(aA, 1);
       }
 
     }
@@ -30,6 +47,18 @@ public class Distinct {
       }
     }
     return 0;
+  }
+
+  public static int findUsingSet(int A[]) {
+    if (A == null || A.length == 0) {
+      return 0;
+    }
+
+    java.util.Set set = new java.util.HashSet<>(); //using HashSet to obtain unique set
+    for (int i = 0; i < A.length; i++) {
+      set.add(A[i]);
+    }
+    return set.size();
   }
 
   public static int sortArray(int A[]) {
@@ -56,8 +85,8 @@ public class Distinct {
     System.out.println(sortArray(n));
     System.out.println(sortArray(m));
     System.out.println(sortArray(o));
-    System.out.println(sortArray(p));
-    System.out.println(sortArray(q));
+    System.out.println(findUsingSet(m));
+    System.out.println(sortArray(m));
   }
 
 }
