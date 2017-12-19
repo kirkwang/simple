@@ -2,13 +2,15 @@ package com.kirkwang.DynamicProgramming;
 
 /**
  * Created by kewang on 11/22/17.
- * Examples:
- LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
- LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.
- The naive solution for this problem is to generate all subsequences of both given sequences and find the longest matching subsequence.
- This solution is exponential in term of time complexity.
- Let us see how this problem possesses both important properties of a Dynamic Programming (DP) Problem.
- http://www.geeksforgeeks.org/longest-common-subsequence/
+ *
+ *
+ * http://www.geeksforgeeks.org/longest-common-subsequence/
+ *
+ * Examples: LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3. LCS for input
+ * Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4. The naive solution for this problem is to
+ * generate all subsequences of both given sequences and find the longest matching subsequence. This
+ * solution is exponential in term of time complexity. Let us see how this problem possesses both
+ * important properties of a Dynamic Programming (DP) Problem. http://www.geeksforgeeks.org/longest-common-subsequence/
  */
 public class LongestCommonSubsequence {
 

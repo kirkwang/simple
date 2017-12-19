@@ -2,23 +2,34 @@ package com.kirkwang.DynamicProgramming;
 
 /**
  * Created by kewang on 11/28/17.
+ *
  * https://stackoverflow.com/questions/767759/occurrences-of-substring-in-a-string
  */
 public class OccurrencesOfSubstring {
 
-  public static int OccurrencesOfSubstring(String source, String target) {
-    int lastIndex = 0;
-    int count = 0;
+  public static int findCatDog(String input, String target) {
+    int counter = 0;
 
+    int lastIndex = 0;
     while (lastIndex != -1) {
-      lastIndex = target.indexOf(source, lastIndex);
-      //  lastIndex = target.lastIndexOf(source);
+      lastIndex = input.indexOf(target, lastIndex);
+
       if (lastIndex != -1) {
-        count++;
-        lastIndex += source.length(); //shift or move source length
+        counter++;
+        lastIndex = lastIndex + target.length();
       }
+
     }
-    return count;
+
+    return counter;
+  }
+
+  public static boolean matchingCount(String first, String second, String target) {
+
+    int firstCount = findCatDog(target, first);
+    int secondCount = findCatDog(target, second);
+
+    return firstCount == secondCount ? true : false;
   }
 
   public static void main(String[] args) {
@@ -40,7 +51,7 @@ public class OccurrencesOfSubstring {
     System.out.println("two string comparesion with compareTo  " + equal1.split("u")[0]);
     System.out.println("two string comparesion with endsWith  " + equal1.endsWith("al"));
     System.out.println("two string comparesion with chars  " + equal1.toCharArray()[0]);
-    System.out.println(OccurrencesOfSubstring("cat",
+    System.out.println(findCatDog("cat",
         "atdogcatcatdog")); // find how many cat(s) in the target string
 
   }

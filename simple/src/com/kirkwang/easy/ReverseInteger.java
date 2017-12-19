@@ -19,7 +19,6 @@ public class ReverseInteger {
 
     if (reversedNum > Integer.MAX_VALUE || reversedNum < Integer.MIN_VALUE) {
       return 0;
-      // throw new IllegalArgumentException();
     }
     return (int) reversedNum;
 

@@ -29,8 +29,8 @@ public class IsomorphicStrings {
     System.out.print(IsomorphicStrings.isomorphicStrings("daa", "add"));
   }
 
-  public static boolean isomorphicStrings(String source, String t) {
-    if (source.length() != t.length()) {
+  public static boolean isomorphicStrings(String source, String target) {
+    if (source.length() != target.length()) {
       return false;
     }
     Map<Character, Character> map1 = new HashMap<Character, Character>(); //daa, add
@@ -38,17 +38,17 @@ public class IsomorphicStrings {
 
     for (int i = 0; i < source.length(); i++) {
       if (map1.containsKey(source.charAt(i))) {
-        if (map1.get(source.charAt(i)) != t.charAt(i)) {
+        if (map1.get(source.charAt(i)) != target.charAt(i)) {
           return false;
         }
       }
-      if (map2.containsKey(t.charAt(i))) {
-        if (map2.get(t.charAt(i)) != source.charAt(i)) {
+      if (map2.containsKey(target.charAt(i))) {
+        if (map2.get(target.charAt(i)) != source.charAt(i)) {
           return false;
         }
       }
-      map1.put(source.charAt(i), t.charAt(i));
-      map2.put(t.charAt(i), source.charAt(i));
+      map1.put(source.charAt(i), target.charAt(i));
+      map2.put(target.charAt(i), source.charAt(i));
     }
     return true;
   }
