@@ -17,7 +17,7 @@ public class HtmlParser {
         try {
 
             // need http protocol
-            doc = Jsoup.connect("http://google.com").get();
+            doc = Jsoup.connect("https://google.com").get();
 
             // get page title
             String title = doc.title();
@@ -26,7 +26,6 @@ public class HtmlParser {
             // get all links
             Elements links = doc.select("a[href]");
             for (Element link : links) {
-
                 // get the value from href attribute
                 System.out.println("\nlink : " + link.attr("href"));
                 System.out.println("text : " + link.text());
