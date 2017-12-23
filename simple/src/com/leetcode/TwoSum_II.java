@@ -33,7 +33,7 @@ public class TwoSum_II {
         tail--;
       }
     }
-    return new int[]{numbs[head], numbs[tail]};
+    return new int[]{head + 1, tail + 1};
   }
 
   public static void main(String[] args) {
