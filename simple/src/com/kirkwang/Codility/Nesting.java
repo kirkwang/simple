@@ -1,8 +1,12 @@
 package com.kirkwang.Codility;
 
 /**
- * Created by kewang on 11/15/17. For example, given S = "(()(())())", the function should return 1
- * and given S = "())", the function should return 0, as explained above.
+ * Created by kewang on 11/15/17.
+ *
+ * https://app.codility.com/programmers/lessons/7-stacks_and_queues/nesting/
+ *
+ * For example, given S = "(()(())())", the function should return 1 and given S = "())", the
+ * function should return 0, as explained above.
  */
 public class Nesting {
 

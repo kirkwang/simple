@@ -1,14 +1,16 @@
 package com.kirkwang.Codility;
 
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.TreeSet;
 
 /**
- * Created by kewang on 11/9/17. For example, given A = [1, 3, 6, 4, 1, 2], the function should
- * return 5. <p> Given A = [1, 2, 3], the function should return 4. <p> Given A = [−1, −3], the
- * function should return 1.
+ * Created by kewang on 11/9/17.
+ *
+ * https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/
+ *
+ *
+ * For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5. <p> Given A = [1, 2, 3],
+ * the function should return 4. <p> Given A = [−1, −3], the function should return 1.
  */
 
 public class MissingInteger {
@@ -50,73 +52,30 @@ public class MissingInteger {
     }
     int max = Integer.MIN_VALUE;
     TreeSet hSet = new TreeSet<>();
+
     for (int i = 0; i < A.length; i++) {
       if (A[i] > 0) {
-        //only add positive number
-        hSet.add(A[i]);
+        hSet.add(A[i]);  //only add positive number
       }
       if (A[i] > max) {
-        max = A[i];
+        max = A[i]; // we need to find out weather the biggest number is less then 0
       }
     }
+
     if (max < 0) {
       return 1;
     }
     int n = hSet.size() + 1;
-    max = n * (n + 1) / 2;
+    int result = n * (n + 1) / 2;  //find the sum total ;
 
     Iterator<Integer> iterator = hSet.iterator();
 
     while (iterator.hasNext()) {
-      max -= iterator.next();
+      result -= iterator.next();
     }
 
-    return (int) max;
+    return (int) result;
   }
 
-  /**
-   * Created by kewang on 11/15/17.
-   *
-   *
-   * https://app.codility.com/programmers/lessons/8-leader/dominator/
-   *
-   * For example, consider array A such that A[0] = 3    A[1] = 4 A[2] =  3 A[3] = 2    A[4] = 3
-   * A[5] = -1 A[6] = 3    A[7] = 3
-   *
-   * The dominator of A is 3 because it occurs in 5 out of 8 elements of A (namely in those with
-   * indices 0, 2, 4, 6 and 7) and 5 is more than a half of 8.
-   */
-  public static class Dominator {
 
-    private static int Dominator(int[] A) {
-      Map<Integer, Integer> dominator = new HashMap<>();
-      int MAX = -1;
-      int index = -1;
-      for (int i = 0; i < A.length; i++) {
-        if (dominator.containsKey(A[i])) {
-          dominator.put(A[i], dominator.get(A[i]) + 1);
-        } else {
-          dominator.put(A[i], 1);
-        }
-
-        if (dominator.get(A[i]) > MAX) {
-          MAX = dominator.get(A[i]);
-          index = i;
-        }
-
-      }
-
-      return MAX > (A.length / 2) ? index : -1;
-    }
-
-    public static void main(String[] args) {
-
-      int[] A = new int[]{1, 3, 3, 3, 4};
-      int[] n = new int[]{2, 1, 1, 1, 3};
-
-      System.out.println(Dominator(A));
-    }
-
-
-  }
 }
