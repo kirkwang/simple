@@ -20,12 +20,12 @@ package com.leetcode;
 
 public class TwoSum_II {
 
-  public static int[] TwoSum_II(int[] numbs, int total) {
+  public static int[] TwoSum_II(int[] numbs, int index, int total) {
 
-    int head = 0;
+    int head = index;
     int tail = numbs.length - 1;
 
-    while (numbs[head] + numbs[tail] != total) {
+    while (head <= tail && numbs[head] + numbs[tail] != total) {
       int sum = numbs[tail] + numbs[head];
       if (sum < total) {
         head++;
@@ -37,7 +37,9 @@ public class TwoSum_II {
   }
 
   public static void main(String[] args) {
-    int[] result = TwoSum_II(new int[]{1, 2, 7, 15}, 9);
-    System.out.print(String.valueOf(result[1]));
+    int[] result = TwoSum_II(new int[]{1, 2, 7, 15}, 0, 9);
+    for (int sum : result) {
+      System.out.println(sum);
+    }
   }
 }
