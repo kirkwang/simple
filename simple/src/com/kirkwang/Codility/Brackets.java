@@ -39,7 +39,6 @@ public class Brackets {
     switch (left) {
       case '{':
         return right == '}';
-
       case '[':
         return right.equals(']');
 

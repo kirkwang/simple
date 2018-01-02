@@ -14,8 +14,6 @@ public class HashSetExample {
     set.add(2);
     set.add(3);
 
-    for (Integer integer : set) {
-    }
 
     set.remove(3);
 

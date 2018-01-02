@@ -40,11 +40,11 @@ public class LengthOfLongestSubstring_Map {
 
   public static void main(String[] args) {
 
-    int result = LengthOfLongestSubstring_Map("bbbbb");
+    int result = LengthOfLongestSubstring_Map("abcabcbb");
     System.out.println("This is the result " + result);
 
-    int result1 = LengthOfLongestSubstring_Map("pwwkew");
-    System.out.println("This is the result " + result1);
+    //   int result1 = LengthOfLongestSubstring_Map("pwwkew");
+    //   System.out.println("This is the result " + result1);
 
   }
 }

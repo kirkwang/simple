@@ -38,13 +38,14 @@ public class CombinationSum {
   }
 
   private static void generator(List<List<Integer>> list, ArrayList<Integer> sublist,
-      int[] canidate,
-      int target, int index) {
+      int[] canidate, int target, int index) {
+
     if (target == 0) {
       list.add(new ArrayList<Integer>(sublist));
-    } else if
-        (target < 0) {
+    } else if (target < 0) {
+
       return;
+
     } else {
       for (int i = index; i < canidate.length; i++) {
         sublist.add(canidate[i]);
@@ -57,7 +58,7 @@ public class CombinationSum {
 
   public static void main(String[] args) {
     int target = 7;
-    System.out.println("This is the result " + target);
+    System.out.println("This is the target " + target);
 
     System.out.println("This is the result " + CombinationSum(new int[]{2, 3, 6}, target));
 

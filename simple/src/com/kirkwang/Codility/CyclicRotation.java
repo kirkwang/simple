@@ -31,7 +31,7 @@ public class CyclicRotation {
     int[] n = new int[]{1, 2, 3, 4, 5};
     // int[] n = new int[]{  9, 3, 9, 3, 1, 4, 4};
     //  [3, 8, 9, 7, 6] [9, 7, 6, 3, 8]
-    n = solution(n, 2);
+    n = solution(n, 3);
     for (int i = 0; i < n.length; i++) {
       System.out.print(n[i]);
 

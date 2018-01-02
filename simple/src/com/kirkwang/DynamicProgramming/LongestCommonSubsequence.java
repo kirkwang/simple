@@ -21,8 +21,9 @@ public class LongestCommonSubsequence {
     if (a[a_size - 1] == b[b_size - 1]) {
       return 1 + LongestCommonSubsequence(a, b, a_size - 1, b_size - 1);
     } else {
-      return Math.max(LongestCommonSubsequence(a, b, a_size, b_size - 1),
-          LongestCommonSubsequence(a, b, a_size - 1, b_size));
+      return
+          Math.max(LongestCommonSubsequence(a, b, a_size, b_size - 1),
+              LongestCommonSubsequence(a, b, a_size - 1, b_size));
     }
 
   }

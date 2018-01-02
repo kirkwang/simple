@@ -7,6 +7,9 @@ import java.util.Map;
  * Created by kewang on 12/29/15.
  */
 /*
+
+https://leetcode.com/problems/majority-element/description/
+
 Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
 
 You may assume that the array is non-empty and the majority element always exist in the array.
@@ -36,7 +39,7 @@ public class MajorityElement {
 
   public static void main(String[] args) {
     //  int[] array = new int[]{1, 1, 2, 4, 4, 4, 4, 5};
-    int[] array = {1, 1, 2, 4, 4, 4, 4, 5};
+    int[] array = {1, 1, 2, 4, 4, 4, 4, 4, 5};
     Integer me = MajorityElement.majorityElement(array);
     System.out.print(me);
   }

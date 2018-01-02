@@ -13,7 +13,6 @@ public class OccurrencesOfSubstring {
     int lastIndex = 0;
     while (lastIndex != -1) {
       lastIndex = input.indexOf(target, lastIndex);
-
       if (lastIndex != -1) {
         counter++;
         lastIndex = lastIndex + target.length();

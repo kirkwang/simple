@@ -21,7 +21,7 @@ public class LengthOfLongestSubstring_Set {
 
   public static void main(String[] args) {
 
-    int result = LengthOfLongestSubstring_Set("bbbbb");
+    int result = LengthOfLongestSubstring_Set("abcabcbb");
     System.out.println("This is the result " + result);
 
     int result1 = LengthOfLongestSubstring_Set("pwwkew");
