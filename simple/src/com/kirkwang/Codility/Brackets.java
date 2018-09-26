@@ -3,17 +3,15 @@ package com.kirkwang.Codility;
 /**
  * Created by kewang on 11/15/17.
  *
+ * <p>https://codility.com/programmers/lessons/7-stacks_and_queues/nesting/
  *
- * https://codility.com/programmers/lessons/7-stacks_and_queues/nesting/
- *
- * that, given a string S consisting of N characters, returns 1 if S is properly nested and 0
+ * <p>that, given a string S consisting of N characters, returns 1 if S is properly nested and 0
  * otherwise.
  *
- * For example, given S = "{[()()]}", the function should return 1 and given S = "([)()]", the
+ * <p>For example, given S = "{[()()]}", the function should return 1 and given S = "([)()]", the
  * function should return 0, as explained above.
  */
 public class Brackets {
-
 
   public static int matching(String S) {
     java.util.Stack<Character> bracket = new java.util.Stack();
@@ -23,13 +21,10 @@ public class Brackets {
       } else {
         Character left = bracket.peek();
         if (compare(left, S.charAt(i))) {
-          bracket.pop(); //remove matching pair
+          bracket.pop(); // remove matching pair
         } else {
           bracket.push(S.charAt(i));
-
         }
-
-
       }
     }
     return bracket.isEmpty() ? 1 : 0;
@@ -56,5 +51,4 @@ public class Brackets {
     s = "{[()(";
     System.out.println(matching(s));
   }
-
 }

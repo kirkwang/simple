@@ -1,4 +1,4 @@
-package com.kirk.rest;
+package main.java.com.kirk.rest;
  
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
