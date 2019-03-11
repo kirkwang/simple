@@ -14,6 +14,5 @@ public class NaturalNumbers {
       }
     }
     System.out.printf("The sum is " + sum);
-
   }
 }

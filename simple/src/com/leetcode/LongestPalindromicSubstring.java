@@ -3,21 +3,19 @@ package com.leetcode;
 /**
  * Created by kewang on 12/12/17.
  *
- * https://leetcode.com/problems/longest-palindromic-substring/description/
+ * <p>https://leetcode.com/problems/longest-palindromic-substring/description/
  *
+ * <p>Input: "babad"
  *
- * Input: "babad"
+ * <p>Output: "bab"
  *
- * Output: "bab"
+ * <p>Note: "aba" is also a valid answer.
  *
- * Note: "aba" is also a valid answer.
+ * <p>Input: "cbbd"
  *
- * Input: "cbbd"
- *
- * Output: "bb"
+ * <p>Output: "bb"
  */
 public class LongestPalindromicSubstring {
-
 
   public static String LongestPalindromicSubstring(String input) {
     int tail = 0;
@@ -29,15 +27,14 @@ public class LongestPalindromicSubstring {
     if (input.length() <= 1) {
       return input;
     }
-
-    for (int i = 0; i < input.length(); i++) {
+    // ababada
+    for (int i = 0; i < input.length() - 1; i++) {
       int len1 = checkPalindromicSubstring(input, i, i);
       int len2 = checkPalindromicSubstring(input, i, i + 1);
       int len = Math.max(len1, len2);
       if (len > tail - head) {
         head = i - (len - 1) / 2;
         tail = i + len / 2;
-
       }
     }
 
@@ -50,8 +47,15 @@ public class LongestPalindromicSubstring {
     System.out.println("This is the result " + result);
 
     String result1 = LongestPalindromicSubstring("acbbcd");
-    System.out.println("This is the result " + result1);
+    System.out.println("This is the 2nd result " + result1);
+  }
 
+  private static int findpalindromicsubstring(String input, int i, int j) {
+    while (i >= 0 && j < input.length() && input.charAt(i) == input.charAt(j)) {
+      i--;
+      j++;
+    }
+    return j - i - 1;
   }
 
   private static int checkPalindromicSubstring(String target, int i, int j) {
@@ -61,5 +65,4 @@ public class LongestPalindromicSubstring {
     }
     return j - i - 1;
   }
-
 }

@@ -17,10 +17,9 @@ public class ReverseWordsInAString_II {
     for (int i = 0; i < processed.length; i++) {
       char endChar = processed[i];
       if (endChar == ' ') {
-        reverse(processed, head, i - 1); //done with swap
-        head = i + 1; //skip space char
+        reverse(processed, head, i - 1); // done with swap
+        head = i + 1; // skip space char
       }
-
     }
     reverse(processed, head, processed.length - 1);
 
@@ -42,17 +41,12 @@ public class ReverseWordsInAString_II {
     return processed;
   }
 
-
   public static void main(String args[]) {
 
-    //original string
+    // original string
     String str = " Sony is going to introduce Internet TV soon ";
     System.out.println("Original String: " + str);
 
     System.out.println("Reservsed String: " + ReverseWordsInAString_II(str));
-
-
   }
-
-
 }

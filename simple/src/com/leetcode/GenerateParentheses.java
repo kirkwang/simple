@@ -6,15 +6,13 @@ import java.util.List;
 /**
  * Created by kewang on 12/14/17.
  *
- * https://leetcode.com/problems/generate-parentheses/description/
+ * <p>https://leetcode.com/problems/generate-parentheses/description/
  */
 public class GenerateParentheses {
 
   public static void main(String[] args) {
 
-    System.out.println("This is the result " + GenerateParentheses(2));
-
-
+    System.out.println("This is the result " + GenerateParentheses(1));
   }
 
   public static List<String> GenerateParentheses(int count) {

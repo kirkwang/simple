@@ -38,11 +38,13 @@ public class FindDups2 {
 
       }
     }
+    System.out.println("This is the uniques before retainAll " + uniques);
+
     uniques
         .removeAll(dups); // this will remove the all the element from unique that are exist in dups
     uniques.retainAll(dups);  //this method will keep the common element that in both set
 
-    System.out.println(uniques);
+    System.out.println("This is the uniques after retainAll " + uniques);
     System.out.println(dups);
   }
 }
