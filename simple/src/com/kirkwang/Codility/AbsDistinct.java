@@ -29,7 +29,8 @@ public class AbsDistinct {
   }
 
   public static void main(String[] args) {
-    int[] n = new int[] {-5, -3, -1, 0, 3, 6}; // 5, 4, 3, 2, 1
+      // 5, 4, 3, 2, 1
+      int[] n = new int[]{-5, -3, -1, 0, 3, 6};
 
     System.out.println(AbsDistinct(n).length);
   }
