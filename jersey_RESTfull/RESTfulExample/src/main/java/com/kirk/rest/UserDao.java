@@ -1,4 +1,4 @@
-package com.kirk.rest;
+package main.java.com.kirk.rest;
 
 /**
  * Created by kewang on 1/12/16.
@@ -11,20 +11,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao {
-    public List<User> getAllUsers(){
-        List<User> userList = null;
+    public List<com.kirk.rest.User> getAllUsers() {
+        List<com.kirk.rest.User> userList = null;
         try {
             File file = new File("Users.dat");
             if (!file.exists()) {
-                User user = new User(1, "Mahesh", "Teacher");
-                userList = new ArrayList<User>();
+                com.kirk.rest.User user = new com.kirk.rest.User(1, "Mahesh", "Teacher");
+                userList = new ArrayList<com.kirk.rest.User>();
                 userList.add(user);
 
             }
             else{
                 FileInputStream fis = new FileInputStream(file);
                 ObjectInputStream ois = new ObjectInputStream(fis);
-                userList = (List<User>) ois.readObject();
+                userList = (List<com.kirk.rest.User>) ois.readObject();
                 ois.close();
             }
         } catch (IOException e) {

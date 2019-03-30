@@ -1,4 +1,4 @@
-package com.kirk.rest;
+package main.java.com.kirk.rest;
 
 /**
  * Created by kewang on 1/12/16.
@@ -17,7 +17,7 @@ public class UserService {
     @GET
     @Path("/users")
     @Produces(MediaType.APPLICATION_XML)
-    public List<User> getUsers(){
+    public List<com.kirk.rest.User> getUsers() {
         return userDao.getAllUsers();
     }
 }
