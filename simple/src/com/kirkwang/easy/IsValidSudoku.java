@@ -31,7 +31,7 @@ public class IsValidSudoku {
             for(int j=0; j<board[0].length; j++){
                 System.out.print(" board " + board[i][j]);
             }
-            System.out.println("");
+            System.out.println();
         }
 
     }

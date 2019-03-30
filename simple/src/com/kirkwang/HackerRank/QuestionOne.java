@@ -1,11 +1,12 @@
 package com.kirkwang.HackerRank;
 
-import java.io.IOException;
-import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * Created by kewang on 11/1/17.

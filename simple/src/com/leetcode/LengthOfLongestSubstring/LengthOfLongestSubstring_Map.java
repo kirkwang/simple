@@ -1,7 +1,9 @@
 package com.leetcode.LengthOfLongestSubstring;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by kewang on 12/12/17.
@@ -38,13 +40,31 @@ public class LengthOfLongestSubstring_Map {
     return ans;
   }
 
+    private static int lengthOfLongestSubstringSet(String s) {
+        int n = s.length();
+        Set<Character> set = new HashSet<>();
+        int ans = 0, i = 0, j = 0;
+        while (i < n && j < n) {
+            // try to extend the range [i, j]
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j++));
+                ans = Math.max(ans, j - i);
+            } else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        return ans;
+    }
+
   public static void main(String[] args) {
+      String input = "abcabcbb";
+      //   int result = LengthOfLongestSubstring_Map(input);
+      //   System.out.println("This is the result " + result);
 
-    int result = LengthOfLongestSubstring_Map("abcabcbb");
-    System.out.println("This is the result " + result);
-
-    //   int result1 = LengthOfLongestSubstring_Map("pwwkew");
-    //   System.out.println("This is the result " + result1);
+      // input = "pwwkew";
+      int result1 = LengthOfLongestSubstring_Map(input);
+      result1 = lengthOfLongestSubstringSet(input);
+      System.out.println("This is the result " + result1);
 
   }
 }

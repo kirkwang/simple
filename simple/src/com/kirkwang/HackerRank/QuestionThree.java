@@ -12,6 +12,6 @@ public class QuestionThree {
 
         Integer[] array = new Integer[]{1, 2, 3, 4, 5};
         int[] arr = new int[]{1, 3, 5, 7, 9};
-        mms.function();
+        function();
     }
 }

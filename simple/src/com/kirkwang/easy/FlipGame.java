@@ -28,6 +28,7 @@ public class FlipGame {
     public static void main(String[] args) {
         FlipGame fg = new FlipGame();
         String fgame = "--++--+-+-+++";
+        fgame = "++++";
         List steps = fg.flipGame(fgame);
         for (int i = 0; i < steps.size(); i++) {
             System.out.println(steps.get(i));

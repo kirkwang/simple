@@ -22,10 +22,7 @@ public class CanWinNim {
     }
 
     public boolean canWinNim(int n) {
-        if (n % 4 == 0) // if it can't be divided by 4, then true
-            return false;
-        else
-            return true;
+        return n % 4 != 0;
     }
 
 }

@@ -12,7 +12,7 @@ public class GenerateParentheses {
 
   public static void main(String[] args) {
 
-    System.out.println("This is the result " + GenerateParentheses(1));
+      System.out.println("This is the result " + GenerateParentheses(2));
   }
 
   public static List<String> GenerateParentheses(int count) {

@@ -39,7 +39,7 @@ class Solution {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
 
-        Player player[] = new Player[n];
+        Player[] player = new Player[n];
         Checker checker = new Checker();
 
         for (int i = 0; i < n; i++) {

@@ -36,8 +36,6 @@ public class PalindromePermutation {
                 single++;
             }
         }
-        if (single > 1)
-            return false;
-        return true;
+        return single <= 1;
     }
 }

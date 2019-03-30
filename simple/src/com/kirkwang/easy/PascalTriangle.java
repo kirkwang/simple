@@ -2,7 +2,6 @@ package com.kirkwang.easy;
 
 import java.util.ArrayList;
 import java.util.List;
-import scala.actors.threadpool.Arrays;
 
 /**
  * Created by kewang on 12/25/15.
@@ -42,7 +41,7 @@ public class PascalTriangle {
             for (int j = 1; j < i - 1; j++)
                 current[j] = prev[j - 1] + prev[j];
 
-            list.add(new ArrayList<Integer>(Arrays.asList(current)));
+            //      list.add(new ArrayList<Integer>(Arrays.asList(current)));
             prev = current;
         }
         return list;

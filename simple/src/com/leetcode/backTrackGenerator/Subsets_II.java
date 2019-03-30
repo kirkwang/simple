@@ -24,7 +24,7 @@ import java.util.List;
 public class Subsets_II {
 
   public static void main(String[] args) {
-    List result = subsets(new int[]{1, 2, 2});
+      List result = subsets(new int[]{1, 2, 2, 3, 3});
     System.out.println("This is the result " + result);
   }
 

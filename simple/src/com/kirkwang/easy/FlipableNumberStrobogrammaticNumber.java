@@ -31,10 +31,7 @@ public class FlipableNumberStrobogrammaticNumber {
         for (int i = 0; i < number.length() / 2; i++) {
             char left = number.charAt(i);
             char right = number.charAt(number.length() - 1 - i);
-            if (!isflipable(left, right)) {
-                return false;
-            }
-            return true;
+            return isflipable(left, right);
         }
         return false;
     }

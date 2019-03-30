@@ -18,11 +18,11 @@ public class Detect_remove_loop_in_linked_list {
     head.next.next.next = new Node(4);
     head.next.next.next.next = new Node(10);
     Detect_remove_loop_in_linked_list list_1 = new Detect_remove_loop_in_linked_list();
-    list_1.head = new Node(51);
-    list_1.head.next = new Node(21);
-    list_1.head.next.next = new Node(11);
-    list_1.head.next.next.next = new Node(5);
-    list_1.head.next.next.next.next = new Node(11);
+      head = new Node(51);
+      head.next = new Node(21);
+      head.next.next = new Node(11);
+      head.next.next.next = new Node(5);
+      head.next.next.next.next = new Node(11);
 
     list = list_1;
     // Creating a loop for testing

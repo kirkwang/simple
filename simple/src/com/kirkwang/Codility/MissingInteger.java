@@ -74,7 +74,7 @@ public class MissingInteger {
       result -= iterator.next();
     }
 
-    return (int) result;
+      return result;
   }
 
 

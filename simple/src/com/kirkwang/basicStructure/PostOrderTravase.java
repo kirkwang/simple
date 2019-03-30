@@ -30,10 +30,10 @@ public class PostOrderTravase {
 
     postOrder(aNode);
 
-    String[] array = (String[]) treeSet.toArray(new String[treeSet.size()]);
+      String[] array = treeSet.toArray(new String[treeSet.size()]);
     Arrays.toString(array);
 
-    String s1 = new String("hello");
+      String s1 = "hello";
     String s2 = "hello";
     String s3 = "hello";
 

@@ -25,6 +25,6 @@ public class PrintOddNumber {
 
         Integer[] array = new Integer[]{1, 2, 3, 4, 5};
         int[] arr = new int[]{1, 3, 5, 7, 9};
-        mms.oddNumbers(2, 10);
+        oddNumbers(2, 10);
     }
 }

@@ -21,7 +21,7 @@ public class TwoSum {
 
   public static void main(String[] args) {
 
-    System.out.print(String.valueOf(TwoSum(new int[]{1, 2, 7, 15}, 9)[0]));
+      System.out.print(TwoSum(new int[]{1, 2, 7, 15}, 9)[0]);
   }
 
   public static int[] TwoSum(int[] input, int total) {

@@ -37,7 +37,7 @@ public class ReplaceChar {
   }
    private static String removeCharAt(String s, int i){
     StringBuffer buf = new StringBuffer(s.length() -1);
-    buf.append(s.substring(0,i)).append(s.substring(i+1));
+       buf.append(s, 0, i).append(s.substring(i + 1));
      return buf.toString();
    }
 

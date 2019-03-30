@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class SingObjectPrinter {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         SingObjectPrinter myPrinter = new SingObjectPrinter();
         int[] intArray = {1, 2, 3};
         String[] stringArray = {"Hello", "World"};

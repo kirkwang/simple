@@ -1,6 +1,7 @@
 package com.kirkwang.easy;
 
 import com.kirkwang.libary.ListNode;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 /**

@@ -41,7 +41,7 @@ public class ReverseWordsInAString_II {
     return processed;
   }
 
-  public static void main(String args[]) {
+    public static void main(String[] args) {
 
     // original string
     String str = " Sony is going to introduce Internet TV soon ";

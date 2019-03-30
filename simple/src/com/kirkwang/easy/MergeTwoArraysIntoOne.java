@@ -22,7 +22,7 @@ public class MergeTwoArraysIntoOne {
         }
     }
 
-    public int[] mergeTwoArraysIntoOne(int a[], int m, int b[], int n) {
+    public int[] mergeTwoArraysIntoOne(int[] a, int m, int[] b, int n) {
         int theEnd = a.length - 1;
         while (m > 0 && n > 0) {
             if (a[m - 1] > b[n - 1]) {

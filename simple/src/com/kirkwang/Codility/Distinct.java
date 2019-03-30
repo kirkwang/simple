@@ -24,7 +24,7 @@ import java.util.Map;
  * 1, 2 and 3.
  */
 public class Distinct {
-  public static int hashmapSolutaion01(int A[]) {
+    public static int hashmapSolutaion01(int[] A) {
     Map<Integer, Integer> map = new HashMap<>();
     if (A == null || A.length == 0) {
       return 0;
@@ -39,7 +39,7 @@ public class Distinct {
     return map.size();
   }
 
-  public static int hashMapSolution(int A[]) {
+    public static int hashMapSolution(int[] A) {
     if (A == null || A.length <= 0) {
       return 0;
     }
@@ -61,7 +61,7 @@ public class Distinct {
     return 0;
   }
 
-  public static int findUsingSet(int A[]) {
+    public static int findUsingSet(int[] A) {
     if (A == null || A.length == 0) {
       return 0;
     }
@@ -73,7 +73,7 @@ public class Distinct {
     return set.size();
   }
 
-  public static int sortArray(int A[]) {
+    public static int sortArray(int[] A) {
     int count = 0;
     if (A == null || A.length == 0) {
       return 0;

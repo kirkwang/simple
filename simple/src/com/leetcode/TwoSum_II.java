@@ -1,5 +1,7 @@
 package com.leetcode;
 
+import java.util.HashMap;
+
 /**
  * Created by kewang on 12/22/17.
  *
@@ -36,8 +38,24 @@ public class TwoSum_II {
     return new int[]{head + 1, tail + 1};
   }
 
+    public static int[] TwoSum_III(int[] numbs, int total) {
+        if (numbs == null || numbs.length < 2) {
+            return null;
+        }
+        HashMap<Integer, Integer> hashMap = new HashMap();
+        for (int i = 0; i < numbs.length; i++) {
+            if (hashMap.containsKey(numbs[i])) {
+                return new int[]{hashMap.get(numbs[i]), i};
+            } else {
+                hashMap.put(total - numbs[i], i);
+            }
+        }
+
+        return new int[]{0, 0};
+    }
   public static void main(String[] args) {
     int[] result = TwoSum_II(new int[]{1, 2, 7, 15}, 0, 9);
+      result = TwoSum_III(new int[]{1, 2, 7, 15}, 90);
     for (int sum : result) {
       System.out.println(sum);
     }
