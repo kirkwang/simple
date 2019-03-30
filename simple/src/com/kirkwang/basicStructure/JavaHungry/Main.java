@@ -25,7 +25,7 @@ public class Main {
     System.out.println("ArithmeticException");
   }
 
-  public static void main(String args[]) {
+    public static void main(String[] args) {
     JavaHungry(null);
     MyClass tester = new MyClass(2, 3);
     System.out.println(tester.multiply(3, 4));
