@@ -6,12 +6,35 @@
 
 package com.kirkwang.easy;
 
+import java.util.Stack;
+
 class StringCalculator {
 
     public static void main(String[] args) {
-        String input = "-5+2-4";
+        String input = "5+2-4";
         StringCalculator sc = new StringCalculator();
         sc.StringCalculator(input);
+        input = "5+2*4";
+        sc.StringTokenPolishNotation(input.split(""));
+    }
+
+    int StringTokenPolishNotation(String[] tokens) {
+        String operators = "+-*/";
+        Stack operatorStack = new Stack();
+        Stack operatandStack = new Stack();
+
+        for (int i = 0; i < tokens.length; i++) {
+            if (!operators.contains(tokens[i])) {
+                operatandStack.push(tokens[i]);
+            } else {
+                operatorStack.push(tokens[i]);
+            }
+        }
+        System.out.println("operatandStack size" + operatandStack.size());
+        System.out.println("operatorStack size" + operatorStack.size());
+
+
+        return 0;
     }
 
     int StringCalculator(String input) {
