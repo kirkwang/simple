@@ -41,15 +41,6 @@ public class LongestPalindromicSubstring {
     return input.substring(head, tail + 1);
   }
 
-  public static void main(String[] args) {
-
-    String result = LongestPalindromicSubstring("ababada");
-    System.out.println("This is the result " + result);
-
-    String result1 = LongestPalindromicSubstring("acbbcd");
-    System.out.println("This is the 2nd result " + result1);
-  }
-
   private static int findpalindromicsubstring(String input, int i, int j) {
     while (i >= 0 && j < input.length() && input.charAt(i) == input.charAt(j)) {
       i--;
@@ -64,5 +55,14 @@ public class LongestPalindromicSubstring {
       j++;
     }
     return j - i - 1;
+  }
+
+  public static void main(String[] args) {
+
+    String result = LongestPalindromicSubstring("ababada");
+    System.out.println("This is the result " + result);
+
+    String result1 = LongestPalindromicSubstring("acbbcd");
+    System.out.println("This is the 2nd result " + result1);
   }
 }
