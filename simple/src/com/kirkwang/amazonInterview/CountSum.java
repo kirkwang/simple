@@ -6,20 +6,29 @@
 
 package com.kirkwang.amazonInterview;
 
+import java.util.ArrayList;
+
 public class CountSum {
 
     public static int countSum(String input) {
         String strDigi = "";
         int sum = 0;
+        int index = 0;
+        ArrayList<String> list = new ArrayList();
         for (int i = 0; i < input.length(); i++) {
             Character c = input.charAt(i);
             if (Character.isDigit(c)) {
                 strDigi = strDigi + c;
             } else {
-                if (!strDigi.equals("")) {
-                    sum = sum + Integer.valueOf(strDigi);
-                    strDigi = "";
-                }
+
+                list.add(index++, strDigi);
+                strDigi = "";
+            }
+        }
+        list.add(index, strDigi);
+        for (String s : list) {
+            if (!s.equals("")) {
+                sum = sum + Integer.valueOf(s);
             }
         }
         return sum;
