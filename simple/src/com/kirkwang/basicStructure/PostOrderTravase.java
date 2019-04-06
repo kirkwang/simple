@@ -40,7 +40,6 @@ public class PostOrderTravase {
     System.err.println(s1 == s2);
     System.err.println(s2 == s3);
 
-
   }
 
   static void postOrder(Node root) {
