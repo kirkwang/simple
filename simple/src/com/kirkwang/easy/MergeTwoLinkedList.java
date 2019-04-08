@@ -34,7 +34,7 @@ public class MergeTwoLinkedList {
                 right = right.next;
             }
             //            System.out.println(" creation ");
-            //          System.out.println(left.getVal() + " <=left and right=> " + right.getVal());
+            System.out.println(left.getVal() + " <=left and right=> " + right.getVal());
             counter++;
         }
 

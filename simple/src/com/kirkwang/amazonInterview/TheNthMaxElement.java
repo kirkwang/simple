@@ -9,6 +9,9 @@ package com.kirkwang.amazonInterview;
 import java.util.Iterator;
 import java.util.TreeSet;
 
+/*
+https://www.careercup.com/question?id=182717
+ */
 public class TheNthMaxElement {
 
     public static int findTheNthMaxElement(int[] input, int key) {
@@ -29,7 +32,7 @@ public class TheNthMaxElement {
 
     public static void main(String[] args) {
 
-        int[] a = {2, -4, 5, 6, 0, 7, -1, 10, 9};
+        int[] a = {2, -4, 5, 6, 0, 7, 8, 10, 9};
         int k = 3; //if you want to find out 1 largest then give 0
 
         TheNthMaxElement.findTheNthMaxElement(a, k);
