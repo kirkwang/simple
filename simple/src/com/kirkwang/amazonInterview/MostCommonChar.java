@@ -8,8 +8,16 @@ package com.kirkwang.amazonInterview;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
 
+/*
+https://www.careercup.com/question?id=17912674
+1. Create a hash from the string
+2. Sort the hash
+3. Return the character from the entry num-1 in this sorted array
+
+Time complexity: O(m) + O(nlog(n)) where m is size of string and n is size of hash table/array
+Space: O(n) where n is size of hash array
+ */
 public class MostCommonChar {
     public static char findMostCommonChar(String input, int key) {
         char output = ' ';
@@ -23,12 +31,13 @@ public class MostCommonChar {
                 hashMap.put(c, 1);
             }
         }
-        Set<Character> set = hashMap.keySet();
+        // loop the key and put into arrayList with count.
         ArrayList<CompChar> arrayList = new ArrayList<>();
-        for (Character ob : set) {
-            CompChar cc = new CompChar(ob, hashMap.get(ob));
+        for (Character c : hashMap.keySet()) {
+            CompChar cc = new CompChar(c, hashMap.get(c));
             arrayList.add(cc);
         }
+        //bubble sort the array with count
         for (int outer = 0; outer < arrayList.size(); outer++) {
             for (int inner = 0; inner < outer; inner++) {
                 if (arrayList.get(inner).aCount < arrayList.get(outer).aCount) {
