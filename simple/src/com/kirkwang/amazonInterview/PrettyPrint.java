@@ -6,6 +6,9 @@
 
 package com.kirkwang.amazonInterview;
 
+/*
+https://www.careercup.com/question?id=5757179223080960
+ */
 public class PrettyPrint {
     public static void main(String[] args) {
         String input = "Sea!tle is a nice place. Work Hard! have Fun, make HIStory!";
@@ -19,7 +22,7 @@ public class PrettyPrint {
             int lastIndex = word.length() - 1;
             if (word.charAt(lastIndex) == '!' || word.charAt(lastIndex) == ',' || word.charAt(lastIndex) == '.') {
                 StringBuilder sb = new StringBuilder();
-                sb.append(word, 0, lastIndex);
+                sb.append(word, 0, lastIndex); //it will remove the last char and append . at the end.
                 sb.append(".");
                 spaceSplit[i] = sb.toString().toLowerCase();
             }
@@ -28,16 +31,11 @@ public class PrettyPrint {
         for (int i = 0; i < spaceSplit.length; i++) {
 
             char lastChar = spaceSplit[i].charAt(spaceSplit[i].length() - 1);
+            sentence = sentence.append(spaceSplit[i]).append(" ");
+            String firstChar = String.valueOf(sentence.charAt(0));
+            sentence.setCharAt(0, firstChar.toUpperCase().toCharArray()[0]);
 
-            if (lastChar != '.') {
-                sentence = sentence.append(spaceSplit[i]).append(" ");
-                String firstChar = String.valueOf(sentence.charAt(0));
-                sentence.setCharAt(0, firstChar.toUpperCase().toCharArray()[0]);
-
-            } else {
-                sentence = sentence.append(spaceSplit[i]).append(" ");
-                String firstChar = String.valueOf(sentence.charAt(0));
-                sentence.setCharAt(0, firstChar.toUpperCase().toCharArray()[0]);
+            if (lastChar == '.') {
                 System.out.println(sentence.toString().replace('!', 't'));
                 sentence = new StringBuilder();
             }
