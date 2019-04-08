@@ -7,18 +7,31 @@
 package com.kirkwang.easy;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
+/*
+f(10, [3, 4, 5, 6, 7]) // [ [6, 4], [7, 3] ]
+f(8, [3, 4, 5, 4, 4]) // [ [3, 5], [4, 4], [4, 4], [4, 4] ]
+https://github.com/mre/the-coding-interview/blob/master/problems/array-pair-sum/array-pair-sum.java
+ */
 class ArrayPairSum {
 
-    public static int min(int[] a) {
-        Arrays.sort(a);
-        int max_sum = 0;
+    public static int min(int sum, Integer[] arr) {
+        HashMap hashMap = new HashMap() {
+        };
 
-        for (int i = 0; i < a.length; i++) {
-            max_sum += Math.min(a[i], a[i + 1]);
-            i++;
+        int result = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int compent = sum - arr[i];
+            if (hashMap.containsKey(compent)) {
+                System.out.println(arr[i] + " " + compent);
+            } else {
+                hashMap.put(arr[i], true);
+            }
         }
-        return max_sum;
+
+
+        return result;
     }
 
     public static int min_1(int[] nums) {
@@ -31,6 +44,7 @@ class ArrayPairSum {
     }
 
     public static void main(String[] args) {
-        System.out.println("ArrayPairSum " + ArrayPairSum.min_1(new int[]{1, 4, 3, 2}));
+        System.out.println("ArrayPairSum " + ArrayPairSum.min(8, new Integer[]{3, 4, 5, 4, 4}));
+
     }
 }
