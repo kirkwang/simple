@@ -27,12 +27,13 @@ public class IsAnagram {
     }
 
     public static boolean checkAnagram(String source, String target) {
-        if (source.length() != target.length()) {
-            return false;
-        }
+
         if (source == null || target == null) {
             return false;
 
+        }
+        if (source.length() != target.length()) {
+            return false;
         }
         Map<Character, Integer> hashMap = new HashMap();
 

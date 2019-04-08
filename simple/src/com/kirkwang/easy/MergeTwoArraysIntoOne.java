@@ -14,7 +14,7 @@ public class MergeTwoArraysIntoOne {
     public static void main(String[] args) {
 
         MergeTwoArraysIntoOne mtaio = new MergeTwoArraysIntoOne();
-        int[] one = new int[]{1, 3, 5, 6, 0, 0, 0, 0, 0, 0};
+        int[] one = new int[]{1, 3, 5, 6, 0, 0, 0, 0, 0};
         int[] two = new int[]{1, 2, 2, 2, 10};
         int[] merged = mtaio.mergeTwoArraysIntoOne(one, 4, two, 5);
         for (int a : merged) {
@@ -25,11 +25,13 @@ public class MergeTwoArraysIntoOne {
     public int[] mergeTwoArraysIntoOne(int[] a, int m, int[] b, int n) {
         int theEnd = a.length - 1;
         while (m > 0 && n > 0) {
-            if (a[m - 1] > b[n - 1]) {
-                a[m + n - 1] = a[m - 1];
+            int aEnd = m - 1;
+            int bEnd = n - 1;
+            if (a[aEnd] > b[bEnd]) {
+                a[aEnd + n] = a[aEnd];
                 m--;
             } else {
-                a[m + n - 1] = b[n - 1];
+                a[aEnd + n] = b[bEnd];
                 n--;
             }
         }
