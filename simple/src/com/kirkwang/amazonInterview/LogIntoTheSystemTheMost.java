@@ -31,7 +31,7 @@ public class LogIntoTheSystemTheMost {
             }
         }
         for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
-            if (entry.getValue() >= 2) {
+            if (entry.getValue() >= k) {
                 System.out.println(entry.getKey() + ",(" + entry.getValue() + ")");
             }
         }
