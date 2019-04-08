@@ -8,21 +8,18 @@ package com.kirkwang.amazonInterview;
 
 public class SumToSingleDigi {
     public static int sunToSingleDigi(int input) {
-        int result = input;
-        while (result >= 10) {
 
-            int reminder = result % 10;
-            int decemial = result / 10;
-            result = reminder + decemial;
-
+        while (input >= 10) {
+            int reminder = input % 10;
+            int decemial = input / 10;
+            input = reminder + decemial;
         }
 
-        return result;
+        return input;
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{10, 67, 28, 0, -1, -30, -20};
-        int result = SumToSingleDigi.sunToSingleDigi(27);
+        int result = SumToSingleDigi.sunToSingleDigi(271);
 
         System.out.println(result);
     }
