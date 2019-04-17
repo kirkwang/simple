@@ -8,6 +8,8 @@ package com.kirkwang.easy;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /*
 f(10, [3, 4, 5, 6, 7]) // [ [6, 4], [7, 3] ]
@@ -19,18 +21,20 @@ class ArrayPairSum {
     public static int min(int sum, Integer[] arr) {
         HashMap hashMap = new HashMap() {
         };
-
+        Set set = new HashSet();
         int result = 0;
         for (int i = 0; i < arr.length; i++) {
             int compent = sum - arr[i];
             if (hashMap.containsKey(compent)) {
                 System.out.println(arr[i] + " " + compent);
+                set.add(arr[i] + "," + compent);
+
             } else {
                 hashMap.put(arr[i], true);
             }
         }
 
-
+        System.out.println(set.size() + "  set size");
         return result;
     }
 
@@ -44,7 +48,10 @@ class ArrayPairSum {
     }
 
     public static void main(String[] args) {
-        System.out.println("ArrayPairSum " + ArrayPairSum.min(8, new Integer[]{3, 4, 5, 4, 4}));
+
+        Integer[] integers = new Integer[]{6, 1, 3, 46, 1, 3, 9};
+        //  System.out.println("ArrayPairSum " + ArrayPairSum.min(8, new Integer[]{3, 4, 5, 4, 4}));
+        System.out.println("ArrayPairSum " + ArrayPairSum.min(47, integers));
 
     }
 }
