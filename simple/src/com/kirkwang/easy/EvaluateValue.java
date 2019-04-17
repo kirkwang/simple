@@ -14,7 +14,7 @@ public class EvaluateValue {
 
 
     public static void main(String[] args) throws IOException {
-        String[] tokens = new String[]{"2", "1", "/"};
+        String[] tokens = new String[]{"2", "1", "+"};
         System.out.println(evaluate(tokens));
     }
 

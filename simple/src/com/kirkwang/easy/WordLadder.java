@@ -13,7 +13,6 @@ import java.util.Set;
 
 public class WordLadder {
     public static void main(String[] args) throws IOException {
-        String[] tokens = new String[]{"2", "1", "/"};
 
         String start = "hit";
         String end = "cog";

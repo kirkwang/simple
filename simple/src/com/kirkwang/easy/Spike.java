@@ -20,7 +20,7 @@ class Spike {
     }
 
     public static void main(String[] args) {
-        int[] input = new int[]{1, 2, 3, 8, 9, 10};
+        int[] input = new int[]{1, 2, 3, 8, 6, 5};
         System.out.println(findSpike(input));
     }
 }
