@@ -1,6 +1,8 @@
 package com.kirkwang.basicStructure;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -20,5 +22,10 @@ public class HashSetExample {
     for (Integer integer : set) {
       System.out.println(integer);
     }
+      HashMap<Integer, String> hashMap = new HashMap();
+      System.out.println("For Loop:");
+      for (Map.Entry me : hashMap.entrySet()) {
+          System.out.println("Key: " + me.getKey() + " & Value: " + me.getValue());
+      }
   }
 }
