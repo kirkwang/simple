@@ -21,40 +21,22 @@ public class RotateArray {
         for (int i = 0; i < array.length; i++) System.out.print(array[i] + " ");
     }
 
+    static void leftRotatebyOne(int[] input, int n) {
+
+        int temp = input[0];
+        for (int i = 0; i < n - 1; i++) {
+            input[i] = input[i + 1];
+        }
+        input[n - 1] = temp;
+
+
+    }
+
     public void intermediaArray(int[] numbs, int val) {
-        if (val > numbs.length) {
-            val = val % numbs.length; // id val = 10%3;
-        }
-        int[] result = new int[numbs.length];
 
-        for (int i = 0; i < val; i++) {
-            result[i] = numbs[numbs.length - val + i];
-        }// copy the val ~ end to result at the beginning.
-
-        int j = 0;
-
-        // loop begins at val to the end
-        for (int i = val; i < numbs.length; i++) {
-            result[i] = numbs[j++];
-        }
-        System.arraycopy(result, 0, numbs, 0, numbs.length);
+        for (int i = 0; i < val; i++)
+            leftRotatebyOne(numbs, numbs.length);
     }
-    public void rotateArray(int[] numbs, int val) {
-        if (numbs == null || numbs.length == 0) {
-            // return numbs;
-            //return;
-        }
-        val %= numbs.length;
-        int[] result = new int[numbs.length];
-        for (int i = 0; i < val; i++) {
-            result[i] = numbs[numbs.length - val + i];
-            // val--;
-        }
-        int index = 0;
-        for (int i = val; i < numbs.length; i++) {
-            result[i] = numbs[index++];
-        }
-        System.arraycopy(result, 0, numbs, 0, numbs.length);
-        // return numbs;
-    }
+
+
 }
