@@ -8,6 +8,7 @@ package com.kirkwang.HackerRank;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -40,6 +41,7 @@ public class NewYorkChoas {
         }
 
         int swapNum = 0;
+        List<Integer> aList = Arrays.stream(q).sorted().boxed().collect(Collectors.toList());
         LinkedList<Integer> target = new LinkedList<>(Arrays.stream(q).sorted().boxed().collect(Collectors.toList()));
         for (int number : q) {
             int index = target.indexOf(number);
