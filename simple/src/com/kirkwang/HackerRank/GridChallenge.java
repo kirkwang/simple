@@ -66,6 +66,7 @@ public class GridChallenge {
 //    for(int row =0; row < rows; row ++) {
 //        Arrays.sort(grid[row]);
 //    }
+        //This is a bug on row =0; it should be row =1 and compare to row -1
         for (int row = 0; row < rows; row++) {
             for (int col = row + 1; col < cols; col++) {
                 if (grid[row][col] > grid[row + 1][col]) {
