@@ -23,6 +23,7 @@ public class GridChallenge {
 //                    grid[i][j] = line.charAt(j);
 //                }
 //            }
+
         char[][] gridChar = {
                 {'e', 'b', 'a', 'c', 'd'},
                 {'f', 'g', 'h', 'i', 'j'},
@@ -30,7 +31,7 @@ public class GridChallenge {
                 {'t', 'r', 'p', 'q', 's'},
                 {'x', 'y', 'w', 'u', 'v'}};
 
-        System.out.println(solve(gridChar) ? "YES" : "NO");
+        System.out.println(canConvert(gridChar) ? "YES" : "NO");
 
         // sc.close();
     }
@@ -41,6 +42,33 @@ public class GridChallenge {
             for (int j = 0; j < grid[0].length; j++) {
                 //  a(97) < f(102), b(98) < g(103)
                 if (grid[i][j] > grid[i + 1][j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    static String canConvert(String[] grid) {
+        char[][] gridChar = new char[grid.length][grid[0].length()];
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length(); j++) {
+                gridChar[i][j] = grid[i].charAt(j);
+            }
+        }
+        return canConvert(gridChar) ? "YES" : "NO";
+    }
+
+    static boolean canConvert(char[][] grid) {
+        int rows = grid.length;
+        int cols = grid[0].length;
+        Arrays.stream(grid).forEach(Arrays::sort);
+//    for(int row =0; row < rows; row ++) {
+//        Arrays.sort(grid[row]);
+//    }
+        for (int row = 0; row < rows; row++) {
+            for (int col = row + 1; col < cols; col++) {
+                if (grid[row][col] > grid[row + 1][col]) {
                     return false;
                 }
             }
