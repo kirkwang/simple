@@ -31,6 +31,5 @@ public class CuttheSticks {
             }
         }
         return arrayList.stream().mapToInt(i -> i).toArray();
-
     }
 }
