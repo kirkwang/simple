@@ -6,9 +6,9 @@
 
 package com.leetcode;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SubdomainVisitCount {
     public static void main(String[] args) {
@@ -36,7 +36,6 @@ public class SubdomainVisitCount {
                 // index++;
             }
         }
-
-        return new ArrayList<>();
+        return hashMap.entrySet().stream().map(stringIntegerEntry -> (stringIntegerEntry.getValue() + " " + stringIntegerEntry.getKey())).collect(Collectors.toList());
     }
 }
