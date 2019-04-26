@@ -14,12 +14,18 @@ public class CaesarCipher {
 
         for (char c : s.toCharArray()) {
             if (Character.isUpperCase(c)) {
-
-                char newChar = (char) ((c + k));
-                result.append(newChar);
+                int x = 0;
+                if (c > ('Z' - k)) {
+                    x = (c - 'A' + k) % 26;
+                    x = x + 'A';
+                } else {
+                    x = c + k;
+                }
+                result.append((char) x);
             } else if (Character.isLowerCase(c)) {
-                char newChar = (char) ((c + k));
-                result.append(newChar);
+                char ch = (char) ((c - 'a' + k) % 26 + 'a');
+
+                result.append(ch);
             } else {
 
                 result.append(c);
@@ -30,7 +36,7 @@ public class CaesarCipher {
     }
 
     public static void main(String[] args) {
-        String beabeefeab = "Aeabeefeab";
+        String beabeefeab = "Jyabeefeab";
         int shift = 3;
         String ml = caesarCipher(beabeefeab, shift);
         System.out.println(ml);
