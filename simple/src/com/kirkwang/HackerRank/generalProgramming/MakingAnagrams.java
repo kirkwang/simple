@@ -32,7 +32,7 @@ public class MakingAnagrams {
         int[] aCount = createFilledArrayJava8(a);
         int[] bCount = createFilledArrayJava8(b);
         int different = 0;
-        for (int i = 0; i < 26; i++) {
+        for (int i = 0; i < aCount.length; i++) {
             different += Math.abs(aCount[i] - bCount[i]);
         }
         return different;
