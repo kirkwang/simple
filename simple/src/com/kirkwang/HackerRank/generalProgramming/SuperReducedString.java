@@ -20,6 +20,18 @@ public class SuperReducedString {
 
     }
 
+    static String superReducedStringStackv2(String s) {
+        Stack<Character> stack = new Stack();
+        String result;
+        for (char c : s.toCharArray()) {
+            if (!stack.empty() && stack.peek() == c) {
+                stack.pop();
+            } else {
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty() ? "Empty String" : stack.stream().map(i -> i.toString()).collect(Collectors.joining());
+    }
     static String superReducedStringStack(String s) {
         Stack<Character> stack = new Stack();
         String result;
