@@ -6,6 +6,9 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class StringConstruction {
 
     public static void main(String[] args) {
@@ -17,6 +20,10 @@ public class StringConstruction {
 
     static int stringConstruction(String s) {
 
-        return 0;
+        Set<Character> set = new HashSet<>();
+        for (Character c : s.toCharArray()) {
+            set.add(c);
+        }
+        return set.size();
     }
 }
