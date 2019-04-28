@@ -13,8 +13,6 @@ import java.util.Set;
 public class Gemstones {
 
     public static void main(String[] args) {
-
-
         String[] input = {"abcdde", "baccd", "eeabg"};
 
         System.out.println(gemstones(input));
