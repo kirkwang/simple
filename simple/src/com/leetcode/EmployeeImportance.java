@@ -24,8 +24,6 @@ public class EmployeeImportance {
 
     public static void main(String[] args) {
 
-        String s = "Google";
-        String s1 = "FlaG";
         List<Employee> arrayList = new ArrayList();
         int result = getImportance(arrayList, 1);
         System.out.println(result);
@@ -44,7 +42,6 @@ public class EmployeeImportance {
         int totalVal = employee.importance;
 
         for (int i = 0; i < employee.subordinates.size(); i++) {
-
             int temp = employee.subordinates.get(i);
             totalVal += getValueById(hashMap, temp);
         }

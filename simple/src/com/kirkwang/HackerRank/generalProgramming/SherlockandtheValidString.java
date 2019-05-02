@@ -15,7 +15,6 @@ public class SherlockandtheValidString {
         String s = "abcdefghhgfedecba";
         String s1 = "aabbcd";
 
-
         String result = isValid(s1);
         System.out.println(result);
 
