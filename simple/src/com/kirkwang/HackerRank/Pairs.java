@@ -7,4 +7,18 @@
 package com.kirkwang.HackerRank;
 
 public class Pairs {
+
+    static int pairs(int k, int[] arr) {
+
+        return k;
+    }
+
+    public static void main(String[] args) {
+
+        int m = 4;
+        //int[] costs = {1, 4, 5, 3, 2};
+        int[] costs = {2, 2, 4, 3};
+        pairs(m, costs);
+
+    }
 }
