@@ -18,7 +18,7 @@ public class MaxProfit {
     if (A == null || A.length == 0) {
       return 0;
     }
-    int maxProfit = 0;
+      int maxProfit = Integer.MIN_VALUE;
 
     for (int i = 0; i < A.length; i++) {
       for (int j = A.length - 1; j > i; j--) {
