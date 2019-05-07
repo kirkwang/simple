@@ -33,8 +33,8 @@ public class LongestPalindromicSubstring {
       int len2 = checkPalindromicSubstring(input, i, i + 1);
       int len = Math.max(len1, len2);
       if (len > tail - head) {
-        head = i - (len - 1) / 2;
-        tail = i + len / 2;
+        head = i - (len - 1) / 2; // head is shift left(-) size /2
+        tail = i + len / 2;  // tail is i shift right(+) size/2
       }
     }
 
@@ -59,10 +59,10 @@ public class LongestPalindromicSubstring {
 
   public static void main(String[] args) {
 
-    String result = LongestPalindromicSubstring("ababada");
+    String result = LongestPalindromicSubstring.LongestPalindromicSubstring("ababada");
     System.out.println("This is the result " + result);
 
-    String result1 = LongestPalindromicSubstring("acbbcd");
+    String result1 = LongestPalindromicSubstring.LongestPalindromicSubstring("acbbcd");
     System.out.println("This is the 2nd result " + result1);
   }
 }
