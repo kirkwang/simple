@@ -10,6 +10,7 @@ package com.kirkwang.HackerRank;
  * = 21123 − 23171 = −2048. If a share was bought on day 4 and sold on day 5, a profit of 354 would
  * occur because A[5] − A[4] = 21367 − 21013 = 354. Maximum possible profit was 356. It would occur
  * if a share was bought on day 1 and sold on day 5.
+ * Best Time to Buy and Sell Stock
  */
 public class MaxProfit {
 
