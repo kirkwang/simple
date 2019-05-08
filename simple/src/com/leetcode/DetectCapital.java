@@ -16,13 +16,13 @@ public class DetectCapital {
         String s1 = "FlaG";
 
 
-        boolean result = detectCapitalUse(s);
+        boolean result = detectCapitalUse(s1);
         System.out.println(result);
 
     }
 
     public static boolean detectCapitalUse(String word) {
-        return word.equals(word.toUpperCase()) || isLowerCase(word) || isLowerCase(word.substring(1)) && Character.isUpperCase(word.charAt(0));
+        return word.equals(word.toUpperCase()) || word.equals(word.toLowerCase()) || isLowerCase(word.substring(1)) && Character.isUpperCase(word.charAt(0));
     }
 
     public static boolean isLowerCase(String s) {
