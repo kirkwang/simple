@@ -24,7 +24,35 @@ public class EmployeeImportance {
 
     public static void main(String[] args) {
 
+
         List<Employee> arrayList = new ArrayList();
+        Employee employee = new Employee();
+        employee.id = 1;
+        employee.importance = 5;
+        List list = new ArrayList<Integer>();
+        list.add(2);
+        list.add(3);
+        employee.subordinates = list;
+        arrayList.add(0, employee);
+
+        employee = new Employee();
+        employee.id = 2;
+        employee.importance = 3;
+        list = new ArrayList<Integer>();
+        //    list.add(4);
+        //   list.add(5);
+        employee.subordinates = list;
+        arrayList.add(1, employee);
+
+        employee = new Employee();
+        employee.id = 3;
+        employee.importance = 3;
+        list = new ArrayList<Integer>();
+        //   list.add(4);
+        //   list.add(5);
+        employee.subordinates = list;
+        arrayList.add(2, employee);
+
         int result = getImportance(arrayList, 1);
         System.out.println(result);
     }
