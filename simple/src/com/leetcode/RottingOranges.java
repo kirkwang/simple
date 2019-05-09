@@ -14,14 +14,14 @@ https://leetcode.com/problems/rotting-oranges/
 public class RottingOranges {
 
     public static int orangesRotting(int[][] grid) {
-        countOnes(grid);
-        System.out.println(grid[0].length);
-        return 0;
+        int result = countOnes(grid);
+        System.out.println(result);
+        return result;
     }
 
     public static int countOnes(int[][] grid) {
 
-        return Arrays.stream(grid).mapToInt(line -> (int) Arrays.stream(line).filter(x -> x == 1).count()).sum();
+        return Arrays.stream(grid).mapToInt(line -> Arrays.stream(line).filter(x -> x == 1).sum()).sum();
     }
 
     public static void main(String[] args) {
