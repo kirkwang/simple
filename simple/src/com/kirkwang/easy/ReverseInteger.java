@@ -26,10 +26,10 @@ public class ReverseInteger {
 
   public static void main(String[] args) {
 //1534236469
-    int result = ReverseInteger(-456);
+      int result = ReverseInteger.ReverseInteger(-456);
     System.out.println("This is the result " + result);
 
-    int result1 = ReverseInteger(1534236469); //over flow
+      int result1 = ReverseInteger.ReverseInteger(1534236469); //over flow
     System.out.println("This is the result " + result1);
 
   }

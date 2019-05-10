@@ -15,18 +15,21 @@ public class ReplaceChar {
 // but knowing API definitely helps to produce better solution quickly.
 
   public static void main(String ... args){
-  //  System.out.println("Output for replaceCharAt(): " + replaceCharAt("eBay Google Paypal", 10, '$'));
-  //  System.out.println("Output for removeChar(): " + removeChar("eBay Google Paypal", 'a'));
-    System.out.println("Output for removeCharAt(): " + removeCharAt("eBay Google Paypal", 5));
+      //  System.out.println("Output for replaceCharAt(): " + ReplaceChar.replaceCharAt("eBay Google Paypal", 10, '$'));
+      System.out.println("Output for removeChar(): " + ReplaceChar.removeChar("eBay Google Paypal", 'a'));
+      //  System.out.println("Output for removeCharAt(): " + ReplaceChar.removeCharAt("eBay Google Paypal", 5));
   }
 
   private static String replaceCharAt(String s, int i , char c){
     StringBuffer buf = new StringBuffer();
-    buf.setCharAt(i,c);
+      if (i < s.length()) {
+          buf.setCharAt(i, c);
+      }
     return buf.toString();
   }
   private static String removeChar(String s, char c) {
-    StringBuffer buf = new StringBuffer();
+
+      StringBuffer buf = new StringBuffer();
     buf.setLength(s.length());
     int current = 0;
     for (int i=0; i<s.length(); i++){
