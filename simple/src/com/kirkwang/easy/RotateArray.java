@@ -15,13 +15,13 @@ Try to come up as many solutions as you can, there are at least 3 different ways
 @SuppressWarnings("Array")
 public class RotateArray {
     public static void main(String[] args) {
-        RotateArray ra = new RotateArray();
-        int[] array = new int[]{1, 2, 3, 4, 6, 8};
-        ra.intermediaArray(array, 2);
+
+        int[] array = {1, 2, 3, 4, 6, 8};
+        RotateArray.intermediaArray(array, 2);
         for (int i = 0; i < array.length; i++) System.out.print(array[i] + " ");
     }
 
-    static void leftRotatebyOne(int[] input, int n) {
+    public static void leftRotatebyOne(int[] input, int n) {
 
         int temp = input[0];
         for (int i = 0; i < n - 1; i++) {
@@ -32,7 +32,7 @@ public class RotateArray {
 
     }
 
-    public void intermediaArray(int[] numbs, int val) {
+    public static void intermediaArray(int[] numbs, int val) {
 
         for (int i = 0; i < val; i++)
             leftRotatebyOne(numbs, numbs.length);

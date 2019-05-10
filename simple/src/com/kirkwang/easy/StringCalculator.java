@@ -18,24 +18,6 @@ class StringCalculator {
         sc.StringTokenPolishNotation(input.split(""));
     }
 
-    int StringTokenPolishNotation(String[] tokens) {
-        String operators = "+-*/";
-        Stack operatorStack = new Stack();
-        Stack operatandStack = new Stack();
-
-        for (int i = 0; i < tokens.length; i++) {
-            if (!operators.contains(tokens[i])) {
-                operatandStack.push(tokens[i]);
-            } else {
-                operatorStack.push(tokens[i]);
-            }
-        }
-        System.out.println("operatandStack size" + operatandStack.size());
-        System.out.println("operatorStack size" + operatorStack.size());
-
-
-        return 0;
-    }
 
     int StringCalculator(String input) {
         String sign = null;
@@ -65,4 +47,24 @@ class StringCalculator {
         System.out.println("aggrateor " + aggrateor);
         return aggrateor;
     }
+
+    int StringTokenPolishNotation(String[] tokens) {
+        String operators = "+-*/";
+        Stack operatorStack = new Stack();
+        Stack operatandStack = new Stack();
+
+        for (int i = 0; i < tokens.length; i++) {
+            if (!operators.contains(tokens[i])) {
+                operatandStack.push(tokens[i]);
+            } else {
+                operatorStack.push(tokens[i]);
+            }
+        }
+        System.out.println("operatandStack size" + operatandStack.size());
+        System.out.println("operatorStack size" + operatorStack.size());
+
+
+        return 0;
+    }
+
 }
