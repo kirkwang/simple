@@ -15,14 +15,12 @@ public class DetectCapital {
         String s = "Google";
         String s1 = "FlaG";
 
-
         boolean result = detectCapitalUse(s1);
         System.out.println(result);
-
     }
 
     public static boolean detectCapitalUse(String word) {
-        return word.equals(word.toUpperCase()) || word.equals(word.toLowerCase()) || isLowerCase(word.substring(1)) && Character.isUpperCase(word.charAt(0));
+        return word.equals(word.toUpperCase()) || word.equals(word.toLowerCase()) || Character.isUpperCase(word.charAt(0)) && isLowerCase(word.substring(1));
     }
 
     public static boolean isLowerCase(String s) {
