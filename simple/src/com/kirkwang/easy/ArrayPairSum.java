@@ -19,8 +19,7 @@ https://github.com/mre/the-coding-interview/blob/master/problems/array-pair-sum/
 class ArrayPairSum {
 
     public static int min(int sum, Integer[] arr) {
-        HashMap hashMap = new HashMap() {
-        };
+        HashMap<Integer, Boolean> hashMap = new HashMap();
         Set set = new HashSet();
         int result = 0;
         for (int i = 0; i < arr.length; i++) {
