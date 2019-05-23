@@ -1,7 +1,9 @@
 package com.leetcode;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by kewang on 12/25/17.
@@ -19,15 +21,25 @@ public class WordBreak {
 
   public static boolean WordBreak(String s, List<String> wordDict) {
 
-    return false;
+      Set set = new HashSet(wordDict);
+
+      boolean[] result = new boolean[s.length() + 1];
+      result[0] = true;
+      for (int i = 1; i <= s.length(); i++)
+          for (int j = 0; j < i; j++) {
+              if (set.contains(s.substring(j, i))) {
+                  result[i] = true;
+                  break;
+              }
+          }
+      return result[s.length()];
   }
 
   public static void main(String[] args) {
     List<String> list = new ArrayList<>();
     list.add("leet");
     list.add("code");
-    String s = "leetCode";
-      int sqrt = (int) Math.sqrt(9);
+      String s = "leetcode";
 
     boolean result = WordBreak(s, list);
     System.out.print(result);
