@@ -22,20 +22,20 @@ public class PalindromicSubstrings {
     }
     for (int i = 0; i < input.length() - 1; i++) {
       result += checkPalindrom(input, i, i);
-      result += checkPalindrom(input, i, i + 1);
+        //  result += checkPalindrom(input, i, i + 1);
     }
     return result;
   }
 
   public static void main(String[] args) {
 
-    int result = PalindromicSubstrings("abc");
+      int result = PalindromicSubstrings.PalindromicSubstrings("abc");
     System.out.println("This is the result " + result);
 
-    result = PalindromicSubstrings("aaa");
+      result = PalindromicSubstrings.PalindromicSubstrings("aaa");
     System.out.println("This is the result " + result);
 
-    result = PalindromicSubstrings("ababada");
+      result = PalindromicSubstrings.PalindromicSubstrings("ababada");
     System.out.println("This is the result " + result);
 
   }

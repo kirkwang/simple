@@ -15,7 +15,7 @@ public class SubdomainVisitCount {
 
         String[] input = new String[]{"900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"};
 
-        System.out.println(subdomainVisits(input));
+        System.out.println(SubdomainVisitCount.subdomainVisits(input));
     }
 
     public static List<String> subdomainVisits(String[] cpdomains) {

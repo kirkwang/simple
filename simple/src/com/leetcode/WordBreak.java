@@ -27,6 +27,8 @@ public class WordBreak {
     list.add("leet");
     list.add("code");
     String s = "leetCode";
+      int sqrt = (int) Math.sqrt(9);
+
     boolean result = WordBreak(s, list);
     System.out.print(result);
   }

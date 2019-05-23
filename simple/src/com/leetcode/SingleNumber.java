@@ -30,7 +30,8 @@ public class SingleNumber {
         int[] integers = new int[]{1, 1, 2, 2, 3, 3, 4};
         String abc = "abc";
         abc.substring(0, 1);
-        int result = SingleNumber.SingleElementinaSortedArray(integers);
+        SingleNumber singleNumber = new SingleNumber();
+        int result = SingleElementinaSortedArray(integers);
         System.out.println("SingleElementinaSortedArray " + result);
     }
 }
