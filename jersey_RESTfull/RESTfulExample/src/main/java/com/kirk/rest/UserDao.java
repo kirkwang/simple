@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao {
-    public List<com.kirk.rest.User> getAllUsers() {
+    public List<User> getAllUsers() {
         List<com.kirk.rest.User> userList = null;
         try {
             File file = new File("Users.dat");

@@ -1,4 +1,4 @@
-package com.kirk.rest;
+package main.java.com.kirk.rest;
 
 /**
  * Created by kewang on 1/12/16.

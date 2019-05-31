@@ -12,12 +12,12 @@ import java.util.List;
 @Path("/UserService")
 public class UserService {
 
-    UserDao userDao = new UserDao();
+    main.java.com.kirk.rest.UserDao userDao = new main.java.com.kirk.rest.UserDao();
 
     @GET
     @Path("/users")
     @Produces(MediaType.APPLICATION_XML)
-    public List<com.kirk.rest.User> getUsers() {
+    public List<main.java.com.kirk.rest.User> getUsers() {
         return userDao.getAllUsers();
     }
 }
