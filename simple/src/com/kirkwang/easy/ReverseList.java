@@ -11,8 +11,6 @@ public class ReverseList {
 
     System.out.println("This is the result " + 0);
 
-    System.out.println("This is the result " + 0);
-
   }
 
   public ListNode reverseList(ListNode head) {

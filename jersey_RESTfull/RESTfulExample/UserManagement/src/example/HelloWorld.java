@@ -1,11 +1,12 @@
 package example;
-import com.sun.net.httpserver.HttpServer;
+
 import com.sun.jersey.api.container.httpserver.HttpServerFactory;
-import java.io.IOException;
+import com.sun.net.httpserver.HttpServer;
 
 import javax.ws.rs.GET;
-import javax.ws.rs.Produces;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import java.io.IOException;
 
 /**
  * Created by kewang on 1/12/16.

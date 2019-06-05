@@ -17,11 +17,9 @@ public class AreaOfParallelogram {
 
         double area;
 
-
         area = new Integer(twoInts.getKey().toString()) * new Integer(twoInts.getValue().toString());
 
         System.out.println("Area of parallelogram:" + area);
-
 
     }
 
