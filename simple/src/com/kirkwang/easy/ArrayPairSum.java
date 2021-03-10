@@ -14,7 +14,7 @@ import java.util.Set;
 /*
 f(10, [3, 4, 5, 6, 7]) // [ [6, 4], [7, 3] ]
 f(8, [3, 4, 5, 4, 4]) // [ [3, 5], [4, 4], [4, 4], [4, 4] ]
-https://github.com/mre/the-coding-interview/blob/master/problems/array-pair-sum/array-pair-sum.java
+https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-a-with-sum-as-x/
  */
 class ArrayPairSum {
 
@@ -37,20 +37,23 @@ class ArrayPairSum {
         return result;
     }
 
-    public static int min_1(int[] nums) {
+    public static int min_1(int total, Integer[] nums) {
         Arrays.sort(nums);
-        int result = 0;
-        for (int i = 0; i < nums.length / 2; i++) {
-            result = result + nums[i * 2];
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            if (nums[left] + nums[right] == total) return 1;
+            else if (nums[left] + nums[right] < total) left++;
+            else right--;
         }
-        return result;
+        return 0;
     }
 
     public static void main(String[] args) {
 
         Integer[] integers = new Integer[]{6, 1, 3, 46, 1, 3, 9};
         //  System.out.println("ArrayPairSum " + ArrayPairSum.min(8, new Integer[]{3, 4, 5, 4, 4}));
-        System.out.println("ArrayPairSum " + ArrayPairSum.min(47, integers));
+        System.out.println("ArrayPairSum " + ArrayPairSum.min_1(5, integers));
 
     }
 }
