@@ -26,6 +26,7 @@ public class MarsExploration {
         String part = input;
         return (int) IntStream.range(0, 3).filter(i -> input.charAt(i) != UNIT.charAt(i)).count();
     }
+
     public static void main(String[] args) {
         String beabeefeab = "SOSSPSSQSSOR";
         int shift = 3;

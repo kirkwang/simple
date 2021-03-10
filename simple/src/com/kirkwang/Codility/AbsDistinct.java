@@ -13,25 +13,25 @@ package com.kirkwang.Codility;
  */
 public class AbsDistinct {
 
-  public static Object[] AbsDistinct(int[] A) {
-    if (A == null || A.length == 0) {
-      return new Object[0];
+    public static Object[] AbsDistinct(int[] A) {
+        if (A == null || A.length == 0) {
+            return new Object[0];
+        }
+        java.util.Set set = new java.util.HashSet<>();
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] < 0) {
+                A[i] *= -1;
+            }
+            set.add(A[i]);
+        }
+
+        return set.toArray();
     }
-    java.util.Set set = new java.util.HashSet<>();
-    for (int i = 0; i < A.length; i++) {
-      if (A[i] < 0) {
-        A[i] *= -1;
-      }
-      set.add(A[i]);
+
+    public static void main(String[] args) {
+        // 5, 4, 3, 2, 1
+        int[] n = new int[]{-5, -3, -1, 0, 3, 6};
+
+        System.out.println(AbsDistinct(n).length);
     }
-
-    return set.toArray();
-  }
-
-  public static void main(String[] args) {
-      // 5, 4, 3, 2, 1
-      int[] n = new int[]{-5, -3, -1, 0, 3, 6};
-
-    System.out.println(AbsDistinct(n).length);
-  }
 }

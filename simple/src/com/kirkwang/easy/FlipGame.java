@@ -40,7 +40,7 @@ public class FlipGame {
         if (source == null || source.length() == 0) {
             return moves;
         }
-        for (int i = 0; i < source.length()-1; i++) {
+        for (int i = 0; i < source.length() - 1; i++) {
             if (source.charAt(i) == '+' && source.charAt(i + 1) == '+') {
                 String s1 = source.substring(0, i);
                 String s2 = "--";

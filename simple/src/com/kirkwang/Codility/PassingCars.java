@@ -9,45 +9,45 @@ package com.kirkwang.Codility;
  */
 public class PassingCars {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    //   Scanner scn = new Scanner(System.in);
-    //  int n = scn.nextInt();
-    //    int[] A = new int[]{1, 3, 1, 3, 2, 5, 6, 4};
-    int[] n = new int[]{1, 1, 0, 0, 1, 0, 1};
-    n = new int[]{0, 1, 0, 1, 1};
-    //A = 11, B = 345, K = 17
-    System.out.println(solution(n));
-  }
-
-  public static int solution(int[] A) {
-    int numberOntheLeft = 0;
-    int numberOntheright = 0;
-    int numberTotal = 0;
-
-    for (int i = 0; i < A.length; i++) {
-      int temp = A[i];
-      if (temp == 1) {
-        for (int j = i; j >= 0; j--) {
-          if (A[j] == 0) {
-            numberOntheLeft++;
-          }
-        }
-      } else {
-        for (int m = i; m < A.length; m++) {
-          if (A[m] == 1) {
-            numberOntheright++;
-          }
-        }
-      }
-      if (numberTotal > 1000000000) {
-        numberTotal = -1;
-        break;
-      }
-      numberTotal = numberOntheLeft + numberOntheright;
-
+        //   Scanner scn = new Scanner(System.in);
+        //  int n = scn.nextInt();
+        //    int[] A = new int[]{1, 3, 1, 3, 2, 5, 6, 4};
+        int[] n = new int[]{1, 1, 0, 0, 1, 0, 1};
+        n = new int[]{0, 1, 0, 1, 1};
+        //A = 11, B = 345, K = 17
+        System.out.println(solution(n));
     }
 
-    return numberTotal / 2;
-  }
+    public static int solution(int[] A) {
+        int numberOntheLeft = 0;
+        int numberOntheright = 0;
+        int numberTotal = 0;
+
+        for (int i = 0; i < A.length; i++) {
+            int temp = A[i];
+            if (temp == 1) {
+                for (int j = i; j >= 0; j--) {
+                    if (A[j] == 0) {
+                        numberOntheLeft++;
+                    }
+                }
+            } else {
+                for (int m = i; m < A.length; m++) {
+                    if (A[m] == 1) {
+                        numberOntheright++;
+                    }
+                }
+            }
+            if (numberTotal > 1000000000) {
+                numberTotal = -1;
+                break;
+            }
+            numberTotal = numberOntheLeft + numberOntheright;
+
+        }
+
+        return numberTotal / 2;
+    }
 }

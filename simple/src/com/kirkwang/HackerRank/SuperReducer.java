@@ -21,29 +21,29 @@ package com.kirkwang.HackerRank;
  * <p>Sample Output abd
  */
 public class SuperReducer {
-  // aaabccddd
+    // aaabccddd
 
-  public static void main(String[] args) {
-    String input = "aaaabccddd";
-    //  input = input.substring(0, 1);
-    // input = input.substring(2);
-    System.out.println(input + " simple input string");
-    int index = 0;
-    int len = input.length() - 1;
+    public static void main(String[] args) {
+        String input = "aaaabccddd";
+        //  input = input.substring(0, 1);
+        // input = input.substring(2);
+        System.out.println(input + " simple input string");
+        int index = 0;
+        int len = input.length() - 1;
 
-    while (index < len) {
-      char left = input.charAt(index);
-      char right = input.charAt(index + 1);
-      if (left == right) {
-        // index + 2 means skip  1 char
-        input = input.substring(0, index) + input.substring(index + 2);
-        // we need to reset to from head and length
-        len = input.length() - 1;
-        index = 0;
-        System.out.println(input + " continue input string");
-        continue;
-      }
-      index++;
+        while (index < len) {
+            char left = input.charAt(index);
+            char right = input.charAt(index + 1);
+            if (left == right) {
+                // index + 2 means skip  1 char
+                input = input.substring(0, index) + input.substring(index + 2);
+                // we need to reset to from head and length
+                len = input.length() - 1;
+                index = 0;
+                System.out.println(input + " continue input string");
+                continue;
+            }
+            index++;
+        }
     }
-  }
 }

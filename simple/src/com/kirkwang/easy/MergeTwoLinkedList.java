@@ -48,6 +48,7 @@ public class MergeTwoLinkedList {
             merged = merged.next;
         }
     }
+
     public ListNode mergeTwoLinkedList(ListNode left, ListNode right) {
         ListNode fakeNode = new ListNode(0);
         ListNode ptr = fakeNode;

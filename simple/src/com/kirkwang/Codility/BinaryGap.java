@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 /**
  * Created by kewang on 11/8/17.
- *
+ * <p>
  * https://codility.com/programmers/lessons/1-iterations/binary_gap/
- *
- *
+ * <p>
+ * <p>
  * For example, given N = 1041 the function should return 5, because N has binary representation
  * 10000010001 and so its longest binary gap is of length 5.
  */

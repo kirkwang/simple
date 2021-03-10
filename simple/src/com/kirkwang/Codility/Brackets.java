@@ -13,42 +13,42 @@ package com.kirkwang.Codility;
  */
 public class Brackets {
 
-  public static int matching(String S) {
-    java.util.Stack<Character> bracket = new java.util.Stack();
-    for (int i = 0; i < S.length(); i++) {
-      if (bracket.empty()) {
-        bracket.push(S.charAt(i));
-      } else {
-        Character left = bracket.peek();
-        if (compare(left, S.charAt(i))) {
-          bracket.pop(); // remove matching pair
-        } else {
-          bracket.push(S.charAt(i));
+    public static int matching(String S) {
+        java.util.Stack<Character> bracket = new java.util.Stack();
+        for (int i = 0; i < S.length(); i++) {
+            if (bracket.empty()) {
+                bracket.push(S.charAt(i));
+            } else {
+                Character left = bracket.peek();
+                if (compare(left, S.charAt(i))) {
+                    bracket.pop(); // remove matching pair
+                } else {
+                    bracket.push(S.charAt(i));
+                }
+            }
         }
-      }
+        return bracket.isEmpty() ? 1 : 0;
     }
-    return bracket.isEmpty() ? 1 : 0;
-  }
 
-  private static boolean compare(char left, Character right) {
-    switch (left) {
-      case '{':
-        return right == '}';
-      case '[':
-        return right.equals(']');
+    private static boolean compare(char left, Character right) {
+        switch (left) {
+            case '{':
+                return right == '}';
+            case '[':
+                return right.equals(']');
 
-      case '(':
-        return right.equals(')');
+            case '(':
+                return right.equals(')');
 
-      default:
-        return false;
+            default:
+                return false;
+        }
     }
-  }
 
-  public static void main(String[] args) {
-    String s = "{[]{()()}}";
-    s = "asdf";
-    s = "{[()(";
-    System.out.println(matching(s));
-  }
+    public static void main(String[] args) {
+        String s = "{[]{()()}}";
+        s = "asdf";
+        s = "{[()(";
+        System.out.println(matching(s));
+    }
 }

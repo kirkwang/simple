@@ -62,8 +62,8 @@ public class MostCommonChar {
     }
 
     public static class CompChar {
-        private char aChar;
-        private int aCount;
+        private final char aChar;
+        private final int aCount;
 
         CompChar(char c, int count) {
             this.aChar = c;

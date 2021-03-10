@@ -18,14 +18,14 @@ public class PalindromePermutation {
     }
 
     /*
-    * "code"->false, "aab"-> true, "carerac" -> true
+     * "code"->false, "aab"-> true, "carerac" -> true
      */
     public boolean palindromePermutation(String source) {
         Map<Character, Integer> m = new HashMap();
 
         for (int i = 0; i < source.length(); i++) {
             if (m.containsKey(source.charAt(i))) {
-                m.put(source.charAt(i),  m.get(source.charAt(i)) + 1);
+                m.put(source.charAt(i), m.get(source.charAt(i)) + 1);
             } else {
                 m.put(source.charAt(i), 1);
             }

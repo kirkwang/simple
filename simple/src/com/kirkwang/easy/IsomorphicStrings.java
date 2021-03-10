@@ -26,32 +26,32 @@ You may assume both s and t have the same length.
  */
 public class IsomorphicStrings {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-      System.out.print(IsomorphicStrings.isomorphicStrings("daa", "add"));
-  }
-
-  public static boolean isomorphicStrings(String source, String target) {
-    if (source.length() != target.length()) {
-      return false;
+        System.out.print(IsomorphicStrings.isomorphicStrings("daa", "add"));
     }
-    Map<Character, Character> map1 = new HashMap<Character, Character>(); //daa, add
-    Map<Character, Character> map2 = new HashMap<Character, Character>(); //add, daa
 
-    for (int i = 0; i < source.length(); i++) {
-      if (map1.containsKey(source.charAt(i))) {
-        if (map1.get(source.charAt(i)) != target.charAt(i)) {
-          return false;
+    public static boolean isomorphicStrings(String source, String target) {
+        if (source.length() != target.length()) {
+            return false;
         }
-      }
-      if (map2.containsKey(target.charAt(i))) {
-        if (map2.get(target.charAt(i)) != source.charAt(i)) {
-          return false;
+        Map<Character, Character> map1 = new HashMap<Character, Character>(); //daa, add
+        Map<Character, Character> map2 = new HashMap<Character, Character>(); //add, daa
+
+        for (int i = 0; i < source.length(); i++) {
+            if (map1.containsKey(source.charAt(i))) {
+                if (map1.get(source.charAt(i)) != target.charAt(i)) {
+                    return false;
+                }
+            }
+            if (map2.containsKey(target.charAt(i))) {
+                if (map2.get(target.charAt(i)) != source.charAt(i)) {
+                    return false;
+                }
+            }
+            map1.put(source.charAt(i), target.charAt(i));
+            map2.put(target.charAt(i), source.charAt(i));
         }
-      }
-      map1.put(source.charAt(i), target.charAt(i));
-      map2.put(target.charAt(i), source.charAt(i));
+        return true;
     }
-    return true;
-  }
 }

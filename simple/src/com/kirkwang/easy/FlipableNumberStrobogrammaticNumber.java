@@ -25,7 +25,7 @@ public class FlipableNumberStrobogrammaticNumber {
     }
 
     /*
-    *The numbers are 69, 121, 88, 818
+     *The numbers are 69, 121, 88, 818
      */
     public boolean flipableNumberStrobogrammaticNumber(String number) {
         for (int i = 0; i < number.length() / 2; i++) {

@@ -5,11 +5,11 @@ package com.kirkwang.basicStructure.JavaHungry;
  */
 public class MyClass {
 
-  public MyClass(int c, int d) {
-    System.out.println("hi there");
-  }
+    public MyClass(int c, int d) {
+        System.out.println("hi there");
+    }
 
-  public int multiply(int a, int b) {
-    return a * b;
-  }
+    public int multiply(int a, int b) {
+        return a * b;
+    }
 }

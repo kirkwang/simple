@@ -32,6 +32,7 @@ public class SuperReducedString {
         }
         return stack.isEmpty() ? "Empty String" : stack.stream().map(i -> i.toString()).collect(Collectors.joining());
     }
+
     static String superReducedStringStack(String s) {
         Stack<Character> stack = new Stack();
         String result;

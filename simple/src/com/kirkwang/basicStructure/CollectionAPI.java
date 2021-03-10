@@ -49,7 +49,7 @@ public class CollectionAPI {
     vegetables.forEach(System.out::println);
     int counter = 0;
     Collections.fill(vegetables,
-        "filled with dummy data"); //fill will cover up every thing with dummy datejjj
+            "filled with dummy data"); //fill will cover up every thing with dummy datejjj
     vegetables.forEach(System.out::println);
     System.out.println(Collections.frequency(vegetables, "Cabbage"));//print 0 // this is no cabbage
   }

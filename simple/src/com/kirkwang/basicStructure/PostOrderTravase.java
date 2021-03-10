@@ -11,48 +11,48 @@ import java.util.TreeSet;
 @Deprecated //incomplete
 public class PostOrderTravase {
 
-  public static void main(String... arg) {
-    Set<String> treeSet = new TreeSet<String>();
-    treeSet.add("a");
-    treeSet.add("b");
-    treeSet.add("c");
+    public static void main(String... arg) {
+        Set<String> treeSet = new TreeSet<String>();
+        treeSet.add("a");
+        treeSet.add("b");
+        treeSet.add("c");
 
-    Node aNode = new Node(0);
-    aNode.setNodeValue(11);
-    aNode.setNodeValue(3);
-    aNode.setNodeValue(7);
-    aNode.setNodeValue(71);
-    Iterator it = treeSet.iterator();
-    while (it.hasNext()) {
-      Object element = it.next();
-      System.out.println(element);
+        Node aNode = new Node(0);
+        aNode.setNodeValue(11);
+        aNode.setNodeValue(3);
+        aNode.setNodeValue(7);
+        aNode.setNodeValue(71);
+        Iterator it = treeSet.iterator();
+        while (it.hasNext()) {
+            Object element = it.next();
+            System.out.println(element);
+        }
+
+        postOrder(aNode);
+
+        String[] array = treeSet.toArray(new String[treeSet.size()]);
+        Arrays.toString(array);
+
+        String s1 = "hello";
+        String s2 = "hello";
+        String s3 = "hello";
+
+        System.err.println(s1 == s2);
+        System.err.println(s2 == s3);
+
     }
 
-    postOrder(aNode);
+    static void postOrder(Node root) {
 
-      String[] array = treeSet.toArray(new String[treeSet.size()]);
-    Arrays.toString(array);
+        if (root == null) {
+            return;
+        }
 
-      String s1 = "hello";
-    String s2 = "hello";
-    String s3 = "hello";
+        postOrder(root.leftNode());
+        postOrder(root.rightNode());
 
-    System.err.println(s1 == s2);
-    System.err.println(s2 == s3);
+        //  root.getNodeValue();
+        System.out.println(root.getNodeValue() + " ");
 
-  }
-
-  static void postOrder(Node root) {
-
-    if (root == null) {
-      return;
     }
-
-    postOrder(root.leftNode());
-    postOrder(root.rightNode());
-
-    //  root.getNodeValue();
-    System.out.println(root.getNodeValue() + " ");
-
-  }
 }

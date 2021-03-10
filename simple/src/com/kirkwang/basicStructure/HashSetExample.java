@@ -10,22 +10,22 @@ import java.util.Set;
  */
 public class HashSetExample {
 
-  public static void main(String[] args) {
-    Set<Integer> set = new HashSet<>();
-    set.add(1);
-    set.add(2);
-    set.add(3);
+    public static void main(String[] args) {
+        Set<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(3);
 
 
-    set.remove(3);
+        set.remove(3);
 
-    for (Integer integer : set) {
-      System.out.println(integer);
+        for (Integer integer : set) {
+            System.out.println(integer);
+        }
+        HashMap<Integer, String> hashMap = new HashMap();
+        System.out.println("For Loop:");
+        for (Map.Entry me : hashMap.entrySet()) {
+            System.out.println("Key: " + me.getKey() + " & Value: " + me.getValue());
+        }
     }
-      HashMap<Integer, String> hashMap = new HashMap();
-      System.out.println("For Loop:");
-      for (Map.Entry me : hashMap.entrySet()) {
-          System.out.println("Key: " + me.getKey() + " & Value: " + me.getValue());
-      }
-  }
 }

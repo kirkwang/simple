@@ -4,8 +4,7 @@ package com.kirkwang.easy;
  * Created by kewang on 4/22/16.
  */
 
-public class keygen
-{
+public class keygen {
     /**
      * @param s
      * @param i

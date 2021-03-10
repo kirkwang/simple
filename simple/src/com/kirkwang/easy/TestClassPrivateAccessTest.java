@@ -12,9 +12,12 @@ public class TestClassPrivateAccessTest {
     public void setUp() throws Exception {
 
     }
-    public void testhereisthetest(){
-        new MajorityElement.TestClassPrivateAccess() {};
+
+    public void testhereisthetest() {
+        new MajorityElement.TestClassPrivateAccess() {
+        };
     }
+
     @AfterMethod
     public void tearDown() throws Exception {
 

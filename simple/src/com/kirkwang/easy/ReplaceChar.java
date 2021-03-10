@@ -14,46 +14,48 @@ public class ReplaceChar {
 // By the way this programming question is quite common on technical interviews not just Java but also C, C++ or Scala, 
 // but knowing API definitely helps to produce better solution quickly.
 
-  public static void main(String ... args){
-      //  System.out.println("Output for replaceCharAt(): " + ReplaceChar.replaceCharAt("eBay Google Paypal", 10, '$'));
-      System.out.println("Output for removeChar(): " + ReplaceChar.removeChar("eBay Google Paypal", 'a'));
-      //  System.out.println("Output for removeCharAt(): " + ReplaceChar.removeCharAt("eBay Google Paypal", 5));
-  }
-
-  private static String replaceCharAt(String s, int i , char c){
-    StringBuffer buf = new StringBuffer();
-      if (i < s.length()) {
-          buf.setCharAt(i, c);
-      }
-    return buf.toString();
-  }
-  private static String removeChar(String s, char c) {
-
-      StringBuffer buf = new StringBuffer();
-    buf.setLength(s.length());
-    int current = 0;
-    for (int i=0; i<s.length(); i++){
-      char cur = s.charAt(i);
-      if(cur != c) buf.setCharAt(current++, cur);
+    public static void main(String... args) {
+        //  System.out.println("Output for replaceCharAt(): " + ReplaceChar.replaceCharAt("eBay Google Paypal", 10, '$'));
+        System.out.println("Output for removeChar(): " + ReplaceChar.removeChar("eBay Google Paypal", 'a'));
+        //  System.out.println("Output for removeCharAt(): " + ReplaceChar.removeCharAt("eBay Google Paypal", 5));
     }
-    return buf.toString();
-  }
-   private static String removeCharAt(String s, int i){
-    StringBuffer buf = new StringBuffer(s.length() -1);
-       buf.append(s, 0, i).append(s.substring(i + 1));
-     return buf.toString();
-   }
 
-  private static String deleteAllNonDigit(String s) {
-    String temp = s.replaceAll("\\D", "");
-    return temp;
-  }
+    private static String replaceCharAt(String s, int i, char c) {
+        StringBuffer buf = new StringBuffer();
+        if (i < s.length()) {
+            buf.setCharAt(i, c);
+        }
+        return buf.toString();
+    }
 
-  public static String repalceAllChar(String s, String f, String r){
-    String temp = s.replace(f ,r);
-    return temp;
-  }
-  
+    private static String removeChar(String s, char c) {
+
+        StringBuffer buf = new StringBuffer();
+        buf.setLength(s.length());
+        int current = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char cur = s.charAt(i);
+            if (cur != c) buf.setCharAt(current++, cur);
+        }
+        return buf.toString();
+    }
+
+    private static String removeCharAt(String s, int i) {
+        StringBuffer buf = new StringBuffer(s.length() - 1);
+        buf.append(s, 0, i).append(s.substring(i + 1));
+        return buf.toString();
+    }
+
+    private static String deleteAllNonDigit(String s) {
+        String temp = s.replaceAll("\\D", "");
+        return temp;
+    }
+
+    public static String repalceAllChar(String s, String f, String r) {
+        String temp = s.replace(f, r);
+        return temp;
+    }
+
 //  private static String removeCharAt(String s, int i) {
 //    StringBuffer buf = new StringBuffer(s.length() -1);
 //    buf.append(s.substring(0, i)).append(s.substring(i+1));

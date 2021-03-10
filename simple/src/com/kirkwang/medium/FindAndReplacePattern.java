@@ -11,7 +11,7 @@ import java.util.Map;
 
 class FindAndReplacePattern {
 
-    private List<String> arrayList = new ArrayList();
+    private final List<String> arrayList = new ArrayList();
 
     public static void main(String[] args) {
         FindAndReplacePattern frp = new FindAndReplacePattern();
