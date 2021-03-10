@@ -19,17 +19,17 @@ public class PermCheck {
 
         Scanner scn = new Scanner(System.in);
         // int[] n = scn.nextInt();
-        int[] n = new int[]{4, 1, 3};
+        int[] n = new int[]{2, 1, 3};
         //  int[] n = new int[]{  9, 3, 9, 3, 1, 4, 4};
         //  solution(n);
-        System.out.print(solutionV1(n));
+        System.out.print(solution(n));
     }
 
     public static int solution(int[] A) {
         int n = A.length + 1;
         int sum = n * (n + 1) / 2;
 
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < A.length; i++) {
             sum -= A[i];
         }
 
