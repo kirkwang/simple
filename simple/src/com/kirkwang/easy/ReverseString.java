@@ -8,18 +8,17 @@ import java.io.IOException;
 public class ReverseString {
 
     public static String ReverseString(String input) {
-        if (input == null) {
-            return null;
+        if (input == null || input.length() == 0) {
+            return input;
         }
-        char[] chars = input.toCharArray();
-        int j = chars.length - 1;
-        for (int i = 0; i < chars.length / 2; i++) {
-            char temp = chars[i];
-            chars[i] = chars[j - i];
-            chars[j - i] = temp;
+        char[] cArray = input.toCharArray();
+        for (int i = 0; i < input.length() / 2; i++) {
+            char temp = cArray[i];
+            cArray[i] = cArray[input.length() - 1 - i];
+            cArray[input.length() - 1 - i] = temp;
+        }
 
-        }
-        return String.valueOf(chars);
+        return String.valueOf(cArray);
     }
 
     public static void main(String[] args) throws IOException {
