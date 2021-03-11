@@ -25,18 +25,18 @@ public class LongestCommonPrefix {
     }
 
     public String LongestCommonPrefix(String[] strs) {
-        //find the shortest phase
-        String minString = strs[0];
+        String minStr = strs[0];
+
         for (int i = 1; i < strs.length; i++) {
-            if (strs[i].length() < minString.length()) {
-                minString = strs[i];
+            if (minStr.length() > strs[i].length()) {
+                minStr = strs[i];
             }
         }
-        int end = minString.length();
+        int end = minStr.length();
         for (int i = 0; i < strs.length; i++) {
             int j;
             for (j = 0; j < end; j++) {
-                if (minString.charAt(j) != strs[i].charAt(j)) {
+                if (minStr.charAt(j) != strs[i].charAt(j)) {
                     break;
                 }
             }
@@ -44,7 +44,7 @@ public class LongestCommonPrefix {
                 end = j;
             }
         }
-        return minString.substring(0, end);
+        return minStr.substring(0, end);
     }
 
     public String LongestCommonPrefixV2(String[] strs) {
