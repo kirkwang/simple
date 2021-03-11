@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Created by kewang on 3/3/16.
  * <p>
- * https://leetcode.com/problems/contains-duplicate-ii/description/
+ * https://just4once.gitbooks.io/leetcode-notes/content/leetcode/hash-table/219-contains-duplicate-ii.html
  */
 public class ContainsNearByDubByK {
 
@@ -19,15 +19,16 @@ public class ContainsNearByDubByK {
     }
 
     public static boolean ContainsNearByDub(int[] nums, int k) {
-        HashMap<Integer, Integer> map = new HashMap();
+        HashMap<Integer, Integer> hm = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(nums[i])) {
-                int prevLoc = map.get(nums[i]);
-                if (i - prevLoc <= k) {
-                    return true;
-                }
+            if (hm.containsKey(nums[i])) {
+                Integer preLoc = hm.get(nums[i]);
+                if (i - preLoc <= k) return true;
+
+            } else {
+                hm.put(nums[i], i);
             }
-            map.put(nums[i], i);
+
         }
 
         return false;
