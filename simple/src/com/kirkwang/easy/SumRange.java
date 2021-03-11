@@ -35,8 +35,11 @@ public class SumRange {
     }
 
     public static void main(String[] args) {
-        SumRange sr = new SumRange(new int[]{-12, 0, 6, -5, 2, -1});
-        System.out.print(sr.SumRange(2, 4));
+        int[] target = new int[]{-12, 0, 6, -5, 2, -1};
+        System.out.print(rangeSum(target, 2, 4));
+        //SumRange sr = new SumRange(target);
+        //System.out.print(sr.SumRange(2, 4));
+
     }
 
     public int SumRange(int s, int e) {
@@ -45,4 +48,13 @@ public class SumRange {
         }
         return total[e] - total[s - 1];
     }
+
+    public static int rangeSum(int[] target, int begin, int end) {
+        int total = 0;
+        for (int i = begin; i <= end; i++) {
+            total += target[i];
+        }
+        return total;
+    }
+
 }
