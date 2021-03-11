@@ -15,50 +15,51 @@ public class IsAnagram {
 
     public static void main(String[] args) throws InterruptedException {
         String source = "aab";
-        String target = "aba";
+        String target = "abb";
 
         String firstWord = "hellohackerrankhellohackerrankhellohackerrankhellohackerrankhellohackerrank";
         String secondWord = "kcrhearaknhlloekcrhearaknhlloekcrhearaknhlloekcrhearaknhlloekcrhearaknhlloe"; //take any string
         long begin = System.currentTimeMillis();
-        checkAnagram(firstWord, secondWord);
+        boolean result = checkAnagram(source, target);
 
         long end = System.currentTimeMillis() - begin;
-        System.out.print("Total mil sec" + end);
+        System.out.println("Total mil sec" + end);
+        System.out.println("result is " + result);
     }
 
     public static boolean checkAnagram(String source, String target) {
-
         if (source == null || target == null) {
             return false;
-
         }
-        if (source.length() != target.length()) {
+        if (source.length() == 0 || target.length() == 0) {
             return false;
         }
-        Map<Character, Integer> hashMap = new HashMap();
+        if (source.length() != target.length()) return false;
+
+        Map<Character, Integer> hm = new HashMap<>();
 
         for (int i = 0; i < source.length(); i++) {
-            char c = source.charAt(i);
-            if (hashMap.containsKey(c)) {
-                hashMap.put(c, hashMap.get(c) + 1);
+            Character c = source.charAt(i);
+            if (hm.containsKey(c)) {
+                hm.put(c, hm.get(c) + 1);
             } else {
-                hashMap.put(c, 1);
+                hm.put(c, 1);
             }
         }
 
         for (int i = 0; i < target.length(); i++) {
-            char c = target.charAt(i);
-            if (hashMap.containsKey(c)) {
-                if (hashMap.get(c) == 1) {
-                    hashMap.remove(c);
+            Character t = target.charAt(i);
+            if (hm.containsKey(t)) {
+                if (hm.get(t) == 1) {
+                    hm.remove(t);
                 } else {
-                    hashMap.put(c, hashMap.get(c) - 1);
+                    hm.put(t, hm.get(t) - 1);
                 }
             } else {
                 return false;
             }
         }
-        return hashMap.size() <= 0;
+        return hm.size() <= 0;
     }
 
     public static boolean IsAnagram(String source, String target) {
