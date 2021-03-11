@@ -1,5 +1,7 @@
 package com.kirkwang.easy;
 
+import java.util.HashMap;
+
 /**
  * Created by kewang on 12/27/15.
  */
@@ -16,24 +18,40 @@ The key of the problem is to understand what is called "strobogrammatic number".
 
 Consequently, we could use two pointers, one starts from the beginning and one from the end. If they are equal && substrobogrammatic (not including 6 and 9), continue; else return false.
 If not, but could be 6 and 9 or 9 and 6, respectively, continue; else return false;
+https://programmersought.com/article/1411588186/
  */
 public class FlipableNumberStrobogrammaticNumber {
     public static void main(String[] args) {
         FlipableNumberStrobogrammaticNumber fnumber = new FlipableNumberStrobogrammaticNumber();
-        boolean flag = fnumber.flipableNumberStrobogrammaticNumber("66 000 99");
+        boolean flag = fnumber.fnsn("66 000 99");
         System.out.print(flag);
     }
 
     /*
      *The numbers are 69, 121, 88, 818
      */
-    public boolean flipableNumberStrobogrammaticNumber(String number) {
-        for (int i = 0; i < number.length() / 2; i++) {
-            char left = number.charAt(i);
-            char right = number.charAt(number.length() - 1 - i);
-            return isflipable(left, right);
+    public boolean fnsn(String number) {
+        if (number == null || number.length() == 0) return true;
+        HashMap<Character, Character> hm = new HashMap();
+        hm.put('0', '0');
+        hm.put('6', '9');
+        hm.put('9', '6');
+        hm.put('1', '1');
+        hm.put('8', '8');
+        hm.put(' ', ' ');
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < number.length(); i++) {
+            char temp = number.charAt(i);
+            if (!hm.containsKey(temp)) {
+                return false;
+            }
+            sb.append(hm.get(temp));
         }
-        return false;
+
+        return sb.reverse().toString().equals(number);
+
     }
 
     private boolean isflipable(char left, char right) {
