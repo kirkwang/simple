@@ -16,15 +16,20 @@ public class RomanToDecimalV1 {
         ht.put('D', 500);
 
         int result = 0;
-        int prev = 0;
+        int preNumber = 0;
         for (int i = input.length() - 1; i >= 0; i--) {
             int temp = ht.get(input.charAt(i));
-            if (prev > temp)
+            if (preNumber > temp) {
+
                 result -= temp;
-            else
+
+            } else {
                 result += temp;
-            prev = temp;
+
+            }
+            preNumber = temp;
         }
+
         return result;
     }
 
@@ -32,7 +37,7 @@ public class RomanToDecimalV1 {
         String thirtySix = "XXXVI";
         String twentyTwentyOne = "MMXII";
         String nintheenNitySix = "MCMXCVI";
-        System.out.println(rtoi(nintheenNitySix));
+        System.out.println(rtoi(thirtySix));
     }
 
 }
