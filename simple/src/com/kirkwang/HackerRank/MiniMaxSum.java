@@ -19,15 +19,14 @@ public class MiniMaxSum {
         Integer max = 0;
 
         for (int i = 0; i < input.length; i++) {
-            if (i + 1 <= input.length - 1) { //check if it has reached the end
+            if (i + 1 <= input.length - 1) { //look one ahead to check if it has reach the end.
                 mini += input[i];
-
             }
 
-            max += input[input.length - i - 1]; //sum while going backward
+            max += input[input.length - 1 - i]; //sum while going backward
 
         }
-        max = max - input[0];
+        max = max - input[0]; // skip the 1st one
         System.out.println(" mini " + mini + " max " + max);
         return mini;
     }

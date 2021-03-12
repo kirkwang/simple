@@ -20,9 +20,9 @@ public class MaxProfit {
         }
         int maxProfit = Integer.MIN_VALUE;
 
-        for (int i = 0; i < A.length; i++) {
-            for (int j = A.length - 1; j > i; j--) {
-                int profit = A[j] - A[i];
+        for (int i = 0; i < A.length; i++) { //from the beginning
+            for (int j = A.length - 1; j > i; j--) { // from the end
+                int profit = A[j] - A[i];   // find the differance
                 if (profit > maxProfit) {
                     maxProfit = profit;
                 }
@@ -37,12 +37,7 @@ public class MaxProfit {
 
         int[] A = new int[]{23171, 21011, 21123, 21366, 21013, 21367};
         int[] n = new int[]{5, 4, 3, 2, 1}; //5, 4, 3, 2, 1
-//    A[0] = 23171;
-//    A[1] = 21011;
-//    A[2] = 21123;
-//    A[3] = 21366;
-//    A[4] = 21013;
-//    A[5] = 21367;
+
 
         System.out.println(MaxProfit(n));
     }
