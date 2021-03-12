@@ -35,20 +35,21 @@ import java.util.List;
  * <p>
  * Input: 4 Output: "1211"
  */
-@Deprecated // not coded yet
+
 public class CountAndSay {
 
     public static List CountAndSay(int[] input) {
-        int tail = 0;
+
         int counter = 1;
         List list = new ArrayList<>();
-        for (int i = 0; i < input.length; i++) {
 
-            if (input[i] == input[i - 1]) {
+        for (int i = 1; i < input.length; i++) {
+
+            if (input[i - 1] == input[i]) {
                 counter++;
             } else {
                 list.add(counter);
-                list.add(input[i + 1]);
+                list.add(input[i - 1]);
                 counter = 1;
             }
 
@@ -59,7 +60,6 @@ public class CountAndSay {
     }
 
     public static void main(String[] args) {
-
         System.out.print(CountAndSay(new int[]{1, 1, 1, 2}));
     }
 

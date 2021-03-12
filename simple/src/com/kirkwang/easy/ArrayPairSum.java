@@ -42,18 +42,21 @@ class ArrayPairSum {
         int left = 0;
         int right = nums.length - 1;
         while (left < right) {
-            if (nums[left] + nums[right] == total) return 1;
-            else if (nums[left] + nums[right] < total) left++;
-            else right--;
+            if (nums[left] + nums[right] == total) {
+                return 1;
+            } else if (nums[left] + nums[right] < total) {
+                left++;
+            } else right--;
+
         }
-        return 0;
+        return -1;
     }
 
     public static void main(String[] args) {
 
         Integer[] integers = new Integer[]{6, 1, 3, 46, 1, 3, 9};
         //  System.out.println("ArrayPairSum " + ArrayPairSum.min(8, new Integer[]{3, 4, 5, 4, 4}));
-        System.out.println("ArrayPairSum " + ArrayPairSum.min_1(5, integers));
+        System.out.println("ArrayPairSum " + ArrayPairSum.min_1(7, integers));
 
     }
 }
