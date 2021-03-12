@@ -2,6 +2,7 @@ package com.kirkwang.HackerRank;
 
 /**
  * Created by kewang on 10/31/17.
+ * https://www.hackerrank.com/challenges/mini-max-sum/problem
  */
 public class MiniMaxSum {
 
@@ -16,14 +17,14 @@ public class MiniMaxSum {
     public Integer miniMaxSum(int[] input) {
         Integer mini = 0;
         Integer max = 0;
-        int index = 0;
+
         for (int i = 0; i < input.length; i++) {
-            if (i + 1 <= input.length - 1) {
-                mini = input[i] + mini;
+            if (i + 1 <= input.length - 1) { //check if it has reached the end
+                mini += input[i];
 
             }
 
-            max = input[input.length - i - 1] + max;
+            max += input[input.length - i - 1]; //sum while going backward
 
         }
         max = max - input[0];

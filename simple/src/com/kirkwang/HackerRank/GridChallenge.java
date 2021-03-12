@@ -8,7 +8,7 @@ package com.kirkwang.HackerRank;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
+@Deprecated
 public class GridChallenge {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

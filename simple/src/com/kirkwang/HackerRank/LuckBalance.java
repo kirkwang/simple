@@ -9,7 +9,7 @@ package com.kirkwang.HackerRank;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+@Deprecated
 public class LuckBalance {
 
     static int luckBalance(int k, int[][] contests) {

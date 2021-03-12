@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Deprecated
 public class IceCreamParlor {
     static void whatFlavors(int[] costs, int money) {
         int m = money;

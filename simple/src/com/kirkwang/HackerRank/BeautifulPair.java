@@ -20,6 +20,7 @@ import java.util.Scanner;
 //  Time Complexity: O(n)
 // Space Complexity: O(1)
 
+@Deprecated // not following
 public class BeautifulPair {
 
     public static void main(String[] args) {

@@ -3,6 +3,7 @@ package com.kirkwang.HackerRank;
 /**
  * Created by kewang on 11/14/17.
  */
+@Deprecated
 public class DiagonalDifference {
 
     public static int diagonalDifference(int[] input) {
