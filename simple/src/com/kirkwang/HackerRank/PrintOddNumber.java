@@ -4,20 +4,23 @@ package com.kirkwang.HackerRank;
  * Created by kewang on 11/1/17.
  */
 public class PrintOddNumber {
-    static int[] oddNumbers(int l, int r) {
-        int[] oddnumbers = null;
-        int arraryindex = 0;
-        if (r < l) {
-            return oddnumbers;
+    static int[] oddNumbers(int left, int right) {
+
+        if (right < left) {
+            return new int[]{};
         }
-        oddnumbers = new int[(r - l) / 2];
-        for (int index = l; index < r; index++) {
-            if (index % 2 != 0) {
-                System.out.println(index);
-                oddnumbers[arraryindex++] = index;
+        int index = 0;
+        int[] result = new int[(right - left) / 2];
+
+        for (int temp = left; temp < right; temp++) {
+
+            if (temp % 2 == 0) {
+                result[index++] = temp;
             }
+
         }
-        return oddnumbers;
+        return result;
+
     }
 
     public static void main(String[] args) {
@@ -25,6 +28,9 @@ public class PrintOddNumber {
 
         Integer[] array = new Integer[]{1, 2, 3, 4, 5};
         int[] arr = new int[]{1, 3, 5, 7, 9};
-        oddNumbers(2, 10);
+        arr = oddNumbers(2, 10);
+        for (int i : arr) {
+            System.out.println(i);
+        }
     }
 }
