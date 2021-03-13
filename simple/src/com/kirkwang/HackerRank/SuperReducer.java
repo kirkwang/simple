@@ -1,5 +1,7 @@
 package com.kirkwang.HackerRank;
 
+import java.util.Stack;
+
 /**
  * Created by kewang on 10/31/17. Problem Statement Steve has a string, S, consisting of n lowercase
  * English alphabetic >letters. In one operation, he can delete any pair of adjacent letters with
@@ -21,13 +23,39 @@ package com.kirkwang.HackerRank;
  * <p>Sample Output abd
  */
 public class SuperReducer {
-    // aaabccddd
+
+    // Complete the superReducedString function below.
+    static String superReducedString(String s) {
+        Stack<Character> stack = new Stack();
+
+        for (char c : s.toCharArray()) {
+            if (stack.empty()) {
+                stack.push(c);
+            } else {
+                if (stack.peek() == c) {
+                    stack.pop();
+                } else {
+                    stack.push(c);
+                }
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        for (Character c : stack) {
+            sb.append(c);
+        }
+        return sb.toString();
+        //return stack.isEmpty() ? "Empty String" : (String) stack.stream().map(i -> i.toString()).collect(Collectors.joining());
+    }
+
 
     public static void main(String[] args) {
         String input = "aaaabccddd";
-        //  input = input.substring(0, 1);
-        // input = input.substring(2);
+
+        String reduced = superReducedString(input);
+
         System.out.println(input + " simple input string");
+        System.out.println(reduced + " reduced string");
+
         int index = 0;
         int len = input.length() - 1;
 
