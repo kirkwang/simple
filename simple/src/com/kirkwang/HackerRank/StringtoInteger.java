@@ -7,20 +7,29 @@
 package com.kirkwang.HackerRank;
 
 public class StringtoInteger {
-    public static void StringtoInteger(String input) {
-        Integer result = null;
-        try {
-            result = Integer.parseInt(input);
-            System.out.println(result);
-        } catch (NumberFormatException e) {
-            System.out.println("Bad String");
+    public static int StringtoInteger(String input) {
+        if (input == null || input.length() == 0) {
+            return -1;
         }
+        int result = 0;
+        boolean neg = false;
+        String numberOnly = input.trim().replaceAll("[^0-9-+]", "");
+        for (int i = 0; i < numberOnly.length(); i++) {
+            char c = numberOnly.charAt(i);
+            if (Character.isDigit(c)) {
+                int nValue = Character.getNumericValue(c);
+                result = nValue + result * 10;
+            } else {
+                neg = true;
+            }
+        }
+        return neg ? Integer.parseInt("-" + result) : result;
     }
 
     public static void main(String[] args) {
 
-        String input = "2342";
-        input = "adf";
-        StringtoInteger.StringtoInteger(input);
+        String input = "-2342";
+
+        System.out.println(StringtoInteger.StringtoInteger(input));
     }
 }

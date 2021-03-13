@@ -18,7 +18,7 @@ public class SingObjectPrinter {
         if (o instanceof String[]) {
             System.out.println(Arrays.toString((String[]) o));
         } else if (o instanceof int[]) {
-            System.out.println(Arrays.toString((int[]) o));
+            System.out.println("This is int[] " + Arrays.toString((int[]) o));
         } else {
             System.out.println(Arrays.toString((Object[]) o));
         }
