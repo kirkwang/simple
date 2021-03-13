@@ -23,19 +23,21 @@ class RevealCardsInIncreasingOrder {
     }
 
     public int[] deckRevealedIncreasing(int[] deck) {
-        int N = deck.length;
-        LinkedList<Integer> index = new LinkedList();
-        for (int i = 0; i < N; ++i)
+        LinkedList<Integer> index = new LinkedList<>();
+        for (int i = 0; i < deck.length; i++) {
+            //index has the INDEX
             index.add(i);
-
-        int[] ans = new int[N];
-        Arrays.sort(deck);
-        for (int card : deck) {
-            ans[index.pollFirst()] = card;
-            if (!index.isEmpty())
-                index.add(index.pollFirst());
         }
-
+        int[] ans = new int[deck.length];
+        Arrays.sort(deck);
+        for (int i = 0; i < deck.length; i++) {
+            //the deck[i] card is going to into ans location with index from the list
+            ans[index.pollFirst()] = deck[i];
+            if (!index.isEmpty()) {
+                //pull the next index and put it back to the queue/linked list
+                index.add(index.pollFirst());
+            }
+        }
         return ans;
     }
 }
