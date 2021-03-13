@@ -11,29 +11,29 @@ import java.util.Stack;
 public class MinAddToMakeValid {
     public static void main(String[] args) {
         MinAddToMakeValid matmv = new MinAddToMakeValid();
-        int result = matmv.minAddToMakeValid("(((");
+        int result = matmv.minAddToMakeValid("()))((");
         System.out.println(result);
     }
 
     public int minAddToMakeValid(String input) {
-        Stack stack = new Stack();
+        Stack<Character> myStack = new Stack();
         for (int i = 0; i < input.length(); i++) {
-            char current = input.charAt(i);
-            if (stack.empty()) {
-                stack.push(current);
+            if (myStack.isEmpty()) {
+                myStack.push(input.charAt(i));
             } else {
-                char top = (char) stack.peek();
-                if (matching(top, current)) {
-                    stack.pop();
+                Character left = myStack.peek();
+                if (matching(left, input.charAt(i))) {
+                    myStack.pop();
+
                 } else {
-                    stack.push(current);
+                    myStack.push(input.charAt(i));
                 }
             }
         }
-        return stack.size();
+        return myStack.size();
     }
 
-    boolean matching(char left, char right) {
-        return left == '(' && right == ')';
+    public boolean matching(Character left, Character right) {
+        return left.equals('(') && right.equals(')');
     }
 }
