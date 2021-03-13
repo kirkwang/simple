@@ -18,24 +18,16 @@ class RangeSumofBST {
 
     public static int findRange(TreeNode node, int L, int R) {
         int ans = 0;
-        dfs(node, L, R);
+        rangeSumBST(node, L, R);
         return ans;
     }
 
-    public static void dfs(TreeNode node, int L, int R) {
-        if (node != null) {
-            if (L <= node.getVal() && node.getVal() <= R) {
-                ans = ans + node.getVal();
-            }
-            if (L < node.getVal()) {
-                dfs(node.left, L, R);
-            }
-            if (node.getVal() < R) {
-                dfs(node.right, L, R);
-            }
-
-        }
-
+    public static int rangeSumBST(TreeNode root, int L, int H) {
+        if (root == null) return 0;
+        if (root.getVal() < L)
+            return rangeSumBST(root.getRight(), L, H); // if current is smaller then Left/low , go to right
+        if (root.getVal() > H) return rangeSumBST(root.getLeft(), L, H);  // if current is bigger then High, go to left.
+        return root.getVal() + rangeSumBST(root.getRight(), L, H) + rangeSumBST(root.getLeft(), L, H); // sum current , left and right
     }
 
     public static void main(String[] args) {
