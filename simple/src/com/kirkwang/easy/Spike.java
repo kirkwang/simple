@@ -7,26 +7,17 @@
 package com.kirkwang.easy;
 
 class Spike {
-    public
-    static int findSpike(int[] input) {
-
-        if (input[0] > input[1]) {
-            return input[0];
+    public static int findSpike(int[] nums) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] > nums[i + 1])
+                return nums[i + 1];
         }
-        if (input[input.length - 1] > input[input.length - 2]) {
-            return input[input.length - 1];
-        }
-
-        for (int i = 1; i < input.length; i++) {
-            if (input[i - 1] > input[i]) {
-                return input[i - 1];
-            }
-        }
-        return input[input.length - 1];
+        return nums[0];
     }
 
     public static void main(String[] args) {
-        int[] input = new int[]{1, 2, 3, 8, 6, 10};
+        //   int[] input = new int[]{1, 2, 3, 8, 6, 10};
+        int[] input = new int[]{3, 4, 5, 1, 2};
         System.out.println(findSpike(input));
     }
 }

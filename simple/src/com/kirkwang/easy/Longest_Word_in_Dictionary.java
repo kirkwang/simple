@@ -20,7 +20,6 @@ public class Longest_Word_in_Dictionary {
         String result = "";
         if (words == null || words.length == 0) return result;
         HashSet<String> hs = new HashSet<>();
-
         Arrays.sort(words);
 
         for (int i = 0; i < words.length; i++) {

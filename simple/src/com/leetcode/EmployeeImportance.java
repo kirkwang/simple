@@ -24,7 +24,6 @@ public class EmployeeImportance {
 
     public static void main(String[] args) {
 
-
         List<Employee> arrayList = new ArrayList();
         Employee employee = new Employee();
         employee.id = 1;
