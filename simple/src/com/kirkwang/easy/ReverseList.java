@@ -8,8 +8,20 @@ import com.kirkwang.libary.ListNode;
 public class ReverseList {
 
     public static void main(String[] args) {
+        ReverseList rl = new ReverseList();
+        ListNode five = new ListNode(5);
+        ListNode four = new ListNode(4);
+        ListNode three = new ListNode(3);
+        three.next = four;
+        four.next = five;
 
-        System.out.println("This is the result " + 0);
+        ListNode result = rl.reverseList(three);
+
+        while (result != null) {
+            System.out.println("This is the result " + result.getVal());
+            result = result.next;
+        }
+
 
     }
 
