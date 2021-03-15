@@ -55,7 +55,7 @@ public class TwoSum_II {
     }
   public static void main(String[] args) {
     int[] result = TwoSum_II(new int[]{1, 2, 7, 15}, 0, 9);
-      result = TwoSum_III(new int[]{1, 2, 7, 15}, 90);
+      result = TwoSum_III(new int[]{1, 2, 7, 15}, 9);
     for (int sum : result) {
       System.out.println(sum);
     }

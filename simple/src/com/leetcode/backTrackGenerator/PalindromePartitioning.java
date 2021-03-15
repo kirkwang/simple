@@ -37,8 +37,12 @@ public class PalindromePartitioning {
       for (int i = index; i < input.length(); i++) {
 
         if (checkPalindrome(input, index, i)) {
+          //save the Palindrome to the list. the i+1 is the next char
           sublist.add(input.substring(index, i + 1));
+          // those 3 are the same list, sublist, input,
+          // index is the next char.
           generator(list, sublist, input, i + 1);
+          // sublist remove the last item
           sublist.remove(sublist.size() - 1);
         }
       }
@@ -58,7 +62,7 @@ public class PalindromePartitioning {
 
   public static void main(String[] args) {
 
-    System.out.println("This is the result " + PalindromePartitioning("aab"));
+    System.out.println("This is the result " + PalindromePartitioning("geeks"));
 
   }
 
