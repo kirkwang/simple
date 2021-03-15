@@ -15,13 +15,15 @@ public class ReplaceChar {
 // but knowing API definitely helps to produce better solution quickly.
 
     public static void main(String... args) {
-        //  System.out.println("Output for replaceCharAt(): " + ReplaceChar.replaceCharAt("eBay Google Paypal", 10, '$'));
+        String target = "eBay Google Paypal";
+        System.out.println("Output for replaceCharAt(): " + ReplaceChar.replaceCharAt(target, target.length() - 1, '$'));
         System.out.println("Output for removeChar(): " + ReplaceChar.removeChar("eBay Google Paypal", 'a'));
         //  System.out.println("Output for removeCharAt(): " + ReplaceChar.removeCharAt("eBay Google Paypal", 5));
     }
 
     private static String replaceCharAt(String s, int i, char c) {
         StringBuffer buf = new StringBuffer();
+        buf.append(s);
         if (i < s.length()) {
             buf.setCharAt(i, c);
         }
