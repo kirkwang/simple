@@ -5,6 +5,8 @@
  * kirkwang : the currently used username;
  */
 package com.kirkwang.easy;
+// It is very similar to this task
+//https://leetcode.com/problems/find-peak-element/
 
 class Spike {
     public static int findSpike(int[] nums) {
