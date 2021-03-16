@@ -16,7 +16,6 @@ You have to rotate the image in-place,which means you have to modify the input 2
 
 public class RotateImage {
 
-
     public static void main(String[] args) throws IOException {
         String[] tokens = new String[]{"2", "1", "/"};
         //[[1,2,3],[4,5,6],[7,8,9]]
