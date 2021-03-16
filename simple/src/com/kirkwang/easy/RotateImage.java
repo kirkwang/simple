@@ -13,10 +13,22 @@ public class RotateImage {
 
     public static void main(String[] args) throws IOException {
         String[] tokens = new String[]{"2", "1", "/"};
-        System.out.println(rotate(new int[2][3]));
+        //[[1,2,3],[4,5,6],[7,8,9]]
+        int[][] input = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+        int[][] result = rotate_2_loops(input);
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < result[0].length; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+
     }
 
-    public static int rotate(int[][] matrix) {
+    public static int[][] rotate(int[][] matrix) {
+
         int n = matrix.length;
         for (int i = 0; i < n / 2; i++) {
             for (int j = 0; j < Math.ceil(((double) n) / 2.); j++) {
@@ -27,7 +39,42 @@ public class RotateImage {
                 matrix[j][n - 1 - i] = temp;
             }
         }
-        return 0;
+        return matrix;
+    }
+
+    public static int[][] rotate_2_loops(int[][] matrix) {
+/*
+1 4 7
+2 5 8
+3 6 9
+  * */
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = i; j < matrix[0].length; j++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+                System.out.print(" " + matrix[i][j]);
+            }
+            System.out.println();
+        }
+/*
+        7 4 1
+        8 5 2
+        9 6 3
+*/
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length / 2; j++) {
+                int end_index = matrix[0].length - j - 1;
+                int temp = matrix[i][end_index];
+                matrix[i][end_index] = matrix[i][j];
+                matrix[i][j] = temp;
+                //  System.out.print(" " + matrix[i][j]);
+            }
+            System.out.println();
+        }
+
+        return matrix;
     }
 
 }
