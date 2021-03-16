@@ -7,6 +7,12 @@
 package com.kirkwang.easy;
 
 import java.io.IOException;
+/*
+https://leetcode.com/problems/rotate-image/submissions/
+You are given an n x n 2Dmatrix representing an image,rotate the image by 90 degrees(clockwise).
+
+You have to rotate the image in-place,which means you have to modify the input 2Dmatrix directly.DO NOT allocate another 2Dmatrix and do the rotation.
+*/
 
 public class RotateImage {
 
