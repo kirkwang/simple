@@ -2,4 +2,5 @@
 *.pub
 *.idea
 *.iml
+*.xml
 .idea/*
