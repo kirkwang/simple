@@ -21,7 +21,7 @@ public class Repeated_Substring_Pattern {
 
     public static void main(String[] args) {
 
-        String input = "abab";
+        String input = "abababab";
 //        String input = "abc";
 
         System.out.println("The result is " + Repeated_Substring_Pattern.Repeated_Substring_Pattern(input));
