@@ -5,15 +5,15 @@ import java.util.List;
 
 /**
  * Created by kewang on 12/16/17.
- *
+ * <p>
  * https://leetcode.com/problems/palindrome-partitioning/description/
- *
+ * <p>
  * Given a string s, partition s such that every substring of the partition is a palindrome.
- *
+ * <p>
  * Return all possible palindrome partitioning of s.
- *
+ * <p>
  * For example, given s = "aab", Return
- *
+ * <p>
  * [ ["aa","b"], ["a","a","b"] ]
  */
 public class PalindromePartitioning {
