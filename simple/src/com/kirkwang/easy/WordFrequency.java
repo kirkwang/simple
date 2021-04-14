@@ -47,12 +47,10 @@ class WordFrequency {
         myMap.put(splitted[i], 1);
       }
     }
-    //       //word frequency of cent: 3/8 = 0.28
+    //word frequency of cent: 3/8 = 0.28
 
     for (int j = 0; j < splitted.length; j++) {
-      String temp = splitted[j];
-      Integer feq = myMap.get(temp);
-      double feqCount = (double) feq / splitted.length;
+      double feqCount = (double) myMap.get(splitted[j]) / splitted.length;
       if (feqCount > frequencyLevel) {
         splitted[j] = "";
       }
