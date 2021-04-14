@@ -42,7 +42,6 @@ class WordFrequency {
 
     for (int i = 0; i < splitted.length; i++) {
       if (myMap.containsKey(splitted[i])) {
-
         myMap.put(splitted[i], myMap.get(splitted[i]) + 1);
       } else {
         myMap.put(splitted[i], 1);
@@ -58,7 +57,6 @@ class WordFrequency {
         splitted[j] = "";
       }
     }
-
     return splitted;
   }
 
