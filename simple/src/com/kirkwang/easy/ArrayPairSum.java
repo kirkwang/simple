@@ -18,24 +18,7 @@ https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-
  */
 class ArrayPairSum {
 
-    public static int min(int sum, Integer[] arr) {
-        HashMap<Integer, Boolean> hashMap = new HashMap();
-        Set set = new HashSet();
-        int result = 0;
-        for (int i = 0; i < arr.length; i++) {
-            int compent = sum - arr[i];
-            if (hashMap.containsKey(compent)) {
-                System.out.println(arr[i] + " " + compent);
-                set.add(arr[i] + "," + compent);
 
-            } else {
-                hashMap.put(arr[i], true);
-            }
-        }
-
-        System.out.println(set.size() + "  set size");
-        return result;
-    }
 
     public static int min_1(int total, Integer[] nums) {
         Arrays.sort(nums);
