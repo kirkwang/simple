@@ -12,21 +12,22 @@ For example,
    */
 public class PalindromeString {
 
-    public static void main(String[] args) {
-        String trimedInput = "amanaplanacanalpanama";
+  public static void main(String[] args) {
+    String trimedInput = "amanaplanacanalpanama";
 
-        String source = "A man, a plan, a canal: Panama";
-        source = source.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+    String source = "A man, a plan, a canal: Panama";
+    source = source.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
-        System.out.print(PalindromeString.palindromeString(source));
+    System.out.println(PalindromeString.palindromeString(source));
+  }
+
+  public static boolean palindromeString(String input) {
+    for (int i = 0; i < input.length() / 2; i++) {
+      if (input.charAt(i) != input.charAt(input.length() - i - 1)) {
+        return false;
+      }
     }
+    return true;
 
-    public static boolean palindromeString(String input) {
-        for (int i = 0; i < input.length() / 2; i++) {
-            if (input.charAt(i) != input.charAt(input.length() - i - 1)) {
-                return false;
-            }
-        }
-        return true;
-    }
+  }
 }
