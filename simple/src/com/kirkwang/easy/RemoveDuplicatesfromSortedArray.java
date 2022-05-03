@@ -16,15 +16,30 @@ It doesn't matter what you leave beyond the new length.
  */
 @SuppressWarnings("Array")
 public class RemoveDuplicatesfromSortedArray {
-    public static void main(String[] args) {
-        RemoveDuplicatesfromSortedArray rd = new RemoveDuplicatesfromSortedArray();
-        int[] removed = rd.removeDuplicates(new int[]{1, 2, 2, 3, 4, 4});
-        for (int aRemoved : removed)
-            System.out.println(aRemoved + " ");
-    }
 
-    public int[] removeDuplicates(int[] numbs) {
-        if (numbs.length <= 1) {
+  public static void main(String[] args) {
+    RemoveDuplicatesfromSortedArray rd = new RemoveDuplicatesfromSortedArray();
+    int[] removed = rd.removeDuplicates(new int[]{1, 2, 2, 3, 4, 4});
+    for (int aRemoved : removed) {
+      System.out.println(aRemoved + " ");
+    }
+  }
+
+  public int[] removeDuplicates(int[] numbs) {
+    if (numbs.length <= 1) {
+      return numbs;
+    }
+    int index = 1;
+    for (int i = 1; i < numbs.length; i++) {
+      if (numbs[i - 1] != numbs[i]) {
+        numbs[index++] = numbs[i];
+      }
+    }
+    while (index < numbs.length) {
+      numbs[index++] = -1;
+    }
+    return numbs;
+        /*   if (numbs.length <= 1) {
             return numbs;
         }
         int index = 1;
@@ -34,6 +49,6 @@ public class RemoveDuplicatesfromSortedArray {
             }
         }
         System.out.println("length of Sorted Array which is the end " + index);
-        return numbs;
-    }
+        return numbs;*/
+  }
 }
