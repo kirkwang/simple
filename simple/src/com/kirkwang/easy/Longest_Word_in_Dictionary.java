@@ -2,7 +2,13 @@ package com.kirkwang.easy;
 
 import java.util.Arrays;
 import java.util.HashSet;
-
+/*  Given an array of strings words representing an English Dictionary,
+return the longest word in words that can be built one character at a time by other words in words.
+    If there is more than one possible answer,
+    return the longest word with the smallest lexicographical order.
+    If there is no answer, return the empty string.
+    https://leetcode.com/problems/longest-word-in-dictionary/
+*/
 public class Longest_Word_in_Dictionary {
     public static void main(String[] args) {
 
@@ -11,8 +17,6 @@ public class Longest_Word_in_Dictionary {
         Longest_Word_in_Dictionary lwid = new Longest_Word_in_Dictionary();
         String commStr = lwid.longestWord(input);
 
-
-        // System.out.println(commStr);
         System.out.println(commStr);
     }
 
