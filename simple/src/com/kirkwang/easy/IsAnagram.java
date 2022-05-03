@@ -21,10 +21,12 @@ public class IsAnagram {
         String secondWord = "kcrhearaknhlloekcrhearaknhlloekcrhearaknhlloekcrhearaknhlloekcrhearaknhlloe"; //take any string
         long begin = System.currentTimeMillis();
         boolean result = checkAnagram(source, target);
+        boolean result1 = IsAnagram(source, target);
 
         long end = System.currentTimeMillis() - begin;
         System.out.println("Total mil sec" + end);
         System.out.println("result is " + result);
+        System.out.println("result 1 is " + result1);
     }
 
     public static boolean checkAnagram(String source, String target) {
