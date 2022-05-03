@@ -7,30 +7,30 @@ import java.io.IOException;
  */
 public class ReverseString {
 
-    public static String ReverseString(String input) {
-        if (input == null || input.length() == 0) {
-            return input;
-        }
-        char[] cArray = input.toCharArray();
-        for (int i = 0; i < input.length() / 2; i++) {
-            char temp = cArray[i];
-            cArray[i] = cArray[input.length() - 1 - i];
-            cArray[input.length() - 1 - i] = temp;
-        }
-
-        return String.valueOf(cArray);
+  public static String ReverseString(String input) {
+    if (input == null || input.length() == 0) {
+      return input;
+    }
+    char[] reversed = input.toCharArray();
+    for (int i = 0; i < input.length() / 2; i++) {
+      char temp = reversed[i];
+      reversed[i] = reversed[input.length() - i - 1];
+      reversed[input.length() - i - 1] = temp;
     }
 
-    public static void main(String[] args) throws IOException {
+    return String.valueOf(reversed);
+  }
 
-        //original string
-        String str = "Sony is going to introduce Internet TV soon";
-        System.out.println("Original String: " + str);
+  public static void main(String[] args) throws IOException {
 
-        System.out.println("Reservsed String: " + ReverseString(str));
+    //original string
+    String str = "Sony is going to introduce Internet TV soon";
+    System.out.println("Original String: " + str);
+
+    System.out.println("Reservsed String: " + ReverseString(str));
 
 
-    }
+  }
 
 }
 
