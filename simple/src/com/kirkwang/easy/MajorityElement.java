@@ -21,17 +21,17 @@ public class MajorityElement {
 
         for (int i = 0; i < numbs.length; i++) {
             if (hm.containsKey(numbs[i])) {
-                Integer temp = hm.get(numbs[i]);
-                hm.put(numbs[i], temp + 1);
+                Integer count = hm.get(numbs[i]);
+                hm.put(numbs[i], count + 1);
 
             } else {
                 hm.put(numbs[i], 1);
             }
         }
-        for (Integer i : hm.keySet()) {
-            int count = hm.get(i);
+        for (Integer key : hm.keySet()) {
+            int count = hm.get(key);
             if (count > numbs.length / 2) {
-                return i;
+                return key;
             }
         }
         return -1;
