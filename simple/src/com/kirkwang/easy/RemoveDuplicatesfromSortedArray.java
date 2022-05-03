@@ -39,16 +39,5 @@ public class RemoveDuplicatesfromSortedArray {
       numbs[index++] = -1;
     }
     return numbs;
-        /*   if (numbs.length <= 1) {
-            return numbs;
-        }
-        int index = 1;
-        for (int i = 1; i < numbs.length; i++) {
-            if (numbs[i - 1] != numbs[i]) {
-                numbs[index++] = numbs[i];
-            }
-        }
-        System.out.println("length of Sorted Array which is the end " + index);
-        return numbs;*/
   }
 }
