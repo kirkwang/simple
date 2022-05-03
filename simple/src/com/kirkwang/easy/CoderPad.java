@@ -35,7 +35,6 @@ class CoderPad {
     public static String[] soluation(String[] input) {
         List<String> list = new ArrayList();
         for (String temp : input) {
-
             list.add(temp);
         }
         list.add("Thanks!");

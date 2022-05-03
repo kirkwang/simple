@@ -21,7 +21,7 @@ import java.util.List;
         Output: [12]
         Explanation: 12 is the only lucky number since it is the minimum in its row and the maximum in its column.
 */
-@Deprecated(since = "incomplete")
+//@Deprecated(since = "incomplete")
 public class Lucky_Numbers_in_a_Matrix {
 
     public static void main(String[] args) throws IOException {
