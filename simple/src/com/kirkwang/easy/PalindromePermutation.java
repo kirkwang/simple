@@ -15,27 +15,31 @@ public class PalindromePermutation {
     public static void main(String[] args) {
         PalindromePermutation pp = new PalindromePermutation();
         System.out.print(pp.palindromePermutation("abcdddabcabcda"));
+        System.out.print(pp.palindromePermutation("carerac"));
+        System.out.print(pp.palindromePermutation("code"));
+        System.out.print(pp.palindromePermutation("aab"));
     }
 
     /*
      * "code"->false, "aab"-> true, "carerac" -> true
      */
     public boolean palindromePermutation(String source) {
-        Map<Character, Integer> m = new HashMap();
-
+      Map<Character, Integer> hm = new HashMap();
         for (int i = 0; i < source.length(); i++) {
-            if (m.containsKey(source.charAt(i))) {
-                m.put(source.charAt(i), m.get(source.charAt(i)) + 1);
-            } else {
-                m.put(source.charAt(i), 1);
+            Character c = source.charAt(i);
+            if( hm.containsKey(c)){
+                hm.put(c, hm.get(c)+1 );
+            }else {
+                hm.put(c, 1);
             }
         }
-        int single = 0;
-        for (int i : m.values()) {
-            if (i % 2 != 0) {
-                single++;
+        int count = 0;
+        for (Integer i : hm.values() ) {
+            if (i %2 != 0){
+                count ++;
             }
         }
-        return single <= 1;
-    }
+        return count<=1;
+
+      }
 }
