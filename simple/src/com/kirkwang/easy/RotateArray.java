@@ -7,36 +7,42 @@ package com.kirkwang.easy;
 Rotate an array of n elements to the right by k steps.
 
 For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
-
 Note:
 Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
-
 */
 @SuppressWarnings("Array")
 public class RotateArray {
-    public static void main(String[] args) {
 
-        int[] array = {1, 2, 3, 4, 6, 8};
-        RotateArray.intermediaArray(array, 2);
-        for (int i = 0; i < array.length; i++) System.out.print(array[i] + " ");
+  public static void main(String[] args) {
+
+    int[] array = {1, 2, 3, 4, 6, 8};
+    int[] array1 = {1, 2, 3, 4, 5, 6};
+    RotateArray.intermediaArray(array1, 2);
+    System.out.println("intermediaArray");
+    for (int i = 0; i < array1.length; i++) {
+      System.out.print(array1[i] + " ");
     }
 
-    public static void leftRotatebyOne(int[] input, int n) {
+  }
 
-        int temp = input[0];
-        for (int i = 0; i < n - 1; i++) {
-            input[i] = input[i + 1];
-        }
-        input[n - 1] = temp;
-
-
+  public static int[] intermediaArray(int[] input, int count) {
+    for (int i = 0; i < count; i++) {
+      routeByOne(input, input.length);
     }
 
-    public static void intermediaArray(int[] numbs, int val) {
+    return input;
+  }
 
-        for (int i = 0; i < val; i++)
-            leftRotatebyOne(numbs, numbs.length);
+  private static int[] routeByOne(int[] array, int length) {
+    //[1,2,3,4,5,6,7]
+    //[2,3,4,5,6,7,1]
+    int temp = array[0];
+    for (int i = 0; i < length - 1; i++) {
+      array[i] = array[i + 1];
     }
+    array[length - 1] = temp;
+    return array;
+  }
 
 
 }
