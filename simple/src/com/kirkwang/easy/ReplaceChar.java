@@ -34,10 +34,12 @@ public class ReplaceChar {
 
         StringBuffer buf = new StringBuffer();
         buf.setLength(s.length());
-        int current = 0;
+        int index = 0;
         for (int i = 0; i < s.length(); i++) {
             char cur = s.charAt(i);
-            if (cur != c) buf.setCharAt(current++, cur);
+            if (cur != c) {
+                buf.setCharAt(index++, cur);
+            }
         }
         return buf.toString();
     }
@@ -49,13 +51,11 @@ public class ReplaceChar {
     }
 
     private static String deleteAllNonDigit(String s) {
-        String temp = s.replaceAll("\\D", "");
-        return temp;
+        return s.replaceAll("\\D", "");
     }
 
     public static String repalceAllChar(String s, String f, String r) {
-        String temp = s.replace(f, r);
-        return temp;
+        return s.replace(f, r);
     }
 
 //  private static String removeCharAt(String s, int i) {

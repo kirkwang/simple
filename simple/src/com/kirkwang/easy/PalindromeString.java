@@ -17,7 +17,6 @@ public class PalindromeString {
 
     String source = "A man, a plan, a canal: Panama";
     source = source.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
-
     System.out.println(PalindromeString.palindromeString(source));
   }
 
