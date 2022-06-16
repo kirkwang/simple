@@ -36,8 +36,7 @@ class MergeArrayFindMedian {
   }
 
   public int[] mergTwoArray(int[] one, int[] two) {
-    int totalSize = one.length + two.length;
-    int[] mergedArray = new int[totalSize];
+    int[] mergedArray = new int[one.length + two.length];
     int index = 0;
     for (int i = 0; i < one.length; i++) {
       mergedArray[i] = one[i];
@@ -47,6 +46,7 @@ class MergeArrayFindMedian {
     for (int i = 0; i < two.length; i++) {
       mergedArray[index++] = two[i];
     }
+
     Arrays.sort(mergedArray);
 
     return mergedArray;

@@ -26,11 +26,10 @@ public class MergeSortedArray {
 
         while (pa < a.length && pb < b.length) {
             if (a[pa] < b[pb]) {
-                result[index] = a[pa++];
+                result[index++] = a[pa++];
             } else {
-                result[index] = b[pb++];
+                result[index++] = b[pb++];
             }
-            index++;
         }
         while (pa < a.length) {
             result[index++] = a[pa++];
