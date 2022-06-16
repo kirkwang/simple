@@ -19,16 +19,16 @@ public class ContainsNearByDubByK {
     }
 
     public static boolean ContainsNearByDub(int[] nums, int k) {
-        HashMap<Integer, Integer> hm = new HashMap<>();
+        HashMap<Integer, Integer> myMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            if (hm.containsKey(nums[i])) {
-                Integer preLoc = hm.get(nums[i]);
-                if (i - preLoc <= k) return true;
-
+            if (myMap.containsKey(nums[i])) {
+                int preLoc = myMap.get(nums[i]);
+                if (i - preLoc <= k) {
+                    return true;
+                }
             } else {
-                hm.put(nums[i], i);
+                myMap.put(nums[i], i);
             }
-
         }
 
         return false;
