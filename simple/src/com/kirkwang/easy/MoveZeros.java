@@ -24,20 +24,18 @@ public class MoveZeros {
     }
 
     public int[] movesZeros(int[] numbs) {
+        int index = 0;
         if (numbs == null || numbs.length == 0) {
             return numbs;
         }
-        int index = 0;
         for (int i = 0; i < numbs.length; i++) {
             if (numbs[i] != 0) {
                 numbs[index++] = numbs[i];
             }
-
         }
         while (index < numbs.length) {
             numbs[index++] = 0;
         }
-
         return numbs;
     }
 
