@@ -1,7 +1,6 @@
 package com.kirkwang.easy;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by kewang on 12/29/15.
@@ -17,21 +16,18 @@ You may assume that the array is non-empty and the majority element always exist
 public class MajorityElement {
 
     protected static Integer majorityElement(int[] numbs) {
-        Map<Integer, Integer> hm = new HashMap<Integer, Integer>();
-
-        for (int i = 0; i < numbs.length; i++) {
-            if (hm.containsKey(numbs[i])) {
-                Integer count = hm.get(numbs[i]);
-                hm.put(numbs[i], count + 1);
-
+        HashMap<Integer, Integer> myMap = new HashMap();
+        for (int numb : numbs) {
+            if (myMap.containsKey(numb)) {
+                myMap.put(numb, myMap.get(numb) + 1);
             } else {
-                hm.put(numbs[i], 1);
+                myMap.put(numb, 1);
             }
         }
-        for (Integer key : hm.keySet()) {
-            int count = hm.get(key);
-            if (count > numbs.length / 2) {
-                return key;
+        for (Integer i : myMap.keySet()) {
+            int val = myMap.get(i);
+            if (val > numbs.length / 2) {
+                return i;
             }
         }
         return -1;
