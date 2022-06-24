@@ -7,9 +7,6 @@
 package com.kirkwang.easy;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 /*
 f(10, [3, 4, 5, 6, 7]) // [ [6, 4], [7, 3] ]
@@ -18,15 +15,14 @@ https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-
  */
 class ArrayPairSum {
 
-
-
     public static int min_1(int total, Integer[] nums) {
         Arrays.sort(nums);
         int left = 0;
         int right = nums.length - 1;
         while (left < right) {
             if (nums[left] + nums[right] == total) {
-                return 1;
+                System.out.println("[" + nums[left++] + "," + nums[right--] + "]");
+
             } else if (nums[left] + nums[right] < total) {
                 left++;
             } else right--;
@@ -37,9 +33,9 @@ class ArrayPairSum {
 
     public static void main(String[] args) {
 
-        Integer[] integers = new Integer[]{6, 1, 3, 46, 1, 3, 9};
+        Integer[] integers = new Integer[]{6, 1, 3, 4, 1, 3, 9};
         //  System.out.println("ArrayPairSum " + ArrayPairSum.min(8, new Integer[]{3, 4, 5, 4, 4}));
-        System.out.println("ArrayPairSum " + ArrayPairSum.min_1(7, integers));
+        System.out.println("ArrayPairSum " + ArrayPairSum.min_1(10, integers));
 
     }
 }
