@@ -18,8 +18,8 @@ public class ReverseWordsInAString_I {
       return input;
     }
 
-    input = input.trim().replaceAll("\\s+", ":");
-    String[] reversed = input.split(":");
+    input = input.trim().replaceAll("\\s+", " ");
+    String[] reversed = input.split(" ");
     for (int i = 0; i < reversed.length / 2; i++) {
       String temp = reversed[i];
       reversed[i] = reversed[reversed.length - i - 1];
