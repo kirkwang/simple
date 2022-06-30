@@ -41,7 +41,7 @@ public class CountAndSay {
     public static List CountAndSay(int[] input) {
 
         int counter = 1;
-        List list = new ArrayList<>();
+        List list = new ArrayList();
 
         for (int i = 1; i < input.length; i++) {
 
