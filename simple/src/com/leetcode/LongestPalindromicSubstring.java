@@ -3,7 +3,7 @@ package com.leetcode;
 /**
  * Created by kewang on 12/12/17.
  *
- * <p>https://leetcode.com/problems/longest-palindromic-substring/description/
+ * <p><a href="https://leetcode.com/problems/longest-palindromic-substring/description/">...</a>
  *
  * <p>Input: "babad"
  *

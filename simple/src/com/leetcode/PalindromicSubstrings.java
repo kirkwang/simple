@@ -3,7 +3,7 @@ package com.leetcode;
 /**
  * Created by kewang on 12/12/17.
  *
- * https://leetcode.com/problems/palindromic-substrings/description/ Example 1: Input: "abc" Output:
+ * <a href="https://leetcode.com/problems/palindromic-substrings/description/">...</a> Example 1: Input: "abc" Output:
  * 3 Explanation: Three palindromic strings: "a", "b", "c".
  *
  *
@@ -11,7 +11,7 @@ package com.leetcode;
  * "aa", "aaa".
  *
  *
- * Answer: https://discuss.leetcode.com/topic/96884/very-simple-java-solution-with-detail-explanation
+ * Answer: <a href="https://discuss.leetcode.com/topic/96884/very-simple-java-solution-with-detail-explanation">...</a>
  */
 public class PalindromicSubstrings {
 
