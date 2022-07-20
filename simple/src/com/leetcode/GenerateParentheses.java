@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by kewang on 12/14/17.
  *
- * <p>https://leetcode.com/problems/generate-parentheses/description/
+ * <p><a href="https://leetcode.com/problems/generate-parentheses/description/">...</a>
  */
 public class GenerateParentheses {
 
@@ -35,7 +35,6 @@ public class GenerateParentheses {
     }
     if (left == 0 && right == 0) {
       sublist.add(str);
-      return;
     }
   }
 }

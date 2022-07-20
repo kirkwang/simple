@@ -17,18 +17,18 @@ class Employee {
     // the importance value of this employee
     public int importance;
     // the id of direct subordinates
-    public List<Integer> subordinates;
+    public List subordinates;
 }
 
 public class EmployeeImportance {
 
     public static void main(String[] args) {
 
-        List<Employee> arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList();
         Employee employee = new Employee();
         employee.id = 1;
         employee.importance = 5;
-        List list = new ArrayList<Integer>();
+        List list = new ArrayList<>();
         list.add(2);
         list.add(3);
         employee.subordinates = list;
@@ -58,18 +58,18 @@ public class EmployeeImportance {
 
     public static int getImportance(List<Employee> employees, int id) {
         HashMap hashMap = new HashMap();
-        for (int i = 0; i < employees.size(); i++) {
-            hashMap.put(employees.get(i).id, employees.get(i));
+        for (Employee employee : employees) {
+            hashMap.put(employee.id, employee);
         }
         return getValueById(hashMap, id);
     }
 
-    public static int getValueById(HashMap<Integer, Employee> hashMap, int id) {
+    public static int getValueById(HashMap<Integer, Employee> hashMap, Object id) {
         Employee employee = hashMap.get(id);
         int totalVal = employee.importance;
 
         for (int i = 0; i < employee.subordinates.size(); i++) {
-            int temp = employee.subordinates.get(i);
+            Object temp = employee.subordinates.get(i);
             totalVal += getValueById(hashMap, temp);
         }
         return totalVal;
