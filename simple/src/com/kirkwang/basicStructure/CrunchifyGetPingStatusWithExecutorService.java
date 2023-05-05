@@ -1,16 +1,17 @@
-package com.leetcode.LengthOfLongestSubstring;
+package com.kirkwang.basicStructure;
+
+import lombok.SneakyThrows;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import lombok.SneakyThrows;
 
 public class CrunchifyGetPingStatusWithExecutorService {
 
     private static final int crunchifyThreads = 10;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
         long startTime = System.currentTimeMillis();
 // wait for activity here
         // Executors: Factory and utility methods for Executor, ExecutorService, ScheduledExecutorService, ThreadFactory, and Callable classes defined in this package.
@@ -86,19 +87,21 @@ public class CrunchifyGetPingStatusWithExecutorService {
         public void run() {
             String result = "";
             int code = 200;
-            URL siteURL = new URL(url);
-            HttpURLConnection connection = (HttpURLConnection) siteURL.openConnection();
-            connection.setRequestMethod("GET");
-            connection.setConnectTimeout(3000);
-            connection.connect();
-            code = connection.getResponseCode();
-            if (code == 200) {
-                result = "-> Green <-\t\t" + "Code: " + code;
-                ;
-            } else {
-                result = "-> Yellow <-\t\t" + "Code: " + code;
+            try {
+                URL siteURL = new URL(url);
+                HttpURLConnection connection = (HttpURLConnection) siteURL.openConnection();
+                connection.setRequestMethod("GET");
+                connection.setConnectTimeout(4000);
+                connection.connect();
+                code = connection.getResponseCode();
+                if (code == 200) {
+                    result = "-> Green <-\t\t" + "Code: " + code;
+                } else {
+                    result = "-> Yellow <-\t\t" + "Code: " + code;
+                }
+            } catch (Exception e){
+               result = "-> RED  <-\t\t" +"wrong domain"  + e.getMessage();
             }
-
             Thread.sleep(1000);
             System.out.println(url + "\t\t\t\tStatus:" + result);
         }
