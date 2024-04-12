@@ -10,7 +10,7 @@ public class HelloWorldMessage {
     }
 
     public static void printMessage(String input) {
-        System.out.print(input.substring(1, 5) + input.substring(5, 1));
+        System.out.println(input.substring(0, 5) +" : "+ input.substring(5, input.length()));
 
     }
 }
