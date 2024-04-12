@@ -7,20 +7,21 @@ import com.kirkwang.libary.ListNode;
  * This function will delete the duplicated node in sorted Linked list.
  */
 public class DeletDuplicates {
+
     public ListNode DeletDuplicates(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode p = head.next; //set P to 2nd node
+        ListNode next = head.next; //set P to 2nd node
         ListNode pre = head;
 
-        while (p != null) {
-            if (pre.val == p.val) {
-                pre.next = p.next; // It by-pass P
-                p = p.next;
+        while (next != null) {
+            if (pre.val == next.val) {
+                pre.next = next.next; // It by-pass P
+                next = next.next;
             } else {
-                pre = p;
-                p = p.next;
+                pre = next;
+                next = next.next;
             }
         }
         return head;
