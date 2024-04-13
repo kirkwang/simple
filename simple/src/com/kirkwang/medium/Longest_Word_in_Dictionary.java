@@ -1,4 +1,4 @@
-package com.kirkwang.easy;
+package com.kirkwang.medium;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -27,7 +27,11 @@ public class Longest_Word_in_Dictionary {
         Arrays.sort(words);
 
         for (int i = 0; i < words.length; i++) {
+            String word = words[i].substring(0, words[i].length() - 1);
+
             if (words[i].length() == 1 || hs.contains(words[i].substring(0, words[i].length() - 1))) {
+                System.out.println("with substring : "+word + ", no substring : "+words[i]);
+
                 if (words[i].length() > result.length()) {
                     result = words[i];
                 }
