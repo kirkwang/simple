@@ -13,36 +13,36 @@ Try to come up as many solutions as you can, there are at least 3 different ways
 @SuppressWarnings("Array")
 public class RotateArray {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    int[] array = {1, 2, 3, 4, 6, 8};
-    int[] array1 = {1, 2, 3, 4, 5, 6};
-    RotateArray.intermediaArray(array1, 2);
-    System.out.println("intermediaArray");
-    for (int i = 0; i < array1.length; i++) {
-      System.out.print(array1[i] + " ");
+        int[] array = {1, 2, 3, 4, 6, 8};
+        int[] array1 = {1, 2, 3, 4, 5, 6};
+        RotateArray.intermediaArray(array1, 2);
+        System.out.println("intermediaArray");
+        for (int i = 0; i < array1.length; i++) {
+            System.out.print(array1[i] + " ");
+        }
+
     }
 
-  }
+    public static int[] intermediaArray(int[] input, int count) {
+        for (int i = 0; i < count; i++) {
+            routeByOne(input, input.length);
+        }
 
-  public static int[] intermediaArray(int[] input, int count) {
-    for (int i = 0; i < count; i++) {
-      routeByOne(input, input.length);
+        return input;
     }
 
-    return input;
-  }
-
-  private static int[] routeByOne(int[] array, int length) {
-    //[1,2,3,4,5,6,7]
-    //[2,3,4,5,6,7,1]
-    int temp = array[0];
-    for (int i = 0; i < length - 1; i++) {
-      array[i] = array[i + 1];
+    private static int[] routeByOne(int[] array, int length) {
+        //[1,2,3,4,5,6,7]
+        //[2,3,4,5,6,7,1]
+        int temp = array[0];
+        for (int i = 0; i < length - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        array[length - 1] = temp;
+        return array;
     }
-    array[length - 1] = temp;
-    return array;
-  }
 
 
 }
