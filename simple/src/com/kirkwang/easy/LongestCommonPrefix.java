@@ -14,7 +14,7 @@ public class LongestCommonPrefix {
     public static void main(String[] args) {
         String[] sa = new String[3];
         sa[0] = "aaaaa";
-        sa[1] = "aaa";
+        sa[1] = "aabc";
         sa[2] = "aaabc";
         LongestCommonPrefix lcprefix = new LongestCommonPrefix();
         String commStr = lcprefix.LongestCommonPrefix(sa);
@@ -40,7 +40,7 @@ public class LongestCommonPrefix {
                     break;
                 }
             }
-            if (j < end) {
+            if (j < end) { //keep the location of un-matching char
                 end = j;
             }
         }
@@ -56,22 +56,21 @@ public class LongestCommonPrefix {
             return strs[0];
         }
 
-        String str = strs[0];
+        String result = strs[0];
 
-        for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);
+        for (int i = 0; i < result.length(); i++) {
+            char c = result.charAt(i);
 
             for (int j = 1; j < strs.length; j++) {
 
                 if (strs[j].length() <= i || strs[j].charAt(i) != c) {
-                    return str.substring(0, i);
+                    return result.substring(0, i);
                 }
-
 
             }
         }
 
-        return str;
+        return result;
     }
 
 }
