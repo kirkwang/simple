@@ -18,25 +18,25 @@ Example 3:
 
 public class Running_Sum_of_1d_Array {
 
-  public static int[] runningSum(int[] input) {
-    if (input == null) {
-      return input;
+    public static int[] runningSum(int[] input) {
+        if (input == null) {
+            return input;
+        }
+        int[] result = new int[input.length];
+        result[0] = input[0];
+        for (int i = 1; i < input.length; i++) {
+            result[i] = result[i - 1] + input[i];
+        }
+        return result;
     }
-    int[] result = new int[input.length];
-    result[0] = input[0];
-    for (int i = 1; i < input.length; i++) {
-      result[i] = result[i - 1] + input[i];
+
+    public static void main(String[] args) {
+
+        int[] input = new int[]{3, 1, 2, 10, 1};
+
+        input = runningSum(input);
+        for (int i : input) {
+            System.out.println(i);
+        }
     }
-    return result;
-  }
-
-  public static void main(String[] args) {
-
-    int[] input = new int[]{3, 1, 2, 10, 1};
-
-    input = runningSum(input);
-    for (int i : input) {
-      System.out.println(i);
-    }
-  }
 }
