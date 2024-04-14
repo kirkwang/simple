@@ -21,8 +21,8 @@ import java.util.Arrays;
 class MergeArrayFindMedian {
 
     public static void main(String[] args) {
-        int[] one = new int[]{1, 2};
-        int[] two = new int[]{3};
+        int[] one = {1, 2};
+        int[] two = new int[] {3};
 
         MergeArrayFindMedian mc = new MergeArrayFindMedian();
         for (int i : mc.mergTwoArray(one, two)) {
