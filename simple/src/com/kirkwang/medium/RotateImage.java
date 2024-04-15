@@ -4,7 +4,7 @@
  * kirkwang : the currently used username;
  */
 
-package com.kirkwang.easy;
+package com.kirkwang.medium;
 
 import java.io.IOException;
 /*
