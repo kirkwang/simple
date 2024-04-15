@@ -15,13 +15,13 @@ public class RotateArray {
 
     public static void main(String[] args) {
 
-        int[] array = {1, 2, 3, 4, 6, 8};
-        int[] array1 = {1, 2, 3, 4, 5, 6};
-        RotateArray.routeLeft(array1, 2);
+        int[] array = {1, 2, 3, 4, 5, 6};
+        RotateArray.routeLeft(array, 2);
         System.out.println("routeLeft");
-        for (int j : array1) {
+        for (int j : array) {
             System.out.print(j + " ");
         }
+        //put it back by shift to the right
         RotateArray.routeRight(array, 2);
         System.out.println("routeRight");
         for (int j : array) {
@@ -36,7 +36,6 @@ public class RotateArray {
         for (int i = 0; i < count; i++) {
             routeLeftByOne(input, input.length);
         }
-
     }
 
     private static void routeLeftByOne(int[] array, int length) {
@@ -52,7 +51,7 @@ public class RotateArray {
 
     public static void routeRight(int[] nums, int k) {
         if (k > nums.length) {
-            k = k % nums.length;
+            k %= nums.length;
         }
         for (int i = 0; i < k; i++) {
             routeRightByOne(nums, nums.length - 1);
