@@ -30,10 +30,6 @@ public class RotateString {
 
         boolean result = RotateString.intermediaArray(s, goal);
         System.out.println("intermediaArray " + result);
-  /*  for (int i = 0; i < array1.length; i++) {
-      System.out.print(array1[i] + " ");
-    }*/
-
     }
 
     public static boolean intermediaArray(String s, String goal) {
@@ -43,7 +39,7 @@ public class RotateString {
         }
         char[] result = s.toCharArray();
         for (int i = 0; i < s.length(); i++) {
-            result = rotate(result, s.length());
+             rotate(result, s.length());
             if (goal.equals(new String(result))) {
                 return true;
             }
@@ -51,14 +47,13 @@ public class RotateString {
         return false;
     }
 
-    private static char[] rotate(char[] s, int length) {
-        Character c = s[0];
+    private static void rotate(char[] s, int length) {
+        char c = s[0];
 
         for (int i = 0; i < length - 1; i++) {
             s[i] = s[i + 1];
         }
         s[length - 1] = c;
-        return s;
     }
 
 
