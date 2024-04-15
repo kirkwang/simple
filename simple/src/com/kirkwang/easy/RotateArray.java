@@ -17,23 +17,29 @@ public class RotateArray {
 
         int[] array = {1, 2, 3, 4, 6, 8};
         int[] array1 = {1, 2, 3, 4, 5, 6};
-        RotateArray.intermediaArray(array1, 2);
-        System.out.println("intermediaArray");
-        for (int i = 0; i < array1.length; i++) {
-            System.out.print(array1[i] + " ");
+        RotateArray.routeLeft(array1, 2);
+        System.out.println("routeLeft");
+        for (int j : array1) {
+            System.out.print(j + " ");
         }
-
+        RotateArray.routeRight(array, 2);
+        System.out.println("routeRight");
+        for (int j : array) {
+            System.out.print(j + " ");
+        }
     }
 
-    public static int[] intermediaArray(int[] input, int count) {
+    public static void routeLeft(int[] input, int count) {
+        if (count > input.length) {
+            count = count % input.length;
+        }
         for (int i = 0; i < count; i++) {
-            routeByOne(input, input.length);
+            routeLeftByOne(input, input.length);
         }
 
-        return input;
     }
 
-    private static int[] routeByOne(int[] array, int length) {
+    private static void routeLeftByOne(int[] array, int length) {
         //[1,2,3,4,5,6,7]
         //[2,3,4,5,6,7,1]
         int temp = array[0];
@@ -41,8 +47,27 @@ public class RotateArray {
             array[i] = array[i + 1];
         }
         array[length - 1] = temp;
-        return array;
+
     }
 
+    public static void routeRight(int[] nums, int k) {
+        if (k > nums.length) {
+            k = k % nums.length;
+        }
+        for (int i = 0; i < k; i++) {
+            routeRightByOne(nums, nums.length - 1);
+        }
+
+    }
+
+    private static void routeRightByOne(int[] array, int length) {
+
+        int temp = array[length];
+        for (int i = 0; i < length; i++) {
+            array[length - i] = array[length - i - 1];
+        }
+        array[0] = temp;
+
+    }
 
 }
