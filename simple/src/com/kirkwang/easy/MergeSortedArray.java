@@ -21,9 +21,6 @@ public class MergeSortedArray {
         int pa = 0;
         int pb = 0;
         int index = 0;
-        //abc has more
-        // List abc = Arrays.asList(result);
-
         while (pa < a.length && pb < b.length) {
             if (a[pa] < b[pb]) {
                 result[index++] = a[pa++];
@@ -37,7 +34,6 @@ public class MergeSortedArray {
         while (pb < b.length) {
             result[index++] = b[pb++];
         }
-
         return result;
     }
 }

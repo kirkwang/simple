@@ -1,5 +1,7 @@
 package com.kirkwang.easy;
 
+import java.util.Objects;
+
 /**
  * Created by kewang on 12/24/15.
  */
@@ -21,29 +23,29 @@ public class ShortestWordDistance {
     public static void main(String[] args) {
         ShortestWordDistance rd = new ShortestWordDistance();
         int distance = rd.shortestWordDistance(
-                new String[]{"pratice", "coding", "skills", "it", "needs", "typing"}, "coding", "it");
+                new String[]{"practice", "makes", "perfect", "coding", "makes"}, "coding", "practice");
         System.out.print(distance + " ");
     }
 
     public int shortestWordDistance(String[] words, String word1, String word2) {
-        if (words.length == 0) {
-            return 0;
+        if (words == null || words.length == 0) {
+            return -1;
         }
         int pa = -1;
         int pb = -1;
-        int minDistance = Integer.MAX_VALUE;
-
+        int minDist = Integer.MAX_VALUE;
         for (int i = 0; i < words.length; i++) {
-            if (word1 == words[i]) {
+            if (Objects.equals(word1, words[i])) {
                 pa = i;
             }
-            if (word2 == words[i]) {
+            if (Objects.equals(word2, words[i])) {
                 pb = i;
             }
             if (pa != -1 && pb != -1) {
-                minDistance = Math.min(minDistance, Math.abs(pa - pb));
+                minDist = Math.min(minDist, Math.abs(pa - pb));
             }
         }
-        return minDistance;
+
+        return minDist;
     }
 }

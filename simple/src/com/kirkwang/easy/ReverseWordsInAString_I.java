@@ -13,32 +13,32 @@ package com.kirkwang.easy;
  */
 public class ReverseWordsInAString_I {
 
-  public static String reverseWordInAString(String input) {
-    if (input == null) {
-      return input;
+    public static String reverseWordInAString(String input) {
+        if (input == null) {
+            return input;
+        }
+
+        input = input.trim().replaceAll("\\s+", " ");
+        String[] reversed = input.split(" ");
+        for (int i = 0; i < reversed.length / 2; i++) {
+            String temp = reversed[i];
+            reversed[i] = reversed[reversed.length - i - 1];
+            reversed[reversed.length - i - 1] = temp;
+        }
+
+        return String.join(" ", reversed);
     }
 
-    input = input.trim().replaceAll("\\s+", " ");
-    String[] reversed = input.split(" ");
-    for (int i = 0; i < reversed.length / 2; i++) {
-      String temp = reversed[i];
-      reversed[i] = reversed[reversed.length - i - 1];
-      reversed[reversed.length - i - 1] = temp;
+    public static void main(String[] args) {
+
+        //original string
+        String str = "Sony     is going to introduce Internet TV soon";
+        System.out.println("Original String: " + str);
+
+        System.out.println("Reservsed String: " + reverseWordInAString("   a   b "));
+        System.out.println("Reservsed String: " + reverseWordInAString(str));
+
     }
-
-    return String.join(" ", reversed);
-  }
-
-  public static void main(String[] args) {
-
-    //original string
-    String str = "Sony     is going to introduce Internet TV soon";
-    System.out.println("Original String: " + str);
-
-    System.out.println("Reservsed String: " + reverseWordInAString("   a   b "));
-    System.out.println("Reservsed String: " + reverseWordInAString(str));
-
-  }
 
 
 }

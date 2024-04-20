@@ -1,4 +1,4 @@
-package com.kirkwang.easy;
+package com.kirkwang.medium;
 
 import java.util.ArrayList;
 import java.util.List;

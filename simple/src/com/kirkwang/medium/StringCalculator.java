@@ -4,10 +4,10 @@
  * kirkwang : the currently used username;
  */
 
-package com.kirkwang.easy;
+package com.kirkwang.medium;
 
 import java.util.Stack;
-
+// Hard
 class StringCalculator {
 
     public static void main(String[] args) {
@@ -44,7 +44,7 @@ class StringCalculator {
         if (sign.equals("-")) {
             aggrateor -= 2 * Integer.valueOf(operands[0]);
         }
-        System.out.println("aggrateor " + aggrateor);
+        System.out.println("StringCalculator " + aggrateor);
         return aggrateor;
     }
 

@@ -20,50 +20,51 @@ import java.util.Arrays;
 
 class MergeArrayFindMedian {
 
-  public static void main(String[] args) {
-    int[] one = new int[]{1, 2};
-    int[] two = new int[]{3};
+    public static void main(String[] args) {
+        int[] one = {1, 2};
+        int[] two = new int[] {3};
 
-    MergeArrayFindMedian mc = new MergeArrayFindMedian();
-    for (int i : mc.mergTwoArray(one, two)) {
-      System.out.println(i);
+        MergeArrayFindMedian mc = new MergeArrayFindMedian();
+        for (int i : mc.mergTwoArray(one, two)) {
+            System.out.println(i);
+        }
+
+        int[] meraged = mc.mergTwoArray(one, two);
+        double result = mc.findMedian(meraged);
+        System.out.println("average " + result);
+
     }
 
-    int[] meraged = mc.mergTwoArray(one, two);
-    double result = mc.findMedian(meraged);
-    System.out.println("average " + result);
+    public int[] mergTwoArray(int[] one, int[] two) {
+        int[] mergedArray = new int[one.length + two.length];
+        int index = 0;
+        for (int i = 0; i < one.length; i++) {
+            mergedArray[i] = one[i];
+            index++;
+        }
 
-  }
+        for (int i = 0; i < two.length; i++) {
+            mergedArray[index++] = two[i];
+        }
 
-  public int[] mergTwoArray(int[] one, int[] two) {
-    int[] mergedArray = new int[one.length + two.length];
-    int index = 0;
-    for (int i = 0; i < one.length; i++) {
-      mergedArray[i] = one[i];
-      index++;
+        Arrays.sort(mergedArray);
+
+        return mergedArray;
     }
 
-    for (int i = 0; i < two.length; i++) {
-      mergedArray[index++] = two[i];
+    public double findMedian(int[] input) {
+        //Explanation: merged array = [1,2,3] and median is 2.
+
+        double answer = 0.0;
+        if (input.length % 2 != 0) {
+            //if it is odd length then get middle element
+            answer = (float) input[(input.length - 1) / 2];
+        } else {
+            int right = input[input.length / 2]; // [1,2,3,4] right = 3
+            int left = input[(input.length - 1) / 2]; // [1,2,3,4] left = 2
+            answer = (float) (left + right) / 2;
+        }
+
+        return answer;
     }
-
-    Arrays.sort(mergedArray);
-
-    return mergedArray;
-  }
-
-  public double findMedian(int[] input) {
-    //Explanation: merged array = [1,2,3] and median is 2.
-
-    double answer = 0.0;
-    if (input.length % 2 != 0) {
-      answer = input[(input.length - 1) / 2];
-    } else {
-      int left = input[input.length / 2];
-      int right = input[(input.length - 1) / 2];
-      answer = (left + right) / 2;
-    }
-
-    return answer;
-  }
 }
