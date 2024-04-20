@@ -9,14 +9,15 @@ package com.kirkwang.HackerRank;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 @Deprecated
 public class LuckBalance {
 
     static int luckBalance(int k, int[][] contests) {
-        List<Integer> importantLucks = new ArrayList<Integer>();
+        List<Integer> importantLucks = new ArrayList<>();
 
         //    importantLucks.add(L);
-        Collections.sort(importantLucks, Collections.reverseOrder());
+        importantLucks.sort(Collections.reverseOrder());
         for (int i = 0; i < importantLucks.size(); i++) {
             //    result += importantLucks.get(i) * (i + 1 <= K ? 1 : -1);
         }

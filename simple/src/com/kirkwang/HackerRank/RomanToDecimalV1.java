@@ -6,7 +6,7 @@ public class RomanToDecimalV1 {
 
     public static int rtoi(String input) {
 
-        Hashtable<Character, Integer> ht = new Hashtable<Character, Integer>();
+        Hashtable<Character, Integer> ht = new Hashtable<>();
         ht.put('I', 1);
         ht.put('X', 10);
         ht.put('C', 100);
@@ -33,7 +33,7 @@ public class RomanToDecimalV1 {
         return result;
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String thirtySix = "XXXVI";
         String twentyTwentyOne = "MMXII";
         String nintheenNitySix = "MCMXCVI";

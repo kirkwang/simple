@@ -22,6 +22,7 @@ public class FunnyString {
         for (int i = 1, j = s.length() - 2; i <= j; i++, j--) {
             if (Math.abs(s.charAt(i - 1) - s.charAt(i)) != Math.abs(s.charAt(j + 1) - s.charAt(j))) {
                 flag = false;
+                break;
             }
         }
 
