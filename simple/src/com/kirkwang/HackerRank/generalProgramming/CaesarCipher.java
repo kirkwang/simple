@@ -5,16 +5,20 @@
  */
 
 package com.kirkwang.HackerRank.generalProgramming;
+/*https://www.hackerrank.com/challenges/caesar-cipher-1/problem
+ *
+ * */
 
+import java.util.Scanner;
 
 public class CaesarCipher {
 
-    static String caesarCipher(String s, int k) {
+    static String caesarCipher(char[] s, int k) {
         StringBuilder result = new StringBuilder();
 
-        for (char c : s.toCharArray()) {
+        for (char c : s) {
             if (Character.isUpperCase(c)) {
-                int x = 0;
+                int x;
                 if (c > ('Z' - k)) {
                     x = (c - 'A' + k) % 26;
                     x = x + 'A';
@@ -36,10 +40,15 @@ public class CaesarCipher {
     }
 
     public static void main(String[] args) {
-        String beabeefeab = "Jyabeefeab";
-        int shift = 3;
-        String ml = caesarCipher(beabeefeab, shift);
-        System.out.println(ml);
+       // String beabeefeab = "middle-Outz";  //okffng-Qwvb
+        Scanner scanner = new Scanner(System.in);
+        int length = scanner.nextInt();
+
+        char[] input = scanner.next().toCharArray();
+        int shift = scanner.nextInt();
+        scanner.close();
+
+        System.out.println(caesarCipher(input, shift));
     }
 
 }
