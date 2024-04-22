@@ -4,7 +4,7 @@ public class LongestUniqueSubsttr {
     static boolean isVisited(String input, int i, int j) {
         boolean[] visited = new boolean[26];
         for (int k = i; k <= j; k++) {
-            if (visited[input.charAt(k) - 'a'] == true) {
+            if (visited[input.charAt(k) - 'a']) {
                 return false;
             }
             visited[input.charAt(k) - 'a'] = true;

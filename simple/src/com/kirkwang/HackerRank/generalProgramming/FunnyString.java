@@ -6,14 +6,22 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import java.util.Scanner;
+
 public class FunnyString {
 
     public static void main(String[] args) {
 
-        String input = "acxz";
-        String input1 = "bcxz";
 
-        System.out.println(funnyString(input1));
+        Scanner scanner = new Scanner(System.in);
+        int myInt = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int i = 0; i < myInt; i++) {
+
+            System.out.println(funnyString(scanner.nextLine()));
+        }
+
     }
 
     static String funnyString(String s) {
@@ -22,6 +30,7 @@ public class FunnyString {
         for (int i = 1, j = s.length() - 2; i <= j; i++, j--) {
             if (Math.abs(s.charAt(i - 1) - s.charAt(i)) != Math.abs(s.charAt(j + 1) - s.charAt(j))) {
                 flag = false;
+                break;
             }
         }
 

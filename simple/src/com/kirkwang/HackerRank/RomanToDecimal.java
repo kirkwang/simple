@@ -58,7 +58,7 @@ public class RomanToDecimal {
         }
     }
 
-    public static void main(java.lang.String args[]) {
+    public static void main(java.lang.String[] args) {
         String thirtySix = "XXXVI";
 
         romanToDecimal(thirtySix);

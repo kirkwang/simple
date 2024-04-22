@@ -6,23 +6,38 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import java.util.Scanner;
+
 public class AlternatingCharacters {
     public static void main(String[] args) {
-        String a = "AAABBB";
-        String AAAA = "AAAA";
+        Scanner scanner = new Scanner(System.in);
+        int myInt = scanner.nextInt();
+        String[] inputArray = new String[myInt];
+        for (int i = 0; i < myInt; i++) {
+            inputArray[i] = scanner.next();
+        }
+        scanner.close();
 
-
-        System.out.println(alternatingCharacters(AAAA));
+        int[] result = alternatingCharacters(inputArray);
+        for (int j : result) {
+            System.out.println(j);
+        }
     }
 
-    static int alternatingCharacters(String s) {
+    static int[] alternatingCharacters(String[] s) {
         int deletCount = 0;
-        for (int i = 1; i < s.length(); i++) {
-            if (s.charAt(i - 1) == s.charAt(i)) {
-                deletCount++;
+        int[] result = new int[s.length];
+        for (int j = 0; j < s.length; j++) {
+            for (int i = 1; i < s[j].length(); i++) {
+                if (s[j].charAt(i - 1) == s[j].charAt(i)) {
+                    deletCount++;
+                }
             }
+            result[j] = deletCount;
+            deletCount = 0;
         }
-        return deletCount;
+
+        return result;
     }
 
 }

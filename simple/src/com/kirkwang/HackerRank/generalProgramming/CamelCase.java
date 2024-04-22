@@ -6,14 +6,23 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import java.util.Scanner;
+
+/*
+https://www.hackerrank.com/challenges/camelcase/problem
+ */
 public class CamelCase {
     public static void main(String[] args) {
-
-        String a = "saveChangesInTheEditor";
-        System.out.println(camelcaseJ8(a));
+        //String a = "saveChangesInTheEditor";
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
+        System.out.println(camelcase(input));
     }
 
     static int camelcase(String s) {
+        if (s.isEmpty()) {
+            return 0;
+        }
         int wordCount = 1;
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) >= 'A' && s.charAt(i) <= 'Z') {
@@ -25,7 +34,6 @@ public class CamelCase {
 
     static int camelcaseJ8(String a) {
 
-        int count = (int) a.chars().filter(Character::isUpperCase).count();
-        return count;
+        return (int) a.chars().filter(Character::isUpperCase).count();
     }
 }

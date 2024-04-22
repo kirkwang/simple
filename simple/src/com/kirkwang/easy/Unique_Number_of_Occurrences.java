@@ -22,36 +22,31 @@ import java.util.HashSet;
 
 public class Unique_Number_of_Occurrences {
 
-  public static boolean uniqueOccurrences(int[] arr) {
+    public static boolean uniqueOccurrences(int[] arr) {
 
-    HashMap<Integer, Integer> myMap = new HashMap();
-    for (int i : arr) {
-      //  for (int i = 0; i < arr.length; i++) {
-      myMap.put(i, myMap.getOrDefault(i, 1) + 1);
+        HashMap<Integer, Integer> myMap = new HashMap<>();
+        for (int i : arr) {
+
+            myMap.put(i, myMap.getOrDefault(i, 1) + 1);
+        }
+
+
+        HashSet mySet = new HashSet<>();
+        for (Integer num : myMap.values()) {
+
+            if (!mySet.add(num)) {
+                return false;
+            }
+        }
+        return true;
+
     }
- /*       ArrayList<Integer> abc = new ArrayList<>();
-        abc.toArray();
 
-        HashSet<Integer> set = new HashSet<>(myMap.values());
-        return abc.toArray();
-        */
+    public static void main(String[] args) {
 
-    HashSet mySet = new HashSet();
-    for (Integer num : myMap.values()) {
+        int[] target = new int[]{1, 2};
+        // int[] target = new int[]{1, 2, 2, 1, 1, 3};
+        System.out.print(uniqueOccurrences(target));
 
-      if (!mySet.add(num)) {
-        return false;
-      }
     }
-    return true;
-
-  }
-
-  public static void main(String[] args) {
-
-    int[] target = new int[]{1, 2};
-    // int[] target = new int[]{1, 2, 2, 1, 1, 3};
-    System.out.print(uniqueOccurrences(target));
-
-  }
 }
