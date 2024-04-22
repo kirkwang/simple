@@ -6,7 +6,10 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import java.util.Scanner;
+
 /*
+https://www.hackerrank.com/challenges/append-and-delete/problem
 Function Description
 
 Complete the appendAndDelete function in the editor below. It should return a string, either Yes or No.
@@ -17,13 +20,19 @@ s: the initial string
 t: the desired string
 k: an integer that represents the number of operations
  */
-public class AppendandDelete {
+public class AppendAndDelete {
 
     public static void main(String[] args) {
 
-        int k = 9;
-        String s = "ashley";
-        String t = "ash";
+
+        Scanner scanner = new Scanner(System.in);
+
+        String s = scanner.next();
+        String t = scanner.next();
+        int k = scanner.nextInt();
+
+        scanner.close();
+
         System.out.println(appendAndDelete(s, t, k));
     }
 
@@ -44,7 +53,7 @@ public class AppendandDelete {
         return flag ? "Yes" : "No";
     }
 
-    public static String apendAndDelet(String s, String t, int k) {
+    public static String append_and_Delete(String s, String t, int k) {
         /* Case 1 */
         if (s.length() + t.length() <= k) {
             return "Yes";
