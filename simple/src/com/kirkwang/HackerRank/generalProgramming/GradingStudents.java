@@ -7,6 +7,7 @@
 package com.kirkwang.HackerRank.generalProgramming;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
 https://www.hackerrank.com/challenges/grading/problem
@@ -16,12 +17,16 @@ public class GradingStudents {
     public static void main(String[] args) {
 
         int[] k = {73, 67, 38, 33};
-        for (Integer i : gradingStudents(k)) {
+        List<Integer> grades = new ArrayList<>();
+        for (int i : k) {
+            grades.add(i);
+        }
+        for (Integer i : gradingStudents(grades)) {
             System.out.println(i);
         }
     }
 
-    static Integer[] gradingStudents(int[] grades) {
+    public static List<Integer> gradingStudents(List<Integer> grades) {
         ArrayList<Integer> arrayList = new ArrayList<>();
         for (int i : grades) {
             if (i < 38) {
@@ -36,6 +41,6 @@ public class GradingStudents {
                 }
             }
         }
-        return arrayList.toArray(new Integer[]{});
+        return arrayList;
     }
 }
