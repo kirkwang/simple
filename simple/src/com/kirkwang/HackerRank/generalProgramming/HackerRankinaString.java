@@ -6,26 +6,34 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+/*
+https://www.hackerrank.com/challenges/hackerrank-in-a-string/problem
+ */
 public class HackerRankinaString {
 
     public static void main(String[] args) {
-        String hereiamstackerrank = "hereiamstackerrank";
-        String shift = hackerrankInString(hereiamstackerrank);
+        String target = "rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt";
+        String shift = HackerRankinaString.hackerrankInString(target);
         System.out.println(shift);
     }
 
-    static String hackerrankInString(String s) {
+    public static String hackerrankInString(String s) {
         String hackerrank = "hackerrank";
-        int indexOfHacker = 0;
+        int index = 0;
+
+        if (s.isEmpty() || s.length() < hackerrank.length()) {
+            return "NO";
+        }
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == hackerrank.charAt(indexOfHacker)) {
-                indexOfHacker++;
+            if (hackerrank.charAt(index) == s.charAt(i)) {
+                index++;
             }
-            if (indexOfHacker == hackerrank.length()) {
+            if (index == hackerrank.length()) {
                 return "YES";
             }
         }
 
         return "NO";
     }
+
 }
