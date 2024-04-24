@@ -9,13 +9,16 @@ package com.kirkwang.HackerRank.generalProgramming;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+https://www.hackerrank.com/challenges/string-construction/problem
+ */
 public class StringConstruction {
 
     public static void main(String[] args) {
-        String a = "cde";
-        String b = "abc";
+        String a = "abcd";
+        String b = "abab";
 
-        System.out.println(stringConstruction(a));
+        System.out.println(stringConstruction(b));
     }
 
     static int stringConstruction(String s) {
