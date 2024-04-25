@@ -1,4 +1,4 @@
-package com.kirkwang.HackerRank;
+package com.kirkwang.HackerRank.generalProgramming;
 
 
 /**
@@ -29,7 +29,7 @@ import java.util.Scanner;
 import java.util.Stack;
 import java.util.stream.Collectors;
 
-public class SuperReducer {
+public class SuperStringReducer {
 
     // Complete the superReducedString function below.
     static String superReducedString(String s) {
@@ -62,7 +62,7 @@ public class SuperReducer {
         if (input.isEmpty()){
             return "Empty String";
         }
-        HashMap<Character, Integer> mMap = new HashMap();
+        HashMap<Character, Integer> mMap = new HashMap<>();
         for (Character i : input.toCharArray()) {
             mMap.put(i, mMap.getOrDefault(i, 0) + 1);
         }

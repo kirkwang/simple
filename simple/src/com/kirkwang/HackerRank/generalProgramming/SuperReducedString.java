@@ -16,13 +16,13 @@ public class SuperReducedString {
 
     public static void main(String[] args) {
 
-        String input = "aaabccddd";
+        String input = "aaabccddd"; //aaabccddd > abd, baab → bb → Empty String
         System.out.println(superReducedStringStack(input));
 
     }
 
     static String superReducedStringStackv2(String s) {
-        Stack<Character> stack = new Stack();
+        Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
             if (!stack.empty() && stack.peek() == c) {
                 stack.pop();
