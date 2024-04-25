@@ -14,8 +14,8 @@ import java.util.List;
 public class MinimumAbsoluteDifferenceinanArray {
     public static void main(String[] args) {
 
-        int[] array = {-59, -36, -13, 1, -53, -92, -2, -96, -54, 75};
-        //int[] array = {1, -3, 71, 68, 17};
+       // int[] array = {-59, -36, -13, 1, -53, -92, -2, -96, -54, 75};
+        int[] array = {1, -3, 71, 68, 17};
 
         List<Integer> arrayList = new ArrayList<>();
         for (int i : array) {
@@ -32,6 +32,7 @@ public class MinimumAbsoluteDifferenceinanArray {
         for (int i = 1; i < arr.size(); i++) {
             min = Math.min(arr.get(i) - arr.get(i - 1), min);
         }
+
         return min;
     }
 }
