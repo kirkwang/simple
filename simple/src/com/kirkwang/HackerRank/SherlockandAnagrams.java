@@ -6,10 +6,10 @@
 
 package com.kirkwang.HackerRank;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 /*
 Sherlock and Anagrams
@@ -22,27 +22,29 @@ public class SherlockandAnagrams {
         int T = in.nextInt();
         for (int tc = 0; tc < T; tc++) {
             String S = in.next();
-            System.out.println(findUnorderedAnagramPairNum(S));
+            System.out.println(sherlockAndAnagrams(S));
         }
 
         in.close();
     }
 
-    static int findUnorderedAnagramPairNum(String str) {
-        Map<String, Integer> key2count = new HashMap<String, Integer>();
+
+    public static int sherlockAndAnagrams(String str) {
+        Map<String, Integer> key2count = new HashMap<>();
         for (int i = 0; i < str.length(); i++) {
             for (int j = i + 1; j <= str.length(); j++) {
-                String key = generateKey(str.substring(i, j));
-                if (!key2count.containsKey(key)) {
-                    key2count.put(key, 0);
-                }
-                key2count.put(key, key2count.get(key) + 1);
+                String key = sortStr(str.substring(i, j));
+                key2count.put(key, key2count.getOrDefault(key, 0) + 1);
             }
         }
+
         return key2count.values().stream().mapToInt(count -> count * (count - 1) / 2).sum();
     }
 
-    static String generateKey(String str) {
-        return str.chars().sorted().mapToObj(letter -> String.valueOf((char) letter)).collect(Collectors.joining());
+    static String sortStr(String str) {
+        char[] result = str.toCharArray();
+        Arrays.sort(result);
+        System.out.println("str : " + str + " result : " + String.valueOf(result));
+        return String.valueOf(result);
     }
 }
