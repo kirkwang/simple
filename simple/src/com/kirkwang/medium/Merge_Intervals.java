@@ -34,7 +34,7 @@ public class Merge_Intervals {
 
 
   public static void main(String[] args) {
-
+    // This is not complete yet.
     int input[][] = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
 
     input = merge(input);
