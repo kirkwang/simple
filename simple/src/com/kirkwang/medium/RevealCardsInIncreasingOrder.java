@@ -6,6 +6,9 @@ package com.kirkwang.medium;
  * 2019 : to access the year information of the current date;
  * kirkwang : the currently used username;
  */
+/*
+https://leetcode.com/problems/reveal-cards-in-increasing-order/description/
+ */
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -18,7 +21,7 @@ class RevealCardsInIncreasingOrder {
 
         int[] ans = revealCardsInIncreasingOrder.deckRevealedIncreasing(deck);
         for (int i : ans) {
-            System.out.println(" deck output" + i);
+            System.out.println(" deck output " + i);
         }
     }
 
