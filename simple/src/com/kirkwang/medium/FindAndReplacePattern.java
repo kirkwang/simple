@@ -8,20 +8,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/*
+https://leetcode.com/problems/find-and-replace-pattern/
+ */
 class FindAndReplacePattern {
 
-    private final List<String> arrayList = new ArrayList();
 
     public static void main(String[] args) {
         FindAndReplacePattern frp = new FindAndReplacePattern();
         String[] array = new String[]{"abc", "deq", "mee", "aqq", "dkd", "ccc"};
         String patten = "abb";
-        List result = frp.FindAndReplacePattern(array, patten);
+        List result = frp.findAndReplacePattern(array, patten);
         System.out.println(result.toString());
     }
 
-    public List FindAndReplacePattern(String[] words, String pattern) {
+    public  List findAndReplacePattern(String[] words, String pattern) {
+         List<String> arrayList = new ArrayList<>();
         for (int i = 0; i < words.length; i++) {
             if (checkPatten(words[i], pattern)) {
                 arrayList.add(words[i]);
@@ -30,13 +32,13 @@ class FindAndReplacePattern {
         return arrayList;
     }
 
-    public boolean checkPatten(String source, String target) {
+    public static boolean checkPatten(String source, String target) {
 
         if (source.length() != target.length()) {
             return false;
         }
-        Map<Character, Character> map1 = new HashMap();
-        Map<Character, Character> map2 = new HashMap();
+        Map<Character, Character> map1 = new HashMap<>();
+        Map<Character, Character> map2 = new HashMap<>();
 
         for (int i = 0; i < source.length(); i++) {
             if (map1.containsKey(source.charAt(i))) {
