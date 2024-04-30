@@ -11,13 +11,13 @@ import java.util.Stack;
 public class MinAddToMakeValid {
     public static void main(String[] args) {
         MinAddToMakeValid matmv = new MinAddToMakeValid();
-        int result = matmv.minAddToMakeValid("(((");
+        int result = matmv.minAddToMakeValid("())");
         System.out.println(result);
     }
 
     public static int minAddToMakeValid(String input) {
         int result = 0;
-        if (input.length() == 0) {
+        if (input.isEmpty()) {
             return result;
         }
         Stack<Character> s = new Stack<>();
@@ -26,7 +26,7 @@ public class MinAddToMakeValid {
                 s.push(c);
             } else {
                 Character temp = s.peek();
-                if (matching(c, temp)) {
+                if (matching( temp,c)) {
                     s.pop();
                 } else {
                     s.push(c);
