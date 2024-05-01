@@ -54,13 +54,12 @@ public class RotateArray {
             k %= nums.length;
         }
         for (int i = 0; i < k; i++) {
-            routeRightByOne(nums, nums.length - 1);
+            routeRightByOne(nums, nums.length);
         }
-
     }
 
     private static void routeRightByOne(int[] array, int length) {
-
+        length--;
         int temp = array[length];
         for (int i = 0; i < length; i++) {
             array[length - i] = array[length - i - 1];
