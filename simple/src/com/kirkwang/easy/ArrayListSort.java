@@ -5,21 +5,23 @@ import java.util.*;
 public class ArrayListSort {
 
     public static void main(String[] args) {
-        String[] array = {"abc", "0", "2", "10"};
-        List<String> al = Arrays.asList(array);
-        Collections.sort(al);
-        int a = 1234512345;
+        String[] array = {"abc", "0", "1", "11"};
+        Arrays.sort(array);
 
-        for (int i = 0; i < al.size(); i++) {
-            System.out.println(" Al int i=0 -> " + al.get(i));
+        List<String> aList = Arrays.asList(array);
+        Collections.sort(aList);
+
+        int a = 12232342;
+        for (String s : aList) {
+            System.out.println("alist " + s);
         }
-        Map<Integer, Character> myMap = new HashMap();
+        Map<Integer, Character> myMap = new HashMap<>();
         myMap.put(1, 'a');
         myMap.put(2, 'b');
         myMap.put(3, 'c');
         myMap.put(4, 'd');
         for (int i = 0; i < myMap.size(); i++) {
-            System.out.println(" myMap.get(i) int i=0 -> " + al.get(i));
+            System.out.println(" myMap.get(i) int i=0 -> " + aList.get(i));
         }
         for (Integer i : myMap.keySet()) { //This is for key only
             System.out.println(" Map.Entry i  -> " + i);
@@ -28,11 +30,11 @@ public class ArrayListSort {
             System.out.println(" Map.Entry i key hash  -> " + e.getKey().hashCode());
             System.out.println(" Map.Entry i value hash -> " + e.getValue().hashCode());
         }
-        for (Object object : al) {
+        for (Object object : aList) {
             System.out.println(" object " + object);
         }
 
-        al.forEach(System.out::println);
+        aList.forEach(System.out::println);
 
 
     }
