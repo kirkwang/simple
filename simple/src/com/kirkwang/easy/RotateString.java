@@ -34,12 +34,12 @@ public class RotateString {
 
     public static boolean intermediaArray(String s, String goal) {
 
-        if (s == null || goal == null || s.length() != goal.length()) {
+        if (s.isEmpty() || s.length() != goal.length()) {
             return false;
         }
         char[] result = s.toCharArray();
         for (int i = 0; i < s.length(); i++) {
-             rotate(result, s.length());
+            rotate(result, s.length());
             if (goal.equals(new String(result))) {
                 return true;
             }
@@ -48,12 +48,12 @@ public class RotateString {
     }
 
     private static void rotate(char[] s, int length) {
-        char c = s[0];
+        char t = s[0];
 
         for (int i = 0; i < length - 1; i++) {
             s[i] = s[i + 1];
         }
-        s[length - 1] = c;
+        s[length - 1] = t;
     }
 
 
