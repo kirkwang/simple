@@ -19,11 +19,11 @@ public class CountTwoArrays {
     }
 
     public static HashMap<Integer, Integer> countOnce(int[] one, int[] two) {
-        boolean longest = true;
+        boolean theEnd = true;
         int index = 0;
         HashMap<Integer, Integer> hMap = new HashMap<>();
 
-        while (longest) {
+        while (theEnd) {
             if (index < one.length) {
                 hMap.put(one[index], hMap.getOrDefault(one[index], 0) + 1);
             }
@@ -33,9 +33,9 @@ public class CountTwoArrays {
             index++;
 
             if (index > one.length) {
-                longest = false;
+                theEnd = false;
             } else if (index > two.length) {
-                longest = false;
+                theEnd = false;
             }
         }
         return hMap;
