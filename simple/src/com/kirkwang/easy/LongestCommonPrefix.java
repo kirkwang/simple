@@ -20,7 +20,6 @@ public class LongestCommonPrefix {
         String commStr = lcprefix.LongestCommonPrefix(sa);
         String commStr2 = lcprefix.LongestCommonPrefixV2(sa);
 
-        // System.out.println(commStr);
         System.out.println(commStr);
     }
 
@@ -63,7 +62,7 @@ public class LongestCommonPrefix {
 
             for (int j = 1; j < strs.length; j++) {
 
-                if (strs[j].length() <= i || strs[j].charAt(i) != c) {
+                if (strs[j].length() == i || strs[j].charAt(i) != c) {
                     return result.substring(0, i);
                 }
 
