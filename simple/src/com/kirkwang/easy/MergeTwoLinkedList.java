@@ -2,47 +2,47 @@ package com.kirkwang.easy;
 
 import com.kirkwang.libary.ListNode;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 /**
  * Created by kewang on 12/26/15.
  */
 /*
+https://leetcode.com/problems/merge-two-sorted-lists/description/
 Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
-
  */
 public class MergeTwoLinkedList {
-    static int counter = 0;
+
 
     public static void main(String[] args) {
         ListNode left = new ListNode(0);
         ListNode right = new ListNode(0);
         ListNode leftHead = left;
         ListNode rightHead = right;
-        int min = 0;
+
         int max = 10;
-        for (int i = min; i < max; i++) {
-            int random = ThreadLocalRandom.current().nextInt(min, max);
+        for (int i = 1; i < max; i++) {
 
             if (i % 2 == 0) {
-                ListNode temp = new ListNode(random);
-                left.next = temp;
+                left.next = new ListNode(i);
                 left = left.next;
             } else {
-                ListNode temp = new ListNode(random);
-                right.next = temp;
+                right.next = new ListNode(i);
                 right = right.next;
             }
-            //            System.out.println(" creation ");
             System.out.println(left.getVal() + " <=left and right=> " + right.getVal());
-            counter++;
+
         }
+        right.next = new ListNode(11);
 
-
-        //    MergeTwoSortedList rd = new MergeTwoSortedList();
 
         MergeTwoLinkedList rd = new MergeTwoLinkedList();
         ListNode merged = rd.mergeTwoLinkedList(leftHead, rightHead);
+
+/*
+
+        MergeTwoLinkedList rd = new MergeTwoLinkedList();
+        ListNode merged = rd.mergeTwoLists(leftHead, rightHead);
+*/
+
         while (merged != null) {
             System.out.print(merged.getVal() + " ");
             merged = merged.next;
@@ -52,23 +52,49 @@ public class MergeTwoLinkedList {
     public ListNode mergeTwoLinkedList(ListNode left, ListNode right) {
         ListNode fakeNode = new ListNode(0);
         ListNode ptr = fakeNode;
-        counter = 0;
-
-        while (left != null && right != null) {
-//            System.out.println(left.getVal() + " <-left and right-> " + right.getVal());
-
-            if (left.getVal() < right.getVal()) {
+        while (left != null) {
+            if (left.getVal() <= right.getVal()) {
                 ptr.next = left;
-                ptr = left;
                 left = left.next;
             } else {
                 ptr.next = right;
-                ptr = right;
                 right = right.next;
             }
-        }
-        System.out.println(" counter " + counter);
+            ptr = ptr.next;
 
-        return fakeNode;
+        }
+        if (left == null) {
+            ptr.next = right;
+        }
+        if (right == null) {
+            ptr.next = left;
+        }
+        return fakeNode.next;
+    }
+
+    public ListNode mergeTwoLists(ListNode currA, ListNode currB) {
+        if (currA == null) {
+            return currB;
+        } else if (currB == null) {
+            return currA;
+        }
+
+        ListNode dummy = new ListNode(0);
+        ListNode p = dummy;
+        while (currA != null && currB != null) {
+            if (currA.val < currB.val) {
+                p.next = currA;
+                currA = currA.next;
+            } else {
+                p.next = currB;
+                currB = currB.next;
+            }
+            p = p.next;
+        }
+
+        // attach remaining elements
+        p.next = (currA == null) ? currB : currA;
+
+        return dummy.next;
     }
 }
