@@ -38,11 +38,11 @@ public class SortedArrayToBST {
 
     }
 
-    public static TreeNode sortedArrayToBST(int[] nums) {
-        if (nums == null) {
+    public static TreeNode sortedArrayToBST(int[] numbs) {
+        if (numbs == null) {
             return null;
         }
-        return arrayToBST(nums, 0, nums.length - 1);
+        return arrayToBST(numbs, 0, numbs.length - 1);
     }
 
     private static TreeNode arrayToBST(int[] numbs, int start, int end) {
