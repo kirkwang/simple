@@ -1,4 +1,4 @@
-package com.kirkwang.easy;
+package com.kirkwang.easy.tree;
 
 import com.kirkwang.basicStructure.TreeNode;
 
