@@ -11,34 +11,32 @@ package com.kirkwang.easy;
  * occur because A[5] − A[4] = 21367 − 21013 = 354. Maximum possible profit was 356. It would occur
  * if a share was bought on day 1 and sold on day 5.
  * Best Time to Buy and Sell Stock
+ * <p>
+ * Input: prices = [7,1,5,3,6,4]
+ * Output: 5
+ * Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+ * Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
  */
 public class MaxProfit {
 
-    public static int MaxProfit(int[] A) {
-        if (A == null || A.length == 0) {
+    public static int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) {
             return 0;
         }
-        int maxProfit = Integer.MIN_VALUE;
-
-        for (int i = 0; i < A.length; i++) { //from the beginning
-            for (int j = A.length - 1; j > i; j--) { // from the end
-                int profit = A[j] - A[i];   // find the differance
-                if (profit > maxProfit) {
-                    maxProfit = profit;
-                }
-            }
+        int min = prices[0];
+        int maxP = 0;
+        for (int price : prices) {
+            min = Math.min(min, price);
+            maxP = Math.max(maxP, price - min);
         }
-
-        return maxProfit;
-
+        return maxP;
     }
 
     public static void main(String[] args) {
 
-        int[] A = new int[]{23171, 21011, 21123, 21366, 21013, 21367};
-        int[] n = new int[]{7,1,5,3,6,4}; //5, 4, 3, 2, 1
+        int[] n = new int[]{23171, 21011, 21123, 21366, 21013, 21367};
+        //int[] n = new int[]{7, 1, 5, 3, 6, 4}; //5, 4, 3, 2, 1
 
-
-        System.out.println(MaxProfit(n));
+        System.out.println("maxProfit " + maxProfit(n));
     }
 }
