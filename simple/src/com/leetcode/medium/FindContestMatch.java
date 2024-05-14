@@ -1,4 +1,4 @@
-package com.kirkwang.medium;/*
+package com.leetcode.medium;/*
  * 3/26/19 9:04 PM : for the current date and time;
  * 2019 : to access the year information of the current date;
  * kirkwang : the currently used username;

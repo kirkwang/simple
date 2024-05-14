@@ -1,4 +1,4 @@
-package com.kirkwang.medium;
+package com.leetcode.medium;
 
 
 /*

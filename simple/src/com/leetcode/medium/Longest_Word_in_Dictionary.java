@@ -1,4 +1,4 @@
-package com.kirkwang.medium;
+package com.leetcode.medium;
 
 import java.util.Arrays;
 import java.util.HashSet;

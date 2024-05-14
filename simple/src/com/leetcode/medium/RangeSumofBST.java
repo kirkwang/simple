@@ -1,4 +1,4 @@
-package com.kirkwang.medium;
+package com.leetcode.medium;
 
 /*
  * 3/24/19 10:55 PM : for the current date and time;

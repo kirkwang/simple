@@ -1,4 +1,4 @@
-package com.kirkwang.medium;
+package com.leetcode.medium;
 
 /*
 https://leetcode.com/problems/peak-index-in-a-mountain-array/

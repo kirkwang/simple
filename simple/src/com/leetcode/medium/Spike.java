@@ -4,7 +4,7 @@
  * 2019 : to access the year information of the current date;
  * kirkwang : the currently used username;
  */
-package com.kirkwang.medium;
+package com.leetcode.medium;
 // It is very similar to this task
 //https://leetcode.com/problems/find-peak-element/
 
