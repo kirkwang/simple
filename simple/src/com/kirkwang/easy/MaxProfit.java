@@ -34,8 +34,8 @@ public class MaxProfit {
 
     public static void main(String[] args) {
 
-        int[] n = new int[]{23171, 21011, 21123, 21366, 21013, 21367};
-        //int[] n = new int[]{7, 1, 5, 3, 6, 4}; //5, 4, 3, 2, 1
+       // int[] n = new int[]{23171, 21011, 21123, 21366, 21013, 21367};
+        int[] n = new int[]{7, 1, 5, 3, 6, 4}; //5, 4, 3, 2, 1
 
         System.out.println("maxProfit " + maxProfit(n));
     }
