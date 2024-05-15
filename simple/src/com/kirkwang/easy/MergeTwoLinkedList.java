@@ -37,11 +37,6 @@ public class MergeTwoLinkedList {
         MergeTwoLinkedList rd = new MergeTwoLinkedList();
         ListNode merged = rd.mergeTwoLinkedList(leftHead, rightHead);
 
-/*
-
-        MergeTwoLinkedList rd = new MergeTwoLinkedList();
-        ListNode merged = rd.mergeTwoLists(leftHead, rightHead);
-*/
 
         while (merged != null) {
             System.out.print(merged.getVal() + " ");
@@ -49,52 +44,28 @@ public class MergeTwoLinkedList {
         }
     }
 
-    public ListNode mergeTwoLinkedList(ListNode left, ListNode right) {
+    public ListNode mergeTwoLinkedList(ListNode list1, ListNode list2) {
         ListNode fakeNode = new ListNode(0);
         ListNode ptr = fakeNode;
-        while (left != null) {
-            if (left.getVal() <= right.getVal()) {
-                ptr.next = left;
-                left = left.next;
+        while (list1 != null && list2 != null) {
+            if (list1.val <= list2.val) {
+                ptr.next = list1;
+                list1 = list1.next;
             } else {
-                ptr.next = right;
-                right = right.next;
+                ptr.next = list2;
+                list2 = list2.next;
             }
             ptr = ptr.next;
 
         }
-        if (left == null) {
-            ptr.next = right;
+        if (list1 == null) {
+            ptr.next = list2;
         }
-        if (right == null) {
-            ptr.next = left;
+        if (list2 == null) {
+            ptr.next = list1;
         }
         return fakeNode.next;
     }
 
-    public ListNode mergeTwoLists(ListNode currA, ListNode currB) {
-        if (currA == null) {
-            return currB;
-        } else if (currB == null) {
-            return currA;
-        }
 
-        ListNode dummy = new ListNode(0);
-        ListNode p = dummy;
-        while (currA != null && currB != null) {
-            if (currA.val < currB.val) {
-                p.next = currA;
-                currA = currA.next;
-            } else {
-                p.next = currB;
-                currB = currB.next;
-            }
-            p = p.next;
-        }
-
-        // attach remaining elements
-        p.next = (currA == null) ? currB : currA;
-
-        return dummy.next;
-    }
 }
