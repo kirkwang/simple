@@ -2,16 +2,14 @@ package com.kirkwang.easy;
 
 // Start typing here
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 /*
 Sentence:
 one cent, two cent, three cent, all cents
-
 word frequency of cent: 3/8 = 0.28
-
 0.2
-
-
 */
 
 class WordFrequency {

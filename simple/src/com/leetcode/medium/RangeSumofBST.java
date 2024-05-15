@@ -1,4 +1,4 @@
-package com.kirkwang.medium;
+package com.leetcode.medium;
 
 /*
  * 3/24/19 10:55 PM : for the current date and time;
@@ -9,6 +9,7 @@ package com.kirkwang.medium;
 import com.kirkwang.basicStructure.TreeNode;
 
 /*
+https://leetcode.com/problems/range-sum-of-bst/description/
 Given the root node of a binary search tree, return the sum of values of all nodes with value between L and R (inclusive).
 
 The binary search tree is guaranteed to have unique values.

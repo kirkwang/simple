@@ -7,22 +7,25 @@
 package com.kirkwang.HackerRank.generalProgramming;
 
 import java.util.HashSet;
-import java.util.Set;
 
+/*
+https://www.hackerrank.com/challenges/pangrams/problem
+ */
 public class Pangrams {
 
     public static void main(String[] args) {
         String pangram = "We promptly judged antique ivory buckles for the next prize";
 
-        String shift = pangrams(pangram);
-        System.out.println(shift);
+        System.out.println(pangrams(pangram));
     }
 
     static String pangrams(String s) {
-
+        if (s.isEmpty()) {
+            return "not pangram";
+        }
         s = s.toLowerCase();
 
-        Set sSet = new HashSet<Character>();
+        HashSet<Character> sSet = new HashSet<>();
 
         for (Character c : s.toCharArray()) {
             if (Character.isLetter(c)) {

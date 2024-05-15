@@ -4,6 +4,7 @@ package com.kirkwang.easy;
  * Created by kewang on 12/24/15.
  */
 /*
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
 
 Do not allocate extra space for another array, you must do this in place with constant memory.
@@ -19,14 +20,17 @@ public class RemoveDuplicatesfromSortedArray {
 
     public static void main(String[] args) {
         RemoveDuplicatesfromSortedArray rd = new RemoveDuplicatesfromSortedArray();
-        int[] removed = rd.removeDuplicates(new int[]{2, 2, 2, 3, 4, 4});
+        int[] input = {2, 2, 2, 3, 4, 4};
+        // int[] input = {2};
+
+        int[] removed = rd.removeDuplicates(input);
         for (int aRemoved : removed) {
             System.out.println(aRemoved + " ");
         }
     }
 
     public int[] removeDuplicates(int[] numbs) {
-        if (numbs == null || numbs.length < 1) {
+        if (numbs == null || numbs.length <= 1) {
             return numbs;
         }
         int index = 1;
@@ -35,7 +39,7 @@ public class RemoveDuplicatesfromSortedArray {
                 numbs[index++] = numbs[i];
             }
         }
-        while (index < numbs.length) {
+        while (index != numbs.length) {
             numbs[index++] = 0;
         }
         return numbs;

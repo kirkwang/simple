@@ -37,11 +37,13 @@ import java.util.List;
  */
 
 public class CountAndSay {
+    public static List<Integer> CountAndSay(int[] input) {
+        List<Integer> list = new ArrayList<>();
 
-    public static List CountAndSay(int[] input) {
-
+        if (input == null || input.length == 0) {
+            return list;
+        }
         int counter = 1;
-        List list = new ArrayList();
 
         for (int i = 1; i < input.length; i++) {
 
@@ -60,7 +62,29 @@ public class CountAndSay {
     }
 
     public static void main(String[] args) {
-        System.out.print(CountAndSay(new int[]{1, 1, 1, 2}));
+
+        //  System.out.print(CountAndSay(new int[]{1, 1, 1, 2}));
+        System.out.print(countAndSay(1112));
+    }
+
+    public static String countAndSay(int n) {
+        List<Object> list = new ArrayList<>();
+        int counter = 1;
+        char[] input = String.valueOf(n).toCharArray();
+        int i;
+        for (i = 1; i < input.length; i++) {
+            if (input[i - 1] == input[i]) {
+                counter++;
+            } else {
+                list.add(counter);
+                list.add(input[i - 1]);
+                counter = 1;
+            }
+        }
+        list.add(counter);
+        list.add(input[input.length - 1]);
+
+        return list.toString();
     }
 
 

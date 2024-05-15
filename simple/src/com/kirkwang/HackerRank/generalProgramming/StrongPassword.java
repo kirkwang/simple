@@ -7,7 +7,7 @@
 package com.kirkwang.HackerRank.generalProgramming;
 
 public class StrongPassword {
-    final static String special_characters = "!@#$%^&*()-+";
+
 
     public static void main(String[] args) {
 
@@ -18,6 +18,7 @@ public class StrongPassword {
 
     static int minimumNumber(int n, String password) {
         // Return the minimum number of characters to make the password strong
+        String special_characters = "!@#$%^&*()-+";
         int addNum = 0;
         if (!password.chars().anyMatch(Character::isDigit)) {
             addNum++;

@@ -1,7 +1,5 @@
 package com.kirkwang.basicStructure;
 
-import lombok.SneakyThrows;
-
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
@@ -11,7 +9,7 @@ public class CrunchifyGetPingStatusWithExecutorService {
 
     private static final int crunchifyThreads = 10;
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 // wait for activity here
         // Executors: Factory and utility methods for Executor, ExecutorService, ScheduledExecutorService, ThreadFactory, and Callable classes defined in this package.
@@ -26,9 +24,43 @@ public class CrunchifyGetPingStatusWithExecutorService {
 
         // newFixedThreadPool(): Creates a thread pool that reuses a fixed number of threads operating off a shared unbounded queue.
         // At any point, at most nThreads threads will be active processing tasks. If additional tasks are submitted when all threads are active, they will wait in the queue until a thread is available.
-        // If any thread terminates due to a failure during execution prior to shutdown, a new one will take its place if needed to execute subsequent tasks
+        // If any thread terminates due to a failure during execution prior to shut down, a new one will take its place if needed to execute subsequent tasks
 
         String[] crunchifyList = {
+                "https://crunchify.com",
+                "https://yahoo.com",
+                "https://www.ebay.com",
+                "https://google.com",
+                "https://www.example.co",
+                "https://paypal.com",
+                "http://bing.com/",
+                "https://techcrunch.com/",
+                "http://mashable.com/",
+                "https://wpsharing.co",
+                "https://wordpress.com/",
+                "https://wordpress.org/",
+                "https://example.com/",
+                "https://sjsu.edu/",
+                "https://crunchify.com/",
+                "https://test.com.au/",
+                "https://www.wikipedia.org/",
+                "https://crunchify.com",
+                "https://yahoo.com",
+                "https://www.ebay.com",
+                "https://google.com",
+                "https://www.example.co",
+                "https://paypal.com",
+                "http://bing.com/",
+                "https://techcrunch.com/",
+                "http://mashable.com/",
+                "https://wpsharing.co",
+                "https://wordpress.com/",
+                "https://wordpress.org/",
+                "https://example.com/",
+                "https://sjsu.edu/",
+                "https://crunchify.com/",
+                "https://test.com.au/",
+                "https://www.wikipedia.org/",
                 "https://crunchify.com",
                 "https://yahoo.com",
                 "https://www.ebay.com",
@@ -49,9 +81,8 @@ public class CrunchifyGetPingStatusWithExecutorService {
                 "https://en.wikipedia.org"
         };
 
-        for (int i = 0; i < crunchifyList.length; i++) {
+        for (String url : crunchifyList) {
 
-            String url = crunchifyList[i];
             Runnable worker = new MyRunnable(url);
 
             executor.execute(worker);
@@ -82,7 +113,7 @@ public class CrunchifyGetPingStatusWithExecutorService {
             this.url = url;
         }
 
-        @SneakyThrows
+
         @Override
         public void run() {
             String result = "";
@@ -99,10 +130,14 @@ public class CrunchifyGetPingStatusWithExecutorService {
                 } else {
                     result = "-> Yellow <-\t\t" + "Code: " + code;
                 }
-            } catch (Exception e){
-               result = "-> RED  <-\t\t" +"wrong domain"  + e.getMessage();
+            } catch (Exception e) {
+                result = "-> RED  <-\t\t" + "wrong domain" + e.getMessage();
             }
-            Thread.sleep(1000);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             System.out.println(url + "\t\t\t\tStatus:" + result);
         }
     }

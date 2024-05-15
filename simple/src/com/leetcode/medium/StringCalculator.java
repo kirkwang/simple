@@ -4,9 +4,10 @@
  * kirkwang : the currently used username;
  */
 
-package com.kirkwang.medium;
+package com.leetcode.medium;
 
 import java.util.Stack;
+
 // Hard
 class StringCalculator {
 

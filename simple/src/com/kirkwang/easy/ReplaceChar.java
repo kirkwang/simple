@@ -30,14 +30,14 @@ public class ReplaceChar {
         return buf.toString();
     }
 
-    private static String removeChar(String s, char c) {
+    private static String removeChar(String s, char target) {
 
         StringBuffer buf = new StringBuffer();
         buf.setLength(s.length());
         int index = 0;
         for (int i = 0; i < s.length(); i++) {
             char cur = s.charAt(i);
-            if (cur != c) {
+            if (cur != target) {
                 buf.setCharAt(index++, cur);
             }
         }

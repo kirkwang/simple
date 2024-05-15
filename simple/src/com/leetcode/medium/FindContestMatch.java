@@ -1,8 +1,9 @@
-package com.kirkwang.medium;/*
+package com.leetcode.medium;/*
  * 3/26/19 9:04 PM : for the current date and time;
  * 2019 : to access the year information of the current date;
  * kirkwang : the currently used username;
  * https://www.cnblogs.com/lightwindy/p/9617310.html
+ *https://leetcode.com/problems/output-contest-matches/description/
  */
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ class FindContestMatch {
     public static void main(String[] args) {
         FindContestMatch fcm = new FindContestMatch();
 
-        System.out.println(fcm.FindContestMatch(8));
+        System.out.println(fcm.findContestMatch(8));
     }
 
 
@@ -31,7 +32,7 @@ class FindContestMatch {
     }
 
 
-    public String FindContestMatch(int n) {
+    public String find_Contest_Match(int n) {
         String[] arr = new String[n];
         for (int i = 0; i < n; i++) arr[i] = String.valueOf((i + 1));
 

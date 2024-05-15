@@ -8,14 +8,18 @@ package com.kirkwang.HackerRank.generalProgramming;
 
 import java.util.BitSet;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
+/*
+https://www.hackerrank.com/challenges/gem-stones/problem
+ */
 public class Gemstones {
 
     public static void main(String[] args) {
         String[] input = {"abcdde", "baccd", "eeabg"};
 
-        System.out.println(gemstones(input));
+        System.out.println(gemstonesBit(input));
     }
 
     static int gemstonesBit(String[] array) {
@@ -38,8 +42,7 @@ public class Gemstones {
     static int gemstones(String[] arr) {
         Set set = null;
 
-        for (int i = 0; i < arr.length; i++) {
-            String temp = arr[i];
+        for (String temp : arr) {
             Set set1 = temp.chars().collect(HashSet::new, HashSet::add, HashSet::addAll);
             if (set == null) {
                 set = set1;
@@ -47,7 +50,7 @@ public class Gemstones {
                 set.retainAll(set1);
             }
         }
-        return set.size();
+        return Objects.requireNonNull(set).size();
     }
 
 }

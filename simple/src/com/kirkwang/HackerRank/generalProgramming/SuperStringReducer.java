@@ -1,4 +1,4 @@
-package com.kirkwang.HackerRank;
+package com.kirkwang.HackerRank.generalProgramming;
 
 
 /**
@@ -29,7 +29,7 @@ import java.util.Scanner;
 import java.util.Stack;
 import java.util.stream.Collectors;
 
-public class SuperReducer {
+public class SuperStringReducer {
 
     // Complete the superReducedString function below.
     static String superReducedString(String s) {
@@ -55,14 +55,14 @@ public class SuperReducer {
     }
 
     public static String superReducedString_v2(String input) {
-       // This method doesn't work because that it reduce the whole string.
+        // This method doesn't work because that it reduce the whole string.
         // it should only reduce the nearby string.
         //This is wrong"zztqooauhujtmxnsbzpy" -> "abhjmnpqsxyz"
         //It should be "zztqooauhujtmxnsbzpy" -> "tqauhujtmxnsbzpy"
-        if (input.isEmpty()){
+        if (input.isEmpty()) {
             return "Empty String";
         }
-        HashMap<Character, Integer> mMap = new HashMap();
+        HashMap<Character, Integer> mMap = new HashMap<>();
         for (Character i : input.toCharArray()) {
             mMap.put(i, mMap.getOrDefault(i, 0) + 1);
         }

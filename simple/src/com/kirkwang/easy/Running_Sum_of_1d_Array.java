@@ -36,7 +36,7 @@ public class Running_Sum_of_1d_Array {
 
         input = runningSum(input);
         for (int i : input) {
-            System.out.print(i+" ");
+            System.out.print(i + " ");
         }
     }
 }

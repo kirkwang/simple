@@ -44,8 +44,8 @@ public class FourDigit {
 
     public static void main(String[] args) {
         int count = 0;
-        for (int i = 100; i <= 988; i=i+2) {
-            for (int j = 20; j <= 88; j=j+2) {
+        for (int i = 100; i <= 988; i = i + 2) {
+            for (int j = 20; j <= 88; j = j + 2) {
                 if (checkFirstDigi(i) && checkSecondDigi(j)) {
                     int result = i * j;
                     if (result < 9988) {

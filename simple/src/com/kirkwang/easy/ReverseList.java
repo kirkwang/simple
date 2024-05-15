@@ -4,56 +4,45 @@ import com.kirkwang.libary.ListNode;
 
 /**
  * Created by kewang on 1/5/16.
+ * <a href="https://leetcode.com/problems/reverse-linked-list/">...</a>
+ * Given the head of a singly linked list, reverse the list, and return the reversed list.
  */
 public class ReverseList {
 
     public static void main(String[] args) {
         ReverseList rl = new ReverseList();
-        ListNode five = new ListNode(5);
-        ListNode four = new ListNode(4);
-        ListNode three = new ListNode(3);
-        three.next = four;
-        four.next = five;
 
-        ListNode result = rl.reverseList(three);
+        ListNode nameList = new ListNode(1);
+        ListNode current = nameList;
+        for (int i = 2; i <= 6; i++) {
+            current.next = new ListNode(i);
+            current = current.next;
+        }
+        ListNode result = rl.reverseList(nameList);
 
         while (result != null) {
             System.out.println("This is the result " + result.getVal());
             result = result.next;
         }
 
-
     }
+
 
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode p1 = head;
-        ListNode p2 = head.next;
-        head.next = null;
+        ListNode pre = null;
+        ListNode current = head;
+        ListNode next;
 
-        while (p1 != null && p2 != null) {
-            ListNode temp = p2.next;
-            p2.next = p1;
-            p1 = p2;
-            if (temp != null) {
-                p2 = temp;
-            } else {
-                break;
-            }
+        while (current != null) {
+            next = current.next;
+            current.next = pre;
+            pre = current;
+            current = next;
         }
-        return p2;
+        return pre;
     }
 
-    public ListNode reverseListRecursive(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        ListNode second = head.next;
-        head.next = null;
-        ListNode reversed = reverseListRecursive(second);
-        reversed.next = head;
-        return reversed;
-    }
 }

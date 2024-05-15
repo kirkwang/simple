@@ -1,10 +1,13 @@
-package com.kirkwang.medium;
+package com.leetcode.medium;
 
 
 /*
  * 3/27/19 3:10 AM : for the current date and time;
  * 2019 : to access the year information of the current date;
  * kirkwang : the currently used username;
+ */
+/*
+https://leetcode.com/problems/reveal-cards-in-increasing-order/description/
  */
 
 import java.util.Arrays;
@@ -18,7 +21,7 @@ class RevealCardsInIncreasingOrder {
 
         int[] ans = revealCardsInIncreasingOrder.deckRevealedIncreasing(deck);
         for (int i : ans) {
-            System.out.println(" deck output" + i);
+            System.out.println(" deck output " + i);
         }
     }
 

@@ -6,32 +6,45 @@
 
 package com.leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /*
 https://leetcode.com/problems/single-element-in-a-sorted-array/
+https://leetcode.com/problems/single-number/
+singleNonDuplicate
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+Example 1:
+
+Input: nums = [2,2,1]
+Output: 1
+
  */
 public class SingleNumber {
-    public static int SingleElementinaSortedArray(int[] input) {
-        if (input.length == 1) {
-            return input[0];
-        }
 
-        for (int i = 0, j = 1; i < input.length - 1; i = i + 2) {
-            if (input[i] != input[j]) {
-                return input[i];
-            }
-            j = j + 2;
+    public static int singleNonDuplicate(int[] nums) {
+        if (nums.length == 1) {
+            return nums[0];
         }
-        return 0;
+        Set<Integer> set = new HashSet<>();
+        for (int i : nums) {
+            if (set.contains(i)) {
+                set.remove(i);
+            } else {
+                set.add(i);
+            }
+        }
+        return set.iterator().next();
     }
 
 
     public static void main(String[] args) {
-        //This bug is that it worn't work if it's the end
-        int[] integers = new int[]{1, 1, 2, 2, 3, 3, 4};
-        String abc = "abc";
-        abc.substring(0, 1);
-        SingleNumber singleNumber = new SingleNumber();
-        int result = SingleElementinaSortedArray(integers);
-        System.out.println("SingleElementinaSortedArray " + result);
+        int[] integers = new int[]{1, 2, 2, 3, 3, 4, 4};
+
+
+        System.out.println("SingleElementinaSortedArray " + singleNonDuplicate(integers));
     }
 }

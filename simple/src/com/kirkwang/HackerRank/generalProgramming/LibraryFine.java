@@ -8,7 +8,10 @@ package com.kirkwang.HackerRank.generalProgramming;
 
 import java.time.LocalDate;
 
-public class LibaryFine {
+/*
+https://www.hackerrank.com/challenges/library-fine/problem
+ */
+public class LibraryFine {
 
     public static void main(String[] args) {
 
@@ -17,8 +20,8 @@ public class LibaryFine {
         int returnYear = 2015;
         int dueDay = 6;
         int dueMonth = 6;
-        int dueyear = 2015;
-        System.out.println(libraryFine(returnDay, returnMonth, returnYear, dueDay, dueMonth, dueyear));
+        int dueYear = 2015;
+        System.out.println(libraryFine(returnDay, returnMonth, returnYear, dueDay, dueMonth, dueYear));
     }
 
     static LocalDate toLocalDate(int d, int m, int y) {
