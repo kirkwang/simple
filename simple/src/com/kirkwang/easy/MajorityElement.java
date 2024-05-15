@@ -41,7 +41,7 @@ public class MajorityElement {
     }
 
     public static void main(String[] args) {
-          int[] array = {3,2,3};
+        int[] array = {3, 2, 3};
         //int[] array = new int[]{2, 2, 1, 1, 1, 2, 2};
         //   int[] array = {1, 1, 2, 4, 4, 4, 4, 4, 5};
 

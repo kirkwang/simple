@@ -17,39 +17,39 @@ Given an integer array nums, return an array answer such that answer[i] is equal
 
 public class ProductOfArrayExceptSelf {
 
-  public static int[] ProductOfArrayExceptSelf(int[] nums) {
-    int N = nums.length;
-    int[] result = new int[N];
-    int[] left = new int[N];
-    int[] right = new int[N];
-    left[0] = 1;
-    right[N - 1] = 1;
+    public static int[] ProductOfArrayExceptSelf(int[] nums) {
+        int N = nums.length;
+        int[] result = new int[N];
+        int[] left = new int[N];
+        int[] right = new int[N];
+        left[0] = 1;
+        right[N - 1] = 1;
 //  1,2,3,4
 //  1,1,2,6
-    for (int i = 1; i < N; i++) {
-      left[i] = nums[i - 1] * left[i - 1];
+        for (int i = 1; i < N; i++) {
+            left[i] = nums[i - 1] * left[i - 1];
 
+        }
+        // 1,2,3,4
+        // 24,12,4, 1
+        for (int i = N - 2; i >= 0; i--) {
+            right[i] = nums[i + 1] * right[i + 1];
+
+        }
+
+        for (int i = 0; i < N; i++) {
+            result[i] = left[i] * right[i];
+
+        }
+
+        return result;
     }
-    // 1,2,3,4
-    // 24,12,4, 1
-    for (int i = N - 2; i >= 0; i--) {
-      right[i] = nums[i + 1] * right[i + 1];
 
+    public static void main(java.lang.String args[]) {
+
+        int[] input = new int[]{1, 2, 3, 4};
+        for (int i : ProductOfArrayExceptSelf(input)) {
+            System.out.println(i);
+        }
     }
-
-    for (int i = 0; i < N; i++) {
-      result[i] = left[i] * right[i];
-
-    }
-
-    return result;
-  }
-
-  public static void main(java.lang.String args[]) {
-
-    int[] input = new int[]{1, 2, 3, 4};
-    for (int i : ProductOfArrayExceptSelf(input)) {
-      System.out.println(i);
-    }
-  }
 }

@@ -24,22 +24,22 @@ public class PalindromePermutation {
      * "code"->false, "aab"-> true, "carerac" -> true
      */
     public boolean palindromePermutation(String source) {
-      Map<Character, Integer> hm = new HashMap();
+        Map<Character, Integer> hm = new HashMap();
         for (int i = 0; i < source.length(); i++) {
             Character c = source.charAt(i);
-            if( hm.containsKey(c)){
-                hm.put(c, hm.get(c)+1 );
-            }else {
+            if (hm.containsKey(c)) {
+                hm.put(c, hm.get(c) + 1);
+            } else {
                 hm.put(c, 1);
             }
         }
         int count = 0;
-        for (Integer i : hm.values() ) {
-            if (i %2 != 0){
-                count ++;
+        for (Integer i : hm.values()) {
+            if (i % 2 != 0) {
+                count++;
             }
         }
-        return count<=1;
+        return count <= 1;
 
-      }
+    }
 }

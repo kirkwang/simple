@@ -49,6 +49,7 @@ public class SuperReducedString {
         }
         return stack.isEmpty() ? "Empty String" : stack.stream().map(i -> i.toString()).collect(Collectors.joining());
     }
+
     public static String superReducedString_v2(String input) {
 
         HashMap<Character, Integer> mMap = new HashMap<>();

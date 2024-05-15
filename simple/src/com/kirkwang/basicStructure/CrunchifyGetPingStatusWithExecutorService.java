@@ -9,7 +9,7 @@ public class CrunchifyGetPingStatusWithExecutorService {
 
     private static final int crunchifyThreads = 10;
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 // wait for activity here
         // Executors: Factory and utility methods for Executor, ExecutorService, ScheduledExecutorService, ThreadFactory, and Callable classes defined in this package.
@@ -130,8 +130,8 @@ public class CrunchifyGetPingStatusWithExecutorService {
                 } else {
                     result = "-> Yellow <-\t\t" + "Code: " + code;
                 }
-            } catch (Exception e){
-               result = "-> RED  <-\t\t" +"wrong domain"  + e.getMessage();
+            } catch (Exception e) {
+                result = "-> RED  <-\t\t" + "wrong domain" + e.getMessage();
             }
             try {
                 Thread.sleep(1000);

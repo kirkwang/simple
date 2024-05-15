@@ -12,7 +12,7 @@ public class MiniMaxSum {
     public static void main(String[] args) {
         MiniMaxSum mms = new MiniMaxSum();
 
-          Integer[] array = new Integer[]{2, 7, 69, 221, 8974};
+        Integer[] array = new Integer[]{2, 7, 69, 221, 8974};
         //Integer[] array = new Integer[]{256741038, 623958417, 467905213, 714532089, 938071625};
         int[] arr = new int[]{1, 3, 5, 7, 9};
         miniMaxSum(Arrays.asList(array));

@@ -18,7 +18,7 @@ public class LongestUniqueSubsttr {
 
     public static int lengthOfLongestSubstring(String s) {
         String input = s;
-        int n =  input.length() ;
+        int n = input.length();
         int head = 0;
         int tail = 0;
         int ans = 0;

@@ -26,7 +26,7 @@ class CountTriplets {
     public static void main(String[] args) {
         CountTriplets frp = new CountTriplets();
 
-       // Integer[] array = new Integer[]{1, 3, 9, 9, 27, 81};
+        // Integer[] array = new Integer[]{1, 3, 9, 9, 27, 81};
         Integer[] array = new Integer[]{1, 5, 5, 25, 125};
 
         ArrayList<Long> arrayList = new ArrayList<>();
@@ -46,25 +46,26 @@ class CountTriplets {
          */
         ArrayList result = new ArrayList<>();
 
-        for (int i =0; i < arr.size();i ++){
+        for (int i = 0; i < arr.size(); i++) {
             long first = arr.get(i);
             long second = r * first;
             long third = r * second;
-            Boolean flag =  checkOthertwo(arr, second, third);
-            if (flag){
+            Boolean flag = checkOthertwo(arr, second, third);
+            if (flag) {
 
-                result.add( arr.indexOf(first));
-                result.add( arr.indexOf(second));
-                result.add( arr.indexOf(third));
+                result.add(arr.indexOf(first));
+                result.add(arr.indexOf(second));
+                result.add(arr.indexOf(third));
             }
 
         }
         System.out.println(Long.valueOf(result.size()));
-        return Long.valueOf(result.size()/3);
+        return Long.valueOf(result.size() / 3);
     }
-    static boolean checkOthertwo( List<Long> arr, long second, long third){
+
+    static boolean checkOthertwo(List<Long> arr, long second, long third) {
         //arr.subList(from, to);
-        return arr.contains(second) && arr.contains(third)? true : false;
+        return arr.contains(second) && arr.contains(third) ? true : false;
     }
 
 }

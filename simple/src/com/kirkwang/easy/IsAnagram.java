@@ -49,19 +49,19 @@ public class IsAnagram {
             }
         }
 
-       for(int i =0;i< target.length(); i++){
-           Character t = target.charAt(i);
-           if( hMap.containsKey(t)){
-               if (hMap.get(t) == 1){
-                   hMap.remove(t);
-               }else{
-                   hMap.put(t, hMap.get(t) - 1 );
-               }
-           } else {
-               return false; //no key match
-           }
-       }
-        return  hMap.size() <= 0;
+        for (int i = 0; i < target.length(); i++) {
+            Character t = target.charAt(i);
+            if (hMap.containsKey(t)) {
+                if (hMap.get(t) == 1) {
+                    hMap.remove(t);
+                } else {
+                    hMap.put(t, hMap.get(t) - 1);
+                }
+            } else {
+                return false; //no key match
+            }
+        }
+        return hMap.size() <= 0;
 
     }
 

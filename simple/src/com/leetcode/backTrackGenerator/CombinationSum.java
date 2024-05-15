@@ -26,44 +26,44 @@ import java.util.List;
  */
 public class CombinationSum {
 
-  public static List<List<Integer>> CombinationSum(int[] canidate, int target) {
-    List<List<Integer>> list = new ArrayList<>();
-    if (canidate == null || canidate.length == 0) {
-      return list;
-    }
-    Arrays.sort(canidate);
-
-    generator(list, new ArrayList<>(), canidate, target, 0);
-    return list;
-  }
-
-  private static void generator(List<List<Integer>> list, ArrayList<Integer> sublist,
-      int[] canidate, int target, int index) {
-
-    if (target == 0) {
-      list.add(new ArrayList<Integer>(sublist));
-    } else if (target < 0) {
-
-      return;
-
-    } else {
-      for (int i = index; i < canidate.length; i++) {
-        if (i == index || canidate[i] != canidate[i
-            - 1]) { //The if is for check duplicate. No "if" needed if there is no dup
-          sublist.add(canidate[i]);
-          generator(list, sublist, canidate, target - canidate[i], i);
-          //i + 1 will not reuse the item. for unique result set
-          sublist.remove(sublist.size() - 1);
+    public static List<List<Integer>> CombinationSum(int[] canidate, int target) {
+        List<List<Integer>> list = new ArrayList<>();
+        if (canidate == null || canidate.length == 0) {
+            return list;
         }
-      }
+        Arrays.sort(canidate);
+
+        generator(list, new ArrayList<>(), canidate, target, 0);
+        return list;
     }
-  }
 
-  public static void main(String[] args) {
-    int target = 7;
-    System.out.println("This is the target " + target);
+    private static void generator(List<List<Integer>> list, ArrayList<Integer> sublist,
+                                  int[] canidate, int target, int index) {
 
-    System.out.println("This is the result " + CombinationSum(new int[]{2, 3, 3, 6, 7}, target));
+        if (target == 0) {
+            list.add(new ArrayList<Integer>(sublist));
+        } else if (target < 0) {
 
-  }
+            return;
+
+        } else {
+            for (int i = index; i < canidate.length; i++) {
+                if (i == index || canidate[i] != canidate[i
+                        - 1]) { //The if is for check duplicate. No "if" needed if there is no dup
+                    sublist.add(canidate[i]);
+                    generator(list, sublist, canidate, target - canidate[i], i);
+                    //i + 1 will not reuse the item. for unique result set
+                    sublist.remove(sublist.size() - 1);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int target = 7;
+        System.out.println("This is the target " + target);
+
+        System.out.println("This is the result " + CombinationSum(new int[]{2, 3, 3, 6, 7}, target));
+
+    }
 }

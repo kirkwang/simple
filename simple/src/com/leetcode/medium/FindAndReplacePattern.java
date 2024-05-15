@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 /*
 https://leetcode.com/problems/find-and-replace-pattern/
  */
@@ -20,16 +21,6 @@ class FindAndReplacePattern {
         String patten = "abb";
         List result = frp.findAndReplacePattern(array, patten);
         System.out.println(result.toString());
-    }
-
-    public  List findAndReplacePattern(String[] words, String pattern) {
-         List<String> arrayList = new ArrayList<>();
-        for (int i = 0; i < words.length; i++) {
-            if (checkPatten(words[i], pattern)) {
-                arrayList.add(words[i]);
-            }
-        }
-        return arrayList;
     }
 
     public static boolean checkPatten(String source, String target) {
@@ -56,5 +47,15 @@ class FindAndReplacePattern {
         }
 
         return true;
+    }
+
+    public List findAndReplacePattern(String[] words, String pattern) {
+        List<String> arrayList = new ArrayList<>();
+        for (int i = 0; i < words.length; i++) {
+            if (checkPatten(words[i], pattern)) {
+                arrayList.add(words[i]);
+            }
+        }
+        return arrayList;
     }
 }

@@ -7,6 +7,7 @@
 package com.leetcode.medium;
 
 import java.util.Stack;
+
 // Hard
 class StringCalculator {
 

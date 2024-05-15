@@ -42,19 +42,19 @@ public class SumRange {
 
     }
 
-    public int SumRange(int s, int e) {
-        if (s == 0) {
-            return total[e];
-        }
-        return total[e] - total[s - 1];
-    }
-
     public static int rangeSum(int[] target, int begin, int end) {
         int total = 0;
         for (int i = begin; i <= end; i++) {
             total += target[i];
         }
         return total;
+    }
+
+    public int SumRange(int s, int e) {
+        if (s == 0) {
+            return total[e];
+        }
+        return total[e] - total[s - 1];
     }
 
 }

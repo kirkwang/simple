@@ -12,10 +12,10 @@ public class PrimeNumber {
         if (n < 2) {
             return false;
         } else if (n % 2
-            == 0) { // account for even numbers now, so that we can do i+=2 in loop below
+                == 0) { // account for even numbers now, so that we can do i+=2 in loop below
             return false;
         } else if (n
-            == 2) {     // account for even numbers now, so that we can do i+=2 in loop below
+                == 2) {     // account for even numbers now, so that we can do i+=2 in loop below
             return true;
         }
         int sqrt = (int) Math.sqrt(n);

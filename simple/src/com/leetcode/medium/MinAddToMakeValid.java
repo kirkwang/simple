@@ -26,7 +26,7 @@ public class MinAddToMakeValid {
                 s.push(c);
             } else {
                 Character temp = s.peek();
-                if (matching( temp,c)) {
+                if (matching(temp, c)) {
                     s.pop();
                 } else {
                     s.push(c);

@@ -7,38 +7,38 @@ import java.util.Set;
 
 /**
  * Created by kewang on 12/12/17.
- *
- *
+ * <p>
+ * <p>
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
- *
- *
+ * <p>
+ * <p>
  * Given a string, find the length of the longest substring without repeating characters.
- *
+ * <p>
  * Examples:
- *
+ * <p>
  * Given "abcabcbb", the answer is "abc", which the length is 3.
- *
+ * <p>
  * Given "bbbbb", the answer is "b", with the length of 1.
- *
+ * <p>
  * Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a
  * substring, "pwke" is a subsequence and not a substring.
  */
 public class LengthOfLongestSubstring_Map {
 
-  public static int LengthOfLongestSubstring_Map(String input) {
-    int ans = 0;
-    int head = 0;
-    //int tail = 0;
-    Map<Character, Integer> map = new HashMap<>();
-    for (int tail = 0; tail < input.length(); tail++) {
-      if (map.containsKey(input.charAt(tail))) {
-        head = Math.max(map.get(input.charAt(tail)), head);
-      }
-      ans = Math.max(ans, tail - head + 1);
-      map.put(input.charAt(tail), tail + 1);
+    public static int LengthOfLongestSubstring_Map(String input) {
+        int ans = 0;
+        int head = 0;
+        //int tail = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int tail = 0; tail < input.length(); tail++) {
+            if (map.containsKey(input.charAt(tail))) {
+                head = Math.max(map.get(input.charAt(tail)), head);
+            }
+            ans = Math.max(ans, tail - head + 1);
+            map.put(input.charAt(tail), tail + 1);
+        }
+        return ans;
     }
-    return ans;
-  }
 
     private static int lengthOfLongestSubstringSet(String s) {
         int n = s.length();
@@ -56,15 +56,15 @@ public class LengthOfLongestSubstring_Map {
         return ans;
     }
 
-  public static void main(String[] args) {
-      String input = "abcabcbb";
-      //   int result = LengthOfLongestSubstring_Map(input);
-      //   System.out.println("This is the result " + result);
+    public static void main(String[] args) {
+        String input = "abcabcbb";
+        //   int result = LengthOfLongestSubstring_Map(input);
+        //   System.out.println("This is the result " + result);
 
-      // input = "pwwkew";
-      int result1 = LengthOfLongestSubstring_Map(input);
-      result1 = lengthOfLongestSubstringSet(input);
-      System.out.println("This is the result " + result1);
+        // input = "pwwkew";
+        int result1 = LengthOfLongestSubstring_Map(input);
+        result1 = lengthOfLongestSubstringSet(input);
+        System.out.println("This is the result " + result1);
 
-  }
+    }
 }

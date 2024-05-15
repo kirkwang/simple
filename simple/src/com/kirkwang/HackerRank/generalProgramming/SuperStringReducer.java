@@ -55,11 +55,11 @@ public class SuperStringReducer {
     }
 
     public static String superReducedString_v2(String input) {
-       // This method doesn't work because that it reduce the whole string.
+        // This method doesn't work because that it reduce the whole string.
         // it should only reduce the nearby string.
         //This is wrong"zztqooauhujtmxnsbzpy" -> "abhjmnpqsxyz"
         //It should be "zztqooauhujtmxnsbzpy" -> "tqauhujtmxnsbzpy"
-        if (input.isEmpty()){
+        if (input.isEmpty()) {
             return "Empty String";
         }
         HashMap<Character, Integer> mMap = new HashMap<>();

@@ -18,32 +18,32 @@ public class Merge_Intervals {
     Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 */
 
-  public static int[][] merge(int[][] intervals) {
-    List<int[]> answer = new ArrayList();
-    answer.add(0, intervals[0]);
-    int[] current_start = intervals[0];
-    int[] current_end = intervals[1];
-    for (int[] i : intervals) {
-      int begin = i[0];
-      int end = i[1];
+    public static int[][] merge(int[][] intervals) {
+        List<int[]> answer = new ArrayList();
+        answer.add(0, intervals[0]);
+        int[] current_start = intervals[0];
+        int[] current_end = intervals[1];
+        for (int[] i : intervals) {
+            int begin = i[0];
+            int end = i[1];
 
+        }
+
+        return answer.toArray(new int[answer.size()][]);
     }
 
-    return answer.toArray(new int[answer.size()][]);
-  }
 
+    public static void main(String[] args) {
+        // This is not complete yet.
+        int input[][] = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
 
-  public static void main(String[] args) {
-    // This is not complete yet.
-    int input[][] = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        input = merge(input);
+        int jcount = input[0].length;
+        for (int i = 0; i < input.length; i++) {
+            for (int j = 0; j < jcount; j++) {
+                System.out.println(input[i][j]);
+            }
 
-    input = merge(input);
-    int jcount = input[0].length;
-    for (int i = 0; i < input.length; i++) {
-      for (int j = 0; j < jcount; j++) {
-        System.out.println(input[i][j]);
-      }
-
+        }
     }
-  }
 }
