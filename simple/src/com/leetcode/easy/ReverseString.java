@@ -1,17 +1,32 @@
 package com.leetcode.easy;
 
-import java.io.IOException;
-
 /**
  * Created by amp on 9/24/2015.
+ * <a href="https://leetcode.com/problems/reverse-words-in-a-string/">...</a>
+ * Example 1:
+ * Input: s = "the sky is blue"
+ * Output: "blue is sky the"
+ *
+ * Example 2:
+ * Input: s = "  hello world  "
+ * Output: "world hello"
+ * Explanation: Your reversed string should not contain leading or trailing spaces.
+ *
+ * Example 3:
+ * Input: s = "a good   example"
+ * Output: "example good a"
+ * Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
  */
 public class ReverseString {
 
-    public static String ReverseStance(String input) {
-        if (input == null || input.isEmpty()) {
-            return input;
+    public static String reverseWords(String s) {
+        if (s == null || s.isEmpty()) {
+            return s;
         }
-        String[] reversed = input.split(" ");
+        String noSpaces = s.trim().replaceAll("\\s+", ":");
+        String[] reversed = noSpaces.split(":");
+
+
         for (int i = 0; i < reversed.length / 2; i++) {
             String temp = reversed[i];
             reversed[i] = reversed[reversed.length - i - 1];
@@ -21,27 +36,15 @@ public class ReverseString {
         return String.join(" ", reversed);
     }
 
-    public static void ReverseString(char[] s) {
 
-        for (int i = 0; i < s.length / 2; i++) {
-            char t = s[i];
-            s[i] = s[s.length - i - 1];
-            s[s.length - i - 1] = t;
-        }
-
-    }
-
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         //original string
-        String str = "Sony is going to introduce Internet TV soon";
+        String str = "a good   example";
         System.out.println("Original String: " + str);
 
-        System.out.println("Reversed stance: " + ReverseStance(str));
+        System.out.println("Reversed stance: " + reverseWords(str));
 
-        char[] charArray2 = "Son".toCharArray();
-        ReverseString(charArray2);
-        System.out.println("Reversed string Son : " + String.valueOf(charArray2));
 
     }
 
