@@ -1,7 +1,5 @@
 package com.kirkwang.basicStructure;
 
-import lombok.SneakyThrows;
-
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
@@ -115,7 +113,7 @@ public class CrunchifyGetPingStatusWithExecutorService {
             this.url = url;
         }
 
-        @SneakyThrows
+
         @Override
         public void run() {
             String result = "";
