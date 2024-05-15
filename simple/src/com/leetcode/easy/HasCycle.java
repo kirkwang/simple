@@ -21,7 +21,7 @@ public class HasCycle {
             current = current.next;
         }
         HasCycle hc = new HasCycle();
-        System.out.println(hc.hasCycle(nameList));
+        System.out.println("HasCycle " + hc.hasCycle(nameList));
     }
 
     public boolean hasCycle(ListNode head) {
@@ -31,6 +31,7 @@ public class HasCycle {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast) {
+                System.out.println(" HasCycle at " + slow.getVal());
                 return true;
             }
         }

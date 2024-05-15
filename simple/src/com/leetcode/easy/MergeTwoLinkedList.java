@@ -35,7 +35,7 @@ public class MergeTwoLinkedList {
 
 
         MergeTwoLinkedList rd = new MergeTwoLinkedList();
-        ListNode merged = rd.mergeTwoLinkedList(leftHead, rightHead);
+        ListNode merged = rd.mergeTwoLinkedList(leftHead, rightHead, null);
 
 
         while (merged != null) {
@@ -44,10 +44,11 @@ public class MergeTwoLinkedList {
         }
     }
 
-    public ListNode mergeTwoLinkedList(ListNode list1, ListNode list2) {
+    public ListNode mergeTwoLinkedList(ListNode list1, ListNode list2, ListNode stopper) {
         ListNode fakeNode = new ListNode(0);
         ListNode ptr = fakeNode;
         while (list1 != null && list2 != null) {
+
             if (list1.val <= list2.val) {
                 ptr.next = list1;
                 list1 = list1.next;
