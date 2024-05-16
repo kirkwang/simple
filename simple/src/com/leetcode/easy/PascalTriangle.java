@@ -1,6 +1,7 @@
 package com.leetcode.easy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  */
 /*
 Given numRows, generate the first numRows of Pascal's triangle.
-
+https://leetcode.com/problems/pascals-triangle/description/
 For example, given numRows = 5,
 Return
 
@@ -25,12 +26,14 @@ public class PascalTriangle {
     public static void main(String[] args) {
         PascalTriangle pt = new PascalTriangle();
 
-        List tp = pt.pascalTriangle(6);
-        for (int i = 0; i < tp.size(); i++) System.out.println(tp.get(i) + " ");
+        List<List<Integer>> tp = pt.pascalTriangle(5);
+        for (int i = 0; i < tp.size(); i++) {
+            System.out.println(tp.get(i) + " ");
+        }
     }
 
     public List<List<Integer>> pascalTriangle(int numbRows) {
-        ArrayList<List<Integer>> list = new ArrayList<List<Integer>>();
+        ArrayList<List<Integer>> list = new ArrayList<>();
 
         Integer[] prev = null;
 
@@ -38,10 +41,10 @@ public class PascalTriangle {
             Integer[] current = new Integer[i];
             current[0] = 1;
             current[i - 1] = 1;
-            for (int j = 1; j < i - 1; j++)
+            for (int j = 1; j < i - 1; j++) {
                 current[j] = prev[j - 1] + prev[j];
-
-            //      list.add(new ArrayList<Integer>(Arrays.asList(current)));
+            }
+            list.add(new ArrayList(Arrays.asList(current)));
             prev = current;
         }
         return list;
