@@ -5,7 +5,7 @@ Given two binary strings a and b, return their sum as a binary string.
 
 Example 1:
 Input: a = "11", b = "1"
-Output: "100"
+Output: "100"  3+ 1 = 4
 
 Example 2:
 Input: a = "1010", b = "1011"
@@ -15,7 +15,7 @@ Output: "10101"
 public class AddBinary {
     public static void main(String[] args) {
         AddBinary ad = new AddBinary();
-        String a = "11";
+        String a = "11"; // 3 + 1 = 4
         String b = "1";
         System.out.println(ad.addBinary(a, b));
 
@@ -49,6 +49,7 @@ public class AddBinary {
             int sum = va + vb + flag;
             if (sum >= 2) {
                 sb.append(sum - 2);
+                System.out.println(sum);
                 flag = 1;
             } else {
                 flag = 0;
