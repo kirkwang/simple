@@ -2,7 +2,7 @@ package com.leetcode.easy;
 
 import com.kirkwang.libary.ListNode;
 //Remove all elements from a linked list of integers that have value val.
-//
+//https://leetcode.com/problems/remove-linked-list-elements/
 //        Example
 //        Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6, val = 6
 //        Return: 1 --> 2 --> 3 --> 4 --> 5
@@ -17,34 +17,31 @@ public class RemoveLinkListElement {
         for (int i = 1; i <= 5; i++) {
             p.next = new ListNode(i);
             p = p.next;
-
         }
+        removeElements(node, 2);
 
-        ListNode p1 = node;
-        removeLinkListElement(p1, 2);
-
-        while (p1 != null) {
-            System.out.println(p1.getVal());
-            p1 = p1.next;
+        while (node != null) {
+            System.out.println(node.getVal());
+            node = node.next;
         }
-
     }
 
-    public static ListNode removeLinkListElement(ListNode head, int val) {
-        ListNode newNode = new ListNode(0);
-        newNode.next = head;
-        ListNode p1 = newNode;
-        ListNode p2 = head;
-        while (p2 != null) {
-            if (p2.val == val) {
-                p1.next = p2.next;
-                p2 = p2.next;
+    public static ListNode removeElements(ListNode head, int val) {
+        ListNode tempNode = new ListNode(-1);
+        tempNode.next = head;
+
+        ListNode previous = tempNode;
+        ListNode current = head;
+        while (current != null) {
+            if (current.val == val) {
+                previous.next = current.next;
+                current = current.next;
                 continue;
             }
-            p1 = p1.next;
-            p2 = p2.next;
+            previous = previous.next;
+            current = current.next;
         }
-        return newNode.next;
+        return tempNode.next;
     }
 
 }
