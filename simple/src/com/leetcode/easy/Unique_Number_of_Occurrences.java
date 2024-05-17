@@ -27,7 +27,7 @@ public class Unique_Number_of_Occurrences {
         HashMap<Integer, Integer> myMap = new HashMap<>();
         for (int i : arr) {
 
-            myMap.put(i, myMap.getOrDefault(i, 1) + 1);
+            myMap.put(i, myMap.getOrDefault(i, 0) + 1);
         }
 
 
@@ -45,7 +45,7 @@ public class Unique_Number_of_Occurrences {
     public static void main(String[] args) {
 
         int[] target = new int[]{1, 2};
-        // int[] target = new int[]{1, 2, 2, 1, 1, 3};
+        //   int[] target = new int[]{1, 2, 2, 1, 1, 3};
         System.out.print(uniqueOccurrences(target));
 
     }
