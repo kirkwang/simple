@@ -6,29 +6,62 @@
 
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * https://leetcode.com/problems/count-primes/description/
+ */
 public class PrimeNumber {
 
-    public static boolean isPrime(int n) {
-        if (n < 2) {
-            return false;
-        } else if (n % 2
-                == 0) { // account for even numbers now, so that we can do i+=2 in loop below
-            return false;
-        } else if (n
-                == 2) {     // account for even numbers now, so that we can do i+=2 in loop below
-            return true;
+
+    public static int checkAndCount(int n) {
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < n; ) {
+            if (countPrimes(i)) {
+                list.add(i);
+            }
+            if (i <= 10) {
+                i++;
+            } else {
+                i = i + 2;
+            }
         }
-        int sqrt = (int) Math.sqrt(n);
-        for (int i = 3; i <= sqrt; i += 2) { // skips even numbers for faster results
+        return list.size();
+    }
+
+    public static boolean countPrimes(int n) {
+
+        if (n <= 1)
+            return false;
+        // Check from 2 to sqrt(n)
+        for (int i = 2; i <= Math.sqrt(n); ) {
             if (n % i == 0) {
                 return false;
             }
+            if (i <= 10) {
+                i++;
+            } else {
+                i = i + 2;
+            }
+
         }
         return true;
     }
-
     public static void main(String[] args) {
 
-        System.out.println("The result is " + PrimeNumber.isPrime(13));
+
+        Assert.assertTrue(countPrimes(3));
+        Assert.assertEquals(checkAndCount(2), 0);
+        Assert.assertEquals(checkAndCount(3), 1);
+        Assert.assertEquals(checkAndCount(4), 2);
+        Assert.assertEquals(checkAndCount(5), 2);
+        Assert.assertEquals(checkAndCount(6), 3);
+        Assert.assertEquals(checkAndCount(10), 4);
+        Assert.assertEquals(checkAndCount(5000000), 348513);
+
     }
 }
