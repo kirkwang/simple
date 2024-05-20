@@ -10,15 +10,14 @@ import com.kirkwang.libary.ListNode;
 public class ReverseList {
 
     public static void main(String[] args) {
-        ReverseList rl = new ReverseList();
 
-        ListNode nameList = new ListNode(1);
+        ListNode nameList = new ListNode(0);
         ListNode current = nameList;
-        for (int i = 2; i <= 6; i++) {
+        for (int i = 1; i <= 6; i++) {
             current.next = new ListNode(i);
             current = current.next;
         }
-        ListNode result = rl.reverseList(nameList);
+        ListNode result = reverseList(nameList);
 
         while (result != null) {
             System.out.println("This is the result " + result.getVal());
@@ -38,7 +37,7 @@ public class ReverseList {
 
         while (current != null) {
             next = current.next;
-            current.next = pre;
+            current.next = pre;  //reverse, point to back
             pre = current;
             current = next;
         }
