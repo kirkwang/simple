@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.Arrays;
 
 /**
@@ -8,6 +10,7 @@ import java.util.Arrays;
 /*
 
 https://leetcode.com/submissions/detail/46640625/
+https://leetcode.com/problems/range-sum-query-immutable/description/
 
 Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
 
@@ -31,15 +34,17 @@ public class SumRange {
 
         }
         this.total = numbs;
-        System.out.print(Arrays.toString(total));
+        System.out.println("SumRange " + Arrays.toString(total));
     }
 
     public static void main(String[] args) {
-        int[] target = new int[]{-12, 0, 6, -5, 2, -1};
-        System.out.print(rangeSum(target, 2, 4));
-        //SumRange sr = new SumRange(target);
-        //System.out.print(sr.SumRange(2, 4));
+        int[] target = new int[]{-2, 0, 3, -5, 2, -1};
 
+        SumRange sr = new SumRange(target);
+
+        Assert.assertEquals(sr.SumRange(0, 2), 1);
+        Assert.assertEquals(sr.SumRange(2, 5), -1);
+        Assert.assertEquals(sr.SumRange(0, 5), -3);
     }
 
     public static int rangeSum(int[] target, int begin, int end) {
@@ -50,11 +55,11 @@ public class SumRange {
         return total;
     }
 
-    public int SumRange(int s, int e) {
-        if (s == 0) {
-            return total[e];
+    public int SumRange(int start, int end) {
+        if (start == 0) {
+            return total[end];
         }
-        return total[e] - total[s - 1];
+        return total[end] - total[start - 1];
     }
 
 }
