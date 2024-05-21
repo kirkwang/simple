@@ -7,15 +7,17 @@
 
 package com.leetcode.easy;
 
-import java.io.IOException;
+import org.testng.Assert;
+
 import java.util.Stack;
 
 public class EvaluateValue {
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String[] tokens = new String[]{"2", "1", "+"};
-        System.out.println(evaluate(tokens));
+
+        Assert.assertEquals(evaluate(tokens), 3);
     }
 
     public static int evaluate(String[] token) {
