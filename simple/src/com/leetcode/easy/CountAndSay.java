@@ -7,6 +7,7 @@ import java.util.List;
  * Created by kewang on 12/23/17.
  * <p>
  * <a href="https://leetcode.com/problems/count-and-say/description/">...</a>
+ * same as https://leetcode.com/problems/string-compression/description/
  * <p>
  * The count-and-say sequence is the sequence of integers with the first five terms as following:
  * <p>
@@ -40,8 +41,9 @@ public class CountAndSay {
 
 
     public static void main(String[] args) {
-
-        System.out.print(countAndSay(-111));
+        //"a","a","b","b","c","c","c"
+        System.out.println(countAndSay(111));
+        // Assert.assertEquals(countAndSay(111).toCharArray(), new int[]{3,1});
     }
 
     public static String countAndSay(int n) {

@@ -23,7 +23,7 @@ import org.testng.Assert;
  * Input: n = 3
  * Output: false
  */
-public class IsPowerOfTwo {
+public class PowerOfTwo {
     public static void main(String[] args) {
 
         Assert.assertTrue(isPowerOfTwo(1));
