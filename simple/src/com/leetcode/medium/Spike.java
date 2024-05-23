@@ -6,9 +6,19 @@
  */
 package com.leetcode.medium;
 // It is very similar to this task
-//https://leetcode.com/problems/find-peak-element/
+/*
+You must write an algorithm that runs in O(log n) time.
+https://leetcode.com/problems/find-peak-element/
+ */
 
 class Spike {
+    /*
+    for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] > nums[i + 1])
+                return i;
+        }
+        return nums.length - 1;
+     */
     public static int findSpike(int[] nums) {
         int head = 0;
         int tail = nums.length - 1;

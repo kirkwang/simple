@@ -1,5 +1,6 @@
 package com.leetcode.easy;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -21,18 +22,20 @@ Output: 2
 You may assume that the array is non-empty and the majority element always exist in the array.
  */
 public class MajorityElement {
+    private static Integer majorityElement_V2(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length / 2];
+    }
 
-    protected static Integer majorityElement(int[] numbs) {
+    protected static Integer majorityElement(int[] nums) {
         HashMap<Integer, Integer> mMap = new HashMap<>();
-        for (int numb : numbs) {
-            if (mMap.containsKey(numb)) {
-                mMap.put(numb, mMap.get(numb) + 1);
-            } else {
-                mMap.put(numb, 1);
-            }
+        for (int numb : nums) {
+
+            mMap.put(numb, mMap.getOrDefault(numb, 0) + 1);
+
         }
         for (int temp : mMap.keySet()) {
-            if (mMap.get(temp) > numbs.length / 2) {
+            if (mMap.get(temp) > nums.length / 2) {
                 return temp;
             }
         }
@@ -46,6 +49,8 @@ public class MajorityElement {
         //   int[] array = {1, 1, 2, 4, 4, 4, 4, 4, 5};
 
         Integer me = MajorityElement.majorityElement(array);
+        // me = MajorityElement.majorityElement_V2(array);
+
         System.out.print(me);
     }
 

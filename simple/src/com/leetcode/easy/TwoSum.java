@@ -3,7 +3,7 @@ package com.leetcode.easy;
 /**
  * Created by kewang on 12/22/17.
  * <p>
- * https://leetcode.com/problems/two-sum/description/
+ * <a href="https://leetcode.com/problems/two-sum/description/">...</a>
  * <p>
  * Given an array of integers, return indices of the two numbers such that they add up to a specific
  * target.
@@ -20,19 +20,22 @@ package com.leetcode.easy;
 public class TwoSum {
 
     public static void main(String[] args) {
-        int[] result = TwoSum(new int[]{1, 2, 7, 15}, 9);
-        assert result != null;
+        int[] result = twoSum(new int[]{3, 2, 4}, 6);
+
         System.out.print(result[0] + " " + result[1]);
     }
 
-    public static int[] TwoSum(int[] input, int total) {
-        for (int i = 0; i < input.length; i++) {
-            for (int j = i + 1; j < input.length; j++) {
-                if (total - input[i] == input[j]) {
+
+    public static int[] twoSum(int[] nums, int target) {
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
                     return new int[]{i, j};
                 }
             }
+
         }
-        return null;
+        return new int[]{};
     }
 }

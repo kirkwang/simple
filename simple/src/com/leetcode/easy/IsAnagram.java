@@ -6,62 +6,49 @@
 
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class IsAnagram {
-    public IsAnagram() {
-    }
 
-    public static void main(String[] args) throws InterruptedException {
+
+    public static void main(String[] args) {
         String source = "aab";
         String target = "aba";
 
         String firstWord = "hellohackerrankhellohackerrankhellohackerrankhellohackerrankhellohackerrank";
         String secondWord = "kcrhearaknhlloekcrhearaknhlloekcrhearaknhlloekcrhearaknhlloekcrhearaknhlloe"; //take any string
-        firstWord = source;
-        secondWord = target;
-        long begin = System.currentTimeMillis();
-        boolean result = checkAnagram(firstWord, secondWord);
-        boolean result1 = IsAnagram(firstWord, secondWord);
 
-        long end = System.currentTimeMillis() - begin;
-        System.out.println("Total mil sec " + end);
-        System.out.println("checkAnagram result is " + result);
-        System.out.println("IsAnagram result is " + result1);
+        Assert.assertTrue(checkAnagram(firstWord, secondWord));
+        Assert.assertTrue(checkAnagram(source, target));
+        Assert.assertTrue(IsAnagram(firstWord, secondWord));
+
     }
 
-    public static boolean checkAnagram(String source, String target) {
-        if (source == null || target == null) {
+    public static boolean checkAnagram(String s, String t) {
+        if (s == null || t == null || s.isEmpty() || t.isEmpty()) {
             return false;
         }
-        if (source.length() == 0 || target.length() == 0) {
-            return false;
-        }
-        if (source.length() != target.length()) return false;
-        Map<Character, Integer> hMap = new HashMap<>();
-        for (int i = 0; i < source.length(); i++) {
-            Character c = source.charAt(i);
-            if (hMap.containsKey(c)) {
-                hMap.put(c, hMap.get(c) + 1);
-            } else {
-                hMap.put(c, 1);
-            }
-        }
+        if (s.length() != t.length()) return false;
 
-        for (int i = 0; i < target.length(); i++) {
-            Character t = target.charAt(i);
-            if (hMap.containsKey(t)) {
-                if (hMap.get(t) == 1) {
-                    hMap.remove(t);
+        Map<Character, Integer> hMap = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            hMap.put(c, hMap.getOrDefault(c, 0) + 1);
+        }
+        for (char target : t.toCharArray()) {
+            if (hMap.containsKey(target)) {
+                if (hMap.get(target) == 1) {
+                    hMap.remove(target);
                 } else {
-                    hMap.put(t, hMap.get(t) - 1);
+                    hMap.put(target, hMap.get(target) - 1);
                 }
             } else {
                 return false; //no key match
             }
         }
-        return hMap.size() <= 0;
+        return hMap.isEmpty();
 
     }
 
@@ -77,8 +64,8 @@ public class IsAnagram {
             arr[source.charAt(i) - 'a']++;
             arr[target.charAt(i) - 'a']--;
         }
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
+        for (int j : arr) {
+            if (j != 0) {
 
                 return false;
             }
