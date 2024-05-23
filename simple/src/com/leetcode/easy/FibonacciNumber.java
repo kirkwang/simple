@@ -6,7 +6,41 @@
 
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
+/*
+https://leetcode.com/problems/fibonacci-number/description/
+Example 1:
+
+Input: n = 2
+Output: 1
+Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
+Example 2:
+
+Input: n = 3
+Output: 2
+Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
+Example 3:
+
+Input: n = 4
+Output: 3
+Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
+
+ */
 public class FibonacciNumber {
+    public static int fib_v1(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        int pre = 0;
+        int cur = 1;
+        for (int i = 2; i <= n; i++) {
+            int next = pre + cur;
+            pre = cur;
+            cur = next;
+        }
+        return cur;
+    }
     public static int fib(int N) {
         if (N == 0) {
             return 0;
@@ -24,8 +58,11 @@ public class FibonacciNumber {
 
     public static void main(String[] args) {
 
-        int n = fib(4);
-        System.out.println(n);
+        Assert.assertEquals(fib(4), 3);
+        Assert.assertEquals(fib_v1(4), 3);
+        Assert.assertEquals(fib_v1(3), 2);
+        Assert.assertEquals(fib_v1(2), 1);
+        Assert.assertEquals(fib_v1(0), 0);
 
     }
 }
