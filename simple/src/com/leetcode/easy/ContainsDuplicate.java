@@ -24,13 +24,10 @@ import java.util.Set;
  */
 public class ContainsDuplicate {
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 1};
-        int[] b = {1, 2, 3, 4};
-        int[] c = new int[]{1, 1, 1, 3, 3, 4, 3, 2, 4, 2};
 
-        Assert.assertTrue(containsDuplicate(a));
-        Assert.assertFalse(containsDuplicate(b));
-        Assert.assertTrue(containsDuplicate(c));
+        Assert.assertTrue(containsDuplicate(new int[]{1, 2, 3, 1}), " 1 and 1 are dup");
+        Assert.assertFalse(containsDuplicate(new int[]{1, 2, 3, 4}));
+        Assert.assertTrue(containsDuplicate(new int[]{1, 1, 1, 3, 3, 4, 3, 2, 4, 2}));
 
     }
 
