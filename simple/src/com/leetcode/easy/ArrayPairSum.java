@@ -6,7 +6,11 @@
  */
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /*
 f(10, [3, 4, 5, 6, 7]) // [ [6, 4], [7, 3] ]
@@ -15,27 +19,44 @@ https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-
  */
 class ArrayPairSum {
 
-    public static int min_1(int total, Integer[] nums) {
+    public static List min_1(int total, Integer[] nums) {
         Arrays.sort(nums);
+        List<ArrayList> list = new ArrayList<>();
         int left = 0;
         int right = nums.length - 1;
         while (left < right) {
             if (nums[left] + nums[right] == total) {
-                System.out.println("[" + nums[left++] + "," + nums[right--] + "]");
+                ArrayList<Integer> temp = new ArrayList<>();
+
+                temp.add(nums[left++]);
+                temp.add(nums[right--]);
+
+                list.add(temp);
 
             } else if (nums[left] + nums[right] < total) {
                 left++;
             } else right--;
 
         }
-        return -1;
+        return list;
     }
 
     public static void main(String[] args) {
 
         Integer[] integers = new Integer[]{6, 1, 3, 4, 1, 3, 9};
-        //  System.out.println("ArrayPairSum " + ArrayPairSum.min(8, new Integer[]{3, 4, 5, 4, 4}));
-        System.out.println("ArrayPairSum " + ArrayPairSum.min_1(10, integers));
+
+        List<ArrayList<Integer>> list = new ArrayList<>();
+        ArrayList<Integer> temp = new ArrayList<>();
+        temp.add(1);
+        temp.add(9);
+
+        list.add(temp);
+        temp = new ArrayList<>();
+        temp.add(4);
+        temp.add(6);
+        list.add(temp);
+
+        Assert.assertEquals(ArrayPairSum.min_1(10, integers), list);
 
     }
 }
