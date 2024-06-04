@@ -1,11 +1,25 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.HashMap;
 
 /**
  * Created by kewang on 3/3/16.
  * <p>
  * https://just4once.gitbooks.io/leetcode-notes/content/leetcode/hash-table/219-contains-duplicate-ii.html
+ * Example 1:
+ *
+ * Input: nums = [1,2,3,1], k = 3
+ * Output: true
+ * Example 2:
+ *
+ * Input: nums = [1,0,1,1], k = 1
+ * Output: true
+ * Example 3:
+ *
+ * Input: nums = [1,2,3,1,2,3], k = 2
+ * Output: false
  */
 public class ContainsNearByDubByK {
 
@@ -14,23 +28,22 @@ public class ContainsNearByDubByK {
     // find out whether there are two distinct indices i and j in the array
     // such that nums[i] = nums[j] and the absolute difference between i and j is at most k.
     public static void main(String[] args) {
-        int[] numbs = {1, 4, 5, 2, 1, 56, 22, 4};
-        System.out.println(ContainsNearByDub(numbs, 3));
+        Assert.assertFalse(ContainsNearByDub(new int[]{1, 4, 5, 2, 1, 56, 22, 4}, 3));
+        Assert.assertFalse(ContainsNearByDub(new int[]{1, 2, 3, 1, 2, 3}, 2));
+        Assert.assertTrue(ContainsNearByDub(new int[]{1, 2, 3, 1}, 3));
+        Assert.assertTrue(ContainsNearByDub(new int[]{1, 0, 1, 1}, 1));
+
     }
 
     public static boolean ContainsNearByDub(int[] nums, int k) {
         HashMap<Integer, Integer> myMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            if (myMap.containsKey(nums[i])) {
-                int preLoc = myMap.get(nums[i]);
-                if (i - preLoc <= k) {
-                    return true;
-                }
+            if (myMap.containsKey(nums[i]) && (i - myMap.get(nums[i]) <= k)) {
+                return true;
             } else {
                 myMap.put(nums[i], i);
             }
         }
-
         return false;
     }
 
