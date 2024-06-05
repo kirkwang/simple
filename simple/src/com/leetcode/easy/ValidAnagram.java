@@ -5,25 +5,36 @@
  */
 
 package com.leetcode.easy;
+/*
+https://leetcode.com/problems/valid-anagram/description/
+Example 1:
 
+Input: s = "anagram", t = "nagaram"
+Output: true
+Example 2:
+
+Input: s = "rat", t = "car"
+Output: false
+ */
 import org.testng.Assert;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class IsAnagram {
+public class ValidAnagram {
 
 
     public static void main(String[] args) {
-        String source = "aab";
-        String target = "aba";
-
         String firstWord = "hellohackerrankhellohackerrankhellohackerrankhellohackerrankhellohackerrank";
         String secondWord = "kcrhearaknhlloekcrhearaknhlloekcrhearaknhlloekcrhearaknhlloekcrhearaknhlloe"; //take any string
 
         Assert.assertTrue(checkAnagram(firstWord, secondWord));
-        Assert.assertTrue(checkAnagram(source, target));
         Assert.assertTrue(IsAnagram(firstWord, secondWord));
+
+        Assert.assertTrue(checkAnagram("aab", "aba"));
+        Assert.assertTrue(IsAnagram("anagram", "nagaram"));
+        Assert.assertTrue(checkAnagram("anagram", "nagaram"));
+        Assert.assertFalse(IsAnagram("rat", "car"));
 
     }
 
@@ -37,12 +48,12 @@ public class IsAnagram {
         for (char c : s.toCharArray()) {
             hMap.put(c, hMap.getOrDefault(c, 0) + 1);
         }
-        for (char target : t.toCharArray()) {
-            if (hMap.containsKey(target)) {
-                if (hMap.get(target) == 1) {
-                    hMap.remove(target);
+        for (char c : t.toCharArray()) {
+            if (hMap.containsKey(c)) {
+                if (hMap.get(c) == 1) {
+                    hMap.remove(c);
                 } else {
-                    hMap.put(target, hMap.get(target) - 1);
+                    hMap.put(c, hMap.get(c) - 1);
                 }
             } else {
                 return false; //no key match
