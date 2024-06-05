@@ -25,19 +25,20 @@ public class IntersectiontwoArrays {
     }
 
     public static int[] intersection(int[] nums1, int[] nums2) {
-        Set<Integer> s = new HashSet<>();
-        for (int i : nums1) {
-            s.add(i);
-        }
-        Set<Integer> e = new HashSet<>();
-        for (int i : nums2) {
-            e.add(i);
-        }
-        s.retainAll(e);
+        Set<Integer> source = new HashSet<>();
+        Set<Integer> target = new HashSet<>();
 
-        int[] result = new int[s.size()];
+        for (int i : nums1) {
+            source.add(i);
+        }
+        for (int i : nums2) {
+            target.add(i);
+        }
+        source.retainAll(target);
+
+        int[] result = new int[source.size()];
         int index = 0;
-        for (int i : s) {
+        for (int i : source) {
             result[index++] = i;
         }
         return result;
