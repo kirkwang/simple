@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
 Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
 
 Example 1:
@@ -20,17 +21,13 @@ Output: [2]
  */
 public class FindDisappearedNumbers {
     public static void main(String[] args) {
-        List<Integer> result = new ArrayList<>();
+
 
         int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
-        result.add(5);
-        result.add(6);
-        Assert.assertEquals(findDisappearedNumbers(nums), result);
+        Assert.assertEquals(findDisappearedNumbers(nums).toString(), "[5, 6]");
 
         nums = new int[]{1, 1};
-        result.clear();
-        result.add(2);
-        Assert.assertEquals(findDisappearedNumbers(nums), result);
+        Assert.assertEquals(findDisappearedNumbers(nums).toString(), "[2]");
 
 
     }
