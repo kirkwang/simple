@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 /**
  * Created by kewang on 12/24/15.
  */
@@ -18,8 +20,10 @@ public class HouseRobber {
 
     public static void main(String[] args) {
         HouseRobber hr = new HouseRobber();
-        System.out.print(hr.houseRobber(new int[]{1, 50, 23, 3}));
 
+        Assert.assertEquals(hr.houseRobber(new int[]{1, 50, 23, 3}), 53);
+        Assert.assertEquals(hr.houseRobber(new int[]{1, 2, 3, 1}), 4);
+        Assert.assertEquals(hr.houseRobber(new int[]{2, 7, 9, 3, 1}), 12);
     }
 
     public int houseRobber(int[] numbs) {
@@ -27,7 +31,8 @@ public class HouseRobber {
             return 0;
         }
 
-        int even = 0, odd = 0;
+        int even = 0;
+        int odd = 0;
 
         for (int i = 0; i < numbs.length; i++) {
             if (i % 2 == 0) {
