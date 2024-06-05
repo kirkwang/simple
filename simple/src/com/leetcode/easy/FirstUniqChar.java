@@ -1,5 +1,6 @@
 package com.leetcode.easy;
 /*
+  https://leetcode.com/problems/first-unique-character-in-a-string/description/
   Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
   <p>
   Example 1:

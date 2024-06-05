@@ -39,18 +39,13 @@ public class FindDuplicates {
 
     public static void main(String[] args) {
         int[] input = {4, 3, 2, 7, 8, 2, 3, 1};
-        List<Integer> expected = new ArrayList<>();
-        expected.add(2);
-        expected.add(3);
-        Assert.assertEquals(findDuplicates(input), expected);
+        Assert.assertEquals(findDuplicates(input).toString(), "[2, 3]");
 
         input = new int[]{1, 1, 2};
-        expected.clear();
-        expected.add(1);
-        Assert.assertEquals(findDuplicates(input), expected);
+        Assert.assertEquals(findDuplicates(input).toString(), "[1]");
+
         input = new int[]{1};
-        expected.clear();
-        Assert.assertEquals(findDuplicates(input), expected);
+        Assert.assertEquals(findDuplicates(input).toString(), "[]");
 
     }
 }

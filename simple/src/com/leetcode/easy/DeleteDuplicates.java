@@ -3,7 +3,7 @@ package com.leetcode.easy;
 import com.kirkwang.libary.ListNode;
 
 /**
- * https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+ * <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/">...</a>
  * Created by kewang on 1/5/16.
  * This function will delete the duplicated node in sorted Linked list.
  * Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
@@ -20,7 +20,7 @@ public class DeleteDuplicates {
 
     public static void main(String[] args) {
         //[1,1,2,3,3]
-        DeleteDuplicates dd = new DeleteDuplicates();
+
         ListNode one = new ListNode(1);
         ListNode two = new ListNode(1);
         ListNode three = new ListNode(2);
@@ -31,6 +31,7 @@ public class DeleteDuplicates {
         two.next = three;
         three.next = four;
         four.next = five;
+        DeleteDuplicates dd = new DeleteDuplicates();
         dd.DeletDuplicates(one);
         ListNode current = one;
         while (current != null) {
@@ -47,7 +48,7 @@ public class DeleteDuplicates {
         ListNode current = head.next;
         ListNode pre = head;
         while (current != null) {
-            if (current.getVal() == pre.getVal()) {
+            if (pre.getVal() == current.getVal()) {
                 pre.next = current.next;
             } else {
                 pre = pre.next;

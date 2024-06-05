@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +9,8 @@ import java.util.List;
  * Created by kewang on 12/23/17.
  * <p>
  * <a href="https://leetcode.com/problems/count-and-say/description/">...</a>
- * same as https://leetcode.com/problems/string-compression/description/
- * <p>
+ * same as <a href="https://leetcode.com/problems/string-compression/description/">...</a>
+ * <p>["a","a","b","b","c","c","c"]
  * The count-and-say sequence is the sequence of integers with the first five terms as following:
  * <p>
  * 1.     1
@@ -41,13 +43,15 @@ public class CountAndSay {
 
 
     public static void main(String[] args) {
-        //"a","a","b","b","c","c","c"
-        System.out.println(countAndSay(111));
-        // Assert.assertEquals(countAndSay(111).toCharArray(), new int[]{3,1});
+        char[] input = new char[]{'a', 'a', 'b', 'b', 'c', 'c', 'c'};
+
+        Assert.assertEquals(countAndSay(111), "[3, 1]");
+        Assert.assertEquals(countAndSay(111221), "[3, 1, 2, 2, 1, 1]");
+        Assert.assertEquals(compress(input), "2a2b3c");
     }
 
     public static String countAndSay(int n) {
-        List<Object> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         int counter = 1;
         char[] input = String.valueOf(n).toCharArray();
 
@@ -55,16 +59,35 @@ public class CountAndSay {
             if (input[i - 1] == input[i]) {
                 counter++;
             } else {
-                list.add(counter);
-                list.add(input[i - 1]);
+                list.add(String.valueOf(counter));
+                list.add(String.valueOf(input[i - 1]));
                 counter = 1;
             }
         }
-        list.add(counter);
-        list.add(input[input.length - 1]);
+        list.add(String.valueOf(counter));
+        list.add(String.valueOf(input[input.length - 1]));
 
         return list.toString();
     }
 
+    public static String compress(char[] chars) {
+
+        int counter = 1;
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 1; i < chars.length; i++) {
+            if (chars[i - 1] == chars[i]) {
+                counter++;
+            } else {
+                sb.append(counter);
+                sb.append(chars[i - 1]);
+                counter = 1;
+            }
+        }
+        sb.append(counter);
+        sb.append(chars[chars.length - 1]);
+
+        return String.valueOf(sb);
+    }
 
 }
