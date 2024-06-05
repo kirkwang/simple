@@ -29,11 +29,10 @@ Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13"
  */
 public class FizzBuzz {
     public static void main(String[] args) {
-        List<String> e = new ArrayList<>();
-        e.add("1");
-        e.add("2");
-        e.add("Fizz");
-        Assert.assertEquals(fizzBuzz(3), e);
+
+        Assert.assertEquals(fizzBuzz(3).toString(), "[1, 2, Fizz]");
+        Assert.assertEquals(fizzBuzz(5).toString(), "[1, 2, Fizz, 4, Buzz]");
+        Assert.assertEquals(fizzBuzz(15).toString(), "[1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz]");
 
     }
 
