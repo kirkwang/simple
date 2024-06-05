@@ -29,6 +29,7 @@ public class WordPattern {
 
         Assert.assertTrue(wordPattern("abba", "dog cat cat dog"));
         Assert.assertFalse(wordPattern("abba", "dog cat cat fish"));
+        Assert.assertFalse(wordPattern("aaaa", "dog cat cat dog"));
 
     }
 
@@ -40,8 +41,9 @@ public class WordPattern {
         }
         HashMap<String, Integer> m = new HashMap<>();
         for (int i = 0; i < pattern.length(); i++) {
-
-            if (!Objects.equals(m.put(split[i], i), m.put(String.valueOf(pattern.charAt(i)), i))) {
+            Integer t = m.put(split[i], i);
+            Integer p = m.put(String.valueOf(pattern.charAt(i)), i);
+            if (!Objects.equals(t, p)) {
                 return false;
             }
         }
