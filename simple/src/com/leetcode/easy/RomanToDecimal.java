@@ -1,4 +1,4 @@
-package com.kirkwang.HackerRank;
+package com.leetcode.easy;
 
 import org.testng.Assert;
 
