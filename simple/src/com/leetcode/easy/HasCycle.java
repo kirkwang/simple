@@ -1,6 +1,7 @@
 package com.leetcode.easy;
 
 import com.kirkwang.libary.ListNode;
+import org.testng.Assert;
 
 /*
 https://leetcode.com/problems/linked-list-cycle/description/
@@ -21,7 +22,7 @@ public class HasCycle {
             current = current.next;
         }
         HasCycle hc = new HasCycle();
-        System.out.println("HasCycle " + hc.hasCycle(nameList));
+        Assert.assertFalse(hc.hasCycle(nameList));
     }
 
     public boolean hasCycle(ListNode head) {

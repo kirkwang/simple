@@ -1,5 +1,9 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
+import java.util.Arrays;
+
 /**
  * Created by kewang on 12/22/17.
  * <p>
@@ -23,6 +27,7 @@ public class TwoSum {
         int[] result = twoSum(new int[]{3, 2, 4}, 6);
 
         System.out.print(result[0] + " " + result[1]);
+        Assert.assertEquals(Arrays.stream(result).toArray()[0], "[]");
     }
 
 

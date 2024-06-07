@@ -1,10 +1,12 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * https://leetcode.com/problems/happy-number/description/
+ * <a href="https://leetcode.com/problems/happy-number/description/">...</a>
  * Write an algorithm to determine if a number n is happy.
  * <p>
  * A happy number is a number defined by the following process:
@@ -21,7 +23,8 @@ import java.util.Set;
 public class HappyNumber {
     public static void main(String[] args) {
 
-        System.out.println(isHappy(2));
+        Assert.assertFalse(isHappy(2));
+        Assert.assertTrue(isHappy(19));
     }
 
     public static boolean isHappy(int n) {
@@ -46,7 +49,7 @@ public class HappyNumber {
             n /= 10;  //  remove the last digit
         }
         while (n > 0);
-        System.out.println(sum);
+
         return sum;
     }
 }

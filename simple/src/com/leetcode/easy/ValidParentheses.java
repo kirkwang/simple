@@ -1,18 +1,36 @@
 package com.leetcode.easy;
+/*
+https://leetcode.com/problems/valid-parentheses/description/
+Example 1:
+
+Input: s = "()"
+Output: true
+Example 2:
+
+Input: s = "()[]{}"
+Output: true
+Example 3:
+
+Input: s = "(]"
+Output: false
+
+ */
+
+import org.testng.Assert;
 
 import java.util.LinkedList;
 
 public class ValidParentheses {
     public static void main(String[] args) {
-        ValidParentheses vp = new ValidParentheses();
-        String input = "(]";
-        //String input = "([){]}";
 
-        System.out.println(vp.isValid_linkedList("isValid_linkedList" + input));
+
+        Assert.assertTrue(isValid_linkedList("()[]{}"));
+        Assert.assertFalse(isValid_linkedList("(]"));
+        Assert.assertTrue(isValid_linkedList("()"));
 
     }
 
-    public boolean isValid_linkedList(String s) {
+    public static boolean isValid_linkedList(String s) {
         if (s == null || s.isEmpty())
             return true;
         LinkedList<Character> stack = new LinkedList<>();

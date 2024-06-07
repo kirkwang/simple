@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +14,9 @@ public class GenerateParentheses {
 
     public static void main(String[] args) {
 
-        System.out.println("This is the result " + GenerateParentheses(2));
+        Assert.assertEquals(GenerateParentheses(1).toString(), "[()]");
+        Assert.assertEquals(GenerateParentheses(2).toString(), "[(()), ()()]");
+        Assert.assertEquals(GenerateParentheses(3).toString(), "[((())), (()()), (())(), ()(()), ()()()]");
     }
 
     public static List<String> GenerateParentheses(int count) {

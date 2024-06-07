@@ -1,10 +1,24 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
+/*
+https://leetcode.com/problems/is-subsequence/description/
+Example 1:
+
+Input: s = "abc", t = "ahbgdc"
+Output: true
+Example 2:
+
+Input: s = "axc", t = "ahbgdc"
+Output: false
+
+ */
 public class Is_Subsequence {
     public static boolean isSubsequence(String s, String t) {
+        if (s.isEmpty()) return true;
 
         int s_pointer = 0;
-        if (s.length() == 0) return true;
         int t_pointer = 0;
 
         while (t_pointer < t.length()) {
@@ -23,11 +37,9 @@ public class Is_Subsequence {
 
     public static void main(String[] args) {
 
-        String source = "abc";
-        String target = "ahbgdc";
+        Assert.assertTrue(Is_Subsequence.isSubsequence("abc", "ahbgdc"));
+        Assert.assertFalse(Is_Subsequence.isSubsequence("axc", "ahbgdc"));
 
-        //     String source = "axc", target = "ahbgdc";
-        System.out.println("The result is " + Is_Subsequence.isSubsequence(source, target));
     }
 
 }

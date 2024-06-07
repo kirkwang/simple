@@ -2,6 +2,8 @@ package com.leetcode.easy;
 
 // Start typing here
 
+import org.testng.Assert;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,10 +19,8 @@ class WordFrequency {
     public static void main(String[] args) {
         String Sentence = "one cent, two cent, three cent, all cents";
         WordFrequency wf = new WordFrequency();
-        Set<String> answer = wf.wordFrequency(Sentence, 0.28);
-        for (String temp : answer) {
-            System.out.println(temp);
-        }
+
+        Assert.assertEquals(wf.wordFrequency(Sentence, 0.2).toString(), "[cent]");
     }
 
     public Set<String> wordFrequency(String input, double frequencyLevel) {
