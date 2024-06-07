@@ -6,6 +6,13 @@ import java.util.HashMap;
 
 /*
 https://leetcode.com/problems/roman-to-integer/description/
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
 Example 1:
 
 Input: s = "III"
@@ -23,7 +30,7 @@ Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
  */
-public class RomanToDecimalV1 {
+public class RomanToDecimal {
 
     public static int rtoi(String input) {
 
