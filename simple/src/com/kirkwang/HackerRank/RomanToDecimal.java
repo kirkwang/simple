@@ -46,13 +46,13 @@ public class RomanToDecimal {
         int result = 0;
         int preNumber = 0;
         for (int i = input.length() - 1; i >= 0; i--) {
-            int temp = ht.get(input.charAt(i));
-            if (preNumber > temp) {
-                result -= temp;
+            int current = ht.get(input.charAt(i));
+            if (preNumber > current) {
+                result -= current;
             } else {
-                result += temp;
+                result += current;
             }
-            preNumber = temp;
+            preNumber = current;
         }
 
         return result;
