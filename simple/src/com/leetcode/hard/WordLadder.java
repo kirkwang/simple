@@ -4,19 +4,32 @@
  * kirkwang : the currently used username;
  */
 
-package com.leetcode.easy;
+package com.leetcode.hard;
+/*
+https://leetcode.com/problems/word-ladder/description/
+Example 1:
 
-import java.io.IOException;
+Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]
+Output: 5
+Explanation: One shortest transformation sequence is "hit" -> "hot" -> "dot" -> "dog" -> cog", which is 5 words long.
+Example 2:
+
+Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"]
+Output: 0
+Explanation: The endWord "cog" is not in wordList, therefore there is no valid transformation sequence.
+
+ */
+
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 
 public class WordLadder {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         String start = "hit";
         String end = "cog";
-        Set dict = new HashSet();
+        Set<String> dict = new HashSet<>();
         dict.add("hot");
         dict.add("dot");
         dict.add("dog");
@@ -26,7 +39,7 @@ public class WordLadder {
     }
 
     public static int ladderLength(String beginWord, String endWord, Set<String> wordDict) {
-        LinkedList<WordNode> queue = new LinkedList<WordNode>();
+        LinkedList<WordNode> queue = new LinkedList<>();
         queue.add(new WordNode(beginWord, 1));
 
         wordDict.add(endWord);
