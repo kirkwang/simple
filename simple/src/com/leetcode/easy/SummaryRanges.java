@@ -15,19 +15,25 @@ https://leetcode.com/problems/summary-ranges/description/
 public class SummaryRanges {
 
     public static void main(String[] args) {
-        List sr = SummaryRanges.summaryRanges(new int[]{1, 2, 3, 4, 6, 7, 8, 10});
-        for (int i = 0; i < sr.size(); i++) {
-            System.out.print(sr.get(i));
+
+        List<String> sr = SummaryRanges.summaryRanges(new int[]{0, 2, 3, 4, 6, 8, 9});
+        for (String string : sr) {
+            System.out.println(string);
+        }
+        sr = SummaryRanges.summaryRanges(new int[]{0, 1, 2, 4, 5, 7});
+        for (String string : sr) {
+            System.out.print(string);
         }
     }
 
     public static List<String> summaryRanges(int[] numbs) {
-        List rlt = new ArrayList();
+        List<String> rlt = new ArrayList<>();
         if (numbs == null || numbs.length < 1) {
             return rlt;
         }
 
-        int start = 0, end = 0;
+        int start = 0;
+        int end = 0;
 
         while (end < numbs.length) {
             if (end + 1 < numbs.length && numbs[end] + 1 == numbs[end + 1]) {
@@ -38,8 +44,7 @@ public class SummaryRanges {
                 } else {
                     rlt.add("\"" + numbs[start] + "->" + numbs[end] + "\",");
                 }
-                end++;
-                start = end;
+                start = ++end;
             }
         }
         return rlt;
