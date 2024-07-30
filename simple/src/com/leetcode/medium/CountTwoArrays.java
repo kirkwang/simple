@@ -1,8 +1,10 @@
-package com.leetcode.easy;
+package com.leetcode.medium;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/*
+https://leetcode.com/problems/count-pairs-in-two-arrays/description/
+ */
 /**
  * Created by kewang on 12/25/15.
  */
