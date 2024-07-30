@@ -21,7 +21,7 @@ Output: [0,1]
  */
 public class TwoSumProblem {
     public static int[] function(int[] nums, int target) {
-        int[] result = new int[2];
+
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
@@ -29,7 +29,7 @@ public class TwoSumProblem {
                 }
             }
         }
-        return result;
+        return new int[]{2};
     }
 
     public static void main(String[] args) {
