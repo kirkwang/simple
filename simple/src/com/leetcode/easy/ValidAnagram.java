@@ -29,13 +29,13 @@ public class ValidAnagram {
         String secondWord = "kcrhearaknhlloekcrhearaknhlloekcrhearaknhlloekcrhearaknhlloekcrhearaknhlloe"; //take any string
 
         Assert.assertTrue(checkAnagram(firstWord, secondWord));
-        Assert.assertTrue(IsAnagram(firstWord, secondWord));
+        Assert.assertTrue(charArrayAnagram(firstWord, secondWord));
 
-        Assert.assertTrue(IsAnagram("anagram", "nagaram"));
+        Assert.assertTrue(charArrayAnagram("anagram", "nagaram"));
         Assert.assertTrue(checkAnagram("anagram", "nagaram"));
 
         Assert.assertFalse(checkAnagram("rat", "car"));
-        Assert.assertFalse(IsAnagram("rat", "car"));
+        Assert.assertFalse(charArrayAnagram("rat", "car"));
 
     }
 
@@ -63,7 +63,7 @@ public class ValidAnagram {
         return myMap.isEmpty();
     }
 
-    public static boolean IsAnagram(String source, String target) {
+    public static boolean charArrayAnagram(String source, String target) {
         if (source == null || target == null) {
             return false;
         }
