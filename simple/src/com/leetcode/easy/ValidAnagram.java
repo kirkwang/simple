@@ -31,36 +31,36 @@ public class ValidAnagram {
         Assert.assertTrue(checkAnagram(firstWord, secondWord));
         Assert.assertTrue(IsAnagram(firstWord, secondWord));
 
-        Assert.assertTrue(checkAnagram("aab", "aba"));
         Assert.assertTrue(IsAnagram("anagram", "nagaram"));
         Assert.assertTrue(checkAnagram("anagram", "nagaram"));
+
+        Assert.assertFalse(checkAnagram("rat", "car"));
         Assert.assertFalse(IsAnagram("rat", "car"));
 
     }
 
-    public static boolean checkAnagram(String s, String t) {
-        if (s == null || t == null || s.isEmpty() || t.isEmpty()) {
+    public static boolean checkAnagram(String source, String target) {
+        if (source == null || target == null || source.isEmpty() || target.isEmpty()) {
             return false;
         }
-        if (s.length() != t.length()) return false;
+        if (source.length() != target.length()) return false;
 
-        Map<Character, Integer> hMap = new HashMap<>();
-        for (char c : s.toCharArray()) {
-            hMap.put(c, hMap.getOrDefault(c, 0) + 1);
+        Map<Character, Integer> myMap = new HashMap<>();
+        for (char c : source.toCharArray()) {
+            myMap.put(c, myMap.getOrDefault(c, 0) + 1);
         }
-        for (char c : t.toCharArray()) {
-            if (hMap.containsKey(c)) {
-                if (hMap.get(c) == 1) {
-                    hMap.remove(c);
+        for (char c : target.toCharArray()) {
+            if (myMap.containsKey(c)) {
+                if (myMap.get(c) == 1) {
+                    myMap.remove(c);
                 } else {
-                    hMap.put(c, hMap.get(c) - 1);
+                    myMap.put(c, myMap.get(c) - 1);
                 }
             } else {
                 return false; //no key match
             }
         }
-        return hMap.isEmpty();
-
+        return myMap.isEmpty();
     }
 
     public static boolean IsAnagram(String source, String target) {
@@ -77,7 +77,6 @@ public class ValidAnagram {
         }
         for (int j : arr) {
             if (j != 0) {
-
                 return false;
             }
         }
