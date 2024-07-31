@@ -1,11 +1,14 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.Objects;
 
 /**
  * Created by kewang on 12/24/15.
  */
 /*
+https://leetcode.com/problems/shortest-word-distance/description/
 Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.
 For example,
 Assume that words = ["practice", "makes", "perfect", "coding", "makes"].
@@ -21,10 +24,11 @@ Iterate through the array, use two pointers pointing to the index of the word1 a
 public class ShortestWordDistance {
 
     public static void main(String[] args) {
+        String[] words = new String[]{"practice", "makes", "perfect", "coding", "makes"};
         ShortestWordDistance rd = new ShortestWordDistance();
-        int distance = rd.shortestWordDistance(
-                new String[]{"practice", "makes", "perfect", "coding", "makes"}, "coding", "practice");
-        System.out.print(distance + " ");
+        Assert.assertEquals(rd.shortestWordDistance(words, "coding", "practice"), 3);
+        Assert.assertEquals(rd.shortestWordDistance(words, "makes", "coding"), 1);
+
     }
 
     public int shortestWordDistance(String[] words, String word1, String word2) {
