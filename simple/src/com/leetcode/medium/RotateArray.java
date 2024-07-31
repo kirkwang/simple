@@ -39,7 +39,25 @@ public class RotateArray {
         RotateArray.routeLeft(array, 2);
         Assert.assertEquals(array, new int[]{3, 99, -1, -100});
 
+        array = new int[]{-1, -100, 3, 99, 0};
+        RotateArray.rotate(array, 2);
+        Assert.assertEquals(array, new int[]{99, 0, -1, -100, 3});
 
+
+    }
+
+    public static void rotate(int[] nums, int k) {
+        if (k > nums.length) k = k % nums.length;
+        int[] results = new int[nums.length];
+        for (int i = 0; i < k; i++) {
+            results[i] = nums[nums.length - k + i];
+        }
+        int j = 0;
+        for (int i = k; i < nums.length; i++) {
+            results[i] = nums[j];
+            j++;
+        }
+        System.arraycopy(results, 0, nums, 0, nums.length);
     }
 
     public static void routeLeft(int[] input, int count) {
