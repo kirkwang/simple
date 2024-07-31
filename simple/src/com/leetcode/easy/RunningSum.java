@@ -1,5 +1,6 @@
 package com.leetcode.easy;
 /*
+https://leetcode.com/problems/running-sum-of-1d-array/description/
 Example 1:
         Input: nums = [1,2,3,4]
         Output: [1,3,6,10]
@@ -15,13 +16,12 @@ Example 3:
         Output: [3,4,6,16,17]
 */
 
+import org.testng.Assert;
 
-public class Running_Sum_of_1d_Array {
+public class RunningSum {
 
     public static int[] runningSum(int[] nums) {
-        if (nums == null) {
-            return nums;
-        }
+
         int[] result = new int[nums.length];
         result[0] = nums[0];
         for (int i = 1; i < nums.length; i++) {
@@ -31,12 +31,8 @@ public class Running_Sum_of_1d_Array {
     }
 
     public static void main(String[] args) {
-
-        int[] input = new int[]{3, 1, 2, 10, 1};
-
-        input = runningSum(input);
-        for (int i : input) {
-            System.out.print(i + " ");
-        }
+        Assert.assertEquals(runningSum(new int[]{3, 1, 2, 10, 1}), new int[]{3, 4, 6, 16, 17});
+        Assert.assertEquals(runningSum(new int[]{1, 1, 1, 1, 1}), new int[]{1, 2, 3, 4, 5});
+        Assert.assertEquals(runningSum(new int[]{1, 2, 3, 4}), new int[]{1, 3, 6, 10});
     }
 }
