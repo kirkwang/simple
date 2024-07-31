@@ -4,7 +4,7 @@
  * kirkwang : the currently used username;
  */
 
-package com.leetcode.easy;
+package com.leetcode.medium;
 
 import java.util.Arrays;
 
