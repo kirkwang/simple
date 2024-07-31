@@ -27,11 +27,11 @@ public class ReverseString {
 
     public static void main(String[] args) {
         char[] target;
-        target = new char[]{'h', 'e', 'l', 'l', 'o'};
+        target = "hello".toCharArray();
         reverseString(target);
         Assert.assertEquals(target, "olleh".toCharArray());
 
-        target = new char[]{'H', 'a', 'n', 'n', 'a', 'h'};
+        target = "Hannah".toCharArray();
         reverseString(target);
         Assert.assertEquals(target, "hannaH".toCharArray());
     }
