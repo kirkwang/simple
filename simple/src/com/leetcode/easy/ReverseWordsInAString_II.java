@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 /**
  * Created by kewang on 12/14/17.
  */
@@ -26,27 +28,21 @@ public class ReverseWordsInAString_II {
         return String.valueOf(processed);
     }
 
-    private static char[] reverse(char[] processed, int i, int j) {
-        if (processed == null || i < 0 || j < 0) {
-
-            return processed;
+    private static void reverse(char[] target, int i, int j) {
+        if (target == null || i < 0 || j < 0) {
+            return;
         }
         while (i < j) {
-            char temp = processed[i];
-            processed[i] = processed[j];
-            processed[j] = temp;
+            char temp = target[i];
+            target[i] = target[j];
+            target[j] = temp;
             i++;
             j--;
         }
-        return processed;
     }
 
     public static void main(String[] args) {
 
-        // original string
-        String str = " Sony is going to introduce Internet TV soon ";
-        System.out.println("Original String: " + str);
-
-        System.out.println("Reservsed String: " + ReverseWordsInAString_II(str));
+        Assert.assertEquals(ReverseWordsInAString_II(" Sony is going to introduce Internet TV soon "), "soon TV Internet introduce to going is Sony");
     }
 }
