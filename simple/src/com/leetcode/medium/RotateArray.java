@@ -1,14 +1,25 @@
-package com.leetcode.easy;
+package com.leetcode.medium;
+
+import org.testng.Assert;
 
 /**
  * Created by kewang on 12/25/15.
  */
 /*
+https://leetcode.com/problems/rotate-array/description/
 Rotate an array of n elements to the right by k steps.
 
 For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
 Note:
 Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
+Example 2:
+
+Input: nums = [-1,-100,3,99], k = 2
+Output: [3,99,-1,-100]
+Explanation:
+rotate 1 steps to the right: [99,-1,-100,3]
+rotate 2 steps to the right: [3,99,-1,-100]
+
 */
 @SuppressWarnings("Array")
 public class RotateArray {
@@ -17,16 +28,18 @@ public class RotateArray {
 
         int[] array = new int[]{1, 2, 3, 4, 5, 6};
         RotateArray.routeLeft(array, 2);
-        System.out.println("routeLeft");
-        for (int j : array) {
-            System.out.print(j + " ");
-        }
+        Assert.assertEquals(array, new int[]{3, 4, 5, 6, 1, 2});
+
         //put it back by shift to the right
         RotateArray.routeRight(array, 2);
-        System.out.println("routeRight");
-        for (int j : array) {
-            System.out.print(j + " ");
-        }
+        Assert.assertEquals(array, new int[]{1, 2, 3, 4, 5, 6});
+
+
+        array = new int[]{-1, -100, 3, 99};
+        RotateArray.routeLeft(array, 2);
+        Assert.assertEquals(array, new int[]{3, 99, -1, -100});
+
+
     }
 
     public static void routeLeft(int[] input, int count) {
