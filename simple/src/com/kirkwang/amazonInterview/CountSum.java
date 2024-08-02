@@ -6,37 +6,37 @@
 
 package com.kirkwang.amazonInterview;
 
+import org.testng.Assert;
+
 import java.util.ArrayList;
 
 public class CountSum {
 
     public static int countSum(String input) {
-        String strDigi = "";
-        int sum = 0;
-        int index = 0;
-        ArrayList<String> list = new ArrayList();
-        for (int i = 0; i < input.length(); i++) {
-            Character c = input.charAt(i);
-            if (Character.isDigit(c)) {
-                strDigi = strDigi + c;
-            } else {
+        StringBuilder strDigi = new StringBuilder();
 
-                list.add(index++, strDigi);
-                strDigi = "";
+        int index = 0;
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            if (Character.isDigit(c)) {
+                strDigi.append(c);
+            } else {
+                list.add(index++, strDigi.toString());
+                strDigi = new StringBuilder();
             }
         }
-        list.add(index, strDigi);
+        list.add(index, strDigi.toString());
+        int sum = 0;
         for (String s : list) {
-            if (!s.equals("")) {
-                sum = sum + Integer.valueOf(s);
+            if (!s.isEmpty()) {
+                sum = sum + Integer.parseInt(s);
             }
         }
         return sum;
     }
 
     public static void main(String[] args) {
-        String s = "85M2A23++46";
-        int sum = new CountSum().countSum(s);
-        System.out.println(sum);
+        Assert.assertEquals(countSum("85M2A23++46"), 156);
     }
 }

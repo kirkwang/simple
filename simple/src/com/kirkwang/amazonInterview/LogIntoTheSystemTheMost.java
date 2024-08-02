@@ -20,15 +20,9 @@ public class LogIntoTheSystemTheMost {
     }
 
     public void logIntoTheSystemTheMost(String[] input, int k) {
-        Map<String, Integer> hashMap = new HashMap();
-
-        for (int i = 0; i < input.length; i++) {
-            String temp = input[i].trim();
-            if (hashMap.containsKey(temp)) {
-                hashMap.put(temp, hashMap.get(temp) + 1);
-            } else {
-                hashMap.put(temp, 1);
-            }
+        Map<String, Integer> hashMap = new HashMap<>();
+        for (String temp : input) {
+            hashMap.put(temp.trim(), hashMap.getOrDefault(temp.trim(), 0) + 1);
         }
         for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
             if (entry.getValue() >= k) {

@@ -1,24 +1,34 @@
 package com.leetcode.easy;
 
-/**
- * Created by kewang on 12/14/17.
- * <p>
- * https://leetcode.com/problems/reverse-words-in-a-string/description/
- * <p>
- * Reverse Words in a String
- * <p>
- * Given an input string, reverse the string word by word.
- * <p>
- * For example, Given s = "the sky is blue", return "blue is sky the".
+import org.testng.Assert;
+
+/*
+https://leetcode.com/problems/reverse-words-in-a-string/description/
+Example 1:
+
+Input: s = "the sky is blue"
+Output: "blue is sky the"
+Example 2:
+
+Input: s = "  hello world  "
+Output: "world hello"
+Explanation: Your reversed string should not contain leading or trailing spaces.
+Example 3:
+
+Input: s = "a good   example"
+Output: "example good a"
+Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
+
  */
 public class ReverseWordsInAString_I {
 
-    public static String reverseWordInAString(String input) {
+    public static String reverseWords(String input) {
         if (input == null) {
             return input;
         }
 
         input = input.trim().replaceAll("\\s+", " ");
+
         String[] reversed = input.split(" ");
         for (int i = 0; i < reversed.length / 2; i++) {
             String temp = reversed[i];
@@ -33,11 +43,11 @@ public class ReverseWordsInAString_I {
 
         //original string
         String str = "Sony     is going to introduce Internet TV soon";
-        System.out.println("Original String: " + str);
+        Assert.assertEquals(reverseWords(str), "soon TV Internet introduce to going is Sony");
 
-        System.out.println("Reservsed String: " + reverseWordInAString("   a   b "));
-        System.out.println("Reservsed String: " + reverseWordInAString(str));
-
+        Assert.assertEquals(reverseWords("   a   b "), "b a");
+        Assert.assertEquals(reverseWords("the sky is blue"), "blue is sky the");
+        Assert.assertEquals(reverseWords("  hello world  "), "world hello");
     }
 
 

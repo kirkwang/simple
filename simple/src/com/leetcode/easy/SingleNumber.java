@@ -6,6 +6,8 @@
 
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,6 +22,14 @@ You must implement a solution with a linear runtime complexity and use only cons
 Example 1:
 
 Input: nums = [2,2,1]
+Output: 1
+Example 2:
+
+Input: nums = [4,1,2,1,2]
+Output: 4
+Example 3:
+
+Input: nums = [1]
 Output: 1
 
  */
@@ -44,7 +54,10 @@ public class SingleNumber {
     public static void main(String[] args) {
         int[] integers = new int[]{1, 2, 2, 3, 3, 4, 4};
 
-
-        System.out.println("SingleElementinaSortedArray " + singleNonDuplicate(integers));
+        Assert.assertEquals(singleNonDuplicate(integers), 1);
+        Assert.assertEquals(singleNonDuplicate(new int[]{2, 2, 1}), 1);
+        Assert.assertEquals(singleNonDuplicate(new int[]{2, 2, 1}), 1);
+        Assert.assertEquals(singleNonDuplicate(new int[]{4, 1, 2, 1, 2}), 4);
+        Assert.assertEquals(singleNonDuplicate(new int[]{1}), 1);
     }
 }

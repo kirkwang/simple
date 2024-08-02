@@ -1,4 +1,6 @@
-package com.leetcode.easy;
+package com.leetcode.medium;
+
+import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,7 +10,7 @@ import java.util.List;
  * Created by kewang on 12/23/17.
  * <p>
  * <p>
- * https://leetcode.com/problems/3sum/description/
+ * <a href="https://leetcode.com/problems/3sum/description/">...</a>
  * <p>
  * <p>
  * Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all
@@ -39,19 +41,19 @@ public class ThreeSum_I {
     }
 
 
-    public static List<List<Integer>> ThreeSum_I_basedOn2endsWhileLoop(int[] input) {
-        Arrays.sort(input);
+    public static List<List<Integer>> threeSum(int[] nums) {
+        Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<>();
 
-        for (int i = 0; i < input.length; i++) {
-            int expectedSum = 0 - input[i];
-            int[] locationList = TwoSum_II(input, i + 1, expectedSum);
+        for (int i = 0; i < nums.length; i++) {
+            int expectedSum = -nums[i];
+            int[] locationList = TwoSum_II(nums, i + 1, expectedSum);
 
-            if (input[i] + input[locationList[0] - 1] + input[locationList[1] - 1] == 0) {
+            if (nums[i] + nums[locationList[0] - 1] + nums[locationList[1] - 1] == 0) {
                 List<Integer> o = new ArrayList<>();
-                o.add(input[i]);
-                o.add(input[locationList[0] - 1]);
-                o.add(input[locationList[1] - 1]);
+                o.add(nums[i]);
+                o.add(nums[locationList[0] - 1]);
+                o.add(nums[locationList[1] - 1]);
                 result.add(o);
             }
 
@@ -78,14 +80,32 @@ public class ThreeSum_I {
             }
 
         }
-        head = head > tail ? tail : head;
+        head = Math.min(head, tail);
         return new int[]{head + 1, tail + 1};
     }
 
     public static void main(String[] args) {
 
         //   List<List<Integer>> result = ThreeSum_I_basedOn2endsWhileLoop(new int[]{-1, 0, 1, 2, -1});
-        List<List<Integer>> result = ThreeSum_I_basedOn2endsWhileLoop(new int[]{-1, 0, 1, 2, -1, -4});
+        List<List<Integer>> result = threeSum(new int[]{-1, 0, 1, 2, -1, -4});
+        List<List<Integer>> list = new ArrayList<>();
+        List<Integer> al = new ArrayList<>();
+        al.add(-1);
+        al.add(0);
+        al.add(1);
+        List<Integer> al1 = new ArrayList<>();
+        al1.add(-1);
+        al1.add(-1);
+        al1.add(2);
+        List<Integer> al2 = new ArrayList<>();
+        al2.add(-4);
+        al2.add(2);
+        al2.add(2);
+
+        list.add(al2);
+        list.add(al1);
+        list.add(al);
+        Assert.assertEquals(result, list);
         // List<List<Integer>> result = ThreeSum_I_basedOn2endsWhileLoop(new int[]{1, 0, -4});
 
     }

@@ -1,6 +1,6 @@
 package com.leetcode.easy;
 
-import java.util.HashMap;
+import org.testng.Assert;
 
 /**
  * Created by kewang on 12/22/17.
@@ -17,52 +17,44 @@ import java.util.HashMap;
  * You may assume that each input would have exactly one solution and you may not use the same
  * element twice.
  * <p>
- * Input: numbers={2, 7, 11, 15}, target=9 Output: index1=1, index2=2
+ * Example 1:
+ * <p>
+ * Input: numbers = [2,7,11,15], target = 9
+ * Output: [1,2]
+ * Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].
+ * Example 2:
+ * <p>
+ * Input: numbers = [2,3,4], target = 6
+ * Output: [1,3]
+ * Explanation: The sum of 2 and 4 is 6. Therefore index1 = 1, index2 = 3. We return [1, 3].
+ * Example 3:
+ * <p>
+ * Input: numbers = [-1,0], target = -1
+ * Output: [1,2]
+ * Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
+ *
  */
 
 public class TwoSum_II {
 
 
-    public static int[] twoSum(int[] numbers, int target) {
-        int head = 0;
-        int tail = numbers.length - 1;
-        while (head <= tail) {
-            int sum = numbers[head] + numbers[tail];
-            if (sum == target) {
-                return new int[]{++head, ++tail};
-            } else if (sum < target) {
-                head++;
-            } else {
-                tail--;
+    public static int[] function(int[] nums, int target) {
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{++i, ++j};
+                }
             }
         }
-        return new int[]{};
+        return new int[]{2};
     }
 
-    public static int[] TwoSum_III(int[] numbers, int target) {
-        //slow but less memory
-        //Beats 16.91% of users with Java
-        //Beats 97.08% of users with Java
-        if (numbers == null || numbers.length < 2) {
-            return new int[0];
-        }
-        HashMap<Integer, Integer> hashMap = new HashMap<>();
-        for (int i = 0; i < numbers.length; i++) {
-            if (hashMap.containsKey(numbers[i])) {
-                return new int[]{hashMap.get(numbers[i]) + 1, ++i};
-            } else {
-                hashMap.put(target - numbers[i], i);
-            }
-        }
-
-        return new int[]{0, 0};
-    }
 
     public static void main(String[] args) {
-        int[] result = twoSum(new int[]{2, 7, 11, 15}, 9);
-        result = TwoSum_III(new int[]{1, 2, 7, 15}, 9);
-        for (int sum : result) {
-            System.out.println(sum);
-        }
+
+        Assert.assertEquals(function(new int[]{2, 7, 11, 15}, 9), new int[]{1, 2});
+        Assert.assertEquals(function(new int[]{2, 3, 4}, 6), new int[]{1, 3});
+        Assert.assertEquals(function(new int[]{-1, 0}, -1), new int[]{1, 2});
     }
 }

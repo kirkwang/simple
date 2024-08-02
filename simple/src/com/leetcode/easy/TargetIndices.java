@@ -1,10 +1,10 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.testng.Assert.assertEquals;
 
 /*
 https://leetcode.com/problems/find-target-indices-after-sorting-array/
@@ -42,13 +42,14 @@ public class TargetIndices {
 
     public static void main(String[] arges) {
         List<Integer> result = targetIndices(new int[]{1, 2, 5, 2, 3}, 5);
-        assertEquals(result.toArray(), new int[]{4});
+
+        Assert.assertEquals(result.toArray(), new int[]{4});
 
         result = targetIndices(new int[]{1, 2, 5, 2, 3}, 2);
-        assertEquals(result.toArray(), new int[]{1, 2});
+        Assert.assertEquals(result.toArray(), new int[]{1, 2});
 
         result = targetIndices(new int[]{1, 2, 5, 2, 3}, 3);
-        assertEquals(result.toArray(), new int[]{3});
+        Assert.assertEquals(result.toArray(), new int[]{3});
 
 
     }
