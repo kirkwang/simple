@@ -29,14 +29,13 @@ Hey candidate! Welcome to your interview. I'll start off by giving you a Solutio
 */
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 class CoderPad {
     public static String[] soluation(String[] input) {
-        List<String> list = new ArrayList();
-        for (String temp : input) {
-            list.add(temp);
-        }
+        List<String> list = new ArrayList<>();
+        list.addAll(Arrays.asList(input));
         list.add("Thanks!");
         list.add("GoogBye!");
 
