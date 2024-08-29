@@ -6,7 +6,11 @@
 
 package com.kirkwang.amazonInterview;
 
-import java.util.Iterator;
+import org.testng.Assert;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 /*
@@ -14,28 +18,33 @@ https://www.careercup.com/question?id=182717
  */
 public class TheNthMaxElement {
 
-    public static int findTheNthMaxElement(int[] input, int key) {
-        TreeSet treeSet = new TreeSet();
-        for (int i = 0; i < input.length; i++) {
-            treeSet.add(input[i]);
-        }
 
-        for (Iterator it = treeSet.descendingIterator(); it.hasNext(); ) {
-            Object e = it.next();
-            if (--key == 0) {
-                System.out.println(e);
-                return 0;
-            }
+    public static int findTheNMaxElement(int[] input, int key) {
+        SortedSet<Integer> treeSet = new TreeSet<>();
+        for (int j : input) {
+            treeSet.add(j);
         }
-        return 0;
+        List<Object> a = Arrays.asList(treeSet.toArray());
+        if (key < 1) {
+            return -1;
+        }
+        if (key > a.size()) {
+            return -1;
+        }
+        return (int) a.get(a.size() - key);
+
     }
 
     public static void main(String[] args) {
 
-        int[] a = {2, -4, 5, 6, 0, 7, 8, 10, 9};
-        int k = 3; //if you want to find out 1 largest then give 0
 
-        TheNthMaxElement.findTheNthMaxElement(a, k);
+        int[] a = {1, 2, 5, 6, 7, 8, 10, 11, 4};
 
+        Assert.assertEquals(TheNthMaxElement.findTheNMaxElement(a, 1), 11);
+        Assert.assertEquals(TheNthMaxElement.findTheNMaxElement(a, 2), 10);
+
+        Assert.assertEquals(TheNthMaxElement.findTheNMaxElement(a, 9), 1);
+        Assert.assertEquals(TheNthMaxElement.findTheNMaxElement(a, 0), -1);
+        Assert.assertEquals(TheNthMaxElement.findTheNMaxElement(a, 110), -1);
     }
 }
