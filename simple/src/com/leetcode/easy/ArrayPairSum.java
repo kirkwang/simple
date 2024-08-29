@@ -13,19 +13,19 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
+https://leetcode.com/problems/two-sum/description/
 f(10, [3, 4, 5, 6, 7]) // [ [6, 4], [7, 3] ]
 f(8, [3, 4, 5, 4, 4]) // [ [3, 5], [4, 4], [4, 4], [4, 4] ]
 https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-a-with-sum-as-x/
  */
 class ArrayPairSum {
-
-    public static List min_1(int total, Integer[] nums) {
+    public static Object[] twoSum(int[] nums, int target) {
         Arrays.sort(nums);
-        List<ArrayList> list = new ArrayList<>();
+        ArrayList<ArrayList> list = new ArrayList<>();
         int left = 0;
         int right = nums.length - 1;
         while (left < right) {
-            if (nums[left] + nums[right] == total) {
+            if (nums[left] + nums[right] == target) {
                 ArrayList<Integer> temp = new ArrayList<>();
 
                 temp.add(nums[left++]);
@@ -33,17 +33,20 @@ class ArrayPairSum {
 
                 list.add(temp);
 
-            } else if (nums[left] + nums[right] < total) {
+            } else if (nums[left] + nums[right] < target) {
                 left++;
             } else right--;
 
         }
-        return list;
+        return list.toArray();
+
     }
+
 
     public static void main(String[] args) {
 
         Integer[] integers = new Integer[]{6, 1, 3, 4, 1, 3, 9};
+        int[] ints = new int[]{6, 1, 3, 4, 1, 3, 9};
 
         List<ArrayList<Integer>> list = new ArrayList<>();
         ArrayList<Integer> temp = new ArrayList<>();
@@ -56,7 +59,7 @@ class ArrayPairSum {
         temp.add(6);
         list.add(temp);
 
-        Assert.assertEquals(ArrayPairSum.min_1(10, integers), list);
+        Assert.assertEquals(ArrayPairSum.twoSum(ints, 10), list.toArray());
 
     }
 }
