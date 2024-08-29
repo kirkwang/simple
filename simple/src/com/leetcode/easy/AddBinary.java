@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 /*
 Given two binary strings a and b, return their sum as a binary string.
 
@@ -15,18 +17,15 @@ Output: "10101"
 public class AddBinary {
     public static void main(String[] args) {
         AddBinary ad = new AddBinary();
-        String a = "11"; // 3 + 1 = 4
-        String b = "1";
-        System.out.println(ad.addBinary(a, b));
 
+        Assert.assertEquals(ad.addBinary("11", "1"), "100");
+        Assert.assertEquals(ad.addBinary("1010", "1011"), "10101");
     }
 
     public String addBinary(String a, String b) {
 
-        if (a == null || a.isEmpty())
-            return b;
-        if (b == null || b.isEmpty())
-            return a;
+        if (a == null || a.isEmpty()) return b;
+        if (b == null || b.isEmpty()) return a;
 
         int pa = a.length() - 1;
         int pb = b.length() - 1;
@@ -47,9 +46,8 @@ public class AddBinary {
             }
 
             int sum = va + vb + flag;
-            if (sum >= 2) {
-                sb.append(sum - 2);
-                System.out.println(sum);
+            if (sum == 2) {
+                sb.append(0);
                 flag = 1;
             } else {
                 flag = 0;
