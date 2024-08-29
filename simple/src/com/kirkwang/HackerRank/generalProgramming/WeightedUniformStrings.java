@@ -4,11 +4,11 @@ package com.kirkwang.HackerRank.generalProgramming;
 import java.util.HashSet;
 import java.util.Set;
 
-// Traverse the string just 1 time. Save the weights of every possible uniform substring in a HashSet.
-//https://www.hackerrank.com/challenges/weighted-uniform-string/problem
-//  Time complexity: O(n)
+/* Traverse the string just 1 time. Save the weights of every possible uniform substring in a HashSet.
+https://www.hackerrank.com/challenges/weighted-uniform-string/problem
+  Time complexity: O(n)
 // Space complexity: O(n)
-
+*/
 public class WeightedUniformStrings {
     public static void main(String[] args) {
         String str = "aaabbbbcccddd";
