@@ -6,6 +6,12 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /*
 https://www.hackerrank.com/challenges/Angry-Professor/problem
 Function Description
@@ -20,14 +26,16 @@ a: an array of integers representing arrival times
 public class AngryProfessor {
     public static void main(String[] args) {
 
-        int[] B = new int[]{3, -5, -7, 11, 5, 8};
-        int[] A = new int[]{0, -1, 2, 1};
-        int k = 2;
-        System.out.println(angryProfessor(k, A));
+        List<Integer> list = new ArrayList<>(Arrays.asList(0, -1, 2, 1));
+        Assert.assertEquals(angryProfessor(2, list), "NO");
+
+        list = new ArrayList<>(Arrays.asList(-1, -3, 4, 2));
+        Assert.assertEquals(angryProfessor(3, list), "YES");
 
     }
 
-    public static String angryProfessor(int k, int[] a) {
+    public static String angryProfessor(int k, List<Integer> a) {
+
         int count = 0;
         for (int x : a) {
             if (x <= 0) {
