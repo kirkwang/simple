@@ -1,6 +1,6 @@
 package com.kirkwang.Codility;
 
-import java.util.Scanner;
+import org.testng.Assert;
 
 /**
  * Created by kewang on 11/8/17.
@@ -15,9 +15,11 @@ public class BinaryGap {
 
     public static void main(String[] args) {
 
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        System.out.println(BinaryGap_toCharArry(n));
+        Assert.assertEquals(BinaryGap_toCharArry(1041), 5);
+        Assert.assertEquals(BinaryGap_toCharArry(1001), 2);
+        Assert.assertEquals(BinaryGap_toCharArry(20), 1);
+        Assert.assertEquals(BinaryGap_toCharArry(15), 0);
+        Assert.assertEquals(BinaryGap_toCharArry(32), 0);
     }
 
     public static int BinaryGap_toCharArry(int N) {
@@ -29,36 +31,11 @@ public class BinaryGap {
             if (binaryFormat.charAt(i) == '0') {
                 distance++;
             } else if (distance > 0) {
-                result = distance > result ? distance : result;
+                result = Math.max(distance, result);
                 distance = 0;
             }
 
         }
         return result;
-    }
-
-
-    public static int BinaryGap(int N) {
-        int binaryGap = 0;
-        //   String binaryString = Integer.toBinaryString(N);
-        //   char[] characters = binaryString.toCharArray(); // count number of zero's in 10000010001
-        //   int j = 0;
-        Character c;
-        // for (int i = 0; i < characters.length; i++) {
-        for (int j = 0; N > 0; N /= 2) {
-            if (N % 2 == 0) {
-                j++;
-            } else {
-                if (j > binaryGap) {
-                    binaryGap = j;
-                }
-
-                j = 0;
-            }
-            //   }
-
-        }
-        return binaryGap;
-
     }
 }
