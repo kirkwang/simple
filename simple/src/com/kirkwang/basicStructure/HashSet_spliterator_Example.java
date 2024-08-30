@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.kirkwang.basicStructure;
 
 import java.util.HashSet;
 import java.util.Set;
