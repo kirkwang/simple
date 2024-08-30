@@ -47,20 +47,18 @@ public class CountCharacters {
     public static int countCharacters(String[] words, String chars) {
         List<String> result = new ArrayList<>();
 
-        for (int i = 0; i < words.length; i++) {
-            char[] word = words[i].toCharArray();
+        for (String string : words) {
+            char[] word = string.toCharArray();
             int counter = 0;
 
-            for (int j = 0; j < word.length; j++) {
-                if (chars.indexOf(word[j]) != -1) {
+            for (char c : word) {
+                if (chars.indexOf(c) != -1) {
                     counter++;
                 }
             }
             if (counter == word.length) {
-                result.add(words[i]);
+                result.add(string);
             }
-
-
         }
         int counter = 0;
         for (String s : result) {
