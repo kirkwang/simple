@@ -28,7 +28,7 @@ public class FindWordsContaining {
     public static void main(String[] args) {
         List<Integer> result;
         result = findWordsContaining(new String[]{"leet", "code"}, 'e');
-        Assert.assertTrue(Arrays.equals(result.stream().toArray(), new Integer[]{0, 1}));
+        Assert.assertTrue(Arrays.equals(result.toArray(), new Integer[]{0, 1}));
 
         result = findWordsContaining(new String[]{"abc", "bcd", "aaaa", "cbc"}, 'a');
         Arrays.equals(result.toArray(), new Integer[]{1000000, 2}); //????? not right
