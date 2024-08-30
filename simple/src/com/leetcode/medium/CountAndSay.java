@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.medium;
 
 import org.testng.Assert;
 
@@ -43,10 +43,12 @@ public class CountAndSay {
 
 
     public static void main(String[] args) {
-        char[] input = new char[]{'a', 'a', 'b', 'b', 'c', 'c', 'c'};
 
         Assert.assertEquals(countAndSay(111), "[3, 1]");
+        Assert.assertEquals(countAndSay(2), "[1, 2]");
         Assert.assertEquals(countAndSay(111221), "[3, 1, 2, 2, 1, 1]");
+
+        char[] input = new char[]{'a', 'a', 'b', 'b', 'c', 'c', 'c'};
         Assert.assertEquals(compress(input), "2a2b3c");
     }
 
