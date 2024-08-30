@@ -20,29 +20,6 @@ Explanation: The strings that can be formed are "hello" and "world" so the answe
 
  */
 public class CountCharacters {
-    public static int countCharacters_v1(String[] words, String chars) {
-        int total = 0;
-        List<String> result = new ArrayList<>();
-        for (int i = 0; i < chars.length(); i++) {
-            total = total + chars.charAt(i);
-        }
-        int sum = total;
-        for (int i = 0; i < words.length; i++) {
-            char[] word = words[i].toCharArray();
-            for (int j = 0; j < word.length; j++) {
-                sum = sum - word[i];
-            }
-            if (sum > 0) {
-                result.add(words[i]);
-            }
-            sum = total;
-        }
-        int counter = 0;
-        for (String s : result) {
-            counter += s.length();
-        }
-        return counter;
-    }
 
     public static int countCharacters(String[] words, String chars) {
         List<String> result = new ArrayList<>();
@@ -72,13 +49,11 @@ public class CountCharacters {
         String[] words = {"cat", "bt", "hat", "tree"};
         int result;
         result = countCharacters(words, "atach");
-        //  result = countCharacters_v1(words, "atach");
 
         Assert.assertEquals(result, 6);
 
         words = new String[]{"hello", "world", "leetcode"};
         result = countCharacters(words, "welldonehoneyr");
-        //  result = countCharacters_v1(words, "welldonehoneyr");
         Assert.assertEquals(result, 10);
 
     }
