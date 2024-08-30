@@ -49,6 +49,7 @@ public class IntersectiontwoArrays {
     }
 
     public static int[] twoSets(int[] nums1, int[] nums2) {
+        // It is slower than retainAll
         Set<Integer> one = new HashSet<>();
         Set<Integer> two = new HashSet<>();
 
@@ -63,7 +64,6 @@ public class IntersectiontwoArrays {
         for (int i = 0; i < result.length; i++) {
             result[i] = (int) two.toArray()[i];
         }
-
         return result;
 
     }
