@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 /*
 *https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 * You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
@@ -25,7 +27,7 @@ public class MaxProfit_V2 {
 
         int total = 0;
         for (int i = 1; i < prices.length; i++) {
-            if (prices[i] > prices[i - 1]) {
+            if (prices[i - 1] < prices[i]) {
                 total += prices[i] - prices[i - 1];
             }
         }
@@ -34,9 +36,9 @@ public class MaxProfit_V2 {
 
     public static void main(String[] args) {
 
-        int[] n = new int[]{7, 1, 5, 3, 6, 4}; //5, 4, 3, 2, 1
-
-        System.out.println("maxProfit " + maxProfit(n));
+        Assert.assertEquals(maxProfit(new int[]{7, 1, 5, 3, 6, 4}), 7);
+        Assert.assertEquals(maxProfit(new int[]{7, 6, 4, 3, 1}), 0);
+        Assert.assertEquals(maxProfit(new int[]{1, 2, 3, 4, 5}), 4);
     }
 
 }
