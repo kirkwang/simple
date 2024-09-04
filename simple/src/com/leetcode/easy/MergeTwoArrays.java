@@ -28,10 +28,10 @@ Note:
 You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2. The number of elements initialized in nums1 and nums2 are m and n respectively.
 
  */
-public class MergeTwoArraysIntoOne {
+public class MergeTwoArrays {
     public static void main(String[] args) {
 
-        MergeTwoArraysIntoOne mtaio = new MergeTwoArraysIntoOne();
+        MergeTwoArrays mtaio = new MergeTwoArrays();
         int[] one = new int[]{1, 3, 5, 6, 0, 0, 0, 0, 0};
         int[] two = new int[]{1, 2, 2, 2, 10};
         int[] merged = mtaio.mergeTwoArraysIntoOne(one, 4, two, 5);

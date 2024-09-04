@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 /**
  * Created by kewang on 12/25/15.
  * https://leetcode.com/problems/merge-sorted-array/
@@ -20,10 +22,9 @@ public class MergeSortedArray {
 
         int[] one = new int[]{1, 3, 5};
         int[] two = new int[]{1, 2, 2, 2, 10};
-        int[] merged = msa.mergeSortedArray(one, two);
-        for (int aMerged : merged) {
-            System.out.print(aMerged + " ");
-        }
+
+        Assert.assertEquals(msa.mergeSortedArray(one, two), new int[]{1, 1, 2, 2, 2, 3, 5, 10});
+
     }
 
     public int[] mergeSortedArray(int[] a, int[] b) {
