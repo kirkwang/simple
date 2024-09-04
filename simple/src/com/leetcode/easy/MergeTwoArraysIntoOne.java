@@ -1,9 +1,12 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 /**
  * Created by kewang on 12/26/15.
  */
 /*
+https://leetcode.com/problems/merge-sorted-array/description/
 Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
 
 Note:
@@ -17,13 +20,15 @@ public class MergeTwoArraysIntoOne {
         int[] one = new int[]{1, 3, 5, 6, 0, 0, 0, 0, 0};
         int[] two = new int[]{1, 2, 2, 2, 10};
         int[] merged = mtaio.mergeTwoArraysIntoOne(one, 4, two, 5);
-        for (int a : merged) {
-            System.out.print(a + " ");
-        }
+        Assert.assertEquals(merged, new int[]{1, 1, 2, 2, 2, 3, 5, 6, 10});
+
+
+        merged = mtaio.mergeTwoArraysIntoOne(new int[]{1, 2, 3, 0, 0, 0}, 3, new int[]{2, 5, 6}, 3);
+        Assert.assertEquals(merged, new int[]{1, 2, 2, 3, 5, 6});
+
     }
 
     public int[] mergeTwoArraysIntoOne(int[] a, int m, int[] b, int n) {
-        int theEnd = a.length - 1;
         while (m > 0 && n > 0) {
             int aEnd = m - 1;
             int bEnd = n - 1;
