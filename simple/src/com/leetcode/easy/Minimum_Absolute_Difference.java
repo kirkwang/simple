@@ -28,23 +28,18 @@ public class Minimum_Absolute_Difference {
 
     public static List<List<Integer>> minimumAbsDifference(int[] arr) {
         List<List<Integer>> result = new ArrayList<>();
-        int min_diff = Integer.MAX_VALUE;
+        int diff = Integer.MAX_VALUE;
         Arrays.sort(arr);
         for (int i = 0; i < arr.length - 1; i++) {
-            if (min_diff > (arr[i + 1] - arr[i])) {
-                min_diff = arr[i + 1] - arr[i];
+            if ((arr[i + 1] - arr[i]) < diff) {
+                diff = arr[i + 1] - arr[i]; //mini diff found
             }
         }
-        List<Integer> temp;
+
         for (int i = 0; i < arr.length - 1; i++) {
-            if ((arr[i + 1] - arr[i]) == min_diff) {
-                temp = new ArrayList<>();
-
-                temp.add(arr[i]);
-                temp.add(arr[i + 1]);
-                result.add(temp);
+            if ((arr[i + 1] - arr[i]) == diff) {
+                result.add(Arrays.asList(arr[i], arr[i + 1])); // adding all the matches
             }
-
         }
         return result;
     }
