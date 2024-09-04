@@ -63,9 +63,10 @@ public class MedianOfTwoSortedArray {
         int[] arr2 = {3, 4};
         float result = MedianOfTwoSortedArray.findMedianOfTwoSortedArray(arr1, arr2);
         Assert.assertEquals(result, 2.5F);
+        Assert.assertEquals((double) result, 2.50000);
 
         result = MedianOfTwoSortedArray.findMedianOfTwoSortedArray(new int[]{1, 3}, new int[]{2});
-        Assert.assertEquals(result, 2F);
+        Assert.assertEquals(result, 2.0F);
 
     }
 }
