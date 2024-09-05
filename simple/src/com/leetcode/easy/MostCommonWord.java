@@ -43,10 +43,10 @@ public class MostCommonWord {
     }
 
     private static HashMap<String, Integer> getStringIntegerHashMap(String paragraph) {
-        String[] commaFiltered = paragraph.trim().split(",");
+        String[] strings = paragraph.trim().split(",");
 
         List<String> list = new ArrayList<>();
-        for (String string : commaFiltered) {
+        for (String string : strings) {
             String[] temp = string.split(" ");
             for (String s : temp) {
                 list.add(s.trim().replaceAll("[^a-zA-Z0-9]", "").toLowerCase());
