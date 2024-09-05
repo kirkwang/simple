@@ -1,26 +1,28 @@
 package com.leetcode.easy;
 
-/**
- * Created by kewang on 12/27/15.
+/*
+ Created by kewang on 12/27/15.
  */
 
-/**
- *
- * https://leetcode.com/problems/valid-palindrome/
+import org.testng.Assert;
+
+/*
+
+  https://leetcode.com/problems/valid-palindrome/
   Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
 For example,
 "A man, a plan, a canal: Panama" is a palindrome.
 "race a car" is not a palindrome.
- **/
+ */
 public class PalindromeString {
 
     public static void main(String[] args) {
-        String trimedInput = "amanaplanacanalpanama";
 
         String source = "A man, a plan, a canal: Panama";
+        Assert.assertTrue(PalindromeString.palindromeString(source));
+        Assert.assertFalse(PalindromeString.palindromeString("race a car"));
 
-        System.out.println(PalindromeString.palindromeString(source));
     }
 
     public static boolean palindromeString(String s) {
