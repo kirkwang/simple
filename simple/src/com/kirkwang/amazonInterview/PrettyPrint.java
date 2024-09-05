@@ -21,25 +21,23 @@ public class PrettyPrint {
             String word = spaceSplit[i];
             int lastIndex = word.length() - 1;
             if (word.charAt(lastIndex) == '!' || word.charAt(lastIndex) == ',' || word.charAt(lastIndex) == '.') {
-                StringBuilder sb = new StringBuilder();
-                sb.append(word, 0, lastIndex); //it will remove the last char and append . at the end.
-                sb.append(".");
-                spaceSplit[i] = sb.toString().toLowerCase();
+                //it will remove the last char and append . at the end.
+                String sb = word.substring(0, lastIndex) + ".";
+                spaceSplit[i] = sb.toLowerCase();
             }
         }
         StringBuilder sentence = new StringBuilder();
-        for (int i = 0; i < spaceSplit.length; i++) {
+        for (String string : spaceSplit) {
+            sentence = sentence.append(string).append(" ");
 
-            char lastChar = spaceSplit[i].charAt(spaceSplit[i].length() - 1);
-            sentence = sentence.append(spaceSplit[i]).append(" ");
             String firstChar = String.valueOf(sentence.charAt(0));
             sentence.setCharAt(0, firstChar.toUpperCase().toCharArray()[0]);
 
+            char lastChar = string.charAt(string.length() - 1);
             if (lastChar == '.') {
                 System.out.println(sentence.toString().replace('!', 't'));
                 sentence = new StringBuilder();
             }
-
 
         }
     }

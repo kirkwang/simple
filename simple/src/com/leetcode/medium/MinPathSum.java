@@ -4,15 +4,30 @@
  * kirkwang : the currently used username;
  */
 
-package com.leetcode.easy;
+package com.leetcode.medium;
 
 import java.io.IOException;
 
+/*
+https://leetcode.com/problems/minimum-path-sum/description/
+Input: grid = [[1,3,1],[1,5,1],[4,2,1]]
+Output: 7
+Explanation: Because the path 1 → 3 → 1 → 1 → 1 minimizes the sum.
+
+Example 2:
+
+Input: grid = [[1,2,3],[4,5,6]]
+Output: 12
+
+ */
 public class MinPathSum {
 
     public static void main(String[] args) throws IOException {
-        String[] tokens = new String[]{"2", "1", "/"};
-        System.out.println(minPathSum(new int[2][2]));
+        //  [[1,3,1],[1,5,1],[4,2,1]]
+        int[][] table = new int[][]{};
+
+        int result = minPathSum(new int[2][2]);
+        System.out.println(result);
     }
 
     public static int minPathSum(int[][] grid) {

@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -22,12 +24,12 @@ Output: 2
 You may assume that the array is non-empty and the majority element always exist in the array.
  */
 public class MajorityElement {
-    private static Integer majorityElement_V2(int[] nums) {
+    private static Integer majorityElement_fast(int[] nums) {
         Arrays.sort(nums);
         return nums[nums.length / 2];
     }
 
-    protected static Integer majorityElement(int[] nums) {
+    protected static Integer majorityElement_slow(int[] nums) {
         HashMap<Integer, Integer> mMap = new HashMap<>();
         for (int numb : nums) {
 
@@ -44,14 +46,12 @@ public class MajorityElement {
     }
 
     public static void main(String[] args) {
-        int[] array = {3, 2, 3};
-        //int[] array = new int[]{2, 2, 1, 1, 1, 2, 2};
-        //   int[] array = {1, 1, 2, 4, 4, 4, 4, 4, 5};
+        Assert.assertEquals((int) MajorityElement.majorityElement_fast(new int[]{3, 2, 3}), 3);
+        Assert.assertEquals((int) MajorityElement.majorityElement_fast(new int[]{2, 2, 1, 1, 1, 2, 2}), 2);
 
-        Integer me = MajorityElement.majorityElement(array);
-        // me = MajorityElement.majorityElement_V2(array);
 
-        System.out.print(me);
+        Assert.assertEquals((int) MajorityElement.majorityElement_slow(new int[]{3, 2, 3}), 3);
+        Assert.assertEquals((int) MajorityElement.majorityElement_slow(new int[]{2, 2, 1, 1, 1, 2, 2}), 2);
     }
 
     protected static class TestClassPrivateAccess {

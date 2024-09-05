@@ -20,11 +20,15 @@ import java.util.Set;
 public class IntersectiontwoArrays {
     public static void main(String[] args) {
 
-        Assert.assertEquals(intersection(new int[]{1, 2, 2, 1}, new int[]{2, 2}), new int[]{2});
-        Assert.assertEquals(intersection(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4}), new int[]{4, 9});
+        Assert.assertEquals(retainAll(new int[]{1, 2, 2, 1}, new int[]{2, 2}), new int[]{2});
+        Assert.assertEquals(retainAll(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4}), new int[]{4, 9});
+
+        Assert.assertEquals(twoSets(new int[]{1, 2, 2, 1}, new int[]{2, 2}), new int[]{2});
+        Assert.assertEquals(twoSets(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4}), new int[]{4, 9});
+
     }
 
-    public static int[] intersection(int[] nums1, int[] nums2) {
+    public static int[] retainAll(int[] nums1, int[] nums2) {
         Set<Integer> source = new HashSet<>();
         Set<Integer> target = new HashSet<>();
 
@@ -37,10 +41,30 @@ public class IntersectiontwoArrays {
         source.retainAll(target);
 
         int[] result = new int[source.size()];
-        int index = 0;
-        for (int i : source) {
-            result[index++] = i;
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = (int) source.toArray()[i];
         }
         return result;
+    }
+
+    public static int[] twoSets(int[] nums1, int[] nums2) {
+        // It is slower than retainAll
+        Set<Integer> one = new HashSet<>();
+        Set<Integer> two = new HashSet<>();
+
+        for (int n : nums1) {
+            one.add(n);
+        }
+        for (int n : nums2) {
+            if (one.contains(n))
+                two.add(n);
+        }
+        int[] result = new int[two.size()];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = (int) two.toArray()[i];
+        }
+        return result;
+
     }
 }

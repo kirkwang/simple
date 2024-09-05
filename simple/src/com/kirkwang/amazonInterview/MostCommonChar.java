@@ -6,6 +6,8 @@
 //https://www.careercup.com/question?id=17912674
 package com.kirkwang.amazonInterview;
 
+import org.testng.Assert;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -21,16 +23,13 @@ Space: O(n) where n is size of hash array
 public class MostCommonChar {
     public static char findMostCommonChar(String input, int key) {
         char output = ' ';
-        HashMap<Character, Integer> hashMap = new HashMap();
+        HashMap<Character, Integer> hashMap = new HashMap<>();
 
         for (int i = 0; i < input.length(); i++) {
             Character c = input.charAt(i);
-            if (hashMap.containsKey(c)) {
-                hashMap.put(c, hashMap.get(c) + 1);
-            } else {
-                hashMap.put(c, 1);
-            }
+            hashMap.put(c, hashMap.getOrDefault(c, 0) + 1);
         }
+
         // loop the key and put into arrayList with count.
         ArrayList<CompChar> arrayList = new ArrayList<>();
         for (Character c : hashMap.keySet()) {
@@ -47,18 +46,21 @@ public class MostCommonChar {
                 }
             }
         }
-
+        System.out.println(MostCommonChar.class);
         for (CompChar cc : arrayList) {
-            System.out.println(cc.aChar + " " + cc.aCount);
+            if (cc.aCount >= key) {
+                System.out.println(cc.aChar + " " + cc.aCount);
+                output = cc.aChar;
+                break;
+            }
         }
 
         return output;
     }
 
     public static void main(String[] args) {
-        char commonChar = MostCommonChar.findMostCommonChar("Aabra Ka Daabra", 1);
-        System.out.println(commonChar);
-
+        char commonChar = MostCommonChar.findMostCommonChar("Aabra Ka Daabra", 2);
+        Assert.assertEquals(commonChar, 'a');
     }
 
     public static class CompChar {

@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 /*
 Given a string s consisting of words and spaces, return the length of the last word in the string.
 
@@ -28,9 +30,9 @@ Explanation: The last word is "joyboy" with length 6.
 public class LengthOfLastWord {
     public static void main(String[] args) {
         LengthOfLastWord lw = new LengthOfLastWord();
-        String input = "luffy is still joyboy";
-        input = "   fly me   to   the moon  ";
-        System.out.println(lw.lengthOfLastWord(input));
+
+        Assert.assertEquals(lw.lengthOfLastWord("   fly me   to   the moon  "), 4);
+        Assert.assertEquals(lw.lengthOfLastWord("luffy is still joyboy"), 6);
     }
 
     public int lengthOfLastWord(String s) {

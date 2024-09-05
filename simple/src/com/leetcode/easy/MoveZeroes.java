@@ -1,11 +1,13 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 /**
  * Created by kewang on 12/24/15.
  */
 
-/**
- * https://leetcode.com/problems/move-zeroes/
+/*
+  https://leetcode.com/problems/move-zeroes/
 Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
 For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
@@ -18,11 +20,8 @@ Minimize the total number of operations.
 public class MoveZeroes {
 
     public static void main(String[] args) {
-        MoveZeroes mz = new MoveZeroes();
-        int[] sorted = mz.moveZeroes(new int[]{1, 0, 2, 30, 0});
-        for (int i : sorted) {
-            System.out.print(i + " ");
-        }
+        int[] sorted = moveZeroes(new int[]{1, 0, 2, 30, 0});
+        Assert.assertEquals(sorted, new int[]{1, 2, 30, 0, 0});
     }
 
     public static int[] moveZeroes(int[] numbs) {

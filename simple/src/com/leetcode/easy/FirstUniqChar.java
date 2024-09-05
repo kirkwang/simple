@@ -36,11 +36,25 @@ public class FirstUniqChar {
         return -1;
     }
 
+    public static int firstUniqChar_index(String s) {
+        if (s.isEmpty()) return -1;
+        if (s.length() == 1) return 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i))) {
+                return i;
+            }
+        }
+        return -1;
+    }
     public static void main(String[] args) {
 
         Assert.assertEquals(firstUniqChar("leetcode"), 0);
         Assert.assertEquals(firstUniqChar("loveleetcode"), 2);
-        Assert.assertEquals(firstUniqChar("aabb"), -1);
+
+        Assert.assertEquals(firstUniqChar_index("aabb"), -1);
+        Assert.assertEquals(firstUniqChar_index("loveleetcode"), 2);
+        Assert.assertEquals(firstUniqChar_index("aabb"), -1);
 
     }
 

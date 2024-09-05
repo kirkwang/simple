@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,27 +30,26 @@ public class IsomorphicStrings {
 
     public static void main(String[] args) {
 
-        System.out.print(IsomorphicStrings.isomorphicStrings("daa", "add"));
+        Assert.assertTrue(IsomorphicStrings.isomorphicStrings("daa", "add"));
+        Assert.assertFalse(IsomorphicStrings.isomorphicStrings("foo", "bar"));
     }
 
     public static boolean isomorphicStrings(String source, String target) {
         if (source.length() != target.length()) {
             return false;
         }
-        Map<Character, Character> map1 = new HashMap<Character, Character>(); //daa, add
-        Map<Character, Character> map2 = new HashMap<Character, Character>(); //add, daa
+        Map<Character, Character> map1 = new HashMap<>(); //daa, add
+        Map<Character, Character> map2 = new HashMap<>(); //add, daa
 
         for (int i = 0; i < source.length(); i++) {
-            if (map1.containsKey(source.charAt(i))) {
-                if (map1.get(source.charAt(i)) != target.charAt(i)) {
+            if (map1.containsKey(source.charAt(i)) && map1.get(source.charAt(i)) != target.charAt(i)) {
                     return false;
                 }
-            }
-            if (map2.containsKey(target.charAt(i))) {
-                if (map2.get(target.charAt(i)) != source.charAt(i)) {
+
+            if (map2.containsKey(target.charAt(i)) && map2.get(target.charAt(i)) != source.charAt(i)) {
                     return false;
                 }
-            }
+
             map1.put(source.charAt(i), target.charAt(i));
             map2.put(target.charAt(i), source.charAt(i));
         }

@@ -29,29 +29,28 @@ public class ArrayRankTransform {
         Arrays.sort(temp);
 
         Map<Integer, Integer> myMap = new HashMap<>();
-        int index = 1;
+        int index = 1;  // The temp is sorted 10, 20 ,30...
         for (int i = 0; i < arr.length; i++) {
             if (!myMap.containsKey(temp[i])) {
-                myMap.put(temp[i], index++);
+                myMap.put(temp[i], index++); // assign the index
             }
         }
         for (int i = 0; i < arr.length; i++) {
-            temp[i] = myMap.get(arr[i]);
+            temp[i] = myMap.get(arr[i]);  // find the orgional arr from map and put to temp
         }
         return temp;
     }
 
     public static void main(String[] args) {
-        int[] result;
-
-        result = arrayRankTransform(new int[]{40, 10, 20, 30});
 
         int[] result_v1 = arrayRankTransform(new int[]{100, 100, 100});
-        result_v1 = arrayRankTransform(new int[]{40, 10, 20, 30});
-        for (int j : result_v1) {
-            System.out.println(j);
-        }
+        Assert.assertEquals(result_v1, new int[]{1, 1, 1});
 
-        Assert.assertEquals(result.length, 4);
+        result_v1 = arrayRankTransform(new int[]{40, 10, 20, 30});
+        Assert.assertEquals(result_v1, new int[]{4, 1, 2, 3});
+
+        result_v1 = arrayRankTransform(new int[]{37, 12, 28, 9, 100, 56, 80, 5, 12});
+        Assert.assertEquals(result_v1, new int[]{5, 3, 4, 2, 8, 6, 7, 1, 3});
+
     }
 }

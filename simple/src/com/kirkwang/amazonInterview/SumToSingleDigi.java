@@ -6,21 +6,21 @@
 
 package com.kirkwang.amazonInterview;
 
+import org.testng.Assert;
+
 public class SumToSingleDigi {
     public static int sunToSingleDigi(int input) {
 
         while (input >= 10) {
-            int reminder = input % 10;
-            int decemial = input / 10;
-            input = reminder + decemial;
+            input = (input % 10) + (input / 10);
         }
-
         return input;
     }
 
     public static void main(String[] args) {
         int result = SumToSingleDigi.sunToSingleDigi(271);
+        Assert.assertEquals(result, 1);
 
-        System.out.println(result);
+        Assert.assertEquals(SumToSingleDigi.sunToSingleDigi(333), 9);
     }
 }

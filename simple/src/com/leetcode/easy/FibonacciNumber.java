@@ -28,19 +28,7 @@ Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
  */
 public class FibonacciNumber {
-    public static int fib_v1(int n) {
-        if (n == 0) {
-            return 0;
-        }
-        int pre = 0;
-        int cur = 1;
-        for (int i = 2; i <= n; i++) {
-            int next = pre + cur;
-            pre = cur;
-            cur = next;
-        }
-        return cur;
-    }
+
     public static int fib(int N) {
         if (N == 0) {
             return 0;
@@ -59,10 +47,9 @@ public class FibonacciNumber {
     public static void main(String[] args) {
 
         Assert.assertEquals(fib(4), 3);
-        Assert.assertEquals(fib_v1(4), 3);
-        Assert.assertEquals(fib_v1(3), 2);
-        Assert.assertEquals(fib_v1(2), 1);
-        Assert.assertEquals(fib_v1(0), 0);
+        Assert.assertEquals(fib(3), 2);
+        Assert.assertEquals(fib(2), 1);
+        Assert.assertEquals(fib(0), 0);
 
     }
 }

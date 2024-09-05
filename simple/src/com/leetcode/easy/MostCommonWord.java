@@ -28,12 +28,12 @@ public class MostCommonWord {
             return "";
         }
         HashMap<String, Integer> mMap = getStringIntegerHashMap(paragraph);
-        TreeSet<String> ts = new TreeSet<>(Arrays.asList(banned));
+        TreeSet<String> bs = new TreeSet<>(Arrays.asList(banned));
 
         int freq = 0;
         String ans = "";
         for (Map.Entry<String, Integer> entry : mMap.entrySet()) {
-            if (!entry.getKey().isEmpty() && entry.getValue() > freq && !ts.contains(entry.getKey())) {
+            if (!entry.getKey().isEmpty() && entry.getValue() > freq && !bs.contains(entry.getKey())) {
                 freq = entry.getValue();
                 ans = entry.getKey();
             }
@@ -43,10 +43,10 @@ public class MostCommonWord {
     }
 
     private static HashMap<String, Integer> getStringIntegerHashMap(String paragraph) {
-        String[] commaFiltered = paragraph.trim().split(",");
+        String[] strings = paragraph.trim().split(",");
 
         List<String> list = new ArrayList<>();
-        for (String string : commaFiltered) {
+        for (String string : strings) {
             String[] temp = string.split(" ");
             for (String s : temp) {
                 list.add(s.trim().replaceAll("[^a-zA-Z0-9]", "").toLowerCase());

@@ -33,11 +33,13 @@ public class MyQueue {
     public static void main(String[] args) {
         MyQueue obj = new MyQueue();
         obj.push(1);
+        obj.push(2);
 
         Assert.assertEquals(obj.pop(), 1);
+        Assert.assertFalse(obj.empty());
+        Assert.assertEquals(obj.pop(), 2);
         Assert.assertTrue(obj.empty());
-        int param_3 = obj.peek();
-        Assert.assertEquals(param_3, 0);
+        Assert.assertEquals(obj.peek(), 0);
 
     }
 
@@ -51,9 +53,10 @@ public class MyQueue {
         }
         while (!one.empty()) {
             two.push(one.pop());
-        }
+        }  // shift/pop into one
         int result = two.pop();
         while (!two.empty()) {
+            // after pop , put everything back into one
             one.push(two.pop());
         }
         return result;

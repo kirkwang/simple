@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 /**
  * Created by kewang on 12/12/17.
  *
@@ -60,9 +62,13 @@ public class LongestPalindromicSubstring {
     public static void main(String[] args) {
 
         String result = LongestPalindromicSubstring.LongestPalindromicSubstring("ababada");
-        System.out.println("This is the result " + result);
+        Assert.assertEquals(result, "ababa");
 
         String result1 = LongestPalindromicSubstring.LongestPalindromicSubstring("acbbcd");
-        System.out.println("This is the 2nd result " + result1);
+        Assert.assertEquals(result1, "cbbc");
+
+        Assert.assertEquals(LongestPalindromicSubstring.LongestPalindromicSubstring("babad"), "aba");
+        Assert.assertEquals(LongestPalindromicSubstring.LongestPalindromicSubstring("cbbd"), "bb");
+
     }
 }
