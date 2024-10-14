@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import static org.testng.internal.junit.ArrayAsserts.assertArrayEquals;
+
 /*
 https://leetcode.com/problems/plus-one/description/
 You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
@@ -23,18 +25,14 @@ Thus, the result should be [1,0].
  */
 public class PlusOne {
     public static void main(String[] args) {
-        //int[] input = {1, 2, 3};
-        int[] input = {9, 9};
-        PlusOne po = new PlusOne();
-        int[] result = po.plusOne(input);
 
+        assertArrayEquals(PlusOne.plusOne(new int[]{9}), new int[]{1, 0});
+        assertArrayEquals(PlusOne.plusOne(new int[]{1, 2, 3}), new int[]{1, 2, 4});
+        assertArrayEquals(PlusOne.plusOne(new int[]{4, 3, 2, 1}), new int[]{4, 3, 2, 2});
 
-        for (int i = 0; i <= input.length; i++) {
-            System.out.print(result[i]);
-        }
     }
 
-    public int[] plusOne(int[] digits) {
+    public static int[] plusOne(int[] digits) {
         if (digits == null || digits.length == 0) {
             return digits;
         }
