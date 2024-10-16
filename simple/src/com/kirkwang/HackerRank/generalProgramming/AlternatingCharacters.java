@@ -50,19 +50,17 @@ public class AlternatingCharacters {
     }
 
     static int[] alternatingCharacters(String[] s) {
+        int counter = 0;
         int[] result = new int[s.length];
-        int counter_delete = 0;
         for (int i = 0; i < s.length; i++) {
             for (int j = 1; j < s[i].length(); j++) {
                 if (s[i].charAt(j - 1) == s[i].charAt(j)) {
-                    counter_delete++;
+                    counter++;
                 }
             }
-            result[i] = counter_delete;
-            counter_delete = 0;
+            result[i] = counter;
+            counter = 0;
         }
-
         return result;
     }
-
 }
