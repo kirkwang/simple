@@ -6,8 +6,9 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 import java.util.*;
-import java.util.stream.Collectors;
 
 /*
 https://www.hackerrank.com/challenges/reduced-string/problem
@@ -17,7 +18,9 @@ public class SuperReducedString {
     public static void main(String[] args) {
 
         String input = "aaabccddd"; //aaabccddd > abd, baab → bb → Empty String
-        System.out.println(superReducedStringStack(input));
+
+        Assert.assertEquals("abd", superReducedStringStack(input));
+        Assert.assertEquals("abd", superReducedStringStackv2(input));
 
     }
 
@@ -30,12 +33,17 @@ public class SuperReducedString {
                 stack.push(c);
             }
         }
-        return stack.isEmpty() ? "Empty String" : stack.stream().map(i -> i.toString()).collect(Collectors.joining());
+        StringBuilder sb = new StringBuilder();
+        for (Character c : stack) {
+            sb.append(c);
+        }
+        return stack.isEmpty() ? "Empty String" : sb.toString();
+
     }
 
     static String superReducedStringStack(String s) {
         Stack<Character> stack = new Stack<>();
-        String result;
+
         for (char c : s.toCharArray()) {
             if (stack.empty()) {
                 stack.push(c);
@@ -47,11 +55,15 @@ public class SuperReducedString {
                 }
             }
         }
-        return stack.isEmpty() ? "Empty String" : stack.stream().map(i -> i.toString()).collect(Collectors.joining());
+        StringBuilder sb = new StringBuilder();
+        for (Character c : stack) {
+            sb.append(c);
+        }
+        return stack.isEmpty() ? "Empty String" : sb.toString();
     }
 
     public static String superReducedString_v2(String input) {
-
+        // fail on some test cases
         HashMap<Character, Integer> mMap = new HashMap<>();
         for (Character i : input.toCharArray()) {
             mMap.put(i, mMap.getOrDefault(i, 0) + 1);
@@ -69,12 +81,18 @@ public class SuperReducedString {
     }
 
     static String superReducedStringSet(String s) {
+        // fail on some test cases
         Set<Character> set = new HashSet<>();
         for (char c : s.toCharArray()) {
             if (!set.add(c)) {
                 set.remove(c);
             }
         }
-        return set.isEmpty() ? "Empty String" : (String) set.stream().map(i -> i.toString()).collect(Collectors.joining());
+        StringBuilder sb = new StringBuilder();
+        for (Character c : set) {
+            sb.append(c);
+        }
+        return set.isEmpty() ? "" : sb.toString();
+
     }
 }
