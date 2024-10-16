@@ -9,13 +9,16 @@ package com.kirkwang.HackerRank.generalProgramming;
 
 import java.util.Scanner;
 
+/*
+https://www.hackerrank.com/challenges/beautiful-binary-string/problem
+ */
 public class BeautifulBinaryString {
 
     public static void main(String[] args) {
         // String input = "0100101010";
 
         Scanner scanner = new Scanner(System.in);
-        int sLength = scanner.nextInt();
+        scanner.nextInt();
         char[] input;
         input = scanner.next().toCharArray();
         scanner.close();
@@ -24,13 +27,13 @@ public class BeautifulBinaryString {
 
     static int beautifulBinaryString(char[] sb) {
 
-        int count = 0;
+        int counter = 0;
         for (int i = 2; i < sb.length; i++) {
             if (sb[i - 2] == '0' && sb[i - 1] == '1' && sb[i] == '0') {
                 sb[i] = '1';
-                count++;
+                counter++;
             }
         }
-        return count;
+        return counter;
     }
 }
