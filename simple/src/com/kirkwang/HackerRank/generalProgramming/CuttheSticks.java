@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+https://www.hackerrank.com/challenges/cut-the-sticks/problem
+ */
 public class CuttheSticks {
     public static void main(String[] args) {
 

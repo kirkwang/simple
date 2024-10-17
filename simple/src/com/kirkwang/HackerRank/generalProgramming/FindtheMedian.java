@@ -6,11 +6,16 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-//https://www.hackerrank.com/challenges/find-the-median/problem
+/*
+https://www.hackerrank.com/challenges/find-the-median/problem
+ */
+
 /*
 7
 0 1 2 4 6 5 3
@@ -30,11 +35,16 @@ public class FindtheMedian {
         for (int i : array) {
             arrayList.add(i);
         }
-        System.out.println(findMedian(arrayList));
+
+        Assert.assertEquals(findMedian(arrayList), 3);
+        Assert.assertEquals(findMedian(new ArrayList<>()), -1);
 
     }
 
     public static int findMedian(List<Integer> arr) {
+        if (arr.isEmpty()) {
+            return -1;
+        }
         arr.sort(Comparator.naturalOrder());
         return arr.get(arr.size() / 2);
     }
