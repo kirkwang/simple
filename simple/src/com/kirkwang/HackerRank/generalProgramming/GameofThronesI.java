@@ -6,20 +6,20 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 import java.util.HashMap;
-import java.util.Scanner;
 
 /*
 https://www.hackerrank.com/challenges/game-of-thrones/problem
  */
 public class GameofThronesI {
     public static void main(String[] args) {
-        String a = "cdcdcdcdeeeef";
 
-        Scanner scanner = new Scanner(System.in);
-        a = scanner.next();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-        System.out.println(gameOfThrones(a));
+        Assert.assertEquals(gameOfThrones("cdcdcdcdeeeef"), "YES");
+        Assert.assertEquals(gameOfThrones("aaabbbb"), "YES");
+        Assert.assertEquals(gameOfThrones("cdefghmnopqrstuvw"), "NO");
+
     }
 
     static String gameOfThrones(String s) {
@@ -33,6 +33,6 @@ public class GameofThronesI {
                 count++;
             }
         }
-        return count >= 2 ? "NO" : "YES";
+        return count > 1 ? "NO" : "YES";
     }
 }

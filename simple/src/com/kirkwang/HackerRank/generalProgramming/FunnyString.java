@@ -8,6 +8,9 @@ package com.kirkwang.HackerRank.generalProgramming;
 
 import java.util.Scanner;
 
+/*
+https://www.hackerrank.com/challenges/funny-string/problem
+ */
 public class FunnyString {
 
     public static void main(String[] args) {
