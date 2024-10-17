@@ -8,7 +8,10 @@ package com.kirkwang.HackerRank.generalProgramming;
 
 import org.testng.Assert;
 
-import java.util.*;
+import java.util.BitSet;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 /*
 https://www.hackerrank.com/challenges/gem-stones/problem
@@ -18,12 +21,7 @@ public class Gemstones {
     public static void main(String[] args) {
         Assert.assertEquals(gemstonesBit(new String[]{"abcdde", "baccd", "eeabg"}), 2);
 
-        List arr = new ArrayList();
-        String[] sArray = new String[]{"abc", "bac", "bc"};
-        for (String s : sArray) {
-            arr.add(s);
-        }
-        Assert.assertEquals(gemstones_v1(sArray), 2);
+        Assert.assertEquals(gemstones_v1(new String[]{"abc", "bac", "bc"}), 2);
     }
 
     static int gemstonesBit(String[] array) {
