@@ -6,7 +6,7 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
-import java.time.LocalDate;
+import org.testng.Assert;
 
 /*
 https://www.hackerrank.com/challenges/library-fine/problem
@@ -21,29 +21,21 @@ public class LibraryFine {
         int dueDay = 6;
         int dueMonth = 6;
         int dueYear = 2015;
-        System.out.println(libraryFine(returnDay, returnMonth, returnYear, dueDay, dueMonth, dueYear));
-    }
 
-    static LocalDate toLocalDate(int d, int m, int y) {
-        return LocalDate.of(y, m, d);
+        Assert.assertEquals(libraryFine(returnDay, returnMonth, returnYear, dueDay, dueMonth, dueYear), 45);
+        Assert.assertEquals(libraryFine(1, 1, 2015, 31, 12, 2014), 1000);
     }
 
     static int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
-        int fine;
-        LocalDate actual = toLocalDate(d1, m1, y1);
-        LocalDate due = toLocalDate(d2, m2, y2);
-
-        if (actual.isEqual(due) || actual.isBefore(due)) {
-            fine = 0;
-        } else if (actual.getMonth() == due.getMonth() && actual.getYear() == due.getYear()) {
-            fine = 15 * (actual.getDayOfMonth() - due.getDayOfMonth());
-        } else if (actual.getYear() == due.getYear()) {
-            fine = 500 * (actual.getMonthValue() - due.getMonthValue());
-        } else {
-            fine = 1000;
+        if (y1 > y2) {
+            return 1000;
+        } else if (y1 == y2 && m1 > m2) {
+            return 500 * (m1 - m2);
+        } else if (y1 == y2 && m1 == m2 && d1 > d2) {
+            return 15 * (d1 - d2);
         }
-
-
-        return fine;
+        return 0;
     }
+
+
 }
