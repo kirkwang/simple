@@ -6,35 +6,39 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 /*
 https://www.hackerrank.com/challenges/mars-exploration/problem
  */
 public class MarsExploration {
-
-    static int marsExploration(String s) {
+    public static int marsExploration(String s) {
         int result = 0;
-        for (int i = 0, j = i + 3; j <= s.length(); ) {
-            result = result + countSos(s.substring(i, j));
-            i += 3;
-            j += 3;
+        for (int i = 0, j = i + 3; i < s.length(); ) {
+            String temp = s.substring(i, j);
+            result = result + matcher(temp);
+
+            i = i + 3;
+            j = j + 3;
         }
         return result;
     }
 
-    static int countSos(String input) {
-
-        String UNIT = "SOS";
+    static int matcher(String target) {
         int counter = 0;
-        for (int i = 0; i < input.length(); i++) {
-            if (input.charAt(i) != UNIT.charAt(i)) {
+        for (int k = 0; k < target.length(); k++) {
+            if (target.charAt(k) != "SOS".charAt(k)) {
                 counter++;
             }
         }
         return counter;
     }
 
+
     public static void main(String[] args) {
-        String beabeefeab = "SOSSPSSQSSOR";
-        System.out.println(marsExploration(beabeefeab));
+
+        Assert.assertEquals(marsExploration("SOSSPSSQSSOR"), 3);
+        Assert.assertEquals(marsExploration("SOSSOSSOS"), 0);
+        Assert.assertEquals(marsExploration("SOSSOT"), 1);
     }
 }
