@@ -6,8 +6,10 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -23,15 +25,15 @@ public class MarkAndToys {
             prices.add(i);
         }
 
-        System.out.println(maximumToys(prices, total));
+        Assert.assertEquals(maximumToys(prices, total), 4);
     }
 
-    static int maximumToys(List<Integer> prices, int k) {
-        if (k <= 0 || prices.isEmpty()) {
+    public static int maximumToys(List<Integer> prices, int k) {
+        if (k < 0 && prices.size() == 0) {
             return 0;
         }
-        prices.sort(Comparator.naturalOrder());
         int sum = 0;
+        Collections.sort(prices);
         int i;
         for (i = 0; i < prices.size(); i++) {
             if (sum < k) {
@@ -42,4 +44,5 @@ public class MarkAndToys {
         }
         return i - 1;
     }
+
 }
