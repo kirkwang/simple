@@ -6,35 +6,34 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
+/*
+https://www.hackerrank.com/challenges/making-anagrams/problem
+ */
 public class MakingAnagrams {
 
     public static void main(String[] args) {
-        String a = "cde";
-        String b = "abc";
 
-        System.out.println(makeAnagram(a, b));
+        Assert.assertEquals(makingAnagrams("cde", "abc"), 4);
+        Assert.assertEquals(makingAnagrams("abc", "amop"), 5);
     }
 
-    private static int[] createFilledArray(String str) {
-        int[] letter2count = new int[26];
-        str.chars().forEach(letter -> letter2count[letter - 'a']++);
-        return letter2count;
-    }
+    public static int makingAnagrams(String s1, String s2) {
 
-    private static int[] createFilledArrayJava8(String str) {
-        int[] array = new int[26];
+        StringBuilder sb1 = new StringBuilder(s1);
+        StringBuilder sb2 = new StringBuilder(s2);
 
-        str.chars().forEach(s -> array[s - 'a']++);
-        return array;
-    }
-
-    static int makeAnagram(String a, String b) {
-        int[] aCount = createFilledArrayJava8(a);
-        int[] bCount = createFilledArrayJava8(b);
-        int different = 0;
-        for (int i = 0; i < aCount.length; i++) {
-            different += Math.abs(aCount[i] - bCount[i]);
+        for (int i = 0; i < sb1.length(); i++) {
+            int index = sb2.indexOf("" + sb1.charAt(i));
+            if (index != -1) {
+                sb1.deleteCharAt(i);
+                sb2.deleteCharAt(index);
+                i--;
+            }
         }
-        return different;
+        return sb1.length() + sb2.length();
     }
+
+
 }
