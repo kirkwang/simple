@@ -6,10 +6,9 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
-import java.util.BitSet;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import org.testng.Assert;
+
+import java.util.*;
 
 /*
 https://www.hackerrank.com/challenges/gem-stones/problem
@@ -17,9 +16,14 @@ https://www.hackerrank.com/challenges/gem-stones/problem
 public class Gemstones {
 
     public static void main(String[] args) {
-        String[] input = {"abcdde", "baccd", "eeabg"};
+        Assert.assertEquals(gemstonesBit(new String[]{"abcdde", "baccd", "eeabg"}), 2);
 
-        System.out.println(gemstonesBit(input));
+        List arr = new ArrayList();
+        String[] sArray = new String[]{"abc", "bac", "bc"};
+        for (String s : sArray) {
+            arr.add(s);
+        }
+        Assert.assertEquals(gemstones_v1(sArray), 2);
     }
 
     static int gemstonesBit(String[] array) {
@@ -39,7 +43,7 @@ public class Gemstones {
         return bitset.cardinality();
     }
 
-    static int gemstones(String[] arr) {
+    static int gemstones_v1(String[] arr) {
         Set set = null;
 
         for (String temp : arr) {
