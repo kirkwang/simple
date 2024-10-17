@@ -6,6 +6,8 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,26 +23,28 @@ public class GradingStudents {
         for (int i : k) {
             grades.add(i);
         }
-        for (Integer i : gradingStudents(grades)) {
-            System.out.println(i);
-        }
+
+        Assert.assertEquals(gradingStudents(grades).toArray(), new int[]{75, 67, 40, 33});
     }
 
     public static List<Integer> gradingStudents(List<Integer> grades) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
+        ArrayList<Integer> result = new ArrayList<>();
         for (int i : grades) {
             if (i < 38) {
-                arrayList.add(i);
+                result.add(i);
+
             } else {
                 int remainder = i % 5;
-                if (remainder > 2) {
-                    int temp = (i / 5) * 5 + 5;
-                    arrayList.add(temp);
+                if (remainder < 3) {
+                    result.add(i);
                 } else {
-                    arrayList.add(i);
+                    int t = i / 5;
+                    result.add(5 * (t + 1));
                 }
             }
         }
-        return arrayList;
+        return result;
     }
+
+
 }
