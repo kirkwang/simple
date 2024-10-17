@@ -6,24 +6,23 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 /*
 https://www.hackerrank.com/challenges/hackerrank-in-a-string/problem
  */
-public class HackerRankinaString {
+public class HackerRankingString {
 
     public static void main(String[] args) {
-        String target = "rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt";
-        String shift = HackerRankinaString.hackerrankInString(target);
-        System.out.println(shift);
+
+        Assert.assertEquals(HackerRankingString.hackerrankInString("rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt"), "NO");
+        Assert.assertEquals(HackerRankingString.hackerrankInString("hackerworld"), "NO");
+        Assert.assertEquals(HackerRankingString.hackerrankInString("hereiamstackerrank"), "YES");
     }
 
     public static String hackerrankInString(String s) {
         String hackerrank = "hackerrank";
         int index = 0;
-
-        if (s.isEmpty() || s.length() < hackerrank.length()) {
-            return "NO";
-        }
         for (int i = 0; i < s.length(); i++) {
             if (hackerrank.charAt(index) == s.charAt(i)) {
                 index++;
@@ -32,7 +31,6 @@ public class HackerRankinaString {
                 return "YES";
             }
         }
-
         return "NO";
     }
 
