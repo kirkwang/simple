@@ -5,26 +5,26 @@
  */
 
 package com.kirkwang.HackerRank.generalProgramming;
+/*
+https://www.hackerrank.com/challenges/common-child/problem
+ */
 
-import java.util.Scanner;
+import org.testng.Assert;
 
 public class CommonChild {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
 
-        String a = in.next();
-        String b = in.next();
-        System.out.println(findMaxCommonLength(a, b));
+        Assert.assertEquals(findMaxCommonLength("HARRY", "SALLY"), 2);
+        Assert.assertEquals(findMaxCommonLength("AA", "BB"), 0);
+        Assert.assertEquals(findMaxCommonLength("SHINCHAN", "NOHARAAA"), 3);
 
-        in.close();
     }
 
     static int findMaxCommonLength(String s1, String s2) {
-        int length1 = s1.length();
-        int length2 = s2.length();
-        int[][] commonLengths = new int[length1 + 1][length2 + 1];
-        for (int i = 1; i <= length1; i++) {
-            for (int j = 1; j <= length2; j++) {
+
+        int[][] commonLengths = new int[s1.length() + 1][s2.length() + 1];
+        for (int i = 1; i <= s1.length(); i++) {
+            for (int j = 1; j <= s2.length(); j++) {
                 if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
                     commonLengths[i][j] = commonLengths[i - 1][j - 1] + 1;
                 } else {
@@ -32,7 +32,7 @@ public class CommonChild {
                 }
             }
         }
-        return commonLengths[length1][length2];
+        return commonLengths[s1.length()][s2.length()];
     }
 
 }
