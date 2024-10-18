@@ -6,6 +6,9 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+/*
+https://www.hackerrank.com/challenges/separate-the-numbers/problem
+ */
 public class SeparatetheNumbers {
     public static void main(String[] args) {
 
