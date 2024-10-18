@@ -6,7 +6,10 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 import java.util.HashSet;
+import java.util.Set;
 
 /*
 https://www.hackerrank.com/challenges/pangrams/problem
@@ -14,25 +17,24 @@ https://www.hackerrank.com/challenges/pangrams/problem
 public class Pangrams {
 
     public static void main(String[] args) {
-        String pangram = "We promptly judged antique ivory buckles for the next prize";
 
-        System.out.println(pangrams(pangram));
+
+        Assert.assertEquals(pangrams("We promptly judged antique ivory buckles for the next prize"), "pangram");
+        Assert.assertEquals(pangrams("We promptly judged antique ivory buckles for the prize"), "not pangram");
     }
 
     static String pangrams(String s) {
-        if (s.isEmpty()) {
+        if (s.isEmpty() || s.length() < 26) {
             return "not pangram";
         }
         s = s.toLowerCase();
-
-        HashSet<Character> sSet = new HashSet<>();
-
+        Set<Character> set = new HashSet<>();
         for (Character c : s.toCharArray()) {
             if (Character.isLetter(c)) {
-                sSet.add(c);
+                set.add(c);
             }
         }
-
-        return sSet.size() == 26 ? "pangram" : "not pangram";
+        return set.size() == 26 ? "pangram" : "not pangram";
     }
+
 }
