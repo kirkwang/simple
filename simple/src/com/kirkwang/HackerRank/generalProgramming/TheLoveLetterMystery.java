@@ -6,12 +6,18 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
+/*
+https://www.hackerrank.com/challenges/the-love-letter-mystery/problem
+ */
 public class TheLoveLetterMystery {
     public static void main(String[] args) {
-        String s1 = "abc";
-        String s2 = "abcba";
 
-        System.out.println(theLoveLetterMystery(s1));
+        Assert.assertEquals(theLoveLetterMystery("abc"), 2);
+        Assert.assertEquals(theLoveLetterMystery("abcba"), 0);
+        Assert.assertEquals(theLoveLetterMystery("abcd"), 4);
+        Assert.assertEquals(theLoveLetterMystery("cba"), 2);
     }
 
     static int theLoveLetterMystery(String s) {
