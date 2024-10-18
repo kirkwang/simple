@@ -6,6 +6,9 @@
 
 package com.kirkwang.HackerRank;
 
+/*
+https://www.hackerrank.com/contests/doyoulikeit/challenges/string-to-integer-atoi
+ */
 public class StringtoInteger {
     public static int StringtoInteger(String input) {
         if (input == null || input.length() == 0) {

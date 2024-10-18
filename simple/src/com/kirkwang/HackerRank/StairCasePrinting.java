@@ -6,6 +6,9 @@ package com.kirkwang.HackerRank;
 
 import java.util.Scanner;
 
+/*
+https://www.hackerrank.com/contests/indeed-coding-contest/challenges/paint-the-staircase
+ */
 public class StairCasePrinting {
 
     public static void main(String[] args) {
