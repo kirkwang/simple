@@ -6,6 +6,8 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 import java.util.HashMap;
 import java.util.TreeSet;
 
@@ -18,9 +20,8 @@ public class SherlockandtheValidString {
         String s = "abcdefghhgfedecba";
         String s1 = "aabbcd";
 
-        String result = isValid(s1);
-        System.out.println(result);
-
+        Assert.assertEquals(isValid("aabbcd"), "NO");
+        Assert.assertEquals(isValid("abc"), "YES");
     }
 
     // Wrong answer

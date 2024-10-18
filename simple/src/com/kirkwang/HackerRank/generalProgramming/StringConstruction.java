@@ -6,19 +6,20 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 import java.util.HashSet;
 import java.util.Set;
 
 /*
-https://www.hackerrank.com/challenges/string-construction/problem
+    https://www.hackerrank.com/challenges/string-construction/problem
  */
 public class StringConstruction {
 
     public static void main(String[] args) {
-        String a = "abcd";
-        String b = "abab";
 
-        System.out.println(stringConstruction(b));
+        Assert.assertEquals(stringConstruction("abab"), 2);
+        Assert.assertEquals(stringConstruction("abcd"), 4);
     }
 
     static int stringConstruction(String s) {
