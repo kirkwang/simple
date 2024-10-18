@@ -4,7 +4,7 @@
  * kirkwang : the currently used username;
  */
 
-package com.kirkwang.HackerRank;
+package com.kirkwang.HackerRank.generalProgramming;
 
 import org.testng.Assert;
 
