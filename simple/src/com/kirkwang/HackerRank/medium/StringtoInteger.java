@@ -4,7 +4,7 @@
  * kirkwang : the currently used username;
  */
 
-package com.kirkwang.HackerRank;
+package com.kirkwang.HackerRank.medium;
 
 /*
 https://www.hackerrank.com/contests/doyoulikeit/challenges/string-to-integer-atoi

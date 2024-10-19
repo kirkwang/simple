@@ -4,7 +4,7 @@
  * kirkwang : the currently used username;
  */
 
-package com.kirkwang.HackerRank;
+package com.kirkwang.HackerRank.medium;
 
 import java.util.Arrays;
 import java.util.HashMap;
