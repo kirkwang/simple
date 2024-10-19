@@ -6,19 +6,16 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
-import java.util.Scanner;
+import org.testng.Assert;
 
 /*
 https://www.hackerrank.com/challenges/camelcase/problem
  */
 public class CamelCase {
     public static void main(String[] args) {
-        //String a = "saveChangesInTheEditor";
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.next();
-        System.out.println(camelcase(input));
-    }
 
+        Assert.assertEquals(camelcase("saveChangesInTheEditor"), 5);
+    }
 
     static int camelcaseJ8(String a) {
 
