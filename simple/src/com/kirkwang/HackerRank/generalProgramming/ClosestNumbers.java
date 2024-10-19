@@ -34,13 +34,7 @@ public class ClosestNumbers {
             arrayList.add(i);
         }
 
-        List<Integer> expected = new ArrayList<>();
-        expected.add(-520);
-        expected.add(-470);
-        expected.add(-20);
-        expected.add(30);
-
-        assertArrayEquals(expected.toArray(), closestNumbers(arrayList).toArray());
+        assertArrayEquals(closestNumbers(arrayList).toArray(), new Integer[]{-520, -470, -20, 30});
 
         // test case 2
         array = new int[]{5, 4, 3, 2};
@@ -48,7 +42,7 @@ public class ClosestNumbers {
         for (int i : array) {
             arrayList.add(i);
         }
-        assertArrayEquals(new Integer[]{2, 3, 3, 4, 4, 5}, closestNumbers(arrayList).toArray());
+        assertArrayEquals(closestNumbers(arrayList).toArray(), new Integer[]{2, 3, 3, 4, 4, 5});
     }
 
     public static List<Integer> closestNumbers(List<Integer> arr) {
