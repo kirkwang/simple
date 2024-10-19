@@ -7,7 +7,7 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
-import java.util.Scanner;
+import org.testng.Assert;
 
 /*
 https://www.hackerrank.com/challenges/beautiful-binary-string/problem
@@ -15,14 +15,9 @@ https://www.hackerrank.com/challenges/beautiful-binary-string/problem
 public class BeautifulBinaryString {
 
     public static void main(String[] args) {
-        // String input = "0100101010";
-
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextInt();
-        char[] input;
-        input = scanner.next().toCharArray();
-        scanner.close();
-        System.out.println(beautifulBinaryString(input));
+        Assert.assertEquals(beautifulBinaryString("0100101010".toCharArray()), 3);
+        Assert.assertEquals(beautifulBinaryString("0101010".toCharArray()), 2);
+        Assert.assertEquals(beautifulBinaryString("01100".toCharArray()), 0);
     }
 
     static int beautifulBinaryString(char[] sb) {
