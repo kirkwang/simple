@@ -6,7 +6,9 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
-import java.util.Scanner;
+import org.testng.Assert;
+
+import java.util.Arrays;
 
 /*
 https://www.hackerrank.com/challenges/alternating-characters/problem
@@ -35,18 +37,10 @@ AAABBB
  */
 public class AlternatingCharacters {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int myInt = scanner.nextInt();
-        String[] inputArray = new String[myInt];
-        for (int i = 0; i < myInt; i++) {
-            inputArray[i] = scanner.next();
-        }
-        scanner.close();
 
+        String[] inputArray = {"AAAA", "BBBBB", "ABABABAB", "BABABA", "AAABBB"};
         int[] result = alternatingCharacters(inputArray);
-        for (int j : result) {
-            System.out.println(j);
-        }
+        Assert.assertTrue(Arrays.equals(result, new int[]{3, 4, 0, 0, 4}));
     }
 
     static int[] alternatingCharacters(String[] s) {
