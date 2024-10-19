@@ -8,7 +8,6 @@ package com.kirkwang.HackerRank.generalProgramming;
 
 import org.testng.Assert;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,11 +25,8 @@ a: an array of integers representing arrival times
 public class AngryProfessor {
     public static void main(String[] args) {
 
-        List<Integer> list = new ArrayList<>(Arrays.asList(0, -1, 2, 1));
-        Assert.assertEquals(angryProfessor(2, list), "NO");
-
-        list = new ArrayList<>(Arrays.asList(-1, -3, 4, 2));
-        Assert.assertEquals(angryProfessor(3, list), "YES");
+        Assert.assertEquals(angryProfessor(2, Arrays.asList(0, -1, 2, 1)), "NO");
+        Assert.assertEquals(angryProfessor(3, Arrays.asList(-1, -3, 4, 2)), "YES");
 
     }
 
