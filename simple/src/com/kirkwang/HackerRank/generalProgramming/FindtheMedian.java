@@ -9,7 +9,8 @@ package com.kirkwang.HackerRank.generalProgramming;
 import org.testng.Assert;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -29,14 +30,9 @@ The sorted . It's middle element is at .
 public class FindtheMedian {
     public static void main(String[] args) {
 
-        int[] array = {0, 1, 2, 4, 6, 5, 3};
+        Integer[] array = new Integer[]{0, 1, 2, 4, 6, 5, 3};
 
-        List<Integer> arrayList = new ArrayList<>();
-        for (int i : array) {
-            arrayList.add(i);
-        }
-
-        Assert.assertEquals(findMedian(arrayList), 3);
+        Assert.assertEquals(findMedian(Arrays.asList(array)), 3);
         Assert.assertEquals(findMedian(new ArrayList<>()), -1);
 
     }
@@ -45,7 +41,7 @@ public class FindtheMedian {
         if (arr.isEmpty()) {
             return -1;
         }
-        arr.sort(Comparator.naturalOrder());
+        Collections.sort(arr);
         return arr.get(arr.size() / 2);
     }
 }
