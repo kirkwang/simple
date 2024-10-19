@@ -6,7 +6,7 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
-import java.util.Scanner;
+import org.testng.Assert;
 
 /*
 https://www.hackerrank.com/challenges/append-and-delete/problem
@@ -23,17 +23,10 @@ k: an integer that represents the number of operations
 public class AppendAndDelete {
 
     public static void main(String[] args) {
+        Assert.assertEquals(appendAndDelete("hackerhappy", "hackerrank", 9), "Yes");
+        Assert.assertEquals(appendAndDelete("aba", "aba", 7), "Yes");
+        Assert.assertEquals(appendAndDelete("ashley", "ash", 2), "No");
 
-
-        Scanner scanner = new Scanner(System.in);
-
-        String s = scanner.next();
-        String t = scanner.next();
-        int k = scanner.nextInt();
-
-        scanner.close();
-
-        System.out.println(appendAndDelete(s, t, k));
     }
 
     public static String appendAndDelete(String s, String t, int k) {
