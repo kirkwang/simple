@@ -6,7 +6,7 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
-import java.util.Scanner;
+import org.testng.Assert;
 
 /*
 https://www.hackerrank.com/challenges/funny-string/problem
@@ -15,28 +15,25 @@ public class FunnyString {
 
     public static void main(String[] args) {
 
-
-        Scanner scanner = new Scanner(System.in);
-        int myInt = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        for (int i = 0; i < myInt; i++) {
-
-            System.out.println(funnyString(scanner.nextLine()));
-        }
+        Assert.assertEquals(funnyString("acxz"), "Funny");
+        Assert.assertEquals(funnyString("bcxz"), "Not Funny");
 
     }
 
-    static String funnyString(String s) {
-        boolean flag = true;
+    public static String funnyString(String s) {
 
-        for (int i = 1, j = s.length() - 2; i <= j; i++, j--) {
-            if (Math.abs(s.charAt(i - 1) - s.charAt(i)) != Math.abs(s.charAt(j + 1) - s.charAt(j))) {
-                flag = false;
-                break;
+        for (int i = 0; i < s.length() / 2; i++) {
+            char s1 = s.charAt(i + 1);
+            char s2 = s.charAt(i);
+            char r1 = s.charAt(s.length() - 2 - i);
+            char r2 = s.charAt(s.length() - 1 - i);
+
+            if (Math.abs(s1 - s2) != Math.abs(r1 - r2)) {
+                return "Not Funny";
             }
         }
-
-        return flag ? "Funny" : "Not Funny";
+        return "Funny";
     }
+
+
 }
