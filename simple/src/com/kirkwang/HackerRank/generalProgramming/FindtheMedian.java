@@ -30,9 +30,7 @@ The sorted . It's middle element is at .
 public class FindtheMedian {
     public static void main(String[] args) {
 
-        Integer[] array = new Integer[]{0, 1, 2, 4, 6, 5, 3};
-
-        Assert.assertEquals(findMedian(Arrays.asList(array)), 3);
+        Assert.assertEquals(findMedian(Arrays.asList(0, 1, 2, 4, 6, 5, 3)), 3);
         Assert.assertEquals(findMedian(new ArrayList<>()), -1);
 
     }

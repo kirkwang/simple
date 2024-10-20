@@ -9,6 +9,7 @@ package com.kirkwang.HackerRank.generalProgramming;
 import org.testng.Assert;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -18,13 +19,7 @@ public class GradingStudents {
 
     public static void main(String[] args) {
 
-        int[] k = {73, 67, 38, 33};
-        List<Integer> grades = new ArrayList<>();
-        for (int i : k) {
-            grades.add(i);
-        }
-
-        Assert.assertEquals(gradingStudents(grades).toArray(), new int[]{75, 67, 40, 33});
+        Assert.assertEquals(gradingStudents(Arrays.asList(73, 67, 38, 33)).toArray(), new int[]{75, 67, 40, 33});
     }
 
     public static List<Integer> gradingStudents(List<Integer> grades) {

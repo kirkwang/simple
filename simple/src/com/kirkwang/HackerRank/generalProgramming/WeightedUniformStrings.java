@@ -23,8 +23,8 @@ public class WeightedUniformStrings {
 
         List<String> results = weightedUniformStrings("aaabbbbcccddd", querysList);
 
-        String[] expectedArray = {"Yes", "No", "Yes", "Yes", "No"};
-        List<String> expected = new ArrayList<>(Arrays.asList(expectedArray));
+
+        List<String> expected = new ArrayList<>(Arrays.asList("Yes", "No", "Yes", "Yes", "No"));
 
         Assert.assertEquals(results, expected);
 
