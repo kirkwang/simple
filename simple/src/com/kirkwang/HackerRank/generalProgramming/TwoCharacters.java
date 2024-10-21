@@ -6,6 +6,8 @@
 
 package com.kirkwang.HackerRank.generalProgramming;
 
+import org.testng.Assert;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -16,6 +18,7 @@ import java.util.stream.IntStream;
 https://www.hackerrank.com/challenges/three-month-preparation-kit-two-characters/problem
  */
 public class TwoCharacters {
+    //wrong answer
     static int alternate(String s) {
         Set<Integer> letters = s.chars().collect(HashSet::new, Set::add, Set::addAll);
         int maxLength = 0;
@@ -39,10 +42,8 @@ public class TwoCharacters {
     }
 
     public static void main(String[] args) {
-        String beabeefeab = "beabeefeab";
-
-        int ml = alternate(beabeefeab);
-        System.out.println(ml);
+        Assert.assertEquals(alternate("beabeefeab"), 5);
+        Assert.assertEquals(alternate("asvkugfiugsalddlasguifgukvsa"), 0);
     }
 
 }
