@@ -14,6 +14,16 @@ import java.util.List;
 
 /*
 https://www.hackerrank.com/challenges/grading/problem
+Examples
+
+ Grade : 84 round to  (85 - 84 is less than 3)
+ Grade : 29 do not round (result is less than 40)
+ Grade : 57 do not round (60 - 57 is 3 or higher)
+
+73 -> 75
+67 -> 67
+38 -> 40
+33 -> 33
  */
 public class GradingStudents {
 
@@ -27,14 +37,13 @@ public class GradingStudents {
         for (int i : grades) {
             if (i < 38) {
                 result.add(i);
-
             } else {
                 int remainder = i % 5;
                 if (remainder < 3) {
                     result.add(i);
                 } else {
-                    int t = i / 5;
-                    result.add(5 * (t + 1));
+                    int q = i / 5;
+                    result.add(5 * (q + 1));
                 }
             }
         }
