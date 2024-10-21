@@ -10,6 +10,8 @@ import org.testng.Assert;
 
 /*
 https://www.hackerrank.com/challenges/mars-exploration/problem
+SOSSPSSQSSOR -> 3
+SOS SP(1)S SQ(2)S SOR(3,4)
  */
 public class MarsExploration {
     public static int marsExploration(String s) {
