@@ -25,11 +25,12 @@ public class MakingAnagrams {
         StringBuilder sb2 = new StringBuilder(s2);
 
         for (int i = 0; i < sb1.length(); i++) {
-            int index = sb2.indexOf("" + sb1.charAt(i));
-            if (index != -1) {
+            int indexAtsb2 = sb2.indexOf(String.valueOf(sb1.charAt(i)));
+            if (indexAtsb2 != -1) {
+                // removing same chars
                 sb1.deleteCharAt(i);
-                sb2.deleteCharAt(index);
-                i--;
+                sb2.deleteCharAt(indexAtsb2);
+                i--; //back index
             }
         }
         return sb1.length() + sb2.length();
