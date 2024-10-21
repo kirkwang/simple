@@ -12,12 +12,25 @@ public class MiniMaxSum {
 
     public static void main(String[] args) {
 
+        miniMaxSum(Arrays.asList(1, 2, 3, 4, 5));
         miniMaxSum(Arrays.asList(1, 3, 5, 7, 9));
         miniMaxSum(Arrays.asList(2, 7, 69, 221, 8974));
         miniMaxSum(Arrays.asList(256741038, 623958417, 467905213, 714532089, 938071625));
     }
-
     public static void miniMaxSum(List<Integer> arr) {
+        long min = Integer.MAX_VALUE;
+        long max = Integer.MIN_VALUE;
+        long sum = 0;
+        for (Integer i : arr) {
+            sum = sum + i;
+            min = Math.min(min, i);
+            max = Math.max(max, i);
+        }
+        System.out.println((sum - max) + " " + (sum - min));
+
+    }
+
+    public static void miniMaxSum_soft(List<Integer> arr) {
 
         Collections.sort(arr);
         Long min = Long.valueOf(arr.get(0));
