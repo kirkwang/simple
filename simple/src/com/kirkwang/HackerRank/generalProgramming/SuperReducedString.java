@@ -20,24 +20,32 @@ public class SuperReducedString {
         String input = "aaabccddd"; //aaabccddd > abd, baab → bb → Empty String
 
         Assert.assertEquals("abd", superReducedStringStack(input));
-        Assert.assertEquals("abd", superReducedStringStackv2(input));
+        Assert.assertEquals(superReducedStringStackv2(input), "abd");
 
     }
 
     static String superReducedStringStackv2(String s) {
+        if (s.isEmpty()) {
+            return "Empty String";
+        }
         Stack<Character> stack = new Stack<>();
-        for (char c : s.toCharArray()) {
-            if (!stack.empty() && stack.peek() == c) {
-                stack.pop();
+        char[] chars = s.toCharArray();
+        for (char aChar : chars) {
+            if (stack.isEmpty()) {
+                stack.push(aChar);
             } else {
-                stack.push(c);
+                if (stack.peek() == aChar) {
+                    stack.pop();
+                } else {
+                    stack.push(aChar);
+                }
             }
         }
         StringBuilder sb = new StringBuilder();
         for (Character c : stack) {
             sb.append(c);
         }
-        return stack.isEmpty() ? "Empty String" : sb.toString();
+        return sb.toString();
 
     }
 
