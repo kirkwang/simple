@@ -14,15 +14,7 @@ public class WeightedUniformStrings {
     public static void main(String[] args) {
 
 
-        List<Integer> querysList = new ArrayList<>();
-        querysList.add(9);
-        querysList.add(7);
-        querysList.add(8);
-        querysList.add(12);
-        querysList.add(5);
-
-        List<String> results = weightedUniformStrings("aaabbbbcccddd", querysList);
-
+        List<String> results = weightedUniformStrings("aaabbbbcccddd", Arrays.asList(9, 7, 8, 12, 5));
 
         List<String> expected = new ArrayList<>(Arrays.asList("Yes", "No", "Yes", "Yes", "No"));
 
