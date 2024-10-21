@@ -4,7 +4,7 @@
  * kirkwang : the currently used username;
  */
 
-package com.kirkwang.HackerRank.generalProgramming;
+package com.kirkwang.HackerRank;
 
 public class SortingBubbleSort {
 
@@ -35,7 +35,7 @@ public class SortingBubbleSort {
 
         }
 
-        System.out.println("Array is sorted in " + +count + " swaps.");
+        System.out.println("Array is sorted in " + count + " swaps.");
         System.out.println("First Element: " + a[0]);
         System.out.println("Last Element: " + a[a.length - 1]);
     }
