@@ -2,9 +2,6 @@ package com.leetcode.easy;
 
 import org.testng.Assert;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /*
 https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/
 Example 1:
@@ -21,27 +18,57 @@ Explanation: The strings that can be formed are "hello" and "world" so the answe
  */
 public class CountCharacters {
 
+
     public static int countCharacters(String[] words, String chars) {
-        List<String> result = new ArrayList<>();
+        int[] map = new int[26];
 
-        for (String string : words) {
-            char[] word = string.toCharArray();
-            int counter = 0;
+        int result = 0;
+        for (int i = 0; i < chars.length(); i++) {
+            map[chars.charAt(i) - 'a']++;
+        }
 
-            for (char c : word) {
-                if (chars.indexOf(c) != -1) {
-                    counter++;
+        for (String s : words) {
+            int[] tempMap = map.clone();
+            boolean flag = true;
+            for (int i = 0; i < s.length(); i++) {
+
+                if (tempMap[s.charAt(i) - 'a'] == 0) {
+                    flag = false;
+                    break;
+                } else {
+                    tempMap[s.charAt(i) - 'a']--;
                 }
             }
-            if (counter == word.length) {
-                result.add(string);
+            if (flag) result = result + s.length();
+        }
+
+
+        return result;
+    }
+
+    public static int countCharacters_leetcode(String[] words, String chars) {
+        int[] map = new int[26];
+        int res = 0;
+
+        for (int i = 0; i < chars.length(); i++) {
+            map[chars.charAt(i) - 'a']++;
+        }
+
+        for (String word : words) {
+            int[] tempMap = map.clone();
+            boolean flag = true;
+            for (int i = 0; i < word.length(); i++) {
+                if (tempMap[word.charAt(i) - 'a'] == 0) {
+                    flag = false;
+                    break;
+                } else {
+                    tempMap[word.charAt(i) - 'a']--;
+                }
             }
+            if (flag) res += word.length();
         }
-        int counter = 0;
-        for (String s : result) {
-            counter += s.length();
-        }
-        return counter;
+
+        return res;
     }
 
     public static void main(String[] args) {
@@ -49,12 +76,16 @@ public class CountCharacters {
         String[] words = {"cat", "bt", "hat", "tree"};
         int result;
         result = countCharacters(words, "atach");
-
         Assert.assertEquals(result, 6);
 
         words = new String[]{"hello", "world", "leetcode"};
         result = countCharacters(words, "welldonehoneyr");
         Assert.assertEquals(result, 10);
+
+        words = new String[]{"dyiclysmffuhibgfvapygkorkqllqlvokosagyelotobicwcmebnpznjbirzrzsrtzjxhsfpiwyfhzyonmuabtlwin", "ndqeyhhcquplmznwslewjzuyfgklssvkqxmqjpwhrshycmvrb", "ulrrbpspyudncdlbkxkrqpivfftrggemkpyjl", "boygirdlggnh", "xmqohbyqwagkjzpyawsydmdaattthmuvjbzwpyopyafphx", "nulvimegcsiwvhwuiyednoxpugfeimnnyeoczuzxgxbqjvegcxeqnjbwnbvowastqhojepisusvsidhqmszbrnynkyop", "hiefuovybkpgzygprmndrkyspoiyapdwkxebgsmodhzpx", "juldqdzeskpffaoqcyyxiqqowsalqumddcufhouhrskozhlmobiwzxnhdkidr", "lnnvsdcrvzfmrvurucrzlfyigcycffpiuoo", "oxgaskztzroxuntiwlfyufddl", "tfspedteabxatkaypitjfkhkkigdwdkctqbczcugripkgcyfezpuklfqfcsccboarbfbjfrkxp", "qnagrpfzlyrouolqquytwnwnsqnmuzphne", "eeilfdaookieawrrbvtnqfzcricvhpiv", "sisvsjzyrbdsjcwwygdnxcjhzhsxhpceqz", "yhouqhjevqxtecomahbwoptzlkyvjexhzcbccusbjjdgcfzlkoqwiwue", "hwxxighzvceaplsycajkhynkhzkwkouszwaiuzqcleyflqrxgjsvlegvupzqijbornbfwpefhxekgpuvgiyeudhncv", "cpwcjwgbcquirnsazumgjjcltitmeyfaudbnbqhflvecjsupjmgwfbjo", "teyygdmmyadppuopvqdodaczob", "qaeowuwqsqffvibrtxnjnzvzuuonrkwpysyxvkijemmpdmtnqxwekbpfzs", "qqxpxpmemkldghbmbyxpkwgkaykaerhmwwjonrhcsubchs"};
+        result = countCharacters(words, "usdruypficfbpfbivlrhutcgvyjenlxzeovdyjtgvvfdjzcmikjraspdfp");
+        Assert.assertEquals(result, 0);
+
 
     }
 }
