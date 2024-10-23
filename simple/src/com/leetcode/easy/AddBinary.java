@@ -2,6 +2,8 @@ package com.leetcode.easy;
 
 import org.testng.Assert;
 
+import java.math.BigInteger;
+
 /*
 Given two binary strings a and b, return their sum as a binary string.
 
@@ -20,6 +22,13 @@ public class AddBinary {
 
         Assert.assertEquals(ad.addBinary("11", "1"), "100");
         Assert.assertEquals(ad.addBinary("1010", "1011"), "10101");
+        Assert.assertEquals(ad.addBinary_BI("1010", "1011"), "10101");
+    }
+
+    public String addBinary_BI(String a, String b) {
+        BigInteger i = new BigInteger(a, 2);
+        BigInteger j = new BigInteger(b, 2);
+        return i.add(j).toString(2);
     }
 
     public String addBinary(String a, String b) {
