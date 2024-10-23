@@ -8,8 +8,6 @@ package com.leetcode.easy;
 
 import org.testng.Assert;
 
-import java.util.Arrays;
-
 /*
 https://leetcode.com/problems/two-sum/description/
 Example 1:
@@ -32,12 +30,10 @@ https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-
 class ArrayPairSum {
 
     public static void main(String[] args) {
-
-        Assert.assertTrue(Arrays.equals(twoSum(new int[]{6, 3, 4, 1, 3, 9}, 10), new int[]{0, 2}));
-        Assert.assertTrue(Arrays.equals(twoSum(new int[]{2, 7, 11, 15}, 9), new int[]{0, 1}));
-        Assert.assertTrue(Arrays.equals(twoSum(new int[]{3, 2, 4}, 6), new int[]{1, 2}));
-        Assert.assertTrue(Arrays.equals(twoSum(new int[]{3, 3}, 6), new int[]{0, 1}));
-        Assert.assertTrue(Arrays.equals(twoSum(new int[]{3, 3}, 4), new int[]{}));
+        Assert.assertEquals(twoSum(new int[]{3, 3}, 4), new int[]{});
+        Assert.assertEquals(twoSum(new int[]{3, 3}, 6), new int[]{0, 1});
+        Assert.assertEquals(twoSum(new int[]{2, 7, 11, 15}, 9), new int[]{0, 1});
+        Assert.assertEquals(twoSum(new int[]{6, 3, 4, 1, 3, 9}, 10), new int[]{0, 2});
 
     }
 

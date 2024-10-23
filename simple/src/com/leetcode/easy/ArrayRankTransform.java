@@ -36,21 +36,21 @@ public class ArrayRankTransform {
             }
         }
         for (int i = 0; i < arr.length; i++) {
-            temp[i] = myMap.get(arr[i]);  // find the orgional arr from map and put to temp
+            temp[i] = myMap.get(arr[i]);  // find the original arr from map and put to temp
         }
         return temp;
     }
 
     public static void main(String[] args) {
 
-        int[] result_v1 = arrayRankTransform(new int[]{100, 100, 100});
-        Assert.assertEquals(result_v1, new int[]{1, 1, 1});
+        int[] result = arrayRankTransform(new int[]{100, 100, 100});
+        Assert.assertEquals(result, new int[]{1, 1, 1});
 
-        result_v1 = arrayRankTransform(new int[]{40, 10, 20, 30});
-        Assert.assertEquals(result_v1, new int[]{4, 1, 2, 3});
+        result = arrayRankTransform(new int[]{40, 10, 20, 30});
+        Assert.assertEquals(result, new int[]{4, 1, 2, 3});
 
-        result_v1 = arrayRankTransform(new int[]{37, 12, 28, 9, 100, 56, 80, 5, 12});
-        Assert.assertEquals(result_v1, new int[]{5, 3, 4, 2, 8, 6, 7, 1, 3});
+        result = arrayRankTransform(new int[]{37, 12, 28, 9, 100, 56, 80, 5, 12});
+        Assert.assertEquals(result, new int[]{5, 3, 4, 2, 8, 6, 7, 1, 3});
 
     }
 }
