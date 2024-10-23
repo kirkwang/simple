@@ -1,9 +1,11 @@
 package com.leetcode.easy;
 
 import com.kirkwang.libary.ListNode;
+/*
+https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+ */
 
 /**
- * <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/">...</a>
  * Created by kewang on 1/5/16.
  * This function will delete the duplicated node in sorted Linked list.
  * Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
@@ -19,31 +21,28 @@ import com.kirkwang.libary.ListNode;
 public class DeleteDuplicates {
 
     public static void main(String[] args) {
-        //[1,1,2,3,3]
 
-        ListNode one = new ListNode(1);
-        ListNode two = new ListNode(1);
-        ListNode three = new ListNode(2);
-        ListNode four = new ListNode(3);
-        ListNode five = new ListNode(3);
 
-        one.next = two;
-        two.next = three;
-        three.next = four;
-        four.next = five;
-        DeleteDuplicates dd = new DeleteDuplicates();
-        dd.DeletDuplicates(one);
-        ListNode current = one;
-        while (current != null) {
-            System.out.println(current.val);
+        ListNode head = new ListNode(0);
+        ListNode current = head;
+        //[0,0,1,2,3,4]
+        for (int i = 0; i < 5; i++) {
+            current.next = new ListNode(i);
             current = current.next;
+        }
+
+        DeleteDuplicates.deleteDuplicates(head);
+
+        while (head != null) {
+            System.out.println(head.val);
+            head = head.next;
         }
 
     }
 
-    public ListNode DeletDuplicates(ListNode head) {
+    public static void deleteDuplicates(ListNode head) {
         if (head == null || head.next == null) {
-            return head;
+            return;
         }
         ListNode current = head.next;
         ListNode pre = head;
@@ -55,6 +54,5 @@ public class DeleteDuplicates {
             }
             current = current.next;
         }
-        return head;
     }
 }
