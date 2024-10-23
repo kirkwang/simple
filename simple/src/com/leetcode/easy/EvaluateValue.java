@@ -24,7 +24,7 @@ public class EvaluateValue {
     }
 
     public static int evaluate(String[] expression) {
-        Stack<String> stack = new Stack();
+        Stack<String> stack = new Stack<>();
         String operator = "+-*/";
 
         for (String s : expression) {
@@ -33,8 +33,8 @@ public class EvaluateValue {
                 stack.push(s);
             } else {
                 // when there is operator, pop two of them
-                int x = Integer.valueOf(stack.pop());
-                int y = Integer.valueOf(stack.pop());
+                int x = Integer.parseInt(stack.pop());
+                int y = Integer.parseInt(stack.pop());
 
                 int index = operator.indexOf(s);
                 switch (index) {
@@ -54,6 +54,8 @@ public class EvaluateValue {
                         stack.push(String.valueOf(y / x));
                         break;
                     }
+                    default:
+                        break;
                 }
             }
         }
