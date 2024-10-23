@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * <a href="https://leetcode.com/problems/contains-duplicate/">...</a>
+ href="https://leetcode.com/problems/contains-duplicate/
  * Given an integer array nums,
  * return true if any value appears at least twice in the array, and return false if every element is distinct.
  * Example 1:
@@ -43,6 +43,6 @@ public class ContainsDuplicate {
                 set.add(i);
             }
         }
-        return set.size() < nums.length;
+        return false;
     }
 }
