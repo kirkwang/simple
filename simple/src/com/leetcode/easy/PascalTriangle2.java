@@ -1,6 +1,7 @@
 package com.leetcode.easy;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kewang on 12/25/15.
@@ -17,13 +18,12 @@ Could you optimize your algorithm to use only O(k) extra space?
 public class PascalTriangle2 {
     public static void main(String[] args) {
         PascalTriangle2 pt2 = new PascalTriangle2();
-        ArrayList pt2result = pt2.pascalTriangleGetRow(5);
-        for (int i = 0; i < pt2result.size(); i++)
-            System.out.print(pt2result.get(i) + " ");
+        List<Integer> pt2result = pt2.pascalTriangleGetRow(5);
+        for (Integer integer : pt2result) System.out.print(integer + " ");
     }
 
-    public ArrayList<Integer> pascalTriangleGetRow(int rowIndex) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
+    public List<Integer> pascalTriangleGetRow(int rowIndex) {
+        ArrayList<Integer> result = new ArrayList<>();
         result.add(1);
 
         for (int i = 0; i < rowIndex; i++) {

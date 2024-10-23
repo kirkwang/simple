@@ -1,5 +1,7 @@
 package com.leetcode.medium;
 
+import org.testng.Assert;
+
 /*
 https://leetcode.com/problems/peak-index-in-a-mountain-array/
 Example 1:
@@ -15,17 +17,7 @@ Output: 1
 
 */
 public class Peak_Index_in_a_Mountain_Array {
-    public static int peakIndexInMountainArray(int[] arr) {
-        // This is wrong. ie 1, 2, 11, 8, 6, 10. it should be 11. but it gives 10.
-        int result = 0;
 
-        for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i] < arr[i + 1]) {
-                result = i + 1; // index result
-            }
-        }
-        return result;
-    }
 
     public static int peak_Index_InMountainArray(int[] arr) {
 
@@ -46,11 +38,11 @@ public class Peak_Index_in_a_Mountain_Array {
 
     public static void main(String[] args) {
 
-        int[] input = new int[]{1, 2, 11, 8, 6, 10};
-        //  int[] input = new int[]{18,29,38,59,98,100,99,98,90};
-        //int[] input = new int[]{0,2,1,0};
-        //int[] input = new int[]{3, 4, 5, 1};
-        System.out.println(peakIndexInMountainArray(input));
-        System.out.println(peak_Index_InMountainArray(input));
+        Assert.assertEquals(peak_Index_InMountainArray(new int[]{1, 2, 11, 8, 6, 10}), 2);
+        Assert.assertEquals(peak_Index_InMountainArray(new int[]{0, 10, 5, 2}), 1);
+        Assert.assertEquals(peak_Index_InMountainArray(new int[]{0, 2, 1, 0}), 1);
+        Assert.assertEquals(peak_Index_InMountainArray(new int[]{3, 4, 5, 1}), 2);
+        Assert.assertEquals(peak_Index_InMountainArray(new int[]{1, 2, 11, 8, 6, 10}), 2);
+        Assert.assertEquals(peak_Index_InMountainArray(new int[]{18, 29, 38, 59, 98, 100, 99, 98, 90}), 5);
     }
 }

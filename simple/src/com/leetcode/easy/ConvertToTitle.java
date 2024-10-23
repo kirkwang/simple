@@ -1,10 +1,11 @@
 package com.leetcode.easy;
 
+import org.testng.Assert;
+
 /**
  * Created by kewang on 12/22/17.
- * <p>
- * <a href="https://leetcode.com/problems/excel-sheet-column-title/">...</a>
- * <p>
+
+ href="https://leetcode.com/problems/excel-sheet-column-title/
  * Given an integer columnNumber, return its corresponding column title as it appears in an Excel sheet.
  * Example 1:
  * <p>
@@ -18,9 +19,12 @@ package com.leetcode.easy;
 public class ConvertToTitle {
 
     public static void main(String[] args) {
-        String result = convertToTitle(28);
 
-        System.out.print("result " + result);
+
+        Assert.assertEquals(convertToTitle(1), "A");
+        Assert.assertEquals(convertToTitle(28), "AB");
+        Assert.assertEquals(convertToTitle(701), "ZY");
+
     }
 
 
@@ -29,7 +33,6 @@ public class ConvertToTitle {
         while (columnNumber > 0) {
             char c = (char) ('A' + (columnNumber - 1) % 26);
             sb.append(c);
-
             columnNumber = (columnNumber - 1) / 26;
         }
         return sb.reverse().toString();

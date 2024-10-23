@@ -27,8 +27,8 @@ public class PascalTriangle {
         PascalTriangle pt = new PascalTriangle();
 
         List<List<Integer>> tp = pt.pascalTriangle(5);
-        for (int i = 0; i < tp.size(); i++) {
-            System.out.println(tp.get(i) + " ");
+        for (List<Integer> integers : tp) {
+            System.out.println(integers + " ");
         }
     }
 
@@ -44,7 +44,7 @@ public class PascalTriangle {
             for (int j = 1; j < i - 1; j++) {
                 current[j] = prev[j - 1] + prev[j];
             }
-            list.add(new ArrayList(Arrays.asList(current)));
+            list.add(new ArrayList<>(Arrays.asList(current)));
             prev = current;
         }
         return list;

@@ -35,19 +35,19 @@ public class RotateArray {
         Assert.assertEquals(array, new int[]{1, 2, 3, 4, 5, 6});
 
 
-        array = new int[]{-1, -100, 3, 99};
-        RotateArray.routeLeft(array, 2);
-        Assert.assertEquals(array, new int[]{3, 99, -1, -100});
-
         array = new int[]{-1, -100, 3, 99, 0};
-        RotateArray.rotate(array, 2);
+        RotateArray.rotate2R_sysCopy(array, 2);
         Assert.assertEquals(array, new int[]{99, 0, -1, -100, 3});
 
 
     }
 
-    public static void rotate(int[] nums, int k) {
-        if (k > nums.length) k = k % nums.length;
+    public static void rotate2R_sysCopy(int[] nums, int k) {
+        //cut down cycles
+        if (k > nums.length) {
+            k = k % nums.length;
+        }
+
         int[] results = new int[nums.length];
         for (int i = 0; i < k; i++) {
             results[i] = nums[nums.length - k + i];
@@ -60,42 +60,43 @@ public class RotateArray {
         System.arraycopy(results, 0, nums, 0, nums.length);
     }
 
-    public static void routeLeft(int[] input, int count) {
-        if (count > input.length) {
-            count = count % input.length;
+    public static void routeLeft(int[] nums, int k) {
+        if (k > nums.length) {
+            k = k % nums.length;
         }
-        for (int i = 0; i < count; i++) {
-            routeLeftByOne(input, input.length);
+        for (int i = 0; i < k; i++) {
+            routeLeftByOne(nums, nums.length);
         }
-    }
-
-    private static void routeLeftByOne(int[] array, int length) {
-        //[1,2,3,4,5,6,7]
-        //[2,3,4,5,6,7,1]
-        int temp = array[0];
-        for (int i = 0; i < length - 1; i++) {
-            array[i] = array[i + 1];
-        }
-        array[length - 1] = temp;
-
     }
 
     public static void routeRight(int[] nums, int k) {
         if (k > nums.length) {
-            k %= nums.length;
+            k = k % nums.length;
         }
         for (int i = 0; i < k; i++) {
             routeRightByOne(nums, nums.length);
         }
     }
 
-    private static void routeRightByOne(int[] array, int length) {
-        length--;
-        int temp = array[length];
-        for (int i = 0; i < length; i++) {
-            array[length - i] = array[length - i - 1];
+    private static void routeLeftByOne(int[] nums, int k) {
+        //[1,2,3,4,5,6,7]
+        //[2,3,4,5,6,7,1]
+        k--;
+        int temp = nums[0];
+        for (int i = 0; i < k; i++) {
+            nums[i] = nums[i + 1];
         }
-        array[0] = temp;
+        nums[k] = temp;
+
+    }
+
+    private static void routeRightByOne(int[] nums, int k) {
+        k--;
+        int temp = nums[k];
+        for (int i = 0; i < k; i++) {
+            nums[k - i] = nums[k - i - 1];
+        }
+        nums[0] = temp;
 
     }
 

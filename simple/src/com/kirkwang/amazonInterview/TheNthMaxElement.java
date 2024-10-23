@@ -21,6 +21,7 @@ public class TheNthMaxElement {
 
     public static int findTheNMaxElement(int[] input, int key) {
         SortedSet<Integer> treeSet = new TreeSet<>();
+
         for (int j : input) {
             treeSet.add(j);
         }
@@ -31,17 +32,22 @@ public class TheNthMaxElement {
         if (key > a.size()) {
             return -1;
         }
-        return (int) a.get(a.size() - key);
 
+        return (int) a.get(treeSet.size() - key);
+
+    }
+
+    public static int findTheNMaxElement_v1(int[] input, int key) {
+        Arrays.sort(input);
+        return input[input.length - key];
     }
 
     public static void main(String[] args) {
 
-
         int[] a = {1, 2, 5, 6, 7, 8, 10, 11, 4};
 
-        Assert.assertEquals(TheNthMaxElement.findTheNMaxElement(a, 1), 11);
-        Assert.assertEquals(TheNthMaxElement.findTheNMaxElement(a, 2), 10);
+        Assert.assertEquals(TheNthMaxElement.findTheNMaxElement_v1(a, 1), 11);
+        Assert.assertEquals(TheNthMaxElement.findTheNMaxElement_v1(a, 2), 10);
 
         Assert.assertEquals(TheNthMaxElement.findTheNMaxElement(a, 9), 1);
         Assert.assertEquals(TheNthMaxElement.findTheNMaxElement(a, 0), -1);
