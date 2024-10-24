@@ -36,7 +36,7 @@ public class FirstUniqChar {
         return -1;
     }
 
-    public static int firstUniqChar_index(String s) {
+    public static int firstUniqCharIndex(String s) {
         if (s.isEmpty()) return -1;
         if (s.length() == 1) return 0;
 
@@ -52,9 +52,9 @@ public class FirstUniqChar {
         Assert.assertEquals(firstUniqChar("leetcode"), 0);
         Assert.assertEquals(firstUniqChar("loveleetcode"), 2);
 
-        Assert.assertEquals(firstUniqChar_index("aabb"), -1);
-        Assert.assertEquals(firstUniqChar_index("loveleetcode"), 2);
-        Assert.assertEquals(firstUniqChar_index("aabb"), -1);
+        Assert.assertEquals(firstUniqCharIndex("aabb"), -1);
+        Assert.assertEquals(firstUniqCharIndex("loveleetcode"), 2);
+        Assert.assertEquals(firstUniqCharIndex("aabb"), -1);
 
     }
 
