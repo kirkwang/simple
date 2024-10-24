@@ -38,14 +38,12 @@ public class FindDuplicates {
     }
 
     public static void main(String[] args) {
-        int[] input = {4, 3, 2, 7, 8, 2, 3, 1};
-        Assert.assertEquals(findDuplicates(input).toString(), "[2, 3]");
 
-        input = new int[]{1, 1, 2};
-        Assert.assertEquals(findDuplicates(input).toString(), "[1]");
+        Assert.assertEquals(findDuplicates(new int[]{4, 3, 2, 7, 8, 2, 3, 1}).toString(), "[2, 3]");
 
-        input = new int[]{1};
-        Assert.assertEquals(findDuplicates(input).toString(), "[]");
+        Assert.assertEquals(findDuplicates(new int[]{1, 1, 2}).toString(), "[1]");
+
+        Assert.assertEquals(findDuplicates(new int[]{1}).toString(), "[]");
 
     }
 }
