@@ -42,13 +42,21 @@ public class FizzBuzz {
 
             boolean diviableby3 = (i % 3 == 0);
             boolean diviableby5 = (i % 5 == 0);
+
             if (diviableby3 && diviableby5) {
+
                 result.add("FizzBuzz");
+
             } else if (diviableby3) {
+
                 result.add("Fizz");
+
             } else if (diviableby5) {
+
                 result.add("Buzz");
+
             } else {
+
                 result.add(String.valueOf(i));
             }
         }
