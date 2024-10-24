@@ -1,30 +1,36 @@
 package com.leetcode.easy;
 
 import com.kirkwang.libary.ListNode;
+import org.testng.Assert;
 
 public class FindMiddleLinkedList {
     // Method to find the middle node of a linked list
-    /*https://leetcode.com/problems/middle-of-the-linked-list/description/
+    /*
+    https://leetcode.com/problems/middle-of-the-linked-list/description/
     Input: head = [1,2,3,4,5,6]
 Output: [4,5,6]
 Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
      */
 
     public static void main(String[] args) {
-        ListNode nameList = new ListNode(1);
+        int index = 1;
+        ListNode nameList = new ListNode(index);
+
         ListNode current = nameList;
-        for (int i = 2; i <= 6; i++) {
-            current.next = new ListNode(i);
+        // init 6 nodes and values
+        for (int i = index; i <= 5; i++) {
+            current.next = new ListNode(i + 1);
             current = current.next;
         }
+
         FindMiddleLinkedList hc = new FindMiddleLinkedList();
-
-        ListNode temp = hc.findMiddleNode(nameList);
-
-        while (temp != null) {
-            System.out.println(temp.getVal());
-            temp = temp.next;
+        ListNode results = hc.findMiddleNode(nameList);
+        StringBuilder sb = new StringBuilder();
+        while (results != null) {
+            sb.append(results.getVal());
+            results = results.next;
         }
+        Assert.assertEquals(sb.toString(), "456");
     }
 
     public ListNode findMiddleNode(ListNode head) {
