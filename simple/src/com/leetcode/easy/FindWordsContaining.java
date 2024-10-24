@@ -18,7 +18,7 @@ Output: []
 Explanation: "z" does not occur in any of the words. Hence, we return an empty array.
  */
 
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,20 +27,19 @@ import java.util.List;
 public class FindWordsContaining {
     public static void main(String[] args) {
         List<Integer> result;
+        SoftAssert softAssert = new SoftAssert();
         result = findWordsContaining(new String[]{"leet", "code"}, 'e');
-        Assert.assertTrue(Arrays.equals(result.toArray(), new Integer[]{0, 1}));
+        softAssert.assertTrue(Arrays.equals(result.toArray(), new Integer[]{0, 1}), "expect {0, 1}");
 
         result = findWordsContaining(new String[]{"abc", "bcd", "aaaa", "cbc"}, 'a');
-        Arrays.equals(result.toArray(), new Integer[]{1000000, 2}); //????? not right
+        softAssert.assertTrue(Arrays.equals(result.toArray(), new Integer[]{0, 2}), "expect {0, 2}");
 
         result = findWordsContaining(new String[]{"abc", "bcd", "aaaa", "cbc"}, 'z');
-
-        Arrays.equals(result.toArray(), new Integer[]{});
-
+        softAssert.assertTrue(Arrays.equals(result.toArray(), new Integer[]{}), "expect {abc, bcd,aaaa, cbc}");
 
         result = findWordsContaining(new String[]{"abc", "bcd", "aaaa", "cbc"}, 'a');
-        Arrays.equals(result.toArray(), new Integer[]{0, 2});
-
+        softAssert.assertTrue(Arrays.equals(result.toArray(), new Integer[]{0, 2}), "expect {0, 2}");
+        softAssert.assertAll();
     }
 
     public static List<Integer> findWordsContaining(String[] words, char x) {
