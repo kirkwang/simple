@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
+https://leetcode.com/problems/keyboard-row/description/
+
 In the American keyboard:
 
 the first row consists of the characters "qwertyuiop",
@@ -41,6 +43,7 @@ public class KeyboardRow {
         String zxcvbnm = "zxcvbnm";
 
         List<String> list = new ArrayList<>();
+
         for (String w : words) {
             int[] b = new int[3];
             char[] temp = w.toLowerCase().toCharArray();
@@ -53,16 +56,16 @@ public class KeyboardRow {
                     b[2] = 1;
                 }
             }
-
             if ((b[0] + b[1] + b[2]) == 1) {
                 list.add(w);
             }
         }
-        String[] ss = new String[list.size()];
-        for (int i = 0; i < ss.length; i++) {
-            ss[i] = list.get(i);
+
+        String[] result = new String[list.size()];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = list.get(i);
         }
-        return ss;
+        return result;
     }
 
 }
