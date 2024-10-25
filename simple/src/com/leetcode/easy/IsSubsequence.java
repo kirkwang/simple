@@ -20,21 +20,21 @@ public class IsSubsequence {
     public static boolean isSubsequence(String s, String t) {
         if (s.isEmpty()) return true;
 
-        int source_p = 0;
-        int target_p = 0;
+        int source = 0;
+        int target = 0;
 
-        while (target_p < t.length()) {
+        while (target < t.length()) {
 
-            if (s.charAt(source_p) == t.charAt(target_p)) {
-                source_p++;
+            if (s.charAt(source) == t.charAt(target)) {
+                source++;
             }
-            if (source_p == s.length()) {
+            target++;
+            if (source == s.length()) {
                 return true;
             }
-            target_p++;
+
         }
         return false;
-
     }
 
     public static void main(String[] args) {
