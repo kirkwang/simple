@@ -23,6 +23,10 @@ public class HasCycle {
         }
         HasCycle hc = new HasCycle();
         Assert.assertFalse(hc.hasCycle(nameList));
+
+        current.next = nameList.next.next;
+        Assert.assertTrue(hc.hasCycle(nameList));
+
     }
 
     public boolean hasCycle(ListNode head) {
