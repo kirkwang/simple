@@ -29,12 +29,13 @@ public class LongestCommonPrefix {
         sa[2] = "aaabc";
         LongestCommonPrefix lcprefix = new LongestCommonPrefix();
 
-        Assert.assertEquals(lcprefix.LongestCommonPrefixV2(sa), "aa");
-        Assert.assertEquals(lcprefix.LongestCommonPrefixV2(new String[]{"flower", "flow", "flight"}), "fl");
+        Assert.assertEquals(lcprefix.longestCommonPrefix(sa), "aa");
+        Assert.assertEquals(lcprefix.longestCommonPrefix(new String[]{"dog", "racecar", "car"}), "");
+        Assert.assertEquals(lcprefix.longestCommonPrefix(new String[]{"flower", "flow", "flight"}), "fl");
 
     }
 
-    public String LongestCommonPrefixV2(String[] strs) {
+    public String longestCommonPrefix(String[] strs) {
         if (strs == null || strs.length == 0) {
             return "";
         }
@@ -49,11 +50,9 @@ public class LongestCommonPrefix {
             char c = result.charAt(i);
 
             for (int j = 1; j < strs.length; j++) {
-
                 if (strs[j].length() == i || strs[j].charAt(i) != c) {
                     return result.substring(0, i);
                 }
-
             }
         }
 
