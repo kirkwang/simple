@@ -20,11 +20,11 @@ increasing.
 import org.testng.Assert;
 
 public class Longest_Continuous_Increasing_Subsequence {
-
     public static int findLengthOfLCIS(int[] nums) {
         int answer = -1;
         int anchor = 0;
         if (nums == null || nums.length == 0) return answer;
+
         for (int i = 0; i < nums.length; i++) {
             if (i > 0 && nums[i - 1] >= nums[i]) {
                 anchor = i;
@@ -37,7 +37,7 @@ public class Longest_Continuous_Increasing_Subsequence {
 
     public static void main(String[] args) {
 
-        Assert.assertEquals(3, Longest_Continuous_Increasing_Subsequence.findLengthOfLCIS(new int[]{1, 3, 5, 4, 7}));
-        Assert.assertEquals(1, Longest_Continuous_Increasing_Subsequence.findLengthOfLCIS(new int[]{2, 2, 2, 2}));
+        Assert.assertEquals(Longest_Continuous_Increasing_Subsequence.findLengthOfLCIS(new int[]{1, 3, 5, 4, 7}), 3);
+        Assert.assertEquals(Longest_Continuous_Increasing_Subsequence.findLengthOfLCIS(new int[]{2, 2, 2, 2}), 1);
     }
 }
