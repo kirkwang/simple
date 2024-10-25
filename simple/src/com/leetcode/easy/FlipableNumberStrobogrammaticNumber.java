@@ -19,18 +19,18 @@ The key of the problem is to understand what is called "strobogrammatic number".
 6996, return true
 
 Consequently, we could use two pointers, one starts from the beginning and one from the end. If they are equal && substrobogrammatic (not including 6 and 9), continue; else return false.
-If not, but could be 6 and 9 or 9 and 6, respectively, continue; else return false;
+If not, but could be 6 and 9 or 9 and 6, respectively, continue; else return false
 https://programmersought.com/article/1411588186/
  */
 public class FlipableNumberStrobogrammaticNumber {
     public static void main(String[] args) {
-        FlipableNumberStrobogrammaticNumber fnumber = new FlipableNumberStrobogrammaticNumber();
+        FlipableNumberStrobogrammaticNumber sn = new FlipableNumberStrobogrammaticNumber();
 
-        Assert.assertTrue(fnumber.fnsn("66 000 99"));
-        Assert.assertTrue(fnumber.fnsn("6 0 0 9"));
-        Assert.assertTrue(fnumber.fnsn("6969"));
-        Assert.assertTrue(fnumber.fnsn("9006")); //6996
-        Assert.assertFalse(fnumber.fnsn("962"));
+        Assert.assertTrue(sn.fnsn("66 000 99"));
+        Assert.assertTrue(sn.fnsn("6 0 0 9"));
+        Assert.assertTrue(sn.fnsn("6969"));
+        Assert.assertTrue(sn.fnsn("9006")); //6996
+        Assert.assertFalse(sn.fnsn("962"));
     }
 
     /*
@@ -49,11 +49,11 @@ public class FlipableNumberStrobogrammaticNumber {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < number.length(); i++) {
-            char temp = number.charAt(i);
-            if (!hm.containsKey(temp)) {
+            char c = number.charAt(i);
+            if (!hm.containsKey(c)) {
                 return false;
             }
-            sb.append(hm.get(temp));
+            sb.append(hm.get(c));
         }
 
         return sb.reverse().toString().equals(number);
