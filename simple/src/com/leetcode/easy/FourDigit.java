@@ -9,11 +9,9 @@ public class FourDigit {
 
     public static boolean checkEven(int input) {
         // Declaring object of Integer type
-        Set<Integer> a = new HashSet<Integer>();
 
         // Adding all elements to List
-        a.addAll(Arrays.asList(
-                new Integer[]{2, 4, 6, 8, 0}));
+        Set<Integer> a = new HashSet<>(Arrays.asList(2, 4, 6, 8, 0));
 
         return a.contains(input);
     }
