@@ -13,41 +13,45 @@ import com.kirkwang.libary.ListNode;
 public class GetIntersectionNode {
 
     public static void main(String[] args) {
-        ListNode node1 = new ListNode(0);
-        ListNode p = node1;
+        ListNode list1 = new ListNode(0);
+        ListNode current = list1;
         for (int i = 1; i <= 10; i += 2) {
-            p.next = new ListNode(i);
-            p = p.next;
+            current.next = new ListNode(i);
+            current = current.next;
         }
 
-
-        ListNode node2 = new ListNode(0);
-        p = node2;
+        ListNode list2 = new ListNode(0);
+        current = list2;
         for (int i = 2; i <= 10; i += 2) {
-            p.next = new ListNode(i);
-            p = p.next;
+            current.next = new ListNode(i);
+            current = current.next;
         }
-        node1.next.next = node2.next.next;  // joined at 3rd node
 
-        ListNode p1 = node1;
+
+        list1.next.next = list2.next.next;  // joined on the 3rd node
+
+        System.out.println(" p1 nodes are ");
+        ListNode p1 = list1;
         while (p1 != null) {
             System.out.print(p1.getVal() + " ");
             p1 = p1.next;
         }
-        System.out.println(" p2 before finding");
-        ListNode p2 = node2;
+
+
+        System.out.println(" p2 nodes are ");
+        ListNode p2 = list2;
         while (p2 != null) {
             System.out.print(p2.getVal() + " ");
             p2 = p2.next;
         }
 
         GetIntersectionNode gsn = new GetIntersectionNode();
-        p2 = gsn.getIntersectionNode(node1, node2);
-        System.out.println(" p2 after finding");
+        ListNode result = gsn.getIntersectionNode(list1, list2);
 
-        while (p2 != null) {
-            System.out.print(p2.getVal() + " ");
-            p2 = p2.next;
+        System.out.println("the result is ");
+        while (result != null) {
+            System.out.print(result.getVal() + " ");
+            result = result.next;
         }
     }
 
