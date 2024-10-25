@@ -12,11 +12,11 @@ public class IsPalindrome_linklist {
     public static void main(String[] args) {
         ListNode list = new ListNode(0);
         ListNode current = list;
-        for (int i = 1; i < 2; i++) {
+        for (int i = 1; i < 5; i++) {
             current.next = new ListNode(i);
             current = current.next;
         }
-        for (int i = 2; i >= 0; i--) {
+        for (int i = 5; i >= 0; i--) {
             current.next = new ListNode(i);
             current = current.next;
         }
@@ -35,8 +35,9 @@ public class IsPalindrome_linklist {
 
         ListNode middle;
         middle = findMiddle(head);
+
         ListNode reversed = reverseList(middle);
-        // printList( reversed);
+        printList(reversed);
         while (head.next != null) {
             if (head.val == reversed.val) {
                 head = head.next;
