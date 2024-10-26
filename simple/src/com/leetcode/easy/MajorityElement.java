@@ -24,16 +24,16 @@ Output: 2
 You may assume that the array is non-empty and the majority element always exist in the array.
  */
 public class MajorityElement {
-    private static Integer majorityElement_fast(int[] nums) {
+    private static Integer majorityElementFast(int[] nums) {
         Arrays.sort(nums);
         return nums[nums.length / 2];
     }
 
-    protected static Integer majorityElement_slow(int[] nums) {
+    protected static Integer majorityElementSlow(int[] nums) {
         HashMap<Integer, Integer> mMap = new HashMap<>();
-        for (int numb : nums) {
+        for (int num : nums) {
 
-            mMap.put(numb, mMap.getOrDefault(numb, 0) + 1);
+            mMap.put(num, mMap.getOrDefault(num, 0) + 1);
 
         }
         for (int temp : mMap.keySet()) {
@@ -46,17 +46,15 @@ public class MajorityElement {
     }
 
     public static void main(String[] args) {
-        Assert.assertEquals((int) MajorityElement.majorityElement_fast(new int[]{3, 2, 3}), 3);
-        Assert.assertEquals((int) MajorityElement.majorityElement_fast(new int[]{2, 2, 1, 1, 1, 2, 2}), 2);
+        Assert.assertEquals((int) MajorityElement.majorityElementFast(new int[]{3, 2, 3}), 3);
+        Assert.assertEquals((int) MajorityElement.majorityElementFast(new int[]{2, 2, 1, 1, 1, 2, 2}), 2);
 
 
-        Assert.assertEquals((int) MajorityElement.majorityElement_slow(new int[]{3, 2, 3}), 3);
-        Assert.assertEquals((int) MajorityElement.majorityElement_slow(new int[]{2, 2, 1, 1, 1, 2, 2}), 2);
+        Assert.assertEquals((int) MajorityElement.majorityElementSlow(new int[]{3, 2, 3}), 3);
+        Assert.assertEquals((int) MajorityElement.majorityElementSlow(new int[]{2, 2, 1, 1, 1, 2, 2}), 2);
     }
 
     protected static class TestClassPrivateAccess {
-
-        public static String name = "I'm a static variable";
 
         TestClassPrivateAccess() {
             System.out.println("I'm a private class");
