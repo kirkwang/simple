@@ -1,6 +1,5 @@
 package com.leetcode.easy;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,39 +21,45 @@ import java.util.List;
         Explanation: 12 is the only lucky number since it is the minimum in its row and the maximum in its column.
 */
 //@Deprecated(since = "incomplete")
-public class Lucky_Numbers_in_a_Matrix {
+public class LuckyNumbersInAMatrix {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         int[][] input = new int[][]{{3, 7, 8}, {9, 11, 13}, {15, 16, 17}};
+        int[][] input1 = new int[][]{{7, 8}, {1, 2}};
 
         List<Integer> result = luckyNumbers(input);
         for (Integer i : result) {
             System.out.println(i);
         }
+        result = luckyNumbers(input);
+        for (Integer i : result) {
+            System.out.println(i);
+        }
+
     }
 
     public static List<Integer> luckyNumbers(int[][] matrix) {
         List<Integer> answer = new ArrayList<>();
-        int N = matrix.length;
-        int min = Integer.MAX_VALUE;
-        int max = Integer.MIN_VALUE;
+        int l = matrix.length;
+        int min;
+        int max;
         int j = 0;
-        for (int i = 0; i < N; i++) {
-            for (j = 0; j < N; j++) {
+        for (int i = 0; i < l; i++) {
+            for (j = 0; j < l; j++) {
                 min = Math.min(matrix[i][0], matrix[i][j]);
                 answer.add(min);
             }
         }
-        for (int i = 0; i < N; i++) {
-            for (j = 0; j < N; j++) {
+        for (int i = 0; i < l; i++) {
+            for (j = 0; j < l; j++) {
                 max = Math.max(matrix[i][0], matrix[i][j]);
                 if (answer.contains(max)) {
-                    return answer;
+                    return answer.subList(answer.size() - 1, answer.size());
                 }
             }
         }
 
-        return answer;
+        return answer.subList(answer.size() - 1, answer.size());
     }
 
 
