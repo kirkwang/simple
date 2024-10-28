@@ -13,29 +13,30 @@ public class MergeTwoLinkedList {
 
 
     public static void main(String[] args) {
-        ListNode left = new ListNode(0);
-        ListNode right = new ListNode(0);
-        ListNode leftHead = left;
-        ListNode rightHead = right;
+        int starter = 0;
+        ListNode even = new ListNode(starter);
+        ListNode odd = new ListNode(starter);
+        ListNode evenHead = even;
+        ListNode oddHead = odd;
 
         int max = 10;
         for (int i = 1; i < max; i++) {
 
             if (i % 2 == 0) {
-                left.next = new ListNode(i);
-                left = left.next;
+                even.next = new ListNode(i);
+                even = even.next;
             } else {
-                right.next = new ListNode(i);
-                right = right.next;
+                odd.next = new ListNode(i);
+                odd = odd.next;
             }
-            System.out.println(left.getVal() + " <=left and right=> " + right.getVal());
+            System.out.println(even.getVal() + " <=even and odd=> " + odd.getVal());
 
         }
-        right.next = new ListNode(11);
+        odd.next = new ListNode(max);
 
 
         MergeTwoLinkedList rd = new MergeTwoLinkedList();
-        ListNode merged = rd.mergeTwoLinkedList(leftHead, rightHead, null);
+        ListNode merged = rd.mergeTwoLinkedList(evenHead, oddHead, null);
 
 
         while (merged != null) {

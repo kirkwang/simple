@@ -24,12 +24,12 @@ public class MaxProfit {
             return 0;
         }
         int min = prices[0];
-        int maxP = 0;
+        int max = 0;
         for (int price : prices) {
             min = Math.min(min, price);
-            maxP = Math.max(maxP, price - min);
+            max = Math.max(max, price - min);
         }
-        return maxP;
+        return max;
     }
 
     public static void main(String[] args) {
