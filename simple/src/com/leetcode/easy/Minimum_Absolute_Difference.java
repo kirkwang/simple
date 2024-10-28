@@ -31,9 +31,8 @@ public class Minimum_Absolute_Difference {
         int diff = Integer.MAX_VALUE;
         Arrays.sort(arr);
         for (int i = 0; i < arr.length - 1; i++) {
-            if ((arr[i + 1] - arr[i]) < diff) {
-                diff = arr[i + 1] - arr[i]; //mini diff found
-            }
+            diff = Math.min((arr[i + 1] - arr[i]), diff);
+
         }
 
         for (int i = 0; i < arr.length - 1; i++) {
@@ -47,10 +46,10 @@ public class Minimum_Absolute_Difference {
     public static void main(String[] args) {
 
         List<List<Integer>> actual = minimumAbsDifference(new int[]{4, 2, 1, 3});
-        List<int[]> expectedList = new ArrayList<>();
-        expectedList.add(new int[]{1, 2});
-        expectedList.add(new int[]{2, 3});
-        expectedList.add(new int[]{3, 4});
+        List<Integer[]> expectedList = new ArrayList<>();
+        expectedList.add(new Integer[]{1, 2});
+        expectedList.add(new Integer[]{2, 3});
+        expectedList.add(new Integer[]{3, 4});
 
         actual.retainAll(expectedList);
         Assert.assertEquals(actual.size(), 0);
