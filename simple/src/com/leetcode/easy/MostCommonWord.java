@@ -28,12 +28,12 @@ public class MostCommonWord {
             return "";
         }
         HashMap<String, Integer> mMap = getStringIntegerHashMap(paragraph);
-        TreeSet<String> bs = new TreeSet<>(Arrays.asList(banned));
+        TreeSet<String> bannedSet = new TreeSet<>(Arrays.asList(banned));
 
         int freq = 0;
         String ans = "";
         for (Map.Entry<String, Integer> entry : mMap.entrySet()) {
-            if (!entry.getKey().isEmpty() && entry.getValue() > freq && !bs.contains(entry.getKey())) {
+            if (!entry.getKey().isEmpty() && entry.getValue() > freq && !bannedSet.contains(entry.getKey())) {
                 freq = entry.getValue();
                 ans = entry.getKey();
             }
