@@ -4,6 +4,8 @@ package com.leetcode.easy;
  * Created by kewang on 12/24/15.
  */
 /*
+https://leetcode.com/problems/remove-element/description/
+
 Given an array and a value, remove all instances of that value in place and return the new length.
 
 The order of elements can be changed. It doesn't matter what you leave beyond the new length.
@@ -12,7 +14,6 @@ The order of elements can be changed. It doesn't matter what you leave beyond th
 public class RemoveArrayElement {
 
     public static void main(String[] args) {
-        //  int[] inputArray = new int[]{1, 2, 2, 2, 3, 4, 4};
         int[] inputArray = new int[]{0, 1, 2, 2, 3, 0, 4, 2};
 
         RemoveArrayElement rd = new RemoveArrayElement();
@@ -20,7 +21,7 @@ public class RemoveArrayElement {
         System.out.println(result + " removeElement result ");
         rd.printArray(inputArray);
 
-        result = rd.removeElement_v1(inputArray, 4);
+        result = rd.removeElementV1(inputArray, 4);
 
         System.out.println(result + " removeElement_v1 result ");
         int[] removed = rd.removeArrayElement(inputArray, 4);
@@ -63,17 +64,17 @@ public class RemoveArrayElement {
 
     }
 
-    public int removeElement_v1(int[] nums, int val) {
+    public int removeElementV1(int[] nums, int val) {
         if (nums == null) {
             return 0;
         }
-        int i = 0;
+        int counter = 0;
         for (int n : nums) {
             if (n != val) {
-                nums[i] = n;
-                i++;
+                nums[counter] = n;
+                counter++;
             }
         }
-        return i;
+        return counter;
     }
 }
