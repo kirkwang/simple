@@ -13,6 +13,7 @@ class MinStack {
             System.out.println("hello world " + i);
             mini.push(i);
         }
+
         for (int i = 0; i < mini.minStack.size(); i++) {
             System.out.println(mini.minStack.get(i));
             System.out.println(mini.stack.get(i));
