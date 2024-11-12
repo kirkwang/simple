@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import java.util.Arrays;
+
 /**
  * Created by amp on 9/24/2015.
  */
@@ -15,21 +17,38 @@ public class ReplaceChar {
 // but knowing API definitely helps to produce better solution quickly.
 
     public static void main(String... args) {
-        String target = "eBay Google Paypal";
-        System.out.println("Output for replaceCharAt(): " + ReplaceChar.replaceCharAt(target, target.length() - 1, '$'));
-        System.out.println("Output for removeChar(): " + ReplaceChar.removeChar("eBay Google Paypal", 'a'));
+        // String target = "eBay Google Paypal";
+        //    System.out.println("Output for replaceCharAt(): " + ReplaceChar.replaceCharAt(target, target.length() - 1, '$'));
+        //    System.out.println("Output for removeChar(): " + ReplaceChar.removeChar("eBay Google Paypal", 'a'));
+        System.out.println("Output for reverseChars(): " + ReplaceChar.reverseChars("abcd efg"));
         //  System.out.println("Output for removeCharAt(): " + ReplaceChar.removeCharAt("eBay Google Paypal", 5));
     }
 
     private static String replaceCharAt(String s, int i, char c) {
-        StringBuffer buf = new StringBuffer();
-        buf.append(s);
+        StringBuffer buf = new StringBuffer(s);
+
         if (i < s.length()) {
             buf.setCharAt(i, c);
         }
         return buf.toString();
     }
 
+    private static String reverseChars(String input) {
+        String[] strings = input.split(" ");
+        StringBuilder first = new StringBuilder(strings[0]);
+        first = first.reverse();
+        first.replace(0, 1, String.valueOf(input.charAt(0)));
+        first.replace(first.length() - 1, first.length(), String.valueOf(input.charAt(input.length() - 1)));
+
+        StringBuilder last = new StringBuilder(strings[strings.length - 1]);
+        last = last.reverse();
+
+
+        strings[0] = first.toString();
+        strings[strings.length - 1] = last.toString();
+
+        return Arrays.toString(strings);
+    }
     private static String removeChar(String s, char target) {
 
         StringBuffer buf = new StringBuffer();
