@@ -2,13 +2,13 @@ package com.kirkwang.hackerrank.generalprogramming;
 
 import org.testng.Assert;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Lonelyinteger {
-    public static int lonelyinteger(List<Integer> a) {
+public class LonelyInteger {
+    public static int lonelyInteger(List<Integer> a) {
         Map<Integer, Integer> hashMap = new HashMap<>();
         for (Integer i : a) {
             hashMap.put(i, hashMap.getOrDefault(i, 0) + 1);
@@ -22,11 +22,6 @@ public class Lonelyinteger {
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(1);
-        arrayList.add(1);
-        arrayList.add(2);
-
-        Assert.assertEquals(lonelyinteger(arrayList), 2);
+        Assert.assertEquals(lonelyInteger(Arrays.asList(1, 1, 2)), 2);
     }
 }
